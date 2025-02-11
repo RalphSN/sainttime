@@ -1,0 +1,90 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.footer {
+  display: flex;
+  background: v.$black;
+  color: v.$white;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-size: 1rem;
+
+  .footer-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .footer-logo {
+    max-width: 18rem;
+    min-width: 10rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .footer-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+  }
+
+  .footer-text {
+    display: flex;
+  }
+
+  .footer-copyright {
+    font-size: .8rem;
+    letter-spacing: .08rem;
+    text-align: start;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+
+    a {
+      color: v.$primary;
+      text-decoration: none;
+      transition: .35s;
+
+      &:hover {
+        color: v.$warning;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        .footer-container {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            .footer-box {
+                margin-left: 0;
+            }
+
+            .footer-text {
+                justify-content: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+
+            .footer-copyright {
+                font-size: .7rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,251 @@
+@use '../../scss/abstracts/variables' as v;
+@use '../../scss/abstracts/mixins' as m;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  padding: 1rem 2rem;
+  background-color: v.$dark-background;
+  color: v.$white;
+  position: relative;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 10rem;
+    min-width: 8rem;
+  }
+
+  &-logo {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-links {
+    display: flex;
+    gap: 1rem;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: v.$white;
+        transition: color 0.35s;
+
+        &:hover {
+          color: v.$primary;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  &-auth-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-left: 2rem;
+    width: 100%;
+
+    &-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      @include m.small-btn;
+      
+      &.login {
+        background-color: transparent;
+        color: v.$white;
+        border: 1px solid v.$white;
+        &:hover {
+          background-color: v.$white;
+          color: v.$secondary;
+          transition: .35s;
+        }
+      }
+
+      &.register {
+        background-color: v.$primary;
+        color: v.$white;
+        &:hover {
+          background-color: v.$primary-hover;
+          transition: .35s;
+        }
+      }
+    }
+
+    .language-dropdown {
+      position: relative;
+
+      .dropdown-toggle {
+        position: relative;
+        padding-right: 1.5rem;
+        background-color: transparent;
+        border: none;
+        color: v.$white;
+        cursor: pointer;
+        &::after {
+          content: "▼"; /* 使用 Unicode 箭頭符號 */
+          position: absolute;
+          right: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 0.6rem;
+          color: inherit;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 250%;
+        right: -30%;
+        text-align: left;
+        background-color: v.$white;
+        border: 1px solid v.$black;
+        border-radius: 5px;
+        list-style: none;
+        padding: 0.5rem 0;
+        display: none; // 預設不顯示
+        z-index: 30;
+
+        li {
+          padding: 0.5rem 1rem;
+          
+          &:hover {
+            background-color: v.$light;
+            transition: .35s;
+          }
+
+          a {
+            text-decoration: none;
+            color: v.$black;
+            display: block;
+            white-space: nowrap;
+
+          }
+        }
+      }
+
+      // 當 .open 類別存在時顯示 dropdown
+      &.open .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+// 小螢幕時隱藏 navbar-auth
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    &-links {
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      border-bottom: 1px solid v.$white;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .navbar-auth {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+  
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: v.$white;
+        transition: 0.3s;
+      }
+    }
+  
+    // 背景遮罩
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out;
+      display: none; // 初始狀態
+    
+      &.visible {
+        display: block; // 先讓它可見
+      }
+    
+      &.open {
+        opacity: 1;
+      }
+    }
+    
+  
+    // 右側滑出選單
+    .navbar-auth-slide {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 250px;
+      height: 100vh;
+      background-color: v.$secondary;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding: 2rem;
+      gap: 1rem;
+      transition: right 0.35s ease-in-out;
+      z-index: 20;
+
+      &-box {
+        flex-direction: column;
+      }
+  
+      &.open {
+        right: 0;
+      }
+  
+      .close-menu {
+        display: flex;
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: v.$white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+

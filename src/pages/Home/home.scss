@@ -1,0 +1,77 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.home-container {
+  width: 100%;
+  min-height: 70vh;
+  background-color: v.$dark-background;
+
+  .home-carousel {
+    position: relative;
+    width: 100%;
+    padding: 0 2rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    //暫時遮住圖片
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #868383;
+      opacity: 1;
+    }
+  }
+
+  .home-content {
+    display: flex;
+    padding: 2rem 5rem;
+    color: v.$white;
+    font-size: 1.2rem;
+
+    .home-popular {
+      flex: 3;
+
+      &-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 0.4rem; // 垂直線的寬度
+          height: 1.5em; // 與文字等高
+          background-color: #8b5e3c; // 垂直線的顏色
+          margin-right: 20px; // 與文字的間距
+        }
+      }
+    }
+
+    .home-side {
+      flex: 1;
+
+      .home-side-reserve {
+
+        &-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            &::before {
+              content: "";
+              display: inline-block;
+              width: 0.4rem; // 垂直線的寬度
+              height: 1.5em; // 與文字等高
+              background-color: #8b5e3c; // 垂直線的顏色
+              margin-right: 20px; // 與文字的間距
+            }
+          }
+      }
+    }
+  }
+}

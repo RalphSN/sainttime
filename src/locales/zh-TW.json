@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "home": "首頁",
+    "popularGames": "熱門免費遊戲",
+    "login": "登入",
+    "register": "註冊",
+    "language": "語言"
+  },
+  "languages": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "zh-CN": "简体中文",
+    "zh-HK": "简体中文-港"
+  },
+  "footer": {
+    "adultContentWarning": "本網站涉及成人內容，未滿18歲不得瀏覽。",
+    "termsOfService": "服務條款",
+    "privacyPolicy": "隱私政策",
+    "contactUs": "聯繫我們"
+  },
+  "home": {
+    "popularGames": "熱門免費遊戲",
+    "more": "更多",
+    "reserve": "搶先預約"
+  }
+}
