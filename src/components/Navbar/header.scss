@@ -80,18 +80,33 @@
         color: v.$white;
         border: 1px solid v.$white;
         &:hover {
-          background-color: v.$white;
           color: v.$secondary;
+          background-color: v.$white;
           transition: .35s;
+          animation: pulse-log 1s;
+          box-shadow: 0 0 0 1em transparent;
+
+          @keyframes pulse-log {
+            0% {
+              box-shadow: 0 0 0 0 v.$white;
+            }
+          }
         }
       }
 
       &.register {
         background-color: v.$primary;
         color: v.$white;
+
         &:hover {
-          background-color: v.$primary-hover;
-          transition: .35s;
+          animation: pulse-rig 1s;
+          box-shadow: 0 0 0 1em transparent;
+
+          @keyframes pulse-rig {
+            0% {
+              box-shadow: 0 0 0 0 v.$primary;
+            }
+          }
         }
       }
     }

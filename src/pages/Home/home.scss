@@ -37,6 +37,7 @@
 
     .home-popular {
       flex: 3;
+      margin-right: 2rem;
 
       &-title {
         display: flex;
@@ -47,9 +48,19 @@
           display: inline-block;
           width: 0.4rem; // 垂直線的寬度
           height: 1.5em; // 與文字等高
-          background-color: #8b5e3c; // 垂直線的顏色
+          background-color: v.$thirdary; // 垂直線的顏色
           margin-right: 20px; // 與文字的間距
         }
+      }
+
+      .card-grid-popular {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: repeat(3, minmax(auto, 1fr));
+        max-width: 100%;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 1rem 0;
       }
     }
 
@@ -67,9 +78,16 @@
               display: inline-block;
               width: 0.4rem; // 垂直線的寬度
               height: 1.5em; // 與文字等高
-              background-color: #8b5e3c; // 垂直線的顏色
+              background-color: v.$thirdary; // 垂直線的顏色
               margin-right: 20px; // 與文字的間距
             }
+          }
+
+          .reserve-game-list {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0;
+            border-bottom: 1px solid v.$white;
           }
       }
     }

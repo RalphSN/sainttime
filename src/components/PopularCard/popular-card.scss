@@ -1,0 +1,51 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.card-popular {
+  display: flex;
+  flex-direction: column;
+  max-width: 18rem;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid v.$white;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid v.$white;
+  }
+
+  .card-popular-content {
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .card-popular-title {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+
+    .card-popular-button {
+      padding: 0.6rem 1rem;
+      font-weight: 700;
+      background-color: v.$btn-1;
+      //   border: 1px solid v.$white;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+
+      &:hover {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 1em transparent;
+
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 v.$btn-1;
+          }
+        }
+      }
+    }
+  }
+}

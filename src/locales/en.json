@@ -22,5 +22,15 @@
     "popularGames": "Popular Free Games",
     "more": "More",
     "reserve": "Pre-order Now"
+  },
+  "game": {
+    "naruto": "Naruto：Shinobi Exam",
+    "raikage": "Raikage：Shinobi Exam",
+    "kazekage": "Kazekage：Shinobi Exam",
+    "threeKingdoms": "Three Kingdoms：One Unified World",
+    "sixKingdoms": "Six Kingdoms：One Unified World",
+    "description": "",
+    "play": "PLAY",
+    "reserve": "Reserve"
   }
 }

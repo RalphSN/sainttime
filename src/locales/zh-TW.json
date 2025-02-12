@@ -22,5 +22,16 @@
     "popularGames": "熱門免費遊戲",
     "more": "更多",
     "reserve": "搶先預約"
+  },
+  "game": {
+      "naruto": "火影：淫忍考試",
+      "raikage": "雷影：淫忍考試",
+      "kazekage": "風影：淫忍考試",
+      "threeKingdoms": "三國：一桶天下",
+      "sixKingdoms": "六國：一桶天下",
+      "description": "",
+      "play": "PLAY",
+      "reserve": "預約"
+    }
   }
-}
+
