@@ -54,7 +54,7 @@ const Home = () => {
             </div>
             <div className="home-side-ad">
               <a href="#">
-                <img src="" alt="" />
+                <img src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/image-ad.gif" alt="" />
               </a>
             </div>
           </div>
