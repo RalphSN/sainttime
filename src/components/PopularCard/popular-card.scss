@@ -24,6 +24,7 @@
     justify-content: space-between;
 
     .card-popular-title {
+      @include m.nowrap;
       font-size: 1.2rem;
       margin-right: 0.5rem;
     }

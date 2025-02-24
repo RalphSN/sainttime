@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
@@ -55,8 +56,8 @@ const Header = () => {
   };
 
   const navLinks = [
-    { key: "navbar.home", href: "#" },
-    { key: "navbar.popularGames", href: "#" },
+    { key: "navbar.home", to: "/" },
+    { key: "navbar.popularGames", to: "/" },
   ];
 
   const languages = [
@@ -99,13 +100,17 @@ const Header = () => {
         <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.key}>
-              <a href={link.href}>{t(link.key)}</a>
+              <Link to={link.to}>{t(link.key)}</Link>
             </li>
           ))}
         </ul>
         <div className="navbar-auth-slide-box">
-          <button className="btn login">{t("navbar.login")}</button>
-          <button className="btn register">{t("navbar.register")}</button>
+          <Link to="/login" className="btn login">
+            {t("navbar.login")}
+          </Link>
+          <Link to="/register" className="btn register">
+            {t("navbar.register")}
+          </Link>
           <div
             className={`language-dropdown ${dropdownOpen ? "open" : ""}`}
             ref={dropdownRef}

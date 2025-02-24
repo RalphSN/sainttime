@@ -8,7 +8,6 @@ import ReserveCard from "../../components/ReserveCard/ReserveCard";
 const Home = () => {
   const { t } = useTranslation();
 
-
   return (
     <main>
       <div className="home-container">
@@ -34,7 +33,9 @@ const Home = () => {
                 />
               ))}
             </div>
-            <button className="more">{t("home.more")}</button>
+            <div className="more-btn-box">
+              <button className="more">{t("home.more")}</button>
+            </div>
           </div>
           <div className="home-side">
             <div className="home-side-reserve">
@@ -54,7 +55,10 @@ const Home = () => {
             </div>
             <div className="home-side-ad">
               <a href="#" className="home-side-ad-link">
-                <img src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/image-ad.gif" alt="" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/image-ad.gif"
+                  alt=""
+                />
               </a>
             </div>
           </div>

@@ -3,7 +3,7 @@
 
 .home-container {
   width: 100%;
-  min-height: 70vh;
+  min-height: calc(100vh - 6rem);
   background-color: v.$dark-background;
 
   .home-carousel {
@@ -52,6 +52,25 @@
         gap: 2rem;
         margin-top: 2rem;
         padding: 1rem 0;
+      }
+    }
+
+    .more-btn-box {
+      @include m.flex-center;
+      width: 100%;
+      margin-top: 2rem;
+      .more {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid v.$white;
+        border-radius: 10px;
+        transition: .35s;
+        cursor: pointer;
+
+        &:hover {
+          color: v.$secondary;
+          background-color: v.$white;
+        }
       }
     }
 
@@ -139,6 +158,9 @@
 
         .home-side-reserve {
           flex: 1;
+          .reserve-game-list {
+            border-bottom: transparent;
+          }
         }
 
         .home-side-ad {
@@ -157,6 +179,9 @@
     }
     .home-content {
       padding: 2rem;
+      .home-side {
+        flex-direction: column;
+      }
     }
   }
 }

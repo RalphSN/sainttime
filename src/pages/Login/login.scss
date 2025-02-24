@@ -1,0 +1,85 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.login-container {
+    @include m.flex-center;
+    min-height: calc(100vh - 6rem);
+    background-color: v.$secondary;
+
+    .login-box, .register-box {
+        background-color: #200021;
+        border: 1px solid #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: v.$white;
+        margin: 10px;
+        .login-title {
+            margin-bottom: 1.2rem;
+            align-self: flex-start
+        }
+      }
+
+      .login-box {
+        @include m.flex-center;
+        flex-direction: column;
+        flex: 2;
+        .login-btn {
+            @include m.small-btn;
+        }
+      }
+      .register-box {
+        flex: 1;
+      }
+
+      .login-title-sec {
+        align-self: flex-start;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+      }
+
+      .btn-l {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .login-btn {
+        background-color: #b8a399;
+        color: white;
+      }
+      
+      .register-btn {
+        background-color: #e3c48e;
+        color: black;
+      }
+      
+      .forgot-btn {
+        background-color: #b8a399;
+        color: black;
+      }
+      
+      .privacy-policy {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      
+      .tips {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+}
