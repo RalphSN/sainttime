@@ -1,40 +1,86 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next"; // 引入 i18n
 import "./login.scss";
 
+const InputField = ({ label, type, placeholder, id }) => (
+  <div className="input-wrapper">
+    <label htmlFor={id} className="login-title-sec">
+      {label}
+    </label>
+    <input
+      id={id}
+      type={type}
+      placeholder={placeholder}
+      className="login-input"
+      required
+    />
+  </div>
+);
+
 const Login = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation(); // 只使用 t() 來獲取翻譯
+
   return (
     <div className="login-container">
       {/* 左側：登入表單 */}
-      <div className="login-box">
-        <h2 className="login-title">會員登入</h2>
-        <label className="login-title-sec">帳號</label>
-        <input type="text" placeholder="請輸入帳號" className="login-input" />
-        <label className="login-title-sec">密碼</label>
-        <input type="password" placeholder="請輸入密碼" className="login-input" />
-        <button className="btn login-btn">登入帳號</button>
+      <form className="login-box">
+        <h2 className="login-title">{t("login.title")}</h2>
+        <InputField
+          label={t("login.username")}
+          type="text"
+          placeholder={t("login.enterUsername")}
+          id="username"
+        />
+        <InputField
+          label={t("login.password")}
+          type="password"
+          placeholder={t("login.enterPassword")}
+          id="password"
+        />
+        <button type="submit" className="btn login-btn">
+          {t("login.loginBtn")}
+        </button>
         <p className="privacy-policy">
-          登入表示同意本網站 <Link to="/privacy" className="privacy-enter">隱私權條款</Link>
+          {t("login.agreePolicy")}{" "}
+          <Link to="/privacy" className="privacy-enter">
+            {t("login.privacyPolicy")}
+          </Link>
         </p>
-      </div>
+      </form>
 
       {/* 右側：註冊區塊 */}
       <div className="register-box">
-        <h2 className="login-title">還沒有帳號？</h2>
-        <Link to="/register" className="btn-l register-btn">
-          註冊帳號（免費）
-        </Link>
-        <Link to="/forgot-password" className="btn-l forgot-btn">
-          忘記密碼
-        </Link>
-        <p className="tips">
-          <span className="tips-title">帳號、密碼輸入不正確的情形</span>
-          確認英文大小寫、數字是否正確，再次正確輸入資料
-          <span className="tips-title">如何註冊會員呢？</span>
-          尚未註冊會員請用 <Link to="/register">【註冊帳號】</Link> 來創建帳號
-        </p>
+        <h2 className="login-title">{t("register-login.title")}</h2>
+        <button
+          className="btn-l register-btn"
+          onClick={() => navigate("/register")}
+        >
+          {t("register-login.registerBtn")}
+        </button>
+        <button
+          className="btn-l forgot-btn"
+          onClick={() => navigate("/forgot-password")}
+        >
+          {t("register-login.forgotPassword")}
+        </button>
+        <div className="tips">
+          <span className="tips-title">{t("tips.loginIssueTitle")}</span>
+          <span className="tips-content">{t("tips.loginIssueContent")}</span>
+          <span className="tips-title">{t("tips.registerTitle")}</span>
+          <span className="tips-content">{t("tips.registerContent")}</span>
+        </div>
       </div>
     </div>
   );
+};
+
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 export default Login;

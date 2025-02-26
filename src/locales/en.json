@@ -32,5 +32,43 @@
     "description": "",
     "play": "PLAY",
     "reserve": "Reserve"
-  }
+  },
+  "login": {
+    "title": "Member Login",
+    "username": "Username",
+    "password": "Password",
+    "enterUsername": "Enter your username",
+    "enterPassword": "Enter your password",
+    "loginBtn": "Login",
+    "agreePolicy": "By logging in, you agree to our",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "register-login": {
+    "title": "Don't have an account?",
+    "registerBtn": "Register (Free)",
+    "forgotPassword": "Forgot Password"
+  },
+  "tips": {
+    "loginIssueTitle": "Incorrect username or password",
+    "loginIssueContent": "Check uppercase, lowercase letters, and numbers, then enter the correct information again.",
+    "registerTitle": "How to register?",
+    "registerContent": "If you haven't registered yet, please use [Register] to create an account."
+  },
+  "register": {
+      "title": "Register Account",
+      "username": "Username",
+      "enterUsername": "Enter your username",
+      "password": "Password",
+      "enterPassword": "Enter your password",
+      "confirmPassword": "Confirm Password",
+      "enterConfirmPassword": "Re-enter your password",
+      "registerBtn": "Register",
+      "agreePolicy": "By registering, you agree to our",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "login-register": {
+      "alreadyHaveAccount": "Already have an account?",
+      "loginBtn": "Login"
+    }
+  
 }

@@ -32,5 +32,42 @@
       "description": "",
       "play": "PLAY",
       "reserve": "预订"
+    },
+    "login": {
+    "title": "会员登录",
+    "username": "账号",
+    "password": "密码",
+    "enterUsername": "请输入账号",
+    "enterPassword": "请输入密码",
+    "loginBtn": "登录账号",
+    "agreePolicy": "登录表示同意本网站",
+    "privacyPolicy": "隐私权条款"
+  },
+  "register-login": {
+    "title": "还没有账号？",
+    "registerBtn": "注册账号（免费）",
+    "forgotPassword": "忘记密码"
+  },
+  "tips": {
+    "loginIssueTitle": "账号、密码输入不正确的情况",
+    "loginIssueContent": "确认英文大小写、数字是否正确，再次正确输入资料",
+    "registerTitle": "如何注册会员？",
+    "registerContent": "尚未注册会员请用【注册帐号】来创建帐号"
+  },
+  "register": {
+      "title": "注册账号",
+      "username": "账号",
+      "enterUsername": "请输入账号",
+      "password": "密码",
+      "enterPassword": "请输入密码",
+      "confirmPassword": "再次输入密码",
+      "enterConfirmPassword": "请再次输入密码",
+      "registerBtn": "注册账号",
+      "agreePolicy": "注册会员表示同意本网站",
+      "privacyPolicy": "隐私权条款"
+    },
+    "login-register": {
+      "alreadyHaveAccount": "已有账号",
+      "loginBtn": "会员登录"
     }
 }

@@ -24,14 +24,50 @@
     "reserve": "搶先預約"
   },
   "game": {
-      "naruto": "火影：淫忍考試",
-      "raikage": "雷影：淫忍考試",
-      "kazekage": "風影：淫忍考試",
-      "threeKingdoms": "三國：一桶天下",
-      "sixKingdoms": "六國：一桶天下",
-      "description": "",
-      "play": "PLAY",
-      "reserve": "預約"
-    }
+    "naruto": "火影：淫忍考試",
+    "raikage": "雷影：淫忍考試",
+    "kazekage": "風影：淫忍考試",
+    "threeKingdoms": "三國：一桶天下",
+    "sixKingdoms": "六國：一桶天下",
+    "description": "",
+    "play": "PLAY",
+    "reserve": "預約"
+  },
+  "login": {
+    "title": "會員登入",
+    "username": "帳號",
+    "password": "密碼",
+    "enterUsername": "請輸入帳號",
+    "enterPassword": "請輸入密碼",
+    "loginBtn": "登入帳號",
+    "agreePolicy": "登入表示同意本網站",
+    "privacyPolicy": "隱私權條款"
+  },
+  "register-login": {
+    "title": "還沒有帳號？",
+    "registerBtn": "註冊帳號（免費）",
+    "forgotPassword": "忘記密碼"
+  },
+  "tips": {
+    "loginIssueTitle": "帳號、密碼輸入不正確的情形",
+    "loginIssueContent": "確認英文大小寫、數字是否正確，再次正確輸入資料",
+    "registerTitle": "如何註冊會員呢？",
+    "registerContent": "尚未註冊會員請用【註冊帳號】來創建帳號"
+  },
+  "register": {
+    "title": "註冊帳號",
+    "username": "帳號",
+    "enterUsername": "請輸入帳號",
+    "password": "密碼",
+    "enterPassword": "請輸入密碼",
+    "confirmPassword": "再輸入密碼",
+    "enterConfirmPassword": "請再次輸入密碼",
+    "registerBtn": "註冊帳號",
+    "agreePolicy": "註冊會員表示同意本網站",
+    "privacyPolicy": "隱私權條款"
+  },
+  "login-register": {
+    "alreadyHaveAccount": "已有帳號",
+    "loginBtn": "會員登入"
   }
-
+}

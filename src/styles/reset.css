@@ -34,5 +34,19 @@
     outline: none;
     box-shadow: none;
   }
+
+  input {
+  /* 取消所有瀏覽器的預設focus outline */
+  outline: none;
+  
+  /* 取消WebKit瀏覽器的預設appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* 取消iOS上的陰影和圓角 */
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  }
   
   

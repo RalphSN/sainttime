@@ -1,7 +1,7 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.login-container {
+.register-container {
   @include m.flex-center;
   align-items: flex-start;
   min-height: calc(100vh - 6rem);
@@ -9,8 +9,8 @@
   padding: 0 2rem;
   padding-top: 5rem;
 
-  .login-box,
-  .register-box {
+  .register-case, 
+  .login-case {
     background-color: v.$secondary-dark;
     border: 1px solid v.$white;
     padding: 1.5rem;
@@ -19,25 +19,24 @@
     color: v.$white;
     margin: 1rem;
 
-    min-height: 30rem;
+    .register-title,
     .login-title {
-      display: flex;
-      margin-bottom: 1.2rem;
-      align-self: flex-start;
-    }
+        display: flex;
+        margin-bottom: 1.2rem;
+        align-self: flex-start;
+      }
   }
-
-  .login-box {
+  .register-case {
     @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
-    .login-btn {
+    .register-btn {
       @include m.small-btn;
     }
   }
-  .register-box {
+  .login-case {
     @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
@@ -45,7 +44,7 @@
     max-width: 28rem;
   }
 
-  .login-title-sec {
+  .register-title-sec {
     align-self: flex-start;
   }
 
@@ -54,7 +53,7 @@
     flex-direction: column;
     width: 100%;
 
-    .login-input {
+    .register-input {
       width: 100%;
       font-size: 0.9rem;
       margin: 1rem 0;
@@ -71,7 +70,21 @@
     }
   }
 
-  .btn-l {
+  .register-btn {
+    @include m.interactive-btn;
+    background-color: v.$btn-l;
+    color: v.$white;
+    margin: 1rem 0;
+    position: relative;
+  }
+
+  .login-btn {
+    @include m.interactive-btn;
+    background-color: v.$btn-l;
+    color: v.$white;
+  }
+
+  .btn-r {
     display: block;
     width: 100%;
     padding: 10px;
@@ -82,26 +95,6 @@
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-  }
-
-  .login-btn {
-    @include m.interactive-btn;
-    background-color: v.$btn-l;
-    color: v.$white;
-    margin: 1rem 0;
-    position: relative;
-  }
-
-  .register-btn {
-    @include m.interactive-btn;
-    background-color: v.$btn-l;
-    color: v.$white;
-  }
-
-  .forgot-btn {
-    @include m.interactive-btn;
-    background-color: v.$white;
-    color: v.$black;
   }
 
   .privacy-policy {
@@ -117,53 +110,23 @@
       }
     }
   }
-
-  .tips {
-    @include m.flex-center;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: flex-start;
-    width: 100%;
-
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    border-top: 1px solid v.$white;
-
-    .tips-title {
-      font-size: 1.2rem;
-      color: v.$btn-l;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      white-space: normal;
-      text-align: start;
-    }
-
-    .tips-content {
-      font-size: 0.9rem;
-      white-space: normal;
-      text-align: start;
-      white-space: normal;
-      text-align: start;
-    }
-  }
 }
-
 
 @media (max-width:768px) {
-  .login-container {
-    flex-direction: column;
-    padding: 2rem;
-    .login-box {
-      width: 100%;
-      flex: none;
-      max-width: 100%;
-      margin: 2rem 0;
-    }
-    .register-box {
-      width: 100%;
-      flex: none;
-      max-width: 100%;
-      margin: 2rem 0;
+    .register-container {
+      flex-direction: column;
+      padding: 2rem;
+      .register-case {
+        width: 100%;
+        flex: none;
+        max-width: 100%;
+        margin: 2rem 0;
+      }
+      .login-case {
+        width: 100%;
+        flex: none;
+        max-width: 100%;
+        margin: 2rem 0;
+      }
     }
   }
-}
