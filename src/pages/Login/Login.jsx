@@ -8,12 +8,12 @@ const Login = () => {
       <div className="login-box">
         <h2 className="login-title">會員登入</h2>
         <label className="login-title-sec">帳號</label>
-        <input type="text" placeholder="請輸入帳號" />
+        <input type="text" placeholder="請輸入帳號" className="login-input" />
         <label className="login-title-sec">密碼</label>
-        <input type="password" placeholder="請輸入密碼" />
+        <input type="password" placeholder="請輸入密碼" className="login-input" />
         <button className="btn login-btn">登入帳號</button>
         <p className="privacy-policy">
-          登入表示同意本網站 <Link to="/privacy">隱私權條款</Link>
+          登入表示同意本網站 <Link to="/privacy" className="privacy-enter">隱私權條款</Link>
         </p>
       </div>
 
@@ -27,13 +27,10 @@ const Login = () => {
           忘記密碼
         </Link>
         <p className="tips">
-          帳號、密碼輸入不正確的情形
-          <br />
+          <span className="tips-title">帳號、密碼輸入不正確的情形</span>
           確認英文大小寫、數字是否正確，再次正確輸入資料
-          <br />
-          如何註冊會員呢？
-          <br />
-          尚未註冊會員請用 <Link to="/register">註冊帳號</Link> 來創建帳號
+          <span className="tips-title">如何註冊會員呢？</span>
+          尚未註冊會員請用 <Link to="/register">【註冊帳號】</Link> 來創建帳號
         </p>
       </div>
     </div>

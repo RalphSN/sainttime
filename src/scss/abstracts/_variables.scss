@@ -3,6 +3,7 @@
 $primary:#00bfff;
 $primary-hover:#00688b;
 $secondary:#2c002c;
+$secondary-dark: #200021;
 $thirdary:#8b5e3c;
 $white: #fff;
 $black: #000;
@@ -13,9 +14,15 @@ $warning: #ffc107;
 $info: #17a2b8;
 $light: #f0f0f0;
 $dark: #343a40;
+$gray: gray;
 
 
 $dark-background: #2c002c;
 $light-background: #f8f9fa;
 
-$btn-1:#ef5285;
+$btn-p:#ef5285;
+$btn-l: #b8a399;
+$btn-r: #e3c48e;
+
+$shadow-color-white: rgba(255, 255, 255, 0.8);
+$shadow-color-black: rgba(0, 0, 0, 0.2);

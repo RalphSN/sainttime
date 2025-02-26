@@ -2,84 +2,120 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .login-container {
+  @include m.flex-center;
+  min-height: calc(100vh - 6rem);
+  background-color: v.$secondary;
+
+  .login-box,
+  .register-box {
+    background-color: v.$secondary-dark;
+    border: 1px solid v.$white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: v.$white;
+    margin: 10px;
+
+    min-height: 30rem;
+    .login-title {
+      display: flex;
+      margin-bottom: 1.2rem;
+      align-self: flex-start;
+    }
+  }
+
+  .login-box {
     @include m.flex-center;
-    min-height: calc(100vh - 6rem);
-    background-color: v.$secondary;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 2;
+    max-width: 38rem;
+    .login-btn {
+      @include m.small-btn;
+    }
+  }
+  .register-box {
+    @include m.flex-center;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1;
+    max-width: 28rem;
+  }
 
-    .login-box, .register-box {
-        background-color: #200021;
-        border: 1px solid #fff;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        color: v.$white;
-        margin: 10px;
-        .login-title {
-            margin-bottom: 1.2rem;
-            align-self: flex-start
-        }
-      }
+  .login-title-sec {
+    align-self: flex-start;
+  }
 
-      .login-box {
-        @include m.flex-center;
-        flex-direction: column;
-        flex: 2;
-        .login-btn {
-            @include m.small-btn;
-        }
-      }
-      .register-box {
-        flex: 1;
-      }
+  .login-input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid v.$white;
+    border-radius: 10px;
+    background-color: v.$white;
+    color: v.$black;
+  }
 
-      .login-title-sec {
-        align-self: flex-start;
-      }
+  .btn-l {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .login-btn {
+    @include m.interactive-btn;
+    background-color: v.$btn-l;
+    color: v.$white;
+    margin: 1rem 0;
+    position: relative;
+  }
 
-      input {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background-color: white;
-        color: black;
-      }
+  .register-btn {
+    @include m.interactive-btn;
+    background-color: v.$btn-l;
+    color: v.$white;
+  }
 
-      .btn-l {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 16px;
-        cursor: pointer;
-        text-decoration: none;
+  .forgot-btn {
+    @include m.interactive-btn;
+    background-color: v.$white;
+    color: v.$black;
+  }
+
+  .privacy-policy {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+
+    .privacy-enter {
+      color: v.$gray;
+      text-decoration: underline;
+      transition: 0.35s;
+      &:hover {
+        color: v.$primary;
       }
-      .login-btn {
-        background-color: #b8a399;
-        color: white;
-      }
-      
-      .register-btn {
-        background-color: #e3c48e;
-        color: black;
-      }
-      
-      .forgot-btn {
-        background-color: #b8a399;
-        color: black;
-      }
-      
-      .privacy-policy {
-        margin-top: 10px;
-        font-size: 14px;
-      }
-      
-      .tips {
-        font-size: 12px;
-        margin-top: 10px;
-      }
+    }
+  }
+
+  .tips {
+    @include m.flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+
+    font-size: 0.8rem;
+    margin-top: 1rem;
+
+    .tips-title {
+      font-size: 1rem;
+      color: v.$btn-l;
+      margin-top: 1rem;
+    }
+  }
 }

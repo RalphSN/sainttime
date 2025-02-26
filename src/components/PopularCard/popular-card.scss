@@ -32,7 +32,7 @@
     .card-popular-button {
       padding: 0.6rem 1rem;
       font-weight: 700;
-      background-color: v.$btn-1;
+      background-color: v.$btn-p;
       //   border: 1px solid v.$white;
       border-radius: 10px;
       font-size: 0.8rem;
@@ -44,7 +44,7 @@
 
         @keyframes pulse {
           0% {
-            box-shadow: 0 0 0 0 v.$btn-1;
+            box-shadow: 0 0 0 0 v.$btn-p;
           }
         }
       }
