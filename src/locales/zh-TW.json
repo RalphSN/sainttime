@@ -4,7 +4,10 @@
     "popularGames": "熱門免費遊戲",
     "login": "登入",
     "register": "註冊",
-    "language": "語言"
+    "language": "語言",
+    "member": "會員專區",
+    "hello": "您好",
+    "logout": "登出"
   },
   "languages": {
     "en": "English",
@@ -69,5 +72,21 @@
   "login-register": {
     "alreadyHaveAccount": "已有帳號",
     "loginBtn": "會員登入"
+  },
+  "forgotPassword": {
+    "title": "忘記密碼",
+    "emailLabel": "電子郵件",
+    "emailPlaceholder": "請輸入您的電子郵件",
+    "uploadLabel": "上傳憑證（最多 3 個檔案）",
+    "uploadPlaceholder": "拖放或點擊上傳文件",
+    "submit": "提交",
+    "maxFiles": "最多只能上傳 3 個檔案",
+    "uploadRequired": "請上傳憑證文件",
+    "success": "提交成功！請檢查您的電子郵件",
+    "submitError": "提交失敗，請稍後再試",
+    "fetchError": "獲取失敗",
+    "historyTitle": "上傳紀錄",
+    "uploaded": "上傳了",
+    "noHistory": "尚無上傳紀錄"
   }
 }

@@ -75,7 +75,8 @@
     .btn {
       @include m.small-btn;
       
-      &.login {
+      &.login,
+      &.logout {
         background-color: transparent;
         color: v.$white;
         border: 1px solid v.$white;

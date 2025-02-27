@@ -4,7 +4,10 @@
     "popularGames": "Popular Free Games",
     "login": "Login",
     "register": "Register",
-    "language": "Language"
+    "language": "Language",
+    "member": "Member Area",
+    "hello": "Hi",
+    "logout": "logout"
   },
   "languages": {
     "en": "English",
@@ -69,6 +72,23 @@
     "login-register": {
       "alreadyHaveAccount": "Already have an account?",
       "loginBtn": "Login"
-    }
+    },
+    "forgotPassword": {
+    "title": "Forgot Password",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "uploadLabel": "Upload proof (max 3 files)",
+    "uploadPlaceholder": "Drag & drop or click to upload",
+    "submit": "Submit",
+    "maxFiles": "Max 3 files allowed",
+    "uploadRequired": "Please upload a proof file",
+    "success": "Submitted! Check your email",
+    "submitError": "Submission failed, try again",
+    "fetchError": "Failed to fetch data",
+    "historyTitle": "Upload History",
+    "uploaded": "uploaded",
+    "noHistory": "No upload history"
+  }
+
   
 }
