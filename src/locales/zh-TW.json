@@ -88,5 +88,21 @@
     "historyTitle": "上傳紀錄",
     "uploaded": "上傳了",
     "noHistory": "尚無上傳紀錄"
+  },
+  "tags": {
+    "rpg": "角色扮演",
+    "card": "卡牌戰鬥",
+    "action": "動作",
+    "openWorld": "開放世界"
+  },
+  "platforms": {
+    "android": "Android",
+    "ios": "iOS",
+    "pc": "PC"
+  },
+  "hot": {
+    "title": "熱門免費遊戲",
+    "filter-platform": "裝置類型",
+    "filter-genre": "遊戲類型"
   }
 }

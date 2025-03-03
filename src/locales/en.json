@@ -58,22 +58,22 @@
     "registerContent": "If you haven't registered yet, please use [Register] to create an account."
   },
   "register": {
-      "title": "Register Account",
-      "username": "Username",
-      "enterUsername": "Enter your username",
-      "password": "Password",
-      "enterPassword": "Enter your password",
-      "confirmPassword": "Confirm Password",
-      "enterConfirmPassword": "Re-enter your password",
-      "registerBtn": "Register",
-      "agreePolicy": "By registering, you agree to our",
-      "privacyPolicy": "Privacy Policy"
-    },
-    "login-register": {
-      "alreadyHaveAccount": "Already have an account?",
-      "loginBtn": "Login"
-    },
-    "forgotPassword": {
+    "title": "Register Account",
+    "username": "Username",
+    "enterUsername": "Enter your username",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "enterConfirmPassword": "Re-enter your password",
+    "registerBtn": "Register",
+    "agreePolicy": "By registering, you agree to our",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "login-register": {
+    "alreadyHaveAccount": "Already have an account?",
+    "loginBtn": "Login"
+  },
+  "forgotPassword": {
     "title": "Forgot Password",
     "emailLabel": "Email",
     "emailPlaceholder": "Enter your email",
@@ -88,7 +88,21 @@
     "historyTitle": "Upload History",
     "uploaded": "uploaded",
     "noHistory": "No upload history"
+  },
+  "tags": {
+    "rpg": "RPG",
+    "card": "Card Battle",
+    "action": "Action",
+    "openWorld": "Open World"
+  },
+  "platforms": {
+    "android": "Android",
+    "ios": "iOS",
+    "pc": "PC"
+  },
+  "hot": {
+    "title": "Hot Free Games",
+    "filter-platform": "Device Type",
+    "filter-genre": "Game Genre"
   }
-
-  
 }

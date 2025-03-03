@@ -101,6 +101,12 @@ const Login = () => {
         >
           {t("register-login.forgotPassword")}
         </button>
+        <div className="tips">
+          <span className="tips-title">{t("tips.loginIssueTitle")}</span>
+          <span className="tips-content">{t("tips.loginIssueContent")}</span>
+          <span className="tips-title">{t("tips.registerTitle")}</span>
+          <span className="tips-content">{t("tips.registerContent")}</span>
+        </div>
       </div>
     </div>
   );

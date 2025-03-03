@@ -1,0 +1,89 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.hot-container {
+  width: 100%;
+  min-height: calc(100vh - 6rem);
+  background-color: v.$dark-background;
+  padding: 2rem 5rem;
+
+  .hot-title {
+    font-size: 2rem;
+    color: v.$white;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .hot-filter {
+    @include m.flex-center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    color: v.$white;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .hot-filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .hot-filter-tag {
+        background: transparent;
+        border: 1px solid v.$white !important;
+        border-radius: 15px;
+        color: v.$white;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        cursor: pointer;
+        transition: 0.35s;
+
+        &:hover {
+          background: #6a3e8e;
+        }
+
+        &.active {
+          background: v.$thirdary;
+        }
+      }
+    }
+  }
+
+  .card-grid-hot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, max-content));
+    align-items: start;
+    justify-content: start;
+    max-width: 100%;
+    gap: 2rem;
+    padding: 1rem 0;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hot-container {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hot-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .hot-container {
+    padding: 2rem;
+
+    .card-grid-hot {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+
+

@@ -137,8 +137,8 @@
 
       .dropdown-menu {
         position: absolute;
-        top: 250%;
-        right: -30%;
+        top: 150%;
+        right: -20%;
         text-align: left;
         background-color: v.$white;
         border: 1px solid v.$black;
@@ -177,7 +177,7 @@
 // 小螢幕時隱藏 navbar-auth
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     &-links {
       flex-direction: column;
       align-items: start;

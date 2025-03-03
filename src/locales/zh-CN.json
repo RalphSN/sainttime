@@ -27,16 +27,16 @@
     "reserve": "抢先预约"
   },
   "game": {
-      "naruto": "火影：淫忍考试",
-      "raikage": "雷影：淫忍考试",
-      "kazekage": "风影：淫忍考试",
-      "threeKingdoms": "三国：一桶天下",
-      "sixKingdoms": "六国：一桶天下",
-      "description": "",
-      "play": "PLAY",
-      "reserve": "预订"
-    },
-    "login": {
+    "naruto": "火影：淫忍考试",
+    "raikage": "雷影：淫忍考试",
+    "kazekage": "风影：淫忍考试",
+    "threeKingdoms": "三国：一桶天下",
+    "sixKingdoms": "六国：一桶天下",
+    "description": "",
+    "play": "PLAY",
+    "reserve": "预订"
+  },
+  "login": {
     "title": "会员登录",
     "username": "账号",
     "password": "密码",
@@ -58,22 +58,22 @@
     "registerContent": "尚未注册会员请用【注册帐号】来创建帐号"
   },
   "register": {
-      "title": "注册账号",
-      "username": "账号",
-      "enterUsername": "请输入账号",
-      "password": "密码",
-      "enterPassword": "请输入密码",
-      "confirmPassword": "再次输入密码",
-      "enterConfirmPassword": "请再次输入密码",
-      "registerBtn": "注册账号",
-      "agreePolicy": "注册会员表示同意本网站",
-      "privacyPolicy": "隐私权条款"
-    },
-    "login-register": {
-      "alreadyHaveAccount": "已有账号",
-      "loginBtn": "会员登录"
-    },
-    "forgotPassword": {
+    "title": "注册账号",
+    "username": "账号",
+    "enterUsername": "请输入账号",
+    "password": "密码",
+    "enterPassword": "请输入密码",
+    "confirmPassword": "再次输入密码",
+    "enterConfirmPassword": "请再次输入密码",
+    "registerBtn": "注册账号",
+    "agreePolicy": "注册会员表示同意本网站",
+    "privacyPolicy": "隐私权条款"
+  },
+  "login-register": {
+    "alreadyHaveAccount": "已有账号",
+    "loginBtn": "会员登录"
+  },
+  "forgotPassword": {
     "title": "忘记密码",
     "emailLabel": "电子邮件",
     "emailPlaceholder": "请输入您的电子邮件",
@@ -88,5 +88,21 @@
     "historyTitle": "上传记录",
     "uploaded": "上传了",
     "noHistory": "尚无上传记录"
+  },
+  "tags": {
+    "rpg": "角色扮演",
+    "card": "卡牌战斗",
+    "action": "动作",
+    "openWorld": "开放世界"
+  },
+  "platforms": {
+    "android": "Android",
+    "ios": "iOS",
+    "pc": "PC"
+  },
+  "hot": {
+    "title": "热门免费游戏",
+    "filter-platform": "设备类型",
+    "filter-genre": "游戏类型"
   }
 }

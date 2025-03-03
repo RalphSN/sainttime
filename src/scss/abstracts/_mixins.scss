@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use "sass:color";
 
 @mixin small-btn {
   padding: 0.5rem 1rem;
@@ -85,10 +86,11 @@
 
 $base-color: #b8a399;
 $focus-shadow-color: rgba($base-color, 0.4);
-$border-color: darken($base-color, 10%);
-$placeholder-color: lighten($base-color, 15%);
-$text-color: darken($base-color, 35%);
+$border-color: color.adjust($base-color, $lightness: -10%);
+$placeholder-color: color.adjust($base-color, $lightness: 15%);
+$text-color: color.adjust($base-color, $lightness: -35%);
 $transition-duration: 0.3s;
+
 
 @mixin input-focus {
   
