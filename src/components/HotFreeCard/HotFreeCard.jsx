@@ -1,11 +1,12 @@
-import PropTypes from "prop-types"; // 加入 PropTypes 驗證
+import PropTypes from "prop-types"; 
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import "./hot-free-card.scss";
 
 const HotFreeCard = ({
+  id, // 對應id屬性
   title,
   image,
-  url,
   className = "",
   children,
   tagKeys = [],
@@ -14,14 +15,14 @@ const HotFreeCard = ({
   const { t } = useTranslation();
 
   return (
-    <a
+    <Link
       className={`card-hot ${className}`}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      to={`/game?id=${id}`} 
       data-platforms={platforms.join(",")}
     >
-      <figure className="card-hot-image-container">{image && <img src={image} alt={t(title)} className="card-hot-image" />}</figure>
+      <figure className="card-hot-image-container">
+        {image && <img src={image} alt={t(title)} className="card-hot-image" />}
+      </figure>
       <div className="card-hot-content">
         <h2 className="card-hot-title">{t(title)}</h2>
         {children}
@@ -33,17 +34,17 @@ const HotFreeCard = ({
           ))}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
 //  加入 PropTypes 驗證
 HotFreeCard.propTypes = {
+  id: PropTypes.string.isRequired, // 新增 id，且必須是 string
   title: PropTypes.string.isRequired, // 必須是 string，且必填
   tagKeys: PropTypes.arrayOf(PropTypes.string),
   platforms: PropTypes.arrayOf(PropTypes.string),
   image: PropTypes.string,
-  url: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
 };

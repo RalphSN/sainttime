@@ -103,6 +103,7 @@
   "hot": {
     "title": "Hot Free Games",
     "filter-platform": "Device Type",
-    "filter-genre": "Game Genre"
+    "filter-genre": "Game Genre",
+    "no-results": "Master, it's so~ empty here 😢 How about changing the filters?"
   }
 }

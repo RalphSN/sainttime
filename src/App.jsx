@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Forgot from "./pages/Forget/ForgotPassword";
 import HotFreeGames from "./pages/HotFreeGames/HotFreeGames";
+import GameDetails from "./pages/GameDetails/GameDetails";
 // import NotFound from "./pages/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="forgot-password" element={<Forgot />} />
           <Route path="games" element={<HotFreeGames />} />
+          <Route path="game" element={<GameDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

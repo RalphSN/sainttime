@@ -62,7 +62,7 @@ const Header = () => {
   // 導覽連結
   const navLinks = [
     { key: "navbar.home", to: "/" },
-    { key: "navbar.popularGames", to: "/" },
+    { key: "navbar.popularGames", to: "/games" },
     { key: "navbar.member", to: "/member" },
   ];
 

@@ -96,7 +96,7 @@ const HotFreeGames = () => {
             />
           ))
         ) : (
-          <p className="no-results">沒有符合條件的遊戲</p>
+          <p className="no-results">{t("hot.no-results")}</p>
         )}
       </div>
     </section>

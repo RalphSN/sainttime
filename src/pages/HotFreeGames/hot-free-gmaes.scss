@@ -59,6 +59,28 @@
     padding: 1rem 0;
     padding-bottom: 5rem;
   }
+
+  .no-results {
+    display: inline-block;
+    color: v.$white;
+    font-size: 1.2rem;
+    text-align: center;
+    align-self: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background: rgba(v.$btn-p, .8);
+    animation: pulse 1.5s infinite alternate;
+    white-space: normal;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
 }
 
 @media (min-width: 1440px) {
@@ -66,6 +88,14 @@
     padding: 0 10%;
   }
 }
+
+// @media (min-width: 769px) {
+//     .hot-container {
+//       .card-grid-hot {
+//         grid-template-columns: repeat(auto-fit, minmax(20rem, 28rem));
+//       }
+//     }
+// }
 
 @media (max-width: 1024px) {
   .hot-container {
@@ -84,6 +114,3 @@
     }
   }
 }
-
-
-

@@ -23,6 +23,22 @@ const cardHotData = [
       url: "#",
       platforms:["ios"]
     },
+    {
+      id: 4,
+      title: "game.kazekage",
+      image: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/card-image.png",
+      tagKeys: ["action","card"],
+      url: "#",
+      platforms:["ios"]
+    },
+    {
+      id: 5,
+      title: "game.kazekage",
+      image: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/card-image.png",
+      tagKeys: ["action","card"],
+      url: "#",
+      platforms:["ios"]
+    }
   ];
   
   export default cardHotData;
