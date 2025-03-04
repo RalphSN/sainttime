@@ -8,7 +8,6 @@ import Register from "./pages/Register/Register";
 import Forgot from "./pages/Forget/ForgotPassword";
 import HotFreeGames from "./pages/HotFreeGames/HotFreeGames";
 import GameDetails from "./pages/GameDetails/GameDetails";
-// import NotFound from "./pages/NotFound";
 
 function App() {
   return (

@@ -1,11 +1,16 @@
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./game-details.scss";
+import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
 
 const baseUrl =
   "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/game-images/";
@@ -18,49 +23,29 @@ const imageNames = [
 ];
 const images = imageNames.map((name) => baseUrl + name);
 
-// **模擬遊戲資料**
-const mockGamesData = [
-  {
-    id: "1",
-    name: "火影：淫忍考試",
-    version: "1.0",
-    tags: ["動作冒險", "多人競技", "Android", "iOS"],
-    description:
-      "神秘少年意外穿越到了火影的世界，並加入了火影村。在這裡，你與眾多火影女英雄並肩作戰，共同保衛家園。你們面對的是威脅村莊和世界和平的強大勢力。在這個過程中，你不斷成長，成為了一名真正的忍者。",
-    avatar: baseUrl + "ninja-avatar.png",
-  },
-  {
-    id: "5",
-    name: "火影:女巫現身",
-    version: "2.0",
-    tags: ["科幻", "動作", "單人", "PC"],
-    description:
-      "神秘女巫意外穿越到了火影的世界，並加入了火影村。在這裡，你與眾多火影女英雄並肩作戰，共同保衛家園。你們面對的是威脅村莊和世界和平的強大勢力。在這個過程中，你不斷成長，成為了一名真正的忍者。",
-    avatar: baseUrl + "witch-avatar.png",
-  },
-];
-
 const GameDetails = () => {
   const [searchParams] = useSearchParams();
   const gameId = searchParams.get("id");
-
   const [gameData, setGameData] = useState(null);
+  const { t } = useTranslation(); // 使用 i18n 翻譯
 
   useEffect(() => {
-    // 模擬 API 獲取數據
-    const game = mockGamesData.find((g) => g.id === gameId);
-    setGameData(game);
+    if (Array.isArray(cardHotData) && cardHotData.length > 0) {
+      // 確保 cardHotData 有值
+      const game = cardHotData.find((g) => g.id.toString() === gameId);
+      setGameData(game);
+    }
   }, [gameId]);
 
   if (!gameData) {
-    return <h2>遊戲未找到</h2>;
+    return <h2>{t("details.notFound")}</h2>;
   }
 
   return (
     <section className="game-details-container">
       <div className="game-page">
         <header className="game-title">
-          <h1>熱門免費遊戲</h1>
+          <h1>{t("details.header")}</h1>
         </header>
         <section className="game-info">
           <div className="game-info-content">
@@ -70,21 +55,41 @@ const GameDetails = () => {
               className="game-avatar"
             />
             <div className="info-text-container">
-              <h2>{gameData.name}</h2>
-              <p>版本號：{gameData.version}</p>
-              <p className="info-text">{gameData.description}</p>
+              <h2>{t(gameData.title)}</h2>
+              <p>
+                {t("details.version")}：{gameData.version || "unknown"}
+              </p>
+              <p className="info-text">{t(gameData.description)}</p>
               <div className="tags">
-                {gameData.tags.map((tag, index) => (
-                  <span key={index} className="tag">
-                    {tag}
+                {gameData.tagKeys.map((tag, index) => (
+                  <span key={index} className="tag tag-tag">
+                    {t(`tags.${tag}`)}
+                  </span>
+                ))}
+                {gameData.language.map((language, index) => (
+                  <span key={index} className="tag tag-language">
+                    {language}
+                  </span>
+                ))}
+                {gameData.platforms.map((platforms, index) => (
+                  <span key={index} className="tag tag-platforms">
+                    {t(`platforms.${platforms}`)}
                   </span>
                 ))}
               </div>
             </div>
           </div>
           <div className="download-buttons">
-            <button className="ios">iOS 下載</button>
-            <button className="android">Android 下載</button>
+            {gameData.platforms.includes("ios") && (
+              <button className="ios download-btn">
+                <FontAwesomeIcon icon={faApple} className="icon"/> iOS
+              </button>
+            )}
+            {gameData.platforms.includes("android") && (
+              <button className="android download-btn">
+                <FontAwesomeIcon icon={faAndroid} className="icon"/> Android
+              </button>
+            )}
           </div>
         </section>
         <section className="carousel">
@@ -107,13 +112,32 @@ const GameDetails = () => {
             ))}
           </Swiper>
         </section>
-        <section className="game-description">
-          <h2>遊戲介紹</h2>
-          <p>{gameData.description}</p>
+        <section className="game-introduce-container">
+          <h2>{t("details.introduction")}</h2>
+          <p className="game-introduce">
+            {t(gameData.introduce) || t("game.noDetails")}
+          </p>
         </section>
       </div>
     </section>
   );
+};
+
+// **新增 PropTypes 驗證**
+GameDetails.propTypes = {
+  cardHotData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      tagKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+      url: PropTypes.string.isRequired,
+      platforms: PropTypes.arrayOf(PropTypes.string).isRequired,
+      avatar: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      introduce: PropTypes.string,
+    })
+  ),
 };
 
 export default GameDetails;
