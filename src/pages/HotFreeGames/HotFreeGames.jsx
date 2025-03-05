@@ -87,6 +87,7 @@ const HotFreeGames = () => {
           filteredCards.map((card) => (
             <HotFreeCard
               key={card.id}
+              id={card.id}
               title={card.title}
               image={card.image}
               url={card.url}

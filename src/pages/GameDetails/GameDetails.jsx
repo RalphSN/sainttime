@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -43,6 +44,22 @@ const GameDetails = () => {
 
   return (
     <section className="game-details-container">
+      {/* =====Breadcrumbs=====START */}
+      <nav className="breadcrumb">
+        <a href="/" className="breadcrumb-item">
+        <FontAwesomeIcon icon={faHouse} className="icon" />
+          {t("breadcrumb.home")}
+        </a>
+        <span className="breadcrumb-separator"> &gt; </span>
+        <a href="/hot-free-games" className="breadcrumb-item">
+          {t("breadcrumb.hotFreeGames")}
+        </a>
+        <span className="breadcrumb-separator"> &gt; </span>
+        <span className="breadcrumb-current">{t(gameData.title)}</span>
+      </nav>
+
+      {/* =====Breadcrumbs=====END */}
+
       <div className="game-page">
         <header className="game-title">
           <h1>{t("details.header")}</h1>
@@ -82,12 +99,12 @@ const GameDetails = () => {
           <div className="download-buttons">
             {gameData.platforms.includes("ios") && (
               <button className="ios download-btn">
-                <FontAwesomeIcon icon={faApple} className="icon"/> iOS
+                <FontAwesomeIcon icon={faApple} className="icon" /> iOS
               </button>
             )}
             {gameData.platforms.includes("android") && (
               <button className="android download-btn">
-                <FontAwesomeIcon icon={faAndroid} className="icon"/> Android
+                <FontAwesomeIcon icon={faAndroid} className="icon" /> Android
               </button>
             )}
           </div>
@@ -113,10 +130,15 @@ const GameDetails = () => {
           </Swiper>
         </section>
         <section className="game-introduce-container">
-          <h2>{t("details.introduction")}</h2>
-          <p className="game-introduce">
-            {t(gameData.introduce) || t("game.noDetails")}
-          </p>
+          <h2 className="game-introduce-title">{t("details.introduction")}</h2>
+          <p
+            className="game-introduce"
+            dangerouslySetInnerHTML={{
+              __html: t(gameData.introduce)
+                ? t(gameData.introduce).replace(/(\d+\.)/g, "<br />$1")
+                : t("game.noDetails"),
+            }}
+          />
         </section>
       </div>
     </section>
