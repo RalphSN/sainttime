@@ -1,4 +1,5 @@
-const baseUrl = "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images";
+const baseUrl =
+  "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images";
 const cardHotData = [
   {
     id: 1,
@@ -8,11 +9,11 @@ const cardHotData = [
     url: "/game",
     platforms: ["android"],
     avatar: baseUrl + "/game-images/ninja-avatar.png",
-    description:
-      "details.description",
+    description: "details.description",
     introduce: "details.introduce",
     version: "2.0",
-    language: ["繁體中文"]
+    language: ["繁體中文"],
+    buttonText: "game.play",
   },
   {
     id: 2,
@@ -22,11 +23,11 @@ const cardHotData = [
     url: "/game",
     platforms: ["android", "ios"],
     avatar: baseUrl + "/game-images/witch-avatar.png",
-    description:
-      "details.description",
+    description: "details.description",
     introduce: "details.introduce",
     version: "2.0",
-    language: ["简体中文"]
+    language: ["简体中文"],
+    buttonText: "game.play",
   },
   {
     id: 3,
@@ -36,11 +37,11 @@ const cardHotData = [
     url: "/game",
     platforms: ["ios"],
     avatar: baseUrl + "/game-images/ninja-avatar.png",
-    description:
-      "details.description",
+    description: "details.description",
     introduce: "details.introduce",
     version: "2.0",
-    language: ["繁體中文"]
+    language: ["繁體中文"],
+    buttonText: "game.play",
   },
   {
     id: 4,
@@ -50,11 +51,11 @@ const cardHotData = [
     url: "/game",
     platforms: ["ios"],
     avatar: baseUrl + "/game-images/witch-avatar.png",
-    description:
-      "details.description",
+    description: "details.description",
     introduce: "details.introduce",
     version: "2.0",
-    language: ["English"]
+    language: ["English"],
+    buttonText: "game.play",
   },
   {
     id: 5,
@@ -62,13 +63,13 @@ const cardHotData = [
     image: baseUrl + "/card-image.png",
     tagKeys: ["action", "card"],
     url: "/game",
-    platforms: ["ios","android"],
+    platforms: ["ios", "android"],
     avatar: baseUrl + "/game-images/witch-avatar.png",
-    description:
-      "details.description",
+    description: "details.description",
     introduce: "details.introduce",
     version: "2.0",
-    language: ["简体中文"]
+    language: ["简体中文"],
+    buttonText: "game.play",
   },
 ];
 

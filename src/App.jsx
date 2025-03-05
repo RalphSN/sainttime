@@ -8,6 +8,7 @@ import Register from "./pages/Register/Register";
 import Forgot from "./pages/Forget/ForgotPassword";
 import HotFreeGames from "./pages/HotFreeGames/HotFreeGames";
 import GameDetails from "./pages/GameDetails/GameDetails";
+import DownloadApple from "./pages/DownloadApple/DownloadApple";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="forgot-password" element={<Forgot />} />
           <Route path="games" element={<HotFreeGames />} />
           <Route path="game" element={<GameDetails />} />
+          <Route path="gameiOS" element={<DownloadApple />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -24,11 +24,10 @@ const Home = () => {
               {cardData.map((card) => (
                 <PopularCard
                   key={card.id}
+                  id={card.id}
                   title={card.title}
-                  description={card.description}
                   image={card.image}
                   buttonText={card.buttonText}
-                  url={card.url}
                   className={card.className}
                 />
               ))}

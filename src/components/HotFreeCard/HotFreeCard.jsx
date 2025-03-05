@@ -40,8 +40,8 @@ const HotFreeCard = ({
 
 //  加入 PropTypes 驗證
 HotFreeCard.propTypes = {
-  id: PropTypes.string.isRequired, // 新增 id，且必須是 string
-  title: PropTypes.string.isRequired, // 必須是 string，且必填
+  id: PropTypes.string.isRequired, 
+  title: PropTypes.string.isRequired, 
   tagKeys: PropTypes.arrayOf(PropTypes.string),
   platforms: PropTypes.arrayOf(PropTypes.string),
   image: PropTypes.string,

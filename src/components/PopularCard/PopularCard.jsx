@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"; // 加入 PropTypes 驗證
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import "./popular-card.scss";
 
 const PopularCard = ({
+  id,
   title,
-  description,
   image,
   buttonText,
-  url,
   className = "",
   children,
 }) => {
@@ -15,22 +15,16 @@ const PopularCard = ({
 
   return (
     <div className={`card-popular ${className}`}>
-      {image && <img src={image} alt={t(title)} className="card-popular-image" />}
+      {image && (
+        <img src={image} alt={t(title)} className="card-popular-image" />
+      )}
       <div className="card-popular-content">
         <h2 className="card-popular-title">{t(title)}</h2>
-        {description && (
-          <p className="card-popular-description">{t(description)}</p>
-        )}
         {children}
-        {buttonText && url && (
-          <a
-            href={url}
-            className="card-popular-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        {buttonText && id && (
+          <Link to={`/game?id=${id}`} className="card-popular-button">
             {t(buttonText)}
-          </a>
+          </Link>
         )}
       </div>
     </div>
@@ -39,8 +33,8 @@ const PopularCard = ({
 
 //  加入 PropTypes 驗證
 PopularCard.propTypes = {
-  title: PropTypes.string.isRequired, // 必須是 string，且必填
-  description: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   image: PropTypes.string,
   buttonText: PropTypes.string,
   url: PropTypes.string,

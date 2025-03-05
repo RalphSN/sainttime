@@ -2,29 +2,15 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./game-details.scss";
+import "./DownloadApple.scss";
 import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
 
-const baseUrl =
-  "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/game-images/";
-const imageNames = [
-  "image1.png",
-  "image2.png",
-  "image3.png",
-  "image4.png",
-  "image5.png",
-];
-const images = imageNames.map((name) => baseUrl + name);
-
-const GameDetails = () => {
+const DownloadApple = () => {
   const [searchParams] = useSearchParams();
   const gameId = searchParams.get("id");
   const [gameData, setGameData] = useState(null);
@@ -43,7 +29,7 @@ const GameDetails = () => {
   }
 
   return (
-    <section className="game-details-container">
+    <section className="ios-download-container">
       {/* =====Breadcrumbs=====START */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
@@ -55,17 +41,21 @@ const GameDetails = () => {
           {t("breadcrumb.hotFreeGames")}
         </a>
         <span className="breadcrumb-separator"> &gt; </span>
-        <span className="breadcrumb-current">{t(gameData.title)}</span>
+        <a href="/game" className="breadcrumb-item">
+        {t(gameData.title)}
+        </a>
+        <span className="breadcrumb-separator"> &gt; </span>
+        <span className="breadcrumb-current">從 App Store 下載</span>
       </nav>
 
       {/* =====Breadcrumbs=====END */}
 
-      <div className="game-page">
-        <header className="game-title">
+      <div className="page">
+        <header className="title">
           <h1>{t("details.header")}</h1>
         </header>
-        <section className="game-info">
-          <div className="game-info-content">
+        <section className="info">
+          <div className="info-content">
             <img
               src={gameData.avatar}
               alt="game-avatar"
@@ -96,49 +86,9 @@ const GameDetails = () => {
               </div>
             </div>
           </div>
-          <div className="download-buttons">
-            {gameData.platforms.includes("ios") && (
-              <button className="ios download-btn">
-                <FontAwesomeIcon icon={faApple} className="icon" /> iOS
-              </button>
-            )}
-            {gameData.platforms.includes("android") && (
-              <button className="android download-btn">
-                <FontAwesomeIcon icon={faAndroid} className="icon" /> Android
-              </button>
-            )}
-          </div>
         </section>
-        <section className="carousel">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            loop
-            className="carousel-container"
-          >
-            {images.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={img}
-                  alt={`slide-${index}`}
-                  className="carousel-image"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section>
-        <section className="game-introduce-container">
-          <h2 className="game-introduce-title">{t("details.introduction")}</h2>
-          <p
-            className="game-introduce"
-            dangerouslySetInnerHTML={{
-              __html: t(gameData.introduce)
-                ? t(gameData.introduce).replace(/(\d+\.)/g, "<br />$1")
-                : t("game.noDetails"),
-            }}
-          />
+        <section className="ios-download">
+                {/* 3/6從這裡開始繼續寫 */}
         </section>
       </div>
     </section>
@@ -146,7 +96,7 @@ const GameDetails = () => {
 };
 
 // **新增 PropTypes 驗證**
-GameDetails.propTypes = {
+DownloadApple.propTypes = {
   cardHotData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -162,4 +112,4 @@ GameDetails.propTypes = {
   ),
 };
 
-export default GameDetails;
+export default DownloadApple;

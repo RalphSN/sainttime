@@ -1,7 +1,7 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.game-details-container {
+.ios-download-container {
   background-color: v.$secondary;
   padding: 1rem 2rem;
   .breadcrumb {
@@ -41,25 +41,25 @@
     }
   }
 
-  .game-page {
+  .page {
     width: 100%;
     min-height: calc(100vh - 6rem);
     background-color: v.$dark-background;
     color: v.$white;
     padding: 2rem 0;
 
-    .game-title {
+    .title {
       font-size: 2rem;
     }
 
-    .game-info {
+    .info {
       @include m.flex-center;
       justify-content: space-between;
       width: 100%;
       height: 12rem;
       margin-top: 2rem;
 
-      .game-info-content {
+      .info-content {
         @include m.flex-center;
         justify-content: flex-start;
         height: 100%;
@@ -120,132 +120,29 @@
       }
     }
 
-    .download-buttons {
-      display: flex;
-      flex-direction: column;
-      align-self: flex-end;
-      gap: 1rem;
-      margin-left: 1rem;
+  }
 
-      background-color: v.$greyLight-1;
-      padding: 1rem;
-      border-radius: 15px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 3px;
-
-      .download-btn {
-        padding: 0.7rem 1rem;
-        border-radius: 10px;
-        font-weight: bold;
-        cursor: pointer;
-        text-align: center;
-        transition: 0.35s;
-
-        &.ios {
-          background-color: v.$greyLight-1;
-          color: v.$black;
-          box-shadow: v.$shadow;
-          &:active {
-            box-shadow: v.$inner-shadow;
-          }
-          &:hover {
-            transform: translateY(-2px);
-          }
-        }
-
-        &.android {
-          background-color: v.$success;
-          color: v.$white;
-          box-shadow: v.$shadow-green;
-          &:active {
-            box-shadow: v.$inner-shadow-green;
-          }
-          &:hover {
-            transform: translateY(-2px);
-          }
-        }
-
-        .icon {
-          margin-right: 0.5rem;
-          font-size: 1.5rem;
-          align-self: center;
-        }
-      }
-    }
-
-    .carousel-container {
-      width: 100%;
-      margin: 2rem auto;
-
-      .carousel-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-
-        user-select: none;
-        -webkit-user-drag: none; /* 禁止拖曳 */
-        -webkit-tap-highlight-color: transparent; /* 防止反白 */
-      }
-
-      /* 左右箭頭大小與顏色 */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: v.$aid; /* 改變箭頭顏色 */
-        font-size: 24px;
-        width: 50px;
-        height: 50px;
-      }
-
-      /* 修改分頁點的顏色、大小 */
-      .swiper-pagination-bullet {
-        background: v.$white;
-        width: 12px;
-        height: 12px;
-        opacity: 0.6;
-        transition: opacity 0.3s;
-      }
-
-      /* 目前選中的分頁點 */
-      .swiper-pagination-bullet-active {
-        background: v.$aid;
-        opacity: 1;
-      }
-
-      /* 分頁點方形 */
-      .swiper-pagination-bullet {
-        border-radius: 4px;
-      }
-    }
-
-    .game-introduce-container {
-      margin-top: 1rem;
-
-      .game-introduce-title {
-        border-bottom: 2px solid v.$white;
-        padding-bottom: 1.5rem;
-      }
-      .game-introduce {
-        padding-top: 1.5rem;
-        white-space: pre-line;
-        letter-spacing: 0.1rem;
-        line-height: 1.5rem;
-      }
-    }
+  .ios-download {
+    @include m.flex-center;
+    border-radius: 15px;
+    border: 2px solid v.$white;
+    margin: 1rem 0;
+    padding: 1rem;
   }
 }
 
 @media (min-width: 1440px) {
-  .game-details-container {
+  .ios-download-container {
     padding: 0 10%;
   }
 }
 
 @media (max-width: 991px) {
-  .game-details-container {
-    .game-page {
-      .game-info {
+  .ios-download-container {
+    .page {
+      .info {
         height: fit-content;
-        .game-info-content {
+        .info-content {
           flex-direction: column;
           align-items: flex-start;
           .game-avatar {
@@ -256,31 +153,16 @@
           }
         }
       }
-
-      .download-buttons {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        transition: 0.35s;
-        z-index: 999;
-        margin: 0;
-
-        .download-btn {
-          box-shadow: v.$shadow;
-        }
-      }
     }
   }
 }
 
 @media (max-width: 991px) {
-  .game-details-container {
-    .game-page {
-      .game-info {
+  .ios-download-container {
+    .page {
+      .info {
         height: fit-content;
-        .game-info-content {
+        .info-content {
           flex-direction: column;
           align-items: flex-start;
           .game-avatar {
@@ -302,18 +184,18 @@
 }
 
 @media (max-width: 767px) {
-  .game-details-container {
+  .ios-download-container {
     padding: 1rem;
     .breadcrumb {
       margin: 0 auto;
       justify-content: center;
     }
-    .game-title {
+    .title {
       @include m.flex-center;
     }
-    .game-page {
-      .game-info {
-        .game-info-content {
+    .page {
+      .info {
+        .info-content {
           width: 100%;
           .game-avatar {
             margin: 1rem auto;
