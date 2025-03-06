@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons"; 
+import NotFound from "../../components/NotFound/Notfound";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -28,18 +29,18 @@ const GameDetails = () => {
   const [searchParams] = useSearchParams();
   const gameId = searchParams.get("id");
   const [gameData, setGameData] = useState(null);
-  const { t } = useTranslation(); // 使用 i18n 翻譯
+  const { t } = useTranslation(); 
 
   useEffect(() => {
     if (Array.isArray(cardHotData) && cardHotData.length > 0) {
-      // 確保 cardHotData 有值
+
       const game = cardHotData.find((g) => g.id.toString() === gameId);
       setGameData(game);
     }
   }, [gameId]);
 
   if (!gameData) {
-    return <h2>{t("details.notFound")}</h2>;
+    return <NotFound message={t("notFound.message")} height={"calc(100vh - 21rem)"} />;
   }
 
   return (

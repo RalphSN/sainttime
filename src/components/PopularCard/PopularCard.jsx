@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"; // 加入 PropTypes 驗證
+import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./popular-card.scss";

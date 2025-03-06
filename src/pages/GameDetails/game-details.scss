@@ -4,6 +4,7 @@
 .game-details-container {
   background-color: v.$secondary;
   padding: 1rem 2rem;
+  min-height: calc(100vh - 21rem);
   .breadcrumb {
     display: flex;
     align-items: center;

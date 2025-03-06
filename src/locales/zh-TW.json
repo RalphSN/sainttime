@@ -119,5 +119,48 @@
   "breadcrumb": {
     "home": "首頁",
     "hotFreeGames": "熱門免費遊戲"
+  },
+  "notFound": {
+    "message": "抱歉，找不到此頁面"
+  },
+  "iosDownload":{
+    "download": {
+      "title": "下載",
+      "subtitle": "iOS設備下載遊戲方式",
+      "content": "使用iOS設備或手機直接點擊【下載遊戲】，並依照頁面步驟進行遊戲安裝，若無法使用直接下載方式安裝，請嘗試使用【IPA下載】並依照操作步驟安裝遊戲",
+      "btn": "下載遊戲"
+    },
+    "ipa": {
+      "title": "IPA",
+      "subtitle": "iOS版本安裝方式調整說明",
+      "content1": "由於蘋果政策調整使得原本在手機設計下載服務受到影響，團隊目前積極尋找解決方式並期待盡快恢復服務，現階段請玩家以下列方式於電腦上使用個人簽證方式完成安裝。",
+      "content2": "使用Apple ID簽名安裝的應用程式有效期限為7天，7天後若您看到「App無法再使用」，您可以使用相同的Apple ID再次下載。",
+      "btn": "下載IPA遊戲安裝包"
+    },
+    "steps": {
+      "title": "操作步驟",
+      "content1": "一．請到Apple官網下載iTunes並確認是否連結到您的iDevice（請勿使用Microsoft Store版本的iTunes））",
+      "content2": "二．在電腦上安裝最新版本的Sideloadly下載地址:",
+      "content3": "三．查看安裝教學（提供影音版步驟）",
+      "btn": "官方下載"
+    },
+    "questions": {
+      "title": "Q&A",
+      "content": "使用Apple ID簽名文件也就是常常說的「個人簽」，以下彙總使用Sideloadly IPA簽名在使用時可能會遇到的一些問題：",
+      "question1": "開啟應用程式顯示【需要信任開發者模式】提示訊息？",
+      "answer1":"當您的裝置升級至iOS16，需要前往 設定>隱私與安全頁面，滑動至最底部的安全性開啟開發者模式，開啟後等待設備重新開機完畢，再次執行即可正常進入。",
+      "question2": "Sideloadly支援哪個電腦系統版本？",
+      "answer2": "Sideloadly可以在Windows 7、8、10和11上運行。為了獲得最佳效果，建議使用Window 10或更高版本。同理，Sideloadly可以在macOS 10.12 Sierra及更高版本上運行。為了獲得最佳效果，建議使用macOS Catalina、Big Sur、Monterey及更高版本。",
+      "question3": "Sideloadly無法顯示我的裝置？",
+      "answer3": "如果發生這種狀況，請嘗試重新啟動您的PC，在您的設備連結時打開iTunes，並確保您從iDevice的彈出視窗中點擊「信任」。然後再打開Sideloadly。如果這沒有幫助，您也可以嘗試完全卸載後重新安裝iTunes",
+      "question4": "安裝已經簽名的程式需要越獄嗎？",
+      "answer4": "不需要。不論是使用證書簽名還是使用Apple ID簽名，安裝時都不需要裝置越獄",
+      "question5": "用於簽名的Apple ID需要關閉雙重認證嗎？",
+      "answer5": "不需要。無論Apple ID關閉或者開啟雙重認證，都可以用來簽名IPA文件，只不過已開啟雙重認證的Apple ID在第一次使用時需要進行驗證，之後使用時不需要再次驗證。",
+      "question6": "簽名的有效期限是多久？",
+      "answer6": "使用證書簽名的IPA文件，安裝後的使用時間取決於證書的有限期限，如果在有效期限內證書被撤銷，應用程式將無法再次打開，也就是常說的「掉簽」；使用Apple ID簽名安裝的應用程式有效期限為7天。7天後，您可以使用相同的Apple ID再次下載。",
+      "question7": "可以使用多少個應用程式？",
+      "answer7": "iOS 7、8、9:您可以在設備上下載任意數量的應用程式。但是您的免費開發者帳戶有限制。在iOS 10、11、12、13、14及更高版本上，您的設備只能同時安裝３個應用程式。"
+    }
   }
 }

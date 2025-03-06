@@ -119,5 +119,8 @@
   "breadcrumb": {
     "home": "首页",
     "hotFreeGames": "热门免费游戏"
+  },
+  "notFound": {
+    "message": "抱歉，找不到此页面"
   }
 }
