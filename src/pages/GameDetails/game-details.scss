@@ -12,6 +12,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: v.$white;
+    flex-wrap: wrap;
 
     .breadcrumb-item {
       color: v.$white;
@@ -51,6 +52,9 @@
 
     .game-title {
       font-size: 2rem;
+      &__text {
+        white-space: normal;
+      }
     }
 
     .game-info {

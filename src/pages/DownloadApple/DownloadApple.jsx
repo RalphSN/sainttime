@@ -76,7 +76,7 @@ const DownloadApple = () => {
 
       <div className="page">
         <header className="title">
-          <h1>{t("details.header")}</h1>
+          <h1 className="title__text">{t("details.header")}</h1>
         </header>
         <section className="info">
           <div className="info-content">

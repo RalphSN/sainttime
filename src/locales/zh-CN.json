@@ -122,5 +122,45 @@
   },
   "notFound": {
     "message": "抱歉，找不到此页面"
+  },
+  "iosDownload": {
+    "download": {
+      "title": "下载",
+      "subtitle": "iOS设备游戏下载方式",
+      "content": "使用iOS设备或手机直接点击【下载游戏】，并按照页面提示完成游戏安装。如果无法直接下载安装，请尝试使用【IPA下载】并按照操作步骤进行安装。",
+      "btn": "下载游戏"
+    },
+    "ipa": {
+      "title": "IPA",
+      "subtitle": "iOS版本安装方式调整说明",
+      "content1": "由于苹果政策调整影响了原本的手机下载服务，团队目前正在积极寻找解决方案，期待尽快恢复服务。当前阶段，请玩家通过以下方式在电脑上使用个人证书安装游戏。",
+      "content2": "使用Apple ID签名安装的应用程序有效期为7天。7天后，如果您看到“应用程序无法使用”，可以使用相同的Apple ID重新下载。",
+      "btn": "下载IPA游戏安装包"
+    },
+    "steps": {
+      "title": "操作步骤",
+      "content1": "1. 请前往Apple官网下载iTunes，并确认是否连接到您的iDevice（请勿使用Microsoft Store版本的iTunes）。",
+      "content2": "2. 在电脑上安装最新版本的Sideloadly，下载地址：",
+      "content3": "3. 查看安装教程（提供视频版步骤）。",
+      "btn": "官方下载"
+    },
+    "questions": {
+      "title": "Q&A",
+      "content": "使用Apple ID签名（即“个人签”）时，以下是使用Sideloadly进行IPA签名时可能遇到的一些问题：",
+      "question1": "打开应用程序时出现【需要信任开发者模式】的提示？",
+      "answer1": "如果您的设备已升级至iOS 16，请前往设置 > 隐私与安全，滑动至底部打开开发者模式。启用后，等待设备重启完成，然后重新运行应用程序。",
+      "question2": "Sideloadly支持哪些电脑系统版本？",
+      "answer2": "Sideloadly可在Windows 7、8、10和11上运行。为了获得最佳体验，建议使用Windows 10或更高版本。此外，Sideloadly可在macOS 10.12 Sierra及更高版本上运行，建议使用macOS Catalina、Big Sur、Monterey或更新版本。",
+      "question3": "Sideloadly无法检测到我的设备？",
+      "answer3": "如果遇到此问题，请尝试重新启动您的PC，在设备连接时打开iTunes，并确保在iDevice弹出的窗口中点击“信任”。然后再次打开Sideloadly。如果仍然无法检测设备，您可以尝试彻底卸载并重新安装iTunes。",
+      "question4": "安装已签名的应用程序需要越狱吗？",
+      "answer4": "不需要。无论是使用证书签名还是Apple ID签名，安装应用程序时都不需要越狱。",
+      "question5": "用于签名的Apple ID需要关闭双重认证吗？",
+      "answer5": "不需要。无论Apple ID是否启用双重认证，都可以用于签名IPA文件。但如果启用了双重认证，则首次使用时需要进行验证，之后无需再次验证。",
+      "question6": "签名的应用程序有效期是多久？",
+      "answer6": "使用证书签名的IPA文件，其有效期取决于证书的到期时间。如果证书在有效期内被撤销，应用程序将无法打开，即“掉签”。使用Apple ID签名的应用程序有效期为7天。7天后，您可以使用相同的Apple ID重新下载。",
+      "question7": "可以安装多少个应用程序？",
+      "answer7": "在iOS 7、8、9上，设备上可以安装任意数量的应用程序，但免费开发者账号有限制。在iOS 10、11、12、13、14及更高版本上，设备上最多只能同时安装3个应用程序。"
+    }
   }
 }

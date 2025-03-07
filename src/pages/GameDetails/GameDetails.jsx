@@ -63,7 +63,7 @@ const GameDetails = () => {
 
       <div className="game-page">
         <header className="game-title">
-          <h1>{t("details.header")}</h1>
+          <h1 className="game-title__text">{t("details.header")}</h1>
         </header>
         <section className="game-info">
           <div className="game-info-content">

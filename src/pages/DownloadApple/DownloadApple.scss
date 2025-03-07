@@ -11,6 +11,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: v.$white;
+    flex-wrap: wrap; 
 
     .breadcrumb-item {
       color: v.$white;
@@ -50,6 +51,9 @@
 
     .title {
       font-size: 2rem;
+      &__text {
+        white-space: normal;
+      }
     }
 
     .info {
@@ -144,12 +148,14 @@
       padding-bottom: 0.5rem;
       border-bottom: 1.5px solid v.$white;
       width: 100%;
+      white-space: normal;
     }
 
     .ios-subtitle {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       color: v.$success;
+      white-space: normal;
     }
 
     .ios-content {
@@ -168,6 +174,7 @@
       border-radius: 10px;
       background-color: v.$thirdary;
       margin: 0.5rem 0;
+      white-space: normal;
     }
 
     .steps-video {
@@ -180,12 +187,19 @@
         flex-direction: column;
         border-radius: 15px;
         overflow: hidden;
+        margin-top: 2rem;
 
         .faq-item {
           background-color: v.$greyLight-2;
           color: v.$black;
           overflow: hidden;
           transition: all 0.3s ease;
+          border-bottom: 2px solid v.$greyLight-1;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
 
           .faq-question {
             @include m.flex-center;
@@ -194,6 +208,7 @@
             cursor: pointer;
             transition: 0.35s ease;
             padding: 1rem 2rem;
+            white-space: normal;
 
             &:hover {
               background: v.$white;
@@ -230,14 +245,11 @@
             .faq-answer {
               visibility: visible;
               opacity: 1;
+              padding-left: 3rem;
             }
 
             .faq-question {
               background-color: v.$greyLight-1;
-            }
-
-            .faq-question span {
-              transform: rotate(180deg);
             }
           }
         }
@@ -257,32 +269,19 @@
     .page {
       .info {
         height: fit-content;
+
         .info-content {
           flex-direction: column;
           align-items: flex-start;
+
           .game-avatar {
             margin: 1rem 0;
           }
+
           .tags {
             margin: 1rem 0;
           }
-        }
-      }
-    }
-  }
-}
 
-@media (max-width: 991px) {
-  .ios-download-container {
-    .page {
-      .info {
-        height: fit-content;
-        .info-content {
-          flex-direction: column;
-          align-items: flex-start;
-          .game-avatar {
-            margin: 1rem 0;
-          }
           .info-text-container {
             margin: 0;
 
@@ -297,6 +296,7 @@
     }
   }
 }
+
 
 @media (max-width: 767px) {
   .ios-download-container {
@@ -330,6 +330,15 @@
             }
           }
         }
+      }
+    }
+
+    .ios-download {
+      .faq-list {
+       font-size: .8rem;
+       .faq-question {
+        gap: 2rem;
+       }
       }
     }
   }

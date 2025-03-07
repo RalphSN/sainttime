@@ -122,5 +122,45 @@
   },
   "notFound": {
     "message": "Sorry～Page Not Found"
+  },
+  "iosDownload": {
+    "download": {
+      "title": "Download",
+      "subtitle": "How to Download the Game on iOS Devices",
+      "content": "Use an iOS device or mobile phone to directly click [Download Game] and follow the on-screen instructions for installation. If direct download is not possible, please try using [IPA Download] and follow the installation steps.",
+      "btn": "Download Game"
+    },
+    "ipa": {
+      "title": "IPA",
+      "subtitle": "Adjustments to iOS Installation Methods",
+      "content1": "Due to Apple policy changes affecting the original mobile download service, our team is actively seeking solutions to restore the service as soon as possible. For now, players can install the game on a computer using a personal certificate method.",
+      "content2": "Applications installed using an Apple ID signature are valid for 7 days. If you see 'App can no longer be used' after 7 days, you can re-download it using the same Apple ID.",
+      "btn": "Download IPA Game Installation Package"
+    },
+    "steps": {
+      "title": "Installation Steps",
+      "content1": "1. Download iTunes from Apple's official website and ensure it is linked to your iDevice (do not use the Microsoft Store version of iTunes).",
+      "content2": "2. Install the latest version of Sideloadly on your computer. Download link:",
+      "content3": "3. View installation tutorials (video steps available).",
+      "btn": "Official Download"
+    },
+    "questions": {
+      "title": "Q&A",
+      "content": "Using an Apple ID signature, also known as a 'personal certificate,' here are some common issues encountered when signing an IPA file with Sideloadly:",
+      "question1": "Why do I see the message 'Developer Mode must be enabled' when opening the app?",
+      "answer1": "If your device is running iOS 16, go to Settings > Privacy & Security, scroll to the bottom, and enable Developer Mode. After enabling it, restart your device, and then try opening the app again.",
+      "question2": "Which operating systems support Sideloadly?",
+      "answer2": "Sideloadly runs on Windows 7, 8, 10, and 11. For optimal performance, Windows 10 or later is recommended. It also runs on macOS 10.12 Sierra and later, with macOS Catalina, Big Sur, Monterey, or later recommended for best performance.",
+      "question3": "Why doesn't Sideloadly detect my device?",
+      "answer3": "If this happens, restart your PC, open iTunes while your device is connected, and ensure you tap 'Trust' on the popup from your iDevice. Then, open Sideloadly again. If the issue persists, try uninstalling and reinstalling iTunes.",
+      "question4": "Do I need to jailbreak my device to install signed apps?",
+      "answer4": "No. Whether using a certificate signature or an Apple ID signature, jailbreaking is not required for installation.",
+      "question5": "Do I need to disable two-factor authentication on my Apple ID for signing?",
+      "answer5": "No. You can sign IPA files whether two-factor authentication is enabled or not. However, if two-factor authentication is enabled, you will need to verify your Apple ID the first time, but not for subsequent uses.",
+      "question6": "How long is the signed app valid?",
+      "answer6": "IPA files signed with a certificate will work until the certificate expires. If the certificate is revoked before expiration, the app will no longer open ('signature revoked'). Apps installed using an Apple ID signature are valid for 7 days. After 7 days, you can re-download the app using the same Apple ID.",
+      "question7": "How many apps can be installed?",
+      "answer7": "On iOS 7, 8, and 9, you can install unlimited apps on your device. However, free developer accounts have limitations. On iOS 10, 11, 12, 13, 14, and later, only three apps can be installed at the same time."
+    }
   }
 }
