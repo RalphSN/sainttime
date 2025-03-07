@@ -1,54 +1,49 @@
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
-import { faHouse } from "@fortawesome/free-solid-svg-icons"; 
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import NotFound from "../../components/NotFound/Notfound";
+import cardData from "../../data/cardData";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./game-details.scss";
-import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
-
-const baseUrl =
-  "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/game-images/";
-const imageNames = [
-  "image1.png",
-  "image2.png",
-  "image3.png",
-  "image4.png",
-  "image5.png",
-];
-const images = imageNames.map((name) => baseUrl + name);
+import "../../scss/common.scss";
+import "./GameDetails.scss";
 
 const GameDetails = () => {
   const [searchParams] = useSearchParams();
   const gameId = searchParams.get("id");
   const [gameData, setGameData] = useState(null);
-  const { t } = useTranslation(); 
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    if (Array.isArray(cardHotData) && cardHotData.length > 0) {
-
-      const game = cardHotData.find((g) => g.id.toString() === gameId);
+    if (Array.isArray(cardData) && cardData.length > 0) {
+      const game = cardData.find((g) => g.id.toString() === gameId);
       setGameData(game);
     }
   }, [gameId]);
 
   if (!gameData) {
-    return <NotFound message={t("notFound.message")} height={"calc(100vh - 21rem)"} />;
+    return (
+      <NotFound
+        message={t("notFound.message")}
+        height={"calc(100vh - 21rem)"}
+      />
+    );
   }
 
   return (
-    <section className="game-details-container">
+    <section className="game-details">
       {/* =====Breadcrumbs=====START */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
-        <FontAwesomeIcon icon={faHouse} className="icon" />
+          <FontAwesomeIcon icon={faHouse} className="icon" />
           {t("breadcrumb.home")}
         </a>
         <span className="breadcrumb-separator"> &gt; </span>
@@ -61,18 +56,18 @@ const GameDetails = () => {
 
       {/* =====Breadcrumbs=====END */}
 
-      <div className="game-page">
-        <header className="game-title">
-          <h1 className="game-title__text">{t("details.header")}</h1>
+      <div className="game__page">
+        <header className="game__title">
+          <h1 className="game__title-text">{t("details.header")}</h1>
         </header>
-        <section className="game-info">
-          <div className="game-info-content">
+        <section className="game__info">
+          <div className="game__info-content">
             <img
               src={gameData.avatar}
               alt="game-avatar"
               className="game-avatar"
             />
-            <div className="info-text-container">
+            <div className="info-text__container">
               <h2>{t(gameData.title)}</h2>
               <p>
                 {t("details.version")}：{gameData.version || "unknown"}
@@ -80,7 +75,7 @@ const GameDetails = () => {
               <p className="info-text">{t(gameData.description)}</p>
               <div className="tags">
                 {gameData.tagKeys.map((tag, index) => (
-                  <span key={index} className="tag tag-tag">
+                  <span key={index} className="tag tag-genre">
                     {t(`tags.${tag}`)}
                   </span>
                 ))}
@@ -99,7 +94,10 @@ const GameDetails = () => {
           </div>
           <div className="download-buttons">
             {gameData.platforms.includes("ios") && (
-              <button className="ios download-btn">
+              <button
+                className="ios download-btn"
+                onClick={() => navigate(`/gameiOS?id=${gameId}`)}
+              >
                 <FontAwesomeIcon icon={faApple} className="icon" /> iOS
               </button>
             )}
@@ -119,7 +117,7 @@ const GameDetails = () => {
             loop
             className="carousel-container"
           >
-            {images.map((img, index) => (
+            {gameData.carouselImages.map((img, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={img}
@@ -130,8 +128,8 @@ const GameDetails = () => {
             ))}
           </Swiper>
         </section>
-        <section className="game-introduce-container">
-          <h2 className="game-introduce-title">{t("details.introduction")}</h2>
+        <section className="game-introduce__container">
+          <h2 className="game-introduce__title">{t("details.introduction")}</h2>
           <p
             className="game-introduce"
             dangerouslySetInnerHTML={{
@@ -148,7 +146,7 @@ const GameDetails = () => {
 
 // **新增 PropTypes 驗證**
 GameDetails.propTypes = {
-  cardHotData: PropTypes.arrayOf(
+  cardData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

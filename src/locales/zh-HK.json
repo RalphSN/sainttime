@@ -118,7 +118,8 @@
   },
   "breadcrumb": {
     "home": "首页",
-    "hotFreeGames": "热门免费游戏"
+    "hotFreeGames": "热门免费游戏",
+    "appStore": "从App Store下载"
   },
   "notFound": {
     "message": "抱歉，找不到此页面"

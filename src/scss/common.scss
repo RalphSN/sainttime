@@ -1,0 +1,48 @@
+@use "./abstracts/variables" as v;
+@use "./abstracts/mixins" as m;
+
+
+// =====breadcrun=====
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: v.$secondary;
+    font-size: 1rem;
+    font-weight: bold;
+    color: v.$white;
+    flex-wrap: wrap;
+
+    .breadcrumb-item {
+      color: v.$white;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      .fa-house {
+        color: v.$white;
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        color: v.$primary;
+      }
+    }
+
+    .breadcrumb-separator {
+      margin: 0 8px;
+    }
+
+    .breadcrumb-current {
+      color: v.$primary;
+      border-bottom: 1px solid transparent;
+    }
+
+    .home-icon {
+      margin-right: 5px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 0 auto;
+      justify-content: center;
+    }
+  }

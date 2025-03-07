@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDropzone } from "react-dropzone";
-import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
-import "./forgot-password.scss";
+import axios from "axios";
+import "./ForgotPassword.scss";
 
 const ForgotPassword = () => {
   const { register, handleSubmit } = useForm();
@@ -69,48 +69,65 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="forgot-password-container">
-      <h2 className="forgot-password-title">{t("forgotPassword.title")}</h2>
-      <form className="forgot-password-form" onSubmit={handleSubmit(onSubmit)}>
-        <label className="forgot-password-label">{t("forgotPassword.emailLabel")}:</label>
+    <div className="forgot-password">
+      <h2 className="forgot-password__title">{t("forgotPassword.title")}</h2>
+      <form className="forgot-password__form" onSubmit={handleSubmit(onSubmit)}>
+        <label className="forgot-password__label">
+          {t("forgotPassword.emailLabel")}:
+        </label>
         <input
           type="email"
           {...register("email", { required: true })}
           placeholder={t("forgotPassword.emailPlaceholder")}
-          className="email-input"
+          className="input-email"
         />
 
-        <label className="forgot-password-label">{t("forgotPassword.uploadLabel")}:</label>
+        <label className="forgot-password__label">
+          {t("forgotPassword.uploadLabel")}:
+        </label>
         <div {...getRootProps()} className="dropzone">
           <input {...getInputProps()} />
           <FontAwesomeIcon icon={faCloudArrowUp} className="upload-icon" />
           {files.length > 0 ? (
             <ul className="upload-list">
               {files.map((file, index) => (
-                <li key={index} className="upload-text">{file.name}</li>
+                <li key={index} className="upload-text">
+                  {file.name}
+                </li>
               ))}
             </ul>
           ) : (
-            <p className="upload-text">{t("forgotPassword.uploadPlaceholder")}</p>
+            <p className="upload-text">
+              {t("forgotPassword.uploadPlaceholder")}
+            </p>
           )}
         </div>
 
-        <button type="submit" className="upload-btn">{t("forgotPassword.submit")}</button>
+        <button type="submit" className="upload-btn">
+          {t("forgotPassword.submit")}
+        </button>
       </form>
 
       {message && (
-        <p className={`message ${message.includes(t("forgotPassword.success")) ? "success" : "error"}`}>
+        <p
+          className={`message ${
+            message.includes(t("forgotPassword.success")) ? "success" : "error"
+          }`}
+        >
           {message}
         </p>
       )}
 
       <div className="upload-history">
-        <h3 className="upload-history-title">{t("forgotPassword.historyTitle")}</h3>
-        <ul className="upload-history-content">
+        <h3 className="upload-history__title">
+          {t("forgotPassword.historyTitle")}
+        </h3>
+        <ul className="upload-history__content">
           {uploads.length > 0 ? (
             uploads.map((upload, index) => (
-              <li key={index} className="upload-history-item">
-                {upload.email} {t("forgotPassword.uploaded")} <strong>{upload.fileName}</strong>（
+              <li key={index} className="upload-history__item">
+                {upload.email} {t("forgotPassword.uploaded")}{" "}
+                <strong>{upload.fileName}</strong>（
                 {new Date(upload.timestamp).toLocaleString()}）
               </li>
             ))

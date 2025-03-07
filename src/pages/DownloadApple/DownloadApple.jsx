@@ -2,15 +2,16 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // 箭頭圖示
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import cardData from "../../data/cardData";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./DownloadApple.scss";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
+import "../../scss/common.scss";
 
 const DownloadApple = () => {
   const [searchParams] = useSearchParams();
@@ -21,9 +22,9 @@ const DownloadApple = () => {
   const faqListRef = useRef(null);
 
   useEffect(() => {
-    if (Array.isArray(cardHotData) && cardHotData.length > 0) {
-      // 確保 cardHotData 有值
-      const game = cardHotData.find((g) => g.id.toString() === gameId);
+    if (Array.isArray(cardData) && cardData.length > 0) {
+      // 確保 cardData 有值
+      const game = cardData.find((g) => g.id.toString() === gameId);
       setGameData(game);
     }
   }, [gameId]);
@@ -42,7 +43,7 @@ const DownloadApple = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside); // 使用 mousedown 避免點擊按鈕時觸發
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -53,7 +54,7 @@ const DownloadApple = () => {
   }
 
   return (
-    <section className="ios-download-container">
+    <section className="ios-download__container">
       {/* =====Breadcrumbs=====START */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
@@ -69,31 +70,30 @@ const DownloadApple = () => {
           {t(gameData.title)}
         </a>
         <span className="breadcrumb-separator"> &gt; </span>
-        <span className="breadcrumb-current">從 App Store 下載</span>
+        <span className="breadcrumb-current">{t("breadcrumb.appStore")}</span>
       </nav>
-
       {/* =====Breadcrumbs=====END */}
 
-      <div className="page">
-        <header className="title">
+      <div className="ios-download__page">
+        <header className="ios-download__title">
           <h1 className="title__text">{t("details.header")}</h1>
         </header>
-        <section className="info">
-          <div className="info-content">
+        <section className="ios-download__info">
+          <div className="ios-download__info-content">
             <img
               src={gameData.avatar}
               alt="game-avatar"
               className="game-avatar"
             />
-            <div className="info-text-container">
+            <div className="info-text__container">
               <h2>{t(gameData.title)}</h2>
               <p>
                 {t("details.version")}：{gameData.version || "unknown"}
               </p>
               <p className="info-text">{t(gameData.description)}</p>
-              <div className="tags">
+              <div className="ios-download__tags">
                 {gameData.tagKeys.map((tag, index) => (
-                  <span key={index} className="tag tag-tag">
+                  <span key={index} className="tag tag-genre">
                     {t(`tags.${tag}`)}
                   </span>
                 ))}
@@ -111,47 +111,47 @@ const DownloadApple = () => {
             </div>
           </div>
         </section>
-        <section className="ios-download">
-          <div className="download">
-            <h2 className="ios-title">{t("iosDownload.download.title")}</h2>
-            <h3 className="ios-subtitle">
+        <section className="ios-download__description">
+          <div className="area-download">
+            <h2 className="ios__title">{t("iosDownload.download.title")}</h2>
+            <h3 className="ios__subtitle">
               {t("iosDownload.download.subtitle")}
             </h3>
-            <p className="ios-content">{t("iosDownload.download.content")}</p>
+            <p className="ios__content">{t("iosDownload.download.content")}</p>
             <a
               href="https://d2g2eaa4illb8n.cloudfront.net/sbw6mjvgceliol"
-              className="ios-btn"
+              className="ios__btn"
             >
               {t("iosDownload.download.btn")}
             </a>
           </div>
-          <div className="ipa">
-            <h2 className="ios-title">{t("iosDownload.ipa.title")}</h2>
-            <h3 className="ios-subtitle">{t("iosDownload.ipa.subtitle")}</h3>
-            <p className="ios-content">{t("iosDownload.ipa.content1")}</p>
-            <p className="ios-content">{t("iosDownload.ipa.content2")}</p>
+          <div className="area-ipa">
+            <h2 className="ios__title">{t("iosDownload.ipa.title")}</h2>
+            <h3 className="ios__subtitle">{t("iosDownload.ipa.subtitle")}</h3>
+            <p className="ios__content">{t("iosDownload.ipa.content1")}</p>
+            <p className="ios__content">{t("iosDownload.ipa.content2")}</p>
             <a
               href="https://de1s72dat8n04.cloudfront.net/sbw6mjvgceliol"
-              className="ios-btn"
+              className="ios__btn"
             >
               {t("iosDownload.ipa.btn")}
             </a>
           </div>
-          <div className="steps">
-            <h2 className="ios-title">{t("iosDownload.steps.title")}</h2>
-            <p className="ios-content">{t("iosDownload.steps.content1")}</p>
-            <p className="ios-content">
+          <div className="area-steps">
+            <h2 className="ios__title">{t("iosDownload.steps.title")}</h2>
+            <p className="ios__content">{t("iosDownload.steps.content1")}</p>
+            <p className="ios__content">
               {t("iosDownload.steps.content2")}
               <a href="https://sideloadly.io/#download" className="steps-link">
                 {t("iosDownload.steps.btn")}
               </a>
             </p>
-            <p className="ios-content">{t("iosDownload.steps.content3")}</p>
+            <p className="ios__content">{t("iosDownload.steps.content3")}</p>
             <VideoPlayer src={"/video/steps-video.mp4"} />
           </div>
-          <div className="questions">
-            <h2 className="ios-title">{t("iosDownload.questions.title")}</h2>
-            <p className="ios-content">{t("iosDownload.questions.content")}</p>
+          <div className="area-questions">
+            <h2 className="ios__title">{t("iosDownload.questions.title")}</h2>
+            <p className="ios__content">{t("iosDownload.questions.content")}</p>
             <div className="faq-list">
               {faqs.map((faq, index) => (
                 <FAQItem
@@ -172,7 +172,6 @@ const DownloadApple = () => {
   );
 };
 
-// FAQ 展開/收起子組件
 // FAQ 組件
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -193,7 +192,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 
 // ** PropTypes 驗證**
 DownloadApple.propTypes = {
-  cardHotData: PropTypes.arrayOf(
+  cardData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

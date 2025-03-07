@@ -118,7 +118,8 @@
   },
   "breadcrumb": {
     "home": "Home",
-    "hotFreeGames": "Popular Free Games"
+    "hotFreeGames": "Popular Free Games",
+    "appStore": "Download from App Store"
   },
   "notFound": {
     "message": "Sorry～Page Not Found"

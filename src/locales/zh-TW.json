@@ -118,7 +118,8 @@
   },
   "breadcrumb": {
     "home": "首頁",
-    "hotFreeGames": "熱門免費遊戲"
+    "hotFreeGames": "熱門免費遊戲",
+    "appStore": "從App Store下載"
   },
   "notFound": {
     "message": "抱歉，找不到此頁面"
@@ -127,7 +128,7 @@
     "download": {
       "title": "下載",
       "subtitle": "iOS設備下載遊戲方式",
-      "content": "使用iOS設備或手機直接點擊【下載遊戲】，並依照頁面步驟進行遊戲安裝，若無法使用直接下載方式安裝，請嘗試使用【IPA下載】並依照操作步驟安裝遊戲",
+      "content": "使用iOS設備或手機直接點擊【下載遊戲】，並依照頁面步驟進行遊戲安裝，若無法使用直接下載方式安裝，請嘗試使用【IPA下載】並依照操作步驟安裝遊戲。",
       "btn": "下載遊戲"
     },
     "ipa": {
@@ -152,9 +153,9 @@
       "question2": "Sideloadly支援哪個電腦系統版本？",
       "answer2": "Sideloadly可以在Windows 7、8、10和11上運行。為了獲得最佳效果，建議使用Window 10或更高版本。同理，Sideloadly可以在macOS 10.12 Sierra及更高版本上運行。為了獲得最佳效果，建議使用macOS Catalina、Big Sur、Monterey及更高版本。",
       "question3": "Sideloadly無法顯示我的裝置？",
-      "answer3": "如果發生這種狀況，請嘗試重新啟動您的PC，在您的設備連結時打開iTunes，並確保您從iDevice的彈出視窗中點擊「信任」。然後再打開Sideloadly。如果這沒有幫助，您也可以嘗試完全卸載後重新安裝iTunes",
+      "answer3": "如果發生這種狀況，請嘗試重新啟動您的PC，在您的設備連結時打開iTunes，並確保您從iDevice的彈出視窗中點擊「信任」。然後再打開Sideloadly。如果這沒有幫助，您也可以嘗試完全卸載後重新安裝iTunes。",
       "question4": "安裝已經簽名的程式需要越獄嗎？",
-      "answer4": "不需要。不論是使用證書簽名還是使用Apple ID簽名，安裝時都不需要裝置越獄",
+      "answer4": "不需要。不論是使用證書簽名還是使用Apple ID簽名，安裝時都不需要裝置越獄。",
       "question5": "用於簽名的Apple ID需要關閉雙重認證嗎？",
       "answer5": "不需要。無論Apple ID關閉或者開啟雙重認證，都可以用來簽名IPA文件，只不過已開啟雙重認證的Apple ID在第一次使用時需要進行驗證，之後使用時不需要再次驗證。",
       "question6": "簽名的有效期限是多久？",

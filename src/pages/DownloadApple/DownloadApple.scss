@@ -1,69 +1,28 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.ios-download-container {
-  background-color: v.$secondary;
-  padding: 1rem 2rem;
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    background-color: v.$secondary;
-    font-size: 1rem;
-    font-weight: bold;
-    color: v.$white;
-    flex-wrap: wrap; 
+.ios-download__container {
+  @include m.page-basic;
 
-    .breadcrumb-item {
-      color: v.$white;
-      text-decoration: none;
-      transition: color 0.3s ease-in-out;
-
-      .fa-house {
-        color: v.$white;
-        margin-right: 0.5rem;
-      }
-
-      &:hover {
-        color: v.$primary;
-      }
-    }
-
-    .breadcrumb-separator {
-      margin: 0 8px;
-    }
-
-    .breadcrumb-current {
-      color: v.$primary;
-      border-bottom: 1px solid transparent;
-    }
-
-    .home-icon {
-      margin-right: 5px;
-    }
-  }
-
-  .page {
+  .ios-download__page {
     width: 100%;
     min-height: calc(100vh - 6rem);
     background-color: v.$dark-background;
     color: v.$white;
     padding: 2rem 0;
 
-    .title {
+    .ios-download__title {
       font-size: 2rem;
-      &__text {
-        white-space: normal;
-      }
     }
 
-    .info {
+    .ios-download__info {
       @include m.flex-center;
       justify-content: space-between;
       width: 100%;
       height: 12rem;
       margin-top: 2rem;
 
-      .info-content {
+      .ios-download__info-content {
         @include m.flex-center;
         justify-content: flex-start;
         height: 100%;
@@ -76,7 +35,7 @@
           margin-right: 1rem;
         }
 
-        .info-text-container {
+        .info-text__container {
           @include m.flex-center;
           flex-direction: column;
           align-items: flex-start;
@@ -87,7 +46,7 @@
 
           .info-text {
             max-width: 50rem;
-            white-space: normal;
+      
             -webkit-line-clamp: 3;
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -95,7 +54,7 @@
           }
         }
 
-        .tags {
+        .ios-download__tags {
           display: flex;
           gap: 0.8rem;
           margin-top: 0.2rem;
@@ -105,17 +64,18 @@
             text-align: center;
             padding: 0.4rem 0.8rem;
             border-radius: 10px;
+            white-space: nowrap;
 
-            &.tag-tag {
+            &-genre {
               background-color: v.$thirdary;
               color: v.$white;
             }
 
-            &.tag-language {
+            &-language {
               background-color: v.$gray;
               color: v.$white;
             }
-            &.tag-platforms {
+            &-platforms {
               background-color: v.$aid;
               color: v.$white;
             }
@@ -125,63 +85,74 @@
     }
   }
 
-  .ios-download {
+  .ios-download__description {
     @include m.flex-center;
     flex-direction: column;
     border-radius: 15px;
     border: 2px solid v.$white;
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: 1.5rem;
 
-    .download,
-    .ipa,
-    .steps,
-    .questions {
-      height: auto;
-      margin-bottom: 2rem;
-      width: 100%;
+    .area {
+      &-download,
+      &-ipa,
+      &-steps,
+      &-questions {
+        height: auto;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
     }
 
-    .ios-title {
+
+    .ios__title {
       font-size: 2rem;
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem;
       border-bottom: 1.5px solid v.$white;
+      letter-spacing: .1rem;
       width: 100%;
-      white-space: normal;
+
     }
 
-    .ios-subtitle {
+    .ios__subtitle {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       color: v.$success;
-      white-space: normal;
+      letter-spacing: 0.1rem;
     }
 
-    .ios-content {
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
-      line-height: 1.5rem;
-      white-space: normal;
+    .ios__content {
+      @include m.text-basic;
       margin-bottom: 0.5rem;
     }
 
-    .ios-btn {
+    .ios__btn {
       @include m.interactive-btn;
-      display: inline-block;
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
+      @include m.btn-basic;
       background-color: v.$thirdary;
       margin: 0.5rem 0;
+      letter-spacing: .1rem;
       white-space: normal;
+    }
+
+    .steps-link {
+      color: v.$thirdary;
+      text-decoration-line: underline;
+      transition: .35s;
+
+      &:hover {
+        color: v.$success;
+      }
     }
 
     .steps-video {
       margin: 1rem 0;
     }
 
-    .questions {
+
+
+    .area-questions {
       .faq-list {
         display: flex;
         flex-direction: column;
@@ -200,7 +171,6 @@
             border-bottom: none;
           }
 
-
           .faq-question {
             @include m.flex-center;
             justify-content: space-between;
@@ -208,7 +178,7 @@
             cursor: pointer;
             transition: 0.35s ease;
             padding: 1rem 2rem;
-            white-space: normal;
+      
 
             &:hover {
               background: v.$white;
@@ -220,25 +190,23 @@
           }
 
           .faq-answer-container {
-            max-height: 0; 
+            max-height: 0;
             overflow: hidden;
             opacity: 0;
-            transition: .35s ease-in-out;
+            transition: 0.35s ease-in-out;
           }
-
 
           .faq-answer {
             padding: 1rem;
             background-color: v.$white;
             border-top: 1px solid v.$white;
-            white-space: normal;
-            transition: .35s;
+      
+            transition: 0.35s;
           }
 
           &.open {
-
             .faq-answer-container {
-              max-height: 50rem; 
+              max-height: 50rem;
               opacity: 1;
             }
 
@@ -258,19 +226,15 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .ios-download-container {
-    padding: 0 10%;
-  }
-}
+
 
 @media (max-width: 991px) {
-  .ios-download-container {
-    .page {
-      .info {
+  .ios-download__container {
+    .ios-download__page {
+      .ios-download__info {
         height: fit-content;
 
-        .info-content {
+        .ios-download__info-content {
           flex-direction: column;
           align-items: flex-start;
 
@@ -278,17 +242,14 @@
             margin: 1rem 0;
           }
 
-          .tags {
-            margin: 1rem 0;
-          }
-
-          .info-text-container {
+          .info-text__container {
             margin: 0;
 
-            .tags {
+            .ios-download__tags {
               transform: scale(0.8);
               transform-origin: left center;
               align-self: flex-start;
+              margin: 1rem 0;
             }
           }
         }
@@ -297,25 +258,19 @@
   }
 }
 
-
 @media (max-width: 767px) {
-  .ios-download-container {
-    padding: 1rem;
-    .breadcrumb {
-      margin: 0 auto;
-      justify-content: center;
-    }
-    .title {
+  .ios-download__container {
+    .ios-download__title {
       @include m.flex-center;
     }
-    .page {
-      .info {
-        .info-content {
+    .ios-download__page {
+      .ios-download__info {
+        .ios-download__info-content {
           width: 100%;
           .game-avatar {
             margin: 1rem auto;
           }
-          .info-text-container {
+          .info-text__container {
             width: 100%;
             .info-text {
               width: 100%;
@@ -325,7 +280,7 @@
               -webkit-line-clamp: unset;
               -webkit-box-orient: unset;
             }
-            .tags {
+            .ios-download__tags {
               transform: scale(0.7);
             }
           }
@@ -333,12 +288,12 @@
       }
     }
 
-    .ios-download {
+    .ios-download__description {
       .faq-list {
-       font-size: .8rem;
-       .faq-question {
-        gap: 2rem;
-       }
+        font-size: 0.8rem;
+        .faq-question {
+          gap: 2rem;
+        }
       }
     }
   }
