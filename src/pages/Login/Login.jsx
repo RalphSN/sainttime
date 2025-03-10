@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { AuthContext } from "../../context/AuthContext"; // 使用 AuthContext
-import "./login.scss";
+import { AuthContext } from "../../context/AuthContext"; 
+import "./Login.scss";
 
 const InputField = ({ label, type, placeholder, id, value, onChange }) => (
   <div className="input-wrapper">
-    <label htmlFor={id} className="login-title-sec">
+    <label htmlFor={id} className="login__title-sec">
       {label}
     </label>
     <input
@@ -57,9 +57,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login">
       <form className="login-box" onSubmit={handleSubmit}>
-        <h2 className="login-title">{t("login.title")}</h2>
+        <h2 className="login__title">{t("login.title")}</h2>
         <InputField
           label={t("login.username")}
           type="text"
@@ -82,30 +82,30 @@ const Login = () => {
         {message && <p className="message">{message}</p>}
         <p className="privacy-policy">
           {t("login.agreePolicy")}{" "}
-          <Link to="/privacy" className="privacy-enter">
+          <Link to="/privacy" className="privacy-policy__entry">
             {t("login.privacyPolicy")}
           </Link>
         </p>
       </form>
       <div className="register-box">
-        <h2 className="login-title">{t("register-login.title")}</h2>
+        <h2 className="login__title">{t("register-login.title")}</h2>
         <button
-          className="btn-l register-btn"
+          className="btn-l btn--register"
           onClick={() => navigate("/register")}
         >
           {t("register-login.registerBtn")}
         </button>
         <button
-          className="btn-l forgot-btn"
+          className="btn-l btn--forgot"
           onClick={() => navigate("/forgot-password")}
         >
           {t("register-login.forgotPassword")}
         </button>
         <div className="tips">
-          <span className="tips-title">{t("tips.loginIssueTitle")}</span>
-          <span className="tips-content">{t("tips.loginIssueContent")}</span>
-          <span className="tips-title">{t("tips.registerTitle")}</span>
-          <span className="tips-content">{t("tips.registerContent")}</span>
+          <span className="tips__title">{t("tips.loginIssueTitle")}</span>
+          <span className="tips__content">{t("tips.loginIssueContent")}</span>
+          <span className="tips__title">{t("tips.registerTitle")}</span>
+          <span className="tips__content">{t("tips.registerContent")}</span>
         </div>
       </div>
     </div>

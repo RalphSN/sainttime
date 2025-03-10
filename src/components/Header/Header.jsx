@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext"; // 使用 AuthContext
-import "./header.scss";
+import "./Header.scss";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -76,8 +76,8 @@ const Header = () => {
 
   return (
     <header className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-logo">
+      <div className="navbar__container">
+        <div className="navbar__logo">
           <img src={imageUrl} alt="Logo" className="logo" />
         </div>
       </div>
@@ -95,29 +95,29 @@ const Header = () => {
       )}
 
       {/* 右側滑出選單 */}
-      <div className={`navbar-auth-slide ${isMenuOpen ? "open" : ""}`}>
+      <div className={`navbar-auth__slide ${isMenuOpen ? "open" : ""}`}>
         <button className="close-menu" onClick={handleMenuToggle}>×</button>
 
         {/* 導覽連結 */}
-        <ul className="navbar-links">
+        <ul className="navbar__links">
           {navLinks.map((link) => (
-            <li key={link.key}>
+            <li key={link.key} className="navbar__link">
               <Link to={link.to}>{t(link.key)}</Link>
             </li>
           ))}
         </ul>
 
         {/* 登入 / 註冊 or 會員狀態 */}
-        <div className="navbar-auth-slide-box">
+        <div className="navbar-auth__slide-box">
           {user ? (
             <>
               <span className="user-greeting">{dispalyName}，{t("navbar.hello")}!</span>
-              <button className="btn logout" onClick={logout}>{t("navbar.logout")}</button>
+              <button className="btn btn--logout" onClick={logout}>{t("navbar.logout")}</button>
             </>
           ) : (
             <>
-              <Link to="/login" className="btn login">{t("navbar.login")}</Link>
-              <Link to="/register" className="btn register">{t("navbar.register")}</Link>
+              <Link to="/login" className="btn btn--login">{t("navbar.login")}</Link>
+              <Link to="/register" className="btn btn--register">{t("navbar.register")}</Link>
             </>
           )}
 
@@ -129,7 +129,7 @@ const Header = () => {
             {dropdownOpen && (
               <ul className="dropdown-menu">
                 {languages.map((lang) => (
-                  <li key={lang.code} onClick={() => changeLanguage(lang.code)}>
+                  <li key={lang.code} onClick={() => changeLanguage(lang.code)} >
                     <a href="#">{lang.label}</a>
                   </li>
                 ))}

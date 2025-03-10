@@ -1,12 +1,10 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.register-container {
+.register {
+  @include m.page-basic;
   @include m.flex-center;
   align-items: flex-start;
-  min-height: calc(100vh - 6rem);
-  background-color: v.$secondary;
-  padding: 0 2rem;
   padding-top: 5rem;
 
   .register-case, 
@@ -19,8 +17,8 @@
     color: v.$white;
     margin: 1rem;
 
-    .register-title,
-    .login-title {
+    .register__title,
+    .login__title {
         display: flex;
         margin-bottom: 1.2rem;
         align-self: flex-start;
@@ -32,7 +30,7 @@
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
-    .register-btn {
+    .btn--register {
       @include m.small-btn;
     }
   }
@@ -44,7 +42,7 @@
     max-width: 28rem;
   }
 
-  .register-title-sec {
+  .register__subtitle {
     align-self: flex-start;
   }
 
@@ -53,7 +51,7 @@
     flex-direction: column;
     width: 100%;
 
-    .register-input {
+    .input-register {
       width: 100%;
       font-size: 0.9rem;
       margin: 1rem 0;
@@ -70,7 +68,7 @@
     }
   }
 
-  .register-btn {
+  .btn--register {
     @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
@@ -78,7 +76,7 @@
     position: relative;
   }
 
-  .login-btn {
+  .btn--login {
     @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
@@ -101,7 +99,7 @@
     margin-top: 1rem;
     font-size: 0.9rem;
 
-    .privacy-enter {
+    .privacy-policy__entry {
       color: v.$gray;
       text-decoration: underline;
       transition: 0.35s;
@@ -113,7 +111,7 @@
 }
 
 @media (max-width:768px) {
-    .register-container {
+    .register {
       flex-direction: column;
       padding: 2rem;
       .register-case {

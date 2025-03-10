@@ -2,10 +2,7 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .hot-games {
-  width: 100%;
-  min-height: calc(100vh - 6rem);
-  background-color: v.$dark-background;
-  padding: 2rem 5rem;
+  @include m.page-basic;
 
   .hot-games__title {
     font-size: 2rem;
@@ -60,18 +57,18 @@
     padding-bottom: 5rem;
   }
 
-  .no-results {
-    // display: inline-block;
-    // color: v.$white;
-    // font-size: 1.2rem;
-    // text-align: center;
-    // align-self: center;
-    // padding: 1rem;
-    // border-radius: 15px;
-    // background: rgba(v.$btn-p, .8);
-    // animation: plus 1.5s infinite alternate;
-    // white-space: normal;
-  }
+  // .no-results {
+  //   display: inline-block;
+  //   color: v.$white;
+  //   font-size: 1.2rem;
+  //   text-align: center;
+  //   align-self: center;
+  //   padding: 1rem;
+  //   border-radius: 15px;
+  //   background: rgba(v.$btn-p, .8);
+  //   animation: plus 1.5s infinite alternate;
+  //   white-space: normal;
+  // }
 
   @keyframes plus {
     0% {

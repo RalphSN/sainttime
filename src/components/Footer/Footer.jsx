@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import "./footer.scss";
+import "./Footer.scss";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -8,18 +8,18 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-logo">
+      <div className="footer__container">
+        <div className="footer__logo">
           <img src={imageUrl} alt="Logo" className="logo" />
         </div>
-        <div className="footer-box">
-          <p className="footer-text">{t("footer.adultContentWarning")}</p>
-          <div className="footer-links">
-            <a href="#">{t("footer.termsOfService")}</a>
-            <a href="#">{t("footer.privacyPolicy")}</a>
-            <a href="#">{t("footer.contactUs")}</a>
+        <div className="footer-info">
+          <p className="footer-info__text">{t("footer.adultContentWarning")}</p>
+          <div className="footer-info__links">
+            <a href="#" className="footer-info__link">{t("footer.termsOfService")}</a>
+            <a href="#" className="footer-info__link">{t("footer.privacyPolicy")}</a>
+            <a href="#" className="footer-info__link">{t("footer.contactUs")}</a>
           </div>
-          <p className="footer-copyright">Copyright ©2025, OCG GAME Inc. All rights reserved</p>
+          <p className="footer-info__copyrights">Copyright ©2025, OCG GAME Inc. All rights reserved</p>
         </div>
       </div>
     </footer>

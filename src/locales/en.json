@@ -104,7 +104,7 @@
     "title": "Hot Free Games",
     "filter-platform": "Device Type",
     "filter-genre": "Game Genre",
-    "no-results": "Master, it's so~ empty here 😢 How about changing the filters?"
+    "no-results": "Please change the filter conditions."
   },
   "details": {
     "header": "Popular Free Games",
@@ -122,7 +122,7 @@
     "appStore": "Download from App Store"
   },
   "notFound": {
-    "message": "Sorry～Page Not Found"
+    "message": "Page Not Found"
   },
   "iosDownload": {
     "download": {

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import "./popular-card.scss";
+import "./PopularCard.scss";
 
 const PopularCard = ({
   id,
@@ -16,13 +16,13 @@ const PopularCard = ({
   return (
     <div className={`card-popular ${className}`}>
       {image && (
-        <img src={image} alt={t(title)} className="card-popular-image" />
+        <img src={image} alt={t(title)} className="card-popular__image" />
       )}
-      <div className="card-popular-content">
-        <h2 className="card-popular-title">{t(title)}</h2>
+      <div className="card-popular__content">
+        <h2 className="card-popular__title">{t(title)}</h2>
         {children}
         {buttonText && id && (
-          <Link to={`/game?id=${id}`} className="card-popular-button">
+          <Link to={`/game?id=${id}`} className="btn--play">
             {t(buttonText)}
           </Link>
         )}
@@ -31,7 +31,7 @@ const PopularCard = ({
   );
 };
 
-//  加入 PropTypes 驗證
+
 PopularCard.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,

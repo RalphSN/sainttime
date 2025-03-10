@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"; // 加入 PropTypes 驗證
 import { useTranslation } from "react-i18next";
-import "./reserve-card.scss";
+import "./ReserveCard.scss";
 
 const ReserveCard = ({
   title,
@@ -16,25 +16,25 @@ const ReserveCard = ({
 
   return (
     <div className={`card-reserve ${className}`}>
-      <div className="reserve-image-container">
+      <div className="card-reserve__image-container">
         {image && (
           <img
             src={image}
             alt={title && t(title)}
-            className="card-reserve-image"
+            className="card-reserve__image"
           />
         )}
       </div>
-      <div className="card-reserve-content">
-        <h2 className="card-reserve-title">{title && t(title)}</h2>
+      <div className="card-reserve__content">
+        <h2 className="card-reserve__title">{title && t(title)}</h2>
         {description && (
-          <p className="card-reserve-description">{t(description)}</p>
+          <p className="card-reserve__description">{t(description)}</p>
         )}
         {children}
         {buttonText && url && (
           <a
             href={url}
-            className="card-reserve-button"
+            className="btn--reserve"
             target="_blank"
             rel="noopener noreferrer"
           >

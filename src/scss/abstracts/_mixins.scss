@@ -5,6 +5,7 @@
   background-color: v.$secondary;
   padding: 1rem 2rem;
   min-height: calc(100vh - 21rem);
+  width: 100%;
   @media (min-width: 1440px) {
     padding: 0 10%;
   }

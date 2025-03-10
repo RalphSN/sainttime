@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next"; // 引入 i18n
+import { useTranslation } from "react-i18next"; 
 import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
 import HotFreeCard from "../../components/HotFreeCard/HotFreeCard";
 import NotFound from "../../components/NotFound/NotFound";
-import "./hot-free-gmaes.scss";
+import "./HotFreeGames.scss";
 
 const HotFreeGames = () => {
-  const { t } = useTranslation(); // 使用 i18n 翻譯
+  const { t } = useTranslation(); 
 
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
@@ -60,7 +60,7 @@ const HotFreeGames = () => {
               }`}
               onClick={() => handlePlatformClick(platform)}
             >
-              {t(`platforms.${platform}`)} {/* 這裡翻譯 platform */}
+              {t(`platforms.${platform}`)} 
             </button>
           ))}
         </div>
@@ -78,7 +78,7 @@ const HotFreeGames = () => {
               }`}
               onClick={() => handleTagClick(tag)}
             >
-              {t(`tags.${tag}`)} {/* 這裡翻譯 tag */}
+              {t(`tags.${tag}`)} 
             </button>
           ))}
         </div>

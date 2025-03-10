@@ -1,6 +1,6 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Dela+Gothic+One&family=Noto+Sans+TC:wght@100..900&family=ZCOOL+QingKe+HuangYou&family=Zen+Antique+Soft&family=Zen+Old+Mincho&display=swap");
 
 .error-container {
   height: calc(100vh - 21rem);
@@ -13,14 +13,16 @@
     top: 40%;
     transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 400px;
   }
 
   .error-text {
     position: absolute;
+    width: 100%;
     top: 50%;
     left: 50%;
     margin-top: 150px;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
     display: block;
@@ -28,14 +30,11 @@
     text-shadow: 0px 0px 6px v.$btn-p;
     animation: fadeInText 3s ease-in 0.5s forwards,
       flicker4 5s linear 3.5s infinite, hueRotate 6s ease-in-out 3s infinite;
-  }
 
-  .error-text:lang(en) {
-    font-family: "Audiowide", sans-serif;
-  }
-  .error-text:lang(zh) {
     font-family: "Noto Sans TC", sans-serif;
-    font-weight: 900;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
   }
 }
 
@@ -266,5 +265,14 @@
   100% {
     color: #ff6b8b;
     text-shadow: 0px 0px 6px #ff2957;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .error-container {
+    .wrap {
+      max-width: 90%;
+    }
   }
 }

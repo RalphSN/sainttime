@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"; 
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import "./hot-free-card.scss";
+import "./HotFreeCard.scss";
 
 const HotFreeCard = ({
   id, // 對應id屬性
@@ -20,15 +20,15 @@ const HotFreeCard = ({
       to={`/game?id=${id}`} 
       data-platforms={platforms.join(",")}
     >
-      <figure className="card-hot-image-container">
-        {image && <img src={image} alt={t(title)} className="card-hot-image" />}
+      <figure className="card-hot__image-container">
+        {image && <img src={image} alt={t(title)} className="card-hot__image" />}
       </figure>
-      <div className="card-hot-content">
-        <h2 className="card-hot-title">{t(title)}</h2>
+      <div className="card-hot__content">
+        <h2 className="card-hot__title">{t(title)}</h2>
         {children}
-        <div className="card-tags">
+        <div className="card-hot__tags">
           {tagKeys.map((key, index) => (
-            <span key={index} className="tag">
+            <span key={index} className="card-hot__tag">
               {t(`tags.${key}`)}
             </span>
           ))}

@@ -3,11 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next"; 
 import PropTypes from "prop-types";
-import "./register.scss";
+import "./Register.scss";
 
 const InputField = ({ label, type, placeholder, id, value, onChange }) => (
   <div className="input-wrapper">
-    <label htmlFor={id} className="register-title-sec">
+    <label htmlFor={id} className="register__subtitle">
       {label}
     </label>
     <input
@@ -16,7 +16,7 @@ const InputField = ({ label, type, placeholder, id, value, onChange }) => (
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="register-input"
+      className="input-register"
       required
     />
   </div>
@@ -55,24 +55,24 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
+    <div className="register">
       <form className="register-case" onSubmit={handleSubmit}>
-        <h2 className="register-title">{t("register.title")}</h2>
+        <h2 className="register__title">{t("register.title")}</h2>
         <InputField label={t("register.username")} type="text" placeholder={t("register.enterUsername")} id="username" value={formData.username} onChange={handleChange} />
         <InputField label={t("register.password")} type="password" placeholder={t("register.enterPassword")} id="password" value={formData.password} onChange={handleChange} />
         <InputField label={t("register.confirmPassword")} type="password" placeholder={t("register.enterConfirmPassword")} id="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
-        <button type="submit" className="btn register-btn">{t("register.registerBtn")}</button>
+        <button type="submit" className="btn btn--register">{t("register.registerBtn")}</button>
         {message && <p className="message">{message}</p>}
         <p className="privacy-policy">
           {t("register.agreePolicy")}{" "}
-          <Link to="/privacy" className="privacy-enter">
+          <Link to="/privacy" className="privacy-policy__entry">
             {t("register.privacyPolicy")}
           </Link>
         </p>
       </form>
       <div className="login-case">
-        <h2 className="login-title">{t("login-register.alreadyHaveAccount")}</h2>
-        <button className="btn-r login-btn" onClick={() => navigate("/login")}>{t("login-register.loginBtn")}</button>
+        <h2 className="login__title">{t("login-register.alreadyHaveAccount")}</h2>
+        <button className="btn-r btn--login" onClick={() => navigate("/login")}>{t("login-register.loginBtn")}</button>
       </div>
     </div>
   );

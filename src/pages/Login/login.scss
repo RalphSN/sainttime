@@ -1,12 +1,11 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.login-container {
+.login {
+  @include m.page-basic;
   @include m.flex-center;
   align-items: flex-start;
-  min-height: calc(100vh - 6rem);
-  background-color: v.$secondary;
-  padding: 0 2rem;
+  
   padding-top: 5rem;
 
   .login-box,
@@ -20,7 +19,7 @@
     margin: 1rem;
 
     min-height: 30rem;
-    .login-title {
+    .login__title {
       display: flex;
       margin-bottom: 1.2rem;
       align-self: flex-start;
@@ -45,7 +44,7 @@
     max-width: 28rem;
   }
 
-  .login-title-sec {
+  .login__title-sec {
     align-self: flex-start;
   }
 
@@ -92,13 +91,13 @@
     position: relative;
   }
 
-  .register-btn {
+  .btn--register {
     @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
   }
 
-  .forgot-btn {
+  .btn--forgot {
     @include m.interactive-btn;
     background-color: v.$white;
     color: v.$black;
@@ -108,7 +107,7 @@
     margin-top: 1rem;
     font-size: 0.9rem;
 
-    .privacy-enter {
+    .privacy-policy__entry {
       color: v.$gray;
       text-decoration: underline;
       transition: 0.35s;
@@ -129,7 +128,7 @@
     margin-top: 1rem;
     border-top: 1px solid v.$white;
 
-    .tips-title {
+    .tips__title {
       font-size: 1.2rem;
       color: v.$btn-l;
       margin-top: 1.5rem;
@@ -138,7 +137,7 @@
       text-align: start;
     }
 
-    .tips-content {
+    .tips__content {
       font-size: 0.9rem;
       white-space: normal;
       text-align: start;
@@ -150,7 +149,7 @@
 
 
 @media (max-width:768px) {
-  .login-container {
+  .login {
     flex-direction: column;
     padding: 2rem;
     .login-box {
