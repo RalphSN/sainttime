@@ -3,11 +3,11 @@ import "./NotFound.scss";
 // import { useTranslation } from "react-i18next";
 
 
-const NotFound = ({ message, height }) => {
+const NotFound = ({ message, height, top }) => {
     // const { t } = useTranslation();
   return (
     <div className="error-container" style={{ height: height || "auto" }}>
-      <div className="wrap">
+      <div className="wrap" style={{ top: top, left: "50%" }}>
         <svg
           id="svgWrap_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +80,7 @@ const NotFound = ({ message, height }) => {
 NotFound.propTypes = {
   height: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
+  top: PropTypes.string.isRequired,
 };
 
 export default NotFound;

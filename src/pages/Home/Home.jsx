@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import "./home.scss";
+import "./Home.scss";
 import cardData from "../../components/PopularCard/CardPopularData";
 import reserveCardData from "../../components/ReserveCard/CardReserveCard";
 import PopularCard from "../../components/PopularCard/PopularCard";
@@ -10,17 +10,17 @@ const Home = () => {
 
   return (
     <main>
-      <div className="home-container">
-        <div className="home-carousel">
+      <div className="home">
+        <div className="home__carousel">
           <img
             src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/sainttime-banner.gif"
             alt=""
           />
         </div>
-        <div className="home-content">
-          <div className="home-popular">
-            <h2 className="home-popular-title">{t("home.popularGames")}</h2>
-            <div className="card-grid-popular">
+        <div className="home__content">
+          <div className="home__popular">
+            <h2 className="home__popular-title">{t("home.popularGames")}</h2>
+            <div className="home__popular-grid">
               {cardData.map((card) => (
                 <PopularCard
                   key={card.id}
@@ -33,13 +33,13 @@ const Home = () => {
               ))}
             </div>
             <div className="more-btn-box">
-              <button className="more">{t("home.more")}</button>
+              <button className="btn-more">{t("home.more")}</button>
             </div>
           </div>
-          <div className="home-side">
-            <div className="home-side-reserve">
-              <h2 className="home-side-reserve-title">{t("home.reserve")}</h2>
-              <div className="reserve-game-list">
+          <div className="home__side">
+            <div className="home__side-reserve">
+              <h2 className="home__side-reserve-title">{t("home.reserve")}</h2>
+              <div className="home__reserve-list">
                 {reserveCardData.map((game) => (
                   <ReserveCard
                     key={game.id}
@@ -52,8 +52,8 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            <div className="home-side-ad">
-              <a href="#" className="home-side-ad-link">
+            <div className="home__side-ad">
+              <a href="#" className="home__side-ad-link">
                 <img
                   src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/image-ad.gif"
                   alt=""

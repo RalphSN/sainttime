@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next"; // 引入 i18n
 import cardHotData from "../../components/HotFreeCard/HotFreeCardData";
 import HotFreeCard from "../../components/HotFreeCard/HotFreeCard";
+import NotFound from "../../components/NotFound/NotFound";
 import "./hot-free-gmaes.scss";
 
 const HotFreeGames = () => {
@@ -11,7 +12,9 @@ const HotFreeGames = () => {
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
 
   const allTags = [...new Set(cardHotData.flatMap((card) => card.tagKeys))];
-  const allPlatforms = [...new Set(cardHotData.flatMap((card) => card.platforms))];
+  const allPlatforms = [
+    ...new Set(cardHotData.flatMap((card) => card.platforms)),
+  ];
 
   const handleTagClick = (tag) => {
     setSelectedTags((prevSelected) =>
@@ -42,17 +45,17 @@ const HotFreeGames = () => {
   });
 
   return (
-    <section className="hot-container">
-      <h2 className="hot-title">{t("hot.title")}</h2>
+    <section className="hot-games">
+      <h2 className="hot-games__title">{t("hot.title")}</h2>
 
       {/* 裝置類型篩選 */}
-      <div className="hot-filter">
-        <h3 className="hot-filter-title">{t("hot.filter-platform")}</h3>
-        <div className="hot-filter-tags">
+      <div className="hot-games__filter">
+        <h3 className="hot-games__filter-title">{t("hot.filter-platform")}</h3>
+        <div className="hot-games__filter-options">
           {allPlatforms.map((platform) => (
             <button
               key={platform}
-              className={`hot-filter-tag ${
+              className={`hot-games__filter-option ${
                 selectedPlatforms.includes(platform) ? "active" : ""
               }`}
               onClick={() => handlePlatformClick(platform)}
@@ -64,13 +67,13 @@ const HotFreeGames = () => {
       </div>
 
       {/* 遊戲類型篩選 */}
-      <div className="hot-filter">
-        <h3 className="hot-filter-title">{t("hot.filter-genre")}</h3>
-        <div className="hot-filter-tags">
+      <div className="hot-games__filter">
+        <h3 className="hot-games__filter-title">{t("hot.filter-genre")}</h3>
+        <div className="hot-games__filter-options">
           {allTags.map((tag) => (
             <button
               key={tag}
-              className={`hot-filter-tag ${
+              className={`hot-games__filter-option ${
                 selectedTags.includes(tag) ? "active" : ""
               }`}
               onClick={() => handleTagClick(tag)}
@@ -82,7 +85,7 @@ const HotFreeGames = () => {
       </div>
 
       {/* 過濾後的卡片 */}
-      <div className="card-grid-hot">
+      <div className="hot-games__grid">
         {filteredCards.length > 0 ? (
           filteredCards.map((card) => (
             <HotFreeCard
@@ -97,7 +100,14 @@ const HotFreeGames = () => {
             />
           ))
         ) : (
-          <p className="no-results">{t("hot.no-results")}</p>
+          <p className="no-results">
+            {/* {t("hot.no-results")} */}
+            <NotFound
+              message={t("hot.no-results")}
+              height={"calc(100vh - 21rem)"}
+              top={"60%"}
+            />
+          </p>
         )}
       </div>
     </section>
@@ -105,4 +115,3 @@ const HotFreeGames = () => {
 };
 
 export default HotFreeGames;
-

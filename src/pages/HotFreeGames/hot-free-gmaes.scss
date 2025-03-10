@@ -1,20 +1,20 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.hot-container {
+.hot-games {
   width: 100%;
   min-height: calc(100vh - 6rem);
   background-color: v.$dark-background;
   padding: 2rem 5rem;
 
-  .hot-title {
+  .hot-games__title {
     font-size: 2rem;
     color: v.$white;
     margin-bottom: 1rem;
     letter-spacing: 0.1rem;
   }
 
-  .hot-filter {
+  .hot-games__filter {
     @include m.flex-center;
     flex-direction: column;
     flex-wrap: wrap;
@@ -23,12 +23,12 @@
     gap: 1rem;
     margin-bottom: 1rem;
 
-    .hot-filter-tags {
+    .hot-games__filter-options {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
 
-      .hot-filter-tag {
+      .hot-games__filter-option {
         background: transparent;
         border: 1px solid v.$white !important;
         border-radius: 15px;
@@ -49,7 +49,7 @@
     }
   }
 
-  .card-grid-hot {
+  .hot-games__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, max-content));
     align-items: start;
@@ -61,16 +61,16 @@
   }
 
   .no-results {
-    display: inline-block;
-    color: v.$white;
-    font-size: 1.2rem;
-    text-align: center;
-    align-self: center;
-    padding: 1rem;
-    border-radius: 15px;
-    background: rgba(v.$btn-p, .8);
-    animation: plus 1.5s infinite alternate;
-    white-space: normal;
+    // display: inline-block;
+    // color: v.$white;
+    // font-size: 1.2rem;
+    // text-align: center;
+    // align-self: center;
+    // padding: 1rem;
+    // border-radius: 15px;
+    // background: rgba(v.$btn-p, .8);
+    // animation: plus 1.5s infinite alternate;
+    // white-space: normal;
   }
 
   @keyframes plus {
@@ -84,30 +84,30 @@
 }
 
 @media (min-width: 1440px) {
-  .hot-container {
+  .hot-games {
     padding: 0 10%;
   }
 }
 
 // @media (min-width: 769px) {
-//     .hot-container {
-//       .card-grid-hot {
+//     .hot-games {
+//       .hot-games__grid {
 //         grid-template-columns: repeat(auto-fit, minmax(20rem, 28rem));
 //       }
 //     }
 // }
 
 @media (max-width: 1024px) {
-  .hot-container {
+  .hot-games {
     padding: 2rem;
   }
 }
 
 @media (max-width: 991px) {
-  .hot-container {
+  .hot-games {
     padding: 2rem;
 
-    .card-grid-hot {
+    .hot-games__grid {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       align-items: center;
       justify-content: center;

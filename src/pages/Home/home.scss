@@ -1,12 +1,12 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.home-container {
+.home {
   width: 100%;
   min-height: calc(100vh - 21rem);
   background-color: v.$dark-background;
 
-  .home-carousel {
+  .home__carousel {
     @include m.sensational-mask;
     position: relative;
     width: 100%;
@@ -19,13 +19,13 @@
     }
   }
 
-  .home-content {
+  .home__content {
     display: flex;
     padding: 2rem 5rem;
     color: v.$white;
     font-size: 1.2rem;
 
-    .home-popular {
+    .home__popular {
       flex: 3;
       margin-right: 2rem;
 
@@ -36,14 +36,14 @@
         &::before {
           content: "";
           display: inline-block;
-          width: 0.4rem; // 垂直線的寬度
-          height: 1.5em; // 與文字等高
-          background-color: v.$thirdary; // 垂直線的顏色
-          margin-right: 20px; // 與文字的間距
+          width: 0.4rem; 
+          height: 1.5em; 
+          background-color: v.$thirdary; 
+          margin-right: 20px; 
         }
       }
 
-      .card-grid-popular {
+      .home__popular-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         // grid-template-columns: repeat(auto-fit, 18rem);
@@ -59,7 +59,8 @@
       @include m.flex-center;
       width: 100%;
       margin-top: 2rem;
-      .more {
+
+      .btn-more {
         font-size: 1rem;
         padding: 0.5rem 1rem;
         border: 1px solid v.$white;
@@ -74,10 +75,10 @@
       }
     }
 
-    .home-side {
+    .home__side {
       flex: 1;
 
-      .home-side-reserve {
+      .home__side-reserve {
         &-title {
           display: flex;
           align-items: center;
@@ -85,14 +86,14 @@
           &::before {
             content: "";
             display: inline-block;
-            width: 0.4rem; // 垂直線的寬度
-            height: 1.5em; // 與文字等高
-            background-color: v.$thirdary; // 垂直線的顏色
-            margin-right: 20px; // 與文字的間距
+            width: 0.4rem; 
+            height: 1.5em; 
+            background-color: v.$thirdary; 
+            margin-right: 20px; 
           }
         }
 
-        .reserve-game-list {
+        .home__reserve-list {
           display: flex;
           flex-direction: column;
           padding: 1rem 0;
@@ -100,7 +101,7 @@
         }
       }
 
-      .home-side-ad {
+      .home__side-ad {
         @include m.sensational-mask;
         display: flex;
         width: 100%;
@@ -108,7 +109,7 @@
         margin-top: 2rem;
 
 
-        .home-side-ad-link {
+        .home__side-ad-link {
           width: 100%;
           img {
             width: 100%;
@@ -122,48 +123,48 @@
 }
 
 @media (min-width: 1440px) {
-  .home-container {
+  .home {
     padding: 0 10%;
-    .home-carousel {
+    .home__carousel {
       padding: 0;
     }
-    .home-content {
+    .home__content {
       padding: 2rem 0;
     }
   }
 }
 
 @media (max-width: 1024px) {
-  .home-container {
-    .home-content {
+  .home {
+    .home__content {
       padding: 2rem;
     }
   }
 }
 
 @media (max-width: 991px) {
-  .home-container {
-    .home-content {
+  .home {
+    .home__content {
       flex-direction: column;
       padding: 2rem;
 
-      .home-popular {
+      .home__popular {
         margin-right: 0;
         margin-bottom: 2rem;
       }
 
-      .home-side {
+      .home__side {
         display: flex;
         flex-direction: row;
 
-        .home-side-reserve {
+        .home__side-reserve {
           flex: 1;
-          .reserve-game-list {
+          .home__reserve-list {
             border-bottom: transparent;
           }
         }
 
-        .home-side-ad {
+        .home__side-ad {
           flex: 1;
           margin: 2rem auto;
         }
@@ -173,13 +174,13 @@
 }
 
 @media (max-width: 767px) {
-  .home-container {
-    .home-carousel {
+  .home {
+    .home__carousel {
       padding: 0;
     }
-    .home-content {
+    .home__content {
       padding: 2rem;
-      .home-side {
+      .home__side {
         flex-direction: column;
       }
     }
