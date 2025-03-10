@@ -13,10 +13,13 @@ const Header = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [overlayVisible, setOverlayVisible] = useState(false);
   const dropdownRef = useRef(null);
-  const imageUrl = "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/logo_sainttime.png";
+  const imageUrl =
+    "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/logo_sainttime.png";
 
   // 如果username是email格式，則只取@之前的內容
-  const dispalyName = user?.username.includes("@") ? user.username.split("@")[0] : user?.username;
+  const dispalyName = user?.username.includes("@")
+    ? user.username.split("@")[0]
+    : user?.username;
 
   // 切換語言
   const changeLanguage = (lng) => {
@@ -24,7 +27,15 @@ const Header = () => {
       localStorage.setItem("i18nextLng", lng);
       setCurrentLang(lng);
       setDropdownOpen(false);
+      closeMenuOnNavigate();
     });
+  };
+
+  // 導航時關閉側邊欄
+  const closeMenuOnNavigate = () => {
+    setOverlayVisible(false);
+    setIsMenuOpen(false);
+    setTimeout(() => setShowOverlay(false), 350);
   };
 
   // 切換語言選單開關
@@ -50,12 +61,10 @@ const Header = () => {
   const handleMenuToggle = () => {
     if (!isMenuOpen) {
       setShowOverlay(true);
-      setTimeout(() => setOverlayVisible(true), 10);
       setIsMenuOpen(true);
+      setTimeout(() => setOverlayVisible(true), 10);
     } else {
-      setOverlayVisible(false);
-      setIsMenuOpen(false);
-      setTimeout(() => setShowOverlay(false), 350);
+      closeMenuOnNavigate();
     }
   };
 
@@ -89,20 +98,27 @@ const Header = () => {
         <div className="bar"></div>
       </button>
 
-      {/* 背景遮罩（帶有淡入淡出動畫） */}
+      {/* 背景遮罩 */}
       {showOverlay && (
-        <div className={`menu-overlay ${overlayVisible ? "open" : ""}`} onClick={handleMenuToggle}></div>
+        <div
+          className={`menu-overlay ${overlayVisible ? "open" : ""}`}
+          onClick={closeMenuOnNavigate} // 點擊時關閉選單
+        ></div>
       )}
 
       {/* 右側滑出選單 */}
       <div className={`navbar-auth__slide ${isMenuOpen ? "open" : ""}`}>
-        <button className="close-menu" onClick={handleMenuToggle}>×</button>
+        <button className="close-menu" onClick={handleMenuToggle}>
+          ×
+        </button>
 
         {/* 導覽連結 */}
         <ul className="navbar__links">
           {navLinks.map((link) => (
             <li key={link.key} className="navbar__link">
-              <Link to={link.to}>{t(link.key)}</Link>
+              <Link to={link.to} onClick={closeMenuOnNavigate}>
+                {t(link.key)}
+              </Link>
             </li>
           ))}
         </ul>
@@ -111,25 +127,50 @@ const Header = () => {
         <div className="navbar-auth__slide-box">
           {user ? (
             <>
-              <span className="user-greeting">{dispalyName}，{t("navbar.hello")}!</span>
-              <button className="btn btn--logout" onClick={logout}>{t("navbar.logout")}</button>
+              <span className="user-greeting">
+                {dispalyName}，{t("navbar.hello")}!
+              </span>
+              <button
+                className="btn btn--logout"
+                onClick={() => {
+                  logout();
+                  closeMenuOnNavigate();
+                }}
+              >
+                {t("navbar.logout")}
+              </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="btn btn--login">{t("navbar.login")}</Link>
-              <Link to="/register" className="btn btn--register">{t("navbar.register")}</Link>
+              <Link
+                to="/login"
+                className="btn btn--login"
+                onClick={closeMenuOnNavigate}
+              >
+                {t("navbar.login")}
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn--register"
+                onClick={closeMenuOnNavigate}
+              >
+                {t("navbar.register")}
+              </Link>
             </>
           )}
 
           {/* 語言切換選單 */}
-          <div className={`language-dropdown ${dropdownOpen ? "open" : ""}`} ref={dropdownRef}>
+          <div
+            className={`language-dropdown ${dropdownOpen ? "open" : ""}`}
+            ref={dropdownRef}
+          >
             <button className="dropdown-toggle" onClick={handleDropdownToggle}>
               {t(`languages.${currentLang}`) || t("navbar.language")}
             </button>
             {dropdownOpen && (
               <ul className="dropdown-menu">
                 {languages.map((lang) => (
-                  <li key={lang.code} onClick={() => changeLanguage(lang.code)} >
+                  <li key={lang.code} onClick={() => changeLanguage(lang.code)}>
                     <a href="#">{lang.label}</a>
                   </li>
                 ))}
