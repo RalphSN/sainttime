@@ -163,5 +163,253 @@
       "question7": "How many apps can be installed?",
       "answer7": "On iOS 7, 8, and 9, you can install unlimited apps on your device. However, free developer accounts have limitations. On iOS 10, 11, 12, 13, 14, and later, only three apps can be installed at the same time."
     }
+  },
+  "terms": {
+    "first": {
+      "title": "Article 1: Terms of Service",
+      "content1": "1. OCG GAME establishes the Terms of Service for this site and provides operational services to users in accordance with these terms (hereinafter referred to as 'this service').",
+      "content2": "2. In addition to the Terms of Service, this site may establish additional terms for specific services (hereinafter referred to as 'individual terms'). In the event of any inconsistency between the Terms of Service and the individual terms, the individual terms shall take precedence.",
+      "content3": "3. Unless otherwise specified, the individual terms, the help pages of this service, the guide pages, and other explanatory pages related to this service shall be considered part of the Terms of Service and collectively referred to as the Terms of Service.",
+      "content4": "4. 'User' or 'You,' also referred to as 'Member,' refers to a natural person who uses and enjoys the game products and services provided by OCG GAME and is a contracting party to these Terms of Service.",
+      "content5": "5. By using this service, you are deemed to have agreed to the Terms of Service.",
+      "content6": "6. You confirm that you are at least 18 years old in the jurisdiction where you access this website and that you have full legal capacity to comply with these terms. If you are under 18 years old, you must immediately stop using this service.",
+      "content7": "7. You agree and represent that your jurisdiction does not prohibit receiving or viewing adult content.",
+      "content8": "8. Please read these terms carefully before using this service. By using this service, you accept and agree to comply with these terms and our Privacy Policy. If you do not agree to the Terms of Service or the Privacy Policy, you must immediately stop using this service."
+    },
+    "second": {
+      "title": "Article 2: Changes to the Terms",
+      "content1": "1. This site may modify the Terms of Service at any time without prior notice if deemed necessary.",
+      "content2": "2. The revised Terms of Service will take effect when published on this website. By continuing to use this service after the changes, you are deemed to have agreed to the revised terms."
+    },
+    "third": {
+      "title": "Article 3: Methods of Notifying Users and User Communication",
+      "content1": "1. This site may contact users through email, website notifications, or other methods deemed appropriate by this site.",
+      "content2": "2. When notifications are sent via email, the time the email is sent shall be considered the time the user has received the notification.",
+      "content3": "3. When notifications are published on the website, the time they are posted shall be considered the time the user has received the notification.",
+      "content4": "4. Users must use the methods designated by this site for contacting this site."
+    },
+    "fourth": {
+      "title": "Article 4: User Registration",
+      "content1": "1. Users who wish to use this service must register in accordance with the methods specified by this site.",
+      "content2": "2. The adult services within this service are only available to users who are 18 years or older."
+    },
+    "fifth": {
+      "title": "Article 5: User Accounts and Passwords",
+      "content1": "1. Users are responsible for managing their own accounts and passwords. This site is not responsible for any unauthorized use by third parties.",
+      "content2": "2. Users may not provide, transfer, or lend their accounts and passwords to third parties.",
+      "content3": "3. If this site receives an account ID and password and the service is used, it will be deemed that the account holder has used the service, and all consequences will be attributed to that user.",
+      "content4": "4. If a user suspects that their account or password has been disclosed to or used by a third party, they must notify this site and follow its instructions."
+    },
+    "sixth": {
+      "title": "Article 6: Mobile ID Authentication",
+      "content1": "1. Users who register with mobile ID authentication are responsible for strictly managing their mobile ID and related information. This site is not responsible for unauthorized use by third parties.",
+      "content2": "2. If this site receives a registered mobile ID and the service is used, it will be deemed that the mobile ID holder has used the service, and all consequences will be attributed to that user.",
+      "content3": "3. If a user loses the registered mobile device or suspects that their mobile ID is being used by a third party, they must notify this site and follow its instructions."
+    },
+    "seventh": {
+      "title": "Article 7: Prohibition of Transfers",
+      "content": "User qualifications and the rights and obligations arising from using this service based on such qualifications may not be transferred, sold, lent, inherited, sublicensed, or otherwise disposed of to third parties."
+    },
+    "eighth": {
+      "title": "Article 8: Changes to Registration Information",
+      "content": "This site is not responsible for any damages resulting from a user's failure to update their registered information."
+    },
+    "ninth": {
+      "title": "Article 9: Account Cancellation",
+      "content1": "1. Upon account cancellation, the user will lose their user qualifications and will no longer be able to use this service. Additionally, canceled user qualifications cannot be restored.",
+      "content2": "2. Any outstanding financial obligations or other debts to this site will not be waived due to account cancellation.",
+      "content3": "3. Any unused prepaid balances or virtual currencies issued by this site will become invalid upon account cancellation, except as required by law. This site is not obligated to provide refunds."
+    },
+    "tenth": {
+      "title": "Article 10: Service Usage Environment",
+      "content1": "1. Users must pay all costs associated with using this service, including service fees, product purchases, shipping fees, and other applicable charges (hereinafter referred to as 'consideration'), using the payment methods designated by this site.",
+      "content2": "2. Users may make payments through payment providers designated by this site, such as credit card companies, electronic money providers, or mobile network operators (hereinafter referred to as 'payment providers').",
+      "content3": "3. Using this service via proxy servers, VPN servers, or similar means may result in the service being unavailable."
+    },
+    "eleventh": {
+      "title": "Article 11: User Responsibility",
+      "content1": "1. If a user encounters a dispute with a third party while using this service, the user shall bear the responsibility and costs required to resolve the dispute.",
+      "content2": "2. If a user causes harm to a third party while using this service, the user shall be responsible for the damages and costs required for compensation."
+    },
+    "twelfth": {
+      "title": "Article 12: Payment",
+      "content1": "1. This site establishes the Terms of Service and provides operational services to users in accordance with these terms (hereinafter referred to as 'this service').",
+      "content2": "2. In addition to the Terms of Service, this site may establish additional terms for specific services (hereinafter referred to as 'individual terms'). In the event of any inconsistency between the Terms of Service and the individual terms, the individual terms shall take precedence.",
+      "content3": "3. Users must comply with the terms established by the payment service provider and enter into an agreement with the payment provider. If a dispute arises between the user and the payment provider, the user shall be responsible for resolving the dispute, and this site bears no responsibility.",
+      "content4": "4. Any payment processing fees (limited to those designated by this site) shall be borne by the user.",
+      "content5": "5. Regardless of the reason, users shall not request a refund for any payments made to this site."
+    },
+    "thirteenth": {
+      "title": "Article 13: Prohibited Conduct",
+      "content1": "1. The following behaviors are prohibited when using this service.",
+      "content2": "(1) Actions that infringe upon the copyrights, trademarks, design rights, patents, utility models, or other intellectual property rights of this site or third parties.",
+      "content3": "(2) Actions that violate the property rights, portrait rights, publication rights, personal rights, reputation, or privacy of this site or third parties.",
+      "content4": "(3) Actions that violate public order and morality.",
+      "content5": "(4) Actions that violate laws and regulations.",
+      "content6": "(5) Criminal acts, acts that facilitate or promote crimes.",
+      "content7": "(6) Actions that violate laws related to child pornography, pornography, or obscene materials.",
+      "content8": "(7) Acts of intimidation toward others.",
+      "content9": "(8) Actions that cause harm or burdens to this site or third parties.",
+      "content10": "(9) Actions that disrupt the services of this site or third parties.",
+      "content11": "(10) Using this service for purposes that violate its intended use.",
+      "content12": "(11) Circumventing, disabling, or removing content protection measures such as DRM or other technical protections provided within this service.",
+      "content13": "(12) Actions that violate the interests of this site or third parties.",
+      "content14": "(13) Defamation, extortion, or actions that cause disgust toward this site or third parties.",
+      "content15": "(14) Actions that contribute to or encourage criminal activity.",
+      "content16": "(15) Violations of privacy rights, including collecting or disclosing personal information or private details of this site or third parties.",
+      "content17": "(16) Engaging in commercial solicitation, misleading users, or violating election laws.",
+      "content18": "(17) Using this service for profit-making purposes.",
+      "content19": "(18) Using this service for multi-level marketing, pyramid schemes, or related recruitment purposes.",
+      "content20": "(19) Uploading content that cannot be executed outside of this service.",
+      "content21": "(20) Harassment that is not permitted by this site.",
+      "content22": "(21) Uploading content that negatively affects others' emotions.",
+      "content23": "(22) Violating this or other individual terms.",
+      "content24": "(23) Any other actions deemed inappropriate by this site.",
+      "content25": "2. The determination of prohibited conduct shall be made at the discretion of this site, and this site is not obligated to provide explanations.",
+      "content26": "3. If this site determines that a user has engaged in prohibited conduct, it may take any or all of the following actions without prior notice.",
+      "content27": "(1) Restrict the use of this service.",
+      "content28": "(2) Delete the user's registration and account.",
+      "content29": "(3) Take any other necessary measures deemed appropriate by this site.",
+      "content30": "4. This site shall not be liable for any issues arising from the enforcement of this article.",
+      "content31": "5. If a user causes any loss, damage, or expenses (including litigation and attorney fees) due to system failures caused by their actions, this site reserves the right to seek compensation."
+    },
+    "fourteenth": {
+      "title": "Article 14: Restrictions on Service Usage",
+      "content1": "1. This site may impose restrictions on the use of this service under the following circumstances.",
+      "content2": "(1) If there are concerns that a third party is using the user's account ID or password.",
+      "content3": "(2) If there are concerns that the registered information contains false details.",
+      "content4": "(3) If there are concerns regarding delays in payment obligations.",
+      "content5": "(4) If this site is unable to contact the user.",
+      "content6": "(5) Other circumstances deemed necessary by this site.",
+      "content7": "2. This site shall not be responsible for any damages incurred by the user due to these restrictions."
+    },
+    "fifteenth": {
+      "title": "Article 15: Termination of User Qualification",
+      "content1": "1. This site may terminate a user's registration and account without prior notice under the following circumstances.",
+      "content2": "(1) If the registered information contains false details.",
+      "content3": "(2) If there are delays in payments.",
+      "content4": "(3) If the user's credit status deteriorates, making it difficult to continue payments.",
+      "content5": "(4) If the user has previously been notified of a violation and was removed from this site.",
+      "content6": "(5) If this site confirms the death of the user or receives notice from a related party.",
+      "content7": "(6) If this site determines that the user is associated with anti-social groups (such as organized crime groups, members of such groups, related enterprises, etc.).",
+      "content8": "(7) If the user files for bankruptcy or enters civil rehabilitation proceedings.",
+      "content9": "(8) If the user engages in dishonest or obstructive behavior toward this site's operations.",
+      "content10": "(9) Any other circumstances deemed inappropriate by this site.",
+      "content11": "2. This site shall not be responsible for any damages incurred by the user due to these measures.",
+      "content12": "3. A user whose qualification has been revoked under the first clause shall lose all benefits associated with their account and must immediately settle any outstanding debts to this site."
+    },
+    "sixteenth": {
+      "title": "Article 16: Temporary Suspension of Service",
+      "content1": "1. This site may temporarily suspend the provision of this service under the following circumstances.",
+      "content2": "(1) Maintenance, inspection, or similar situations related to this service.",
+      "content3": "(2) Occurrence of accidents such as fire or power outages.",
+      "content4": "(3) Occurrence of natural disasters or other extraordinary events.",
+      "content5": "(4) System or network disruptions.",
+      "content6": "(5) Situations where the site is required to temporarily suspend services due to operational reasons.",
+      "content7": "(6) Other situations deemed necessary by this site.",
+      "content8": "2. This site shall not be responsible for any damages incurred by users due to their inability to use this service as a result of the aforementioned measures."
+    },
+    "seventeenth": {
+      "title": "Article 17: Changes, Additions, and Termination of Service",
+      "content1": "1. This site does not guarantee that this service will meet the user's specific purposes or expectations regarding quality, value, or other factors.",
+      "content2": "2. This site may modify, add, or discontinue all or part of the service at any time without bearing any responsibility.",
+      "content3": "3. When making significant modifications, additions, or discontinuations of all or part of this service as specified in the first clause, this site will notify users within an appropriate timeframe. However, urgent or unavoidable situations may be exempt from prior notice."
+    },
+    "eighteenth": {
+      "title": "Article 18: Disclaimer",
+      "content1": "1. This site does not guarantee that this service will meet the user's specific purposes or expectations regarding quality, value, or other factors.",
+      "content2": "2. This site makes no guarantees regarding the completeness, accuracy, reliability, or usefulness of this service.",
+      "content3": "3. This site shall not be liable for any damages incurred as a result of using this service.",
+      "content4": "4. This site shall not be liable for any damages incurred due to a user's inability to use this service.",
+      "content5": "5. If this site contains links to third-party websites, those websites are not managed by this site, and this site bears no responsibility for such links or their content."
+    },
+    "nineteenth": {
+      "title": "Article 19: Intellectual Property Rights",
+      "content1": "1. The copyrights, neighboring rights, trademarks, design rights, and other intellectual property rights of images, sounds, programs, texts, graphics, pictures, designs, trademarks, logos, and all other information provided in this service belong to this site or third parties that have granted authorization to this site.",
+      "content2": "2. Users shall not engage in any actions that infringe upon the rights of this site or third parties related to the provided content."
+    },
+    "twentieth": {
+      "title": "Article 20: Business Transfer",
+      "content": "If this site transfers its business related to this service to a third party, the operational rights and obligations under these Terms of Service, along with the user registration information, will be transferred to the said third party. Users agree to the transfer of their identity, rights, obligations, registration information, and other related data based on these Terms of Service."
+    },
+    "twentyfirst": {
+      "title": "Article 21: Outsourcing",
+      "content1": "1. This site may entrust all or part of its service operations to third parties (including foreign third parties). Users agree to this arrangement.",
+      "content2": "2. Under the preceding clause and in cases deemed necessary by this site, personal information may be provided to third parties. Users also agree to this arrangement."
+    },
+    "twentysecond": {
+      "title": "Article 22: Transfer of Claims",
+      "content1": "1. Users agree and have no objections to the fact that this site may transfer a user's outstanding debt to a third party (hereinafter referred to as the 'Claim Recipient').",
+      "content2": "2. In such cases, users agree to provide the Claim Recipient with all necessary information for debt collection, including their name, address, phone number, and other relevant details.",
+      "content3": "3. In cases specified in clause 1, this site and the Claim Recipient may omit individual notifications or requests for consent regarding the transfer."
+    },
+    "twentythird": {
+      "title": "Article 23: Liability for Damages",
+      "content": "If a user causes damage to this site through their use of this service or related actions, the user shall be responsible for compensating for such damages."
+    },
+    "twentyfourth": {
+      "title": "Article 24: Governing Law and Jurisdiction",
+      "content1": "1. These Terms of Service shall be interpreted in accordance with local laws.",
+      "content2": "2. In the event of a dispute between this site and a user concerning this service or these Terms of Service, the local court shall have exclusive jurisdiction as the court of first instance."
+    },
+    "twentyfifth": {
+      "title": "Article 25: Handling of Personal Information",
+      "content": "This site shall handle users' personal information in accordance with the established 'Privacy Policy.'"
+    },
+    "twentysixth": {
+      "title": "Article 26: Severability",
+      "content": "If any provision or part of the Terms of Service is deemed invalid or unenforceable under consumer contract laws or other legal regulations, the remaining provisions of the Terms of Service shall remain valid and enforceable."
+    },
+    "twentyseventh": {
+      "title": "Article 27: Collaboration with External Services",
+      "content1": "1. Users may use accounts from third-party services designated by this site (hereinafter referred to as 'external services'). The operators of these external services are hereinafter referred to as 'external service operators.' User registration in accordance with Article 4 must follow the procedures specified by this site (hereinafter referred to as 'collaboration procedures').",
+      "content2": "2. By proceeding with the collaboration procedures, users agree to provide this site with relevant information (hereinafter referred to as 'external service information') from their external service accounts, which will be displayed during the registration process.",
+      "content3": "3. Personal information obtained by this site, including external service information, shall be handled in accordance with this site's 'Privacy Policy.'",
+      "content4": "4. Registration, usage (including login and account deactivation), and other activities related to external service accounts must comply with the terms set forth by the external service operators.",
+      "content5": "5. Users are responsible for managing their external service accounts and login information.",
+      "content6": "6. If a user's improper handling, loss, or unauthorized use of an external service account or password results in damages to the user or a third party, the user shall be fully responsible. This site assumes no liability. Additionally, if such an incident causes damage to this site, the user shall compensate this site for all incurred losses.",
+      "content7": "7. Users are solely responsible for using external services. This site is not responsible for any damages resulting from the use of external services, nor for disputes or other issues arising between users and external service operators."
+    },
+    "twentyeighth": {
+      "title": "Article 28: Fees and Payments",
+      "content1": "1. In addition to these Terms of Service, the fees for using OCG GAME and the payment methods shall be based on the payment standards published on the OCG GAME website.",
+      "content2": "2. Users shall bear any transaction fees, taxes, and initial costs associated with purchasing points.",
+      "content3": "3. Regarding point purchases: If OCG GAME does not confirm the activation or continued use of a service within a specified period, preventing the renewal of the contract and necessary payment, it will be considered that the user does not intend to renew, and the contract will be terminated.",
+      "content4": "4. If OCG GAME is unable to process a payment authorization from a user's credit card or other payment provider, the user shall still be obligated to pay the full amount due to OCG GAME.",
+      "content5": "5. Users who authorize OCG GAME to charge their designated credit card shall be deemed to have granted permission for the credit card to be used for all charges related to their OCG GAME service during the contract period until the user cancels the paid service and terminates the contract.",
+      "content6": "6. OCG GAME may modify payment standards, payment service content, and related terms without prior notice to users. Users shall be deemed to have agreed to the revised terms. The updated payment standards shall take effect upon the next renewal of the payment service contract.",
+      "content7": "7. If a user fails to pay their obligations under these terms within the specified period, they must pay OCG GAME the prescribed late payment interest from the day after the due date until the payment is settled.",
+      "content8": "8. Users must make payments using the methods designated by OCG GAME. OCG GAME is not responsible for any losses incurred due to payments made using unauthorized methods or due to user-related issues.",
+      "content9": "9. Users agree not to cancel the payment service during the contract period.",
+      "content10": "10. Regardless of the reason, users may not request a refund for purchased points or paid membership services.",
+      "content11": "11. If OCG GAME receives a refund request from a credit card provider, the relevant account will be immediately suspended."
+    },
+    "twentyninth": {
+      "title": "Article 29: About Points",
+      "content1": "OCG GAME points (hereinafter referred to as 'points') are a value-added system provided by OCG GAME, allowing users to access certain additional services.",
+      "content2": "1. Users may use points to pay for services permitted under the OCG GAME website's terms.",
+      "content3": "2. Points are valid only during the usage period of the associated OCG GAME ID.",
+      "content4": "3. There is no guarantee that points will be applicable to future services or benefits. If service content, benefits, or system settings change, causing modifications or invalidation of points, OCG GAME does not guarantee continued usability of the user's held points.",
+      "content5": "4. The information displayed regarding a user's points (balance, usage time, applicable benefits, etc.) is for reference only and does not guarantee actual service availability or eligibility for benefits.",
+      "content6": "5. Benefits offered by partner companies are subject to their respective terms and conditions."
+    },
+    "thirtieth": {
+      "title": "Article 30: Prohibited Use of Points",
+      "content1": "Users who violate the following prohibited actions may have their accounts suspended, their points invalidated, or other necessary actions taken by OCG GAME. If such violations result in damages to OCG GAME or third parties, the offending user shall be responsible for compensation. The following actions are strictly prohibited:",
+      "content2": "1. Violating or attempting to violate any prohibited actions specified in these Terms of Service.",
+      "content3": "2. Acquiring points through unauthorized means not designated by OCG GAME.",
+      "content4": "3. Transferring, sharing, lending, gifting, or merging points with another user's account or different IDs by means not approved by OCG GAME.",
+      "content5": "4. Acquiring points through unauthorized methods, including purchasing them through third parties not designated by OCG GAME."
+    },
+    "thirtyfirst": {
+      "title": "Article 31: Invalidation, Reduction, and Cancellation of Points",
+      "content1": "If any of the following circumstances occur, OCG GAME may, without prior notice, invalidate points. Additionally, if there is suspicion of improper activity, OCG GAME may restrict the use, purchase, or exchange of points. Invalidated points cannot be refunded or exchanged.",
+      "content2": "1. If illegal or improper actions are found.",
+      "content3": "2. If there is a violation of these Terms of Service or other terms established by OCG GAME.",
+      "content4": "3. If the user's account is suspended.",
+      "content5": "4. If points were acquired through unauthorized means not designated by OCG GAME.",
+      "content6": "5. If the user cancels their OCG GAME membership.",
+      "content7": "6. If OCG GAME determines that the user's points should be canceled for any other reason."
+    }
   }
 }
