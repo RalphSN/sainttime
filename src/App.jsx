@@ -9,6 +9,8 @@ import Forgot from "./pages/Forget/ForgotPassword";
 import HotFreeGames from "./pages/HotFreeGames/HotFreeGames";
 import GameDetails from "./pages/GameDetails/GameDetails";
 import DownloadApple from "./pages/DownloadApple/DownloadApple";
+import Privacy from "./pages/Privacy/Privacy";
+import Contact from "./pages/Contact/Contact";
 import Terms from "./pages/Terms/Terms";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="game" element={<GameDetails />} />
           <Route path="gameiOS" element={<DownloadApple />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>

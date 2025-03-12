@@ -2,16 +2,16 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import "../../scss/common.scss";
-import "./Terms.scss";
+import "./Privacy.scss";
 
-const Terms = () => {
+const Privacy = () => {
   const { t } = useTranslation();
 
-  // 取得 "terms" 內的所有條款資料
-  const termsData = t("terms", { returnObjects: true });
+  // 取得 "privacy" 內的所有條款資料
+  const privacyData = t("privacy", { returnObjects: true });
 
   return (
-    <div className="terms">
+    <div className="privacy">
       {/* =====Breadcrumbs=====START */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
@@ -22,11 +22,11 @@ const Terms = () => {
         <span className="breadcrumb-current">{t("breadcrumb.privacy")}</span>
       </nav>
       {/* =====Breadcrumbs=====END */}
-      <h1 className="terms__title">{t("terms.title")}</h1>
-      {Object.entries(termsData).map(([key, term]) => (
-        <div key={key} className="term__section">
-          <h2 className="term__section-title">{term.title}</h2>
-          {Object.entries(term)
+      <h1 className="privacy__title">{t("privacy.title")}</h1>
+      {Object.entries(privacyData).map(([key, privacy]) => (
+        <div key={key} className="privacy__section">
+          <h2 className="privacy__section-title">{privacy.title}</h2>
+          {Object.entries(privacy)
             .filter(([contentKey]) => contentKey.startsWith("content"))
             .map(([contentKey, content]) => {
               let className = "content-indent"; // 預設所有條款縮排
@@ -48,4 +48,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default Privacy;

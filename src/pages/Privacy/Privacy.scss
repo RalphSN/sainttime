@@ -1,22 +1,22 @@
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
-.terms {
+.privacy {
   @include m.page-basic;
   color: v.$white;
 
-  .terms__title {
+  .privacy__title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.5rem;
     font-weight: bold;
   }
 
-  .term__section {
+  .privacy__section {
     margin-bottom: 2rem;
     letter-spacing: 0.1rem;
 
-    .term__section-title {
+    .privacy__section-title {
       font-size: 1.5rem;
       margin-bottom: 0.8rem;
       color: v.$primary;
@@ -49,9 +49,9 @@
 
 
 @media (max-width: 797px) {
-  .terms {
-    .term__section {
-      .term__section-title {
+  .privacy {
+    .privacy__section {
+      .privacy__section-title {
         text-align: center;
       }
     }

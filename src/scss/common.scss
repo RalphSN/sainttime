@@ -1,48 +1,118 @@
 @use "./abstracts/variables" as v;
 @use "./abstracts/mixins" as m;
 
-
 // =====breadcrun=====
 
 .breadcrumb {
-    display: flex;
-    align-items: center;
-    background-color: v.$secondary;
-    font-size: 1rem;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: v.$secondary;
+  font-size: 1rem;
+  font-weight: bold;
+  color: v.$white;
+  flex-wrap: wrap;
+
+  .breadcrumb-item {
     color: v.$white;
-    flex-wrap: wrap;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 
-    .breadcrumb-item {
+    .fa-house {
       color: v.$white;
-      text-decoration: none;
-      transition: color 0.3s ease-in-out;
-
-      .fa-house {
-        color: v.$white;
-        margin-right: 0.5rem;
-      }
-
-      &:hover {
-        color: v.$primary;
-      }
+      margin-right: 0.5rem;
     }
 
-    .breadcrumb-separator {
-      margin: 0 8px;
-    }
-
-    .breadcrumb-current {
+    &:hover {
       color: v.$primary;
-      border-bottom: 1px solid transparent;
-    }
-
-    .home-icon {
-      margin-right: 5px;
-    }
-
-    @media (max-width: 767px) {
-      margin: 0 auto;
-      justify-content: center;
     }
   }
+
+  .breadcrumb-separator {
+    margin: 0 8px;
+  }
+
+  .breadcrumb-current {
+    color: v.$primary;
+    border-bottom: 1px solid transparent;
+  }
+
+  .home-icon {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+// =====FAQ=====
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 2rem;
+
+  .faq-item {
+    background-color: v.$greyLight-2;
+    color: v.$black;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid v.$greyLight-1;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      @include m.flex-center;
+      justify-content: space-between;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.35s ease;
+      padding: 1rem 2rem;
+
+      &:hover {
+        background: v.$white;
+      }
+
+      span {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .faq-answer-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.35s ease-in-out;
+    }
+
+    .faq-answer {
+      padding: 1rem;
+      background-color: v.$white;
+      border-top: 1px solid v.$white;
+
+      transition: 0.35s;
+    }
+
+    &.open {
+      .faq-answer-container {
+        max-height: 50rem;
+        opacity: 1;
+      }
+
+      .faq-answer {
+        visibility: visible;
+        opacity: 1;
+        padding-left: 3rem;
+      }
+
+      .faq-question {
+        background-color: v.$greyLight-1;
+      }
+    }
+  }
+}
