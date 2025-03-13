@@ -11,6 +11,7 @@
   font-weight: bold;
   color: v.$white;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 
   .breadcrumb-item {
     color: v.$white;
@@ -43,6 +44,7 @@
   @media (max-width: 767px) {
     margin: 0 auto;
     justify-content: center;
+    margin-bottom: 2rem;
   }
 }
 

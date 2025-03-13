@@ -1,0 +1,69 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.business {
+  @include m.page-basic;
+  color: v.$white;
+
+  .business__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .business__subtitle {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .business__content {
+    @include m.flex-center;
+    width: fit-content;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+    padding: 15px 25px;
+    border-radius: 10px;
+
+    .business__info {
+      @include m.flex-center;
+      gap: 10px;
+    }
+  }
+
+  .mail-icon {
+    font-size: 2rem;
+    color: v.$white;
+  }
+
+  .business__label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .business__email {
+    font-size: 1rem;
+    color: v.$gray;
+  }
+
+  .copy-button {
+    @include m.flex-center;
+    background-color: #007bff;
+    color: v.$white;
+    white-space: nowrap;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    gap: 5px;
+    transition: 0.35s;
+  }
+
+  .copy-button:hover {
+    background-color: #0056b3;
+  }
+}

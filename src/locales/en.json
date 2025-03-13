@@ -122,7 +122,9 @@
     "appStore": "Download from App Store",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "business": "Business Cooperation",
+    "faq": "Frequently Asked Questions"
   },
   "notFound": {
     "message": "Page Not Found"
@@ -457,5 +459,38 @@
     "subtitle": "For any business cooperation, feel free to contact us.",
     "copy": "Copy",
     "copied": "Copied"
+  },
+  "business": {
+    "title": "Business Cooperation",
+    "subtitle": "For any business cooperation, feel free to contact us.",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "Q1": "What can I do with an OCG GAME account?",
+    "A1": "Once you register an account, you can use it to play all games available on OCG GAME.",
+    "Q2": "What should I do if I lose my quick login account password?",
+    "A2": "Since quick login is a simple registration and login method, if you lose your quick login account details, we may not be able to verify or recover your account. We strongly recommend that players take a screenshot of their account and password information after registering to secure their access.",
+    "Q3": "Do I need to pay to play OCG GAME games?",
+    "A3": "Playing OCG GAME is generally free, but some in-game items and platform-wide points may require players to top up.",
+    "Q4": "I can't log into the game. What should I do?",
+    "A4": "During maintenance periods, login issues may occur. Please check whether your login attempt falls within a scheduled maintenance period. If not, try the following: 1. Close and restart the game. 2. Check your internet connection. 3. Clear your device's cache files. 4. If it's a downloadable game, uninstall and reinstall the game after noting your account details. If the issue persists, go to the 'Member Center' and select 'Contact Customer Support,' providing your email and relevant details. We will review and respond as soon as possible.",
+    "Q5": "What are the system requirements?",
+    "A5": "OCG GAME offers both PC and mobile versions of its games. System requirements may vary by game, so please refer to each game's page for specific details.",
+    "Q6": "What payment methods are available?",
+    "A6": "We offer multiple payment methods, including UnionPay, Alipay, credit cards, convenience store payments, ATMs, point cards, online banking, and PayPal. You can check available payment options on the top-up page after logging into OCG GAME. We plan to introduce additional payment methods in the future for more convenience.",
+    "Q7": "What should I do if my purchase of items or points fails?",
+    "A7": "After making a payment, there may be a short delay before virtual goods appear in your account. Please refresh the page after a few minutes. If the items or points do not appear within 1-2 business days, contact customer support with your platform player ID, in-game nickname, and proof of successful payment for further investigation.",
+    "Q8": "What if I am charged twice for the same transaction?",
+    "A8": "If you experience duplicate charges, please contact customer support immediately with your platform player ID, in-game nickname, and proof of successful payment. We will investigate and refund any excess charges.",
+    "Q9": "Can I get a refund?",
+    "A9": "Purchased game items and points are non-refundable.",
+    "Q10": "How do I top up my account?",
+    "A10": "Log into your account, go to 'Member Center' -> 'Point Inquiry' -> 'Top-Up,' and select your preferred payment method. Follow the specific payment instructions for completion.",
+    "Q11": "How do I use points?",
+    "A11": "Once you have successfully topped up your points, you can check your balance in 'Member Center' -> 'Point Inquiry.' You can use these points to purchase in-game items. 1 point = 1 CNY.",
+    "Q12": "How do I unban my account?",
+    "A12": "If your account is banned and you cannot log in, go to 'Contact Us,' copy the customer support email, and send an email with your account details for assistance."
   }
 }

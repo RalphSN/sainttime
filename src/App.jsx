@@ -12,6 +12,9 @@ import DownloadApple from "./pages/DownloadApple/DownloadApple";
 import Privacy from "./pages/Privacy/Privacy";
 import Contact from "./pages/Contact/Contact";
 import Terms from "./pages/Terms/Terms";
+import Business from "./pages/Business/Business";
+import Faq from "./pages/Faq/Faq";
+import NewsPage from "./pages/NewsPage/NewsPage";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="terms" element={<Terms />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="business" element={<Business />} />
+          <Route path="FAQ" element={<Faq />} />
+          <Route path="announce" element={<NewsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
