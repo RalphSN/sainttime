@@ -61,8 +61,8 @@ const NewsPage = () => {
   }, [totalPages]);
 
   return (
-    <div className="news-page">
-      <h1>最新消息</h1>
+    <div className="news">
+      <h1 className="news__title">最新消息</h1>
 
       {error ? (
         <div className="error-message">
@@ -77,9 +77,18 @@ const NewsPage = () => {
             {news.length > 0 ? (
               news.map((item) => (
                 <div key={item.id} className="news-item">
-                  <h2>{item.title}</h2>
+                  <div className="news-info">
+                    <figure className="news-thumbnail">
+                      <img
+                        src={item.thumbnail}
+                        alt={item.title}
+                        className="news-thumbnail__img"
+                      />
+                    </figure>
+                    <span className="news-category">【 {item.category} 】</span>
+                    <h2 className="news-item__title">{item.title}</h2>
+                  </div>
                   <div className="news-date">{formatDate(item.date)}</div>
-                  <div className="news-content">{item.content}</div>
                 </div>
               ))
             ) : (
@@ -92,21 +101,24 @@ const NewsPage = () => {
             <button
               onClick={() => setCurrentPage(1)}
               disabled={currentPage === 1}
+              className="btn--news-page btn--extrem"
             >
               第一頁
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
+              className="btn--news-page"
             >
               上一頁
             </button>
 
             <div className="page-select">
-              <span>第</span>
+              <span className="page-select__text">第</span>
               <select
                 value={currentPage > totalPages ? 1 : currentPage} // 確保 currentPage 不超過 totalPages
                 onChange={(e) => setCurrentPage(Number(e.target.value))}
+                className="page-select__select"
               >
                 {Array.from({ length: totalPages }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -114,7 +126,7 @@ const NewsPage = () => {
                   </option>
                 ))}
               </select>
-              <span>頁 / 共 {totalPages} 頁</span>
+              <span className="page-select__text">頁 / 共 {totalPages} 頁</span>
             </div>
 
             <button
@@ -122,12 +134,14 @@ const NewsPage = () => {
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
+              className="btn--news-page"
             >
               下一頁
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
+              className="btn--news-page btn--extrem"
             >
               最後一頁
             </button>
