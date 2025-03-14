@@ -25,6 +25,9 @@ const Footer = () => {
             <Link to="/contact" className="footer-info__link">
               {t("footer.contactUs")}
             </Link>
+            <Link to="/FAQ" className="footer-info__link">
+              {t("footer.faq")}
+            </Link>
           </div>
           <p className="footer-info__copyrights">
             Copyright ©2025, OCG GAME Inc. All rights reserved

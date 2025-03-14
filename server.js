@@ -13,3 +13,8 @@ server.use((req, res, next) => {
 
 server.use(middlewares);
 server.use(router);
+
+
+
+// 啟動 json-server
+// json-server --watch db.json --port 5000

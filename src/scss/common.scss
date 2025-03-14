@@ -75,6 +75,7 @@
       cursor: pointer;
       transition: 0.35s ease;
       padding: 1rem 2rem;
+      letter-spacing: .1rem;
 
       &:hover {
         background: v.$white;
@@ -96,6 +97,8 @@
       padding: 1rem;
       background-color: v.$white;
       border-top: 1px solid v.$white;
+      letter-spacing: .1rem;
+      line-height: 1.5rem;
 
       transition: 0.35s;
     }

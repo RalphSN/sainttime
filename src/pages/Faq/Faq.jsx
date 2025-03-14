@@ -12,7 +12,7 @@ const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqListRef = useRef(null);
-  const faqData = t("faq",{ returnObjects: true });
+  const faqData = t("faq", { returnObjects: true });
   const faqEntries = Object.entries(faqData);
 
   // 生成 FAQ 列表
@@ -25,7 +25,7 @@ const Faq = () => {
         answer: faqData[aKey] || "",
       };
     });
-   console.log(faqData);
+  console.log(faqData);
 
   // 點擊外部關閉 FAQ
   useEffect(() => {
@@ -71,7 +71,6 @@ const Faq = () => {
 };
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
-  
   return (
     <div className={`faq-item ${isOpen ? "open" : ""}`}>
       <button className="faq-question" onClick={onClick}>
@@ -82,7 +81,12 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         className="faq-answer-container"
         style={{ maxHeight: isOpen ? "200px" : "0" }}
       >
-        <div className="faq-answer">{answer}</div>
+        <div
+          className="faq-answer"
+          dangerouslySetInnerHTML={{
+            __html: (answer || "").replace(/(\d+\.)/g, "<br />$1"),
+          }}
+        ></div>
       </div>
     </div>
   );
