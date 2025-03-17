@@ -1,14 +1,22 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import "./NewsPage.scss";
 
 const NewsPage = () => {
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
+  const currentLang = i18n.language || "zh-TW";
+
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const itemsPerPage = 5; // 每頁顯示的新聞數量
+  const itemsPerPage = 10; // 每頁顯示的新聞數量
 
   // 優化 fetchNews，避免多次請求
   const fetchNews = useCallback(async () => {
@@ -22,7 +30,7 @@ const NewsPage = () => {
       );
 
       if (!totalNewsResponse.ok) {
-        throw new Error("無法獲取新聞總數");
+        throw new Error("cannot fetch news");
       }
 
       const allNews = await totalNewsResponse.json();
@@ -34,7 +42,7 @@ const NewsPage = () => {
       setNews(allNews.news || []);
     } catch (err) {
       if (err.name !== "AbortError") {
-        setError(err.message || "發生未知錯誤，請稍後再試。");
+        setError(err.message || "try again later");
       }
     } finally {
       setLoading(false);
@@ -62,37 +70,61 @@ const NewsPage = () => {
 
   return (
     <div className="news">
-      <h1 className="news__title">最新消息</h1>
+
+      {/* =====Breadcrumbs=====START */}
+      <nav className="breadcrumb">
+        <a href="/" className="breadcrumb-item">
+          <FontAwesomeIcon icon={faHouse} className="icon" />
+          {t("breadcrumb.home")}
+        </a>
+        <span className="breadcrumb-separator"> &gt; </span>
+        <span className="breadcrumb-current">{t("news.title")}</span>
+      </nav>
+
+      {/* =====Breadcrumbs=====END */}
+
+
+      <h1 className="news__title">{t("news.title")}</h1>
 
       {error ? (
         <div className="error-message">
-          <p>錯誤: {error}</p>
-          <button onClick={fetchNews}>重試</button>
+          <p>
+            {t("news.error")}: {error}
+          </p>
+          <button onClick={fetchNews}>{t("news.tryAgain")}</button>
         </div>
       ) : loading ? (
-        <div className="loading">載入中...</div>
+        <div className="loading">{t("news.loading")}</div>
       ) : (
         <>
           <div className="news-list">
             {news.length > 0 ? (
               news.map((item) => (
-                <div key={item.id} className="news-item">
+                <Link
+                  key={item.id}
+                  to={`/news/${item.id}`}
+                  className="news-item"
+                >
                   <div className="news-info">
                     <figure className="news-thumbnail">
                       <img
                         src={item.thumbnail}
-                        alt={item.title}
+                        alt={item.title[currentLang]}
                         className="news-thumbnail__img"
                       />
                     </figure>
-                    <span className="news-category">【 {item.category} 】</span>
-                    <h2 className="news-item__title">{item.title}</h2>
+                    <span className="news-category">
+                      【 {item.category[currentLang]} 】
+                    </span>
+                    <h2 className="news-item__title">
+                      {item.title[currentLang]}
+                    </h2>
                   </div>
                   <div className="news-date">{formatDate(item.date)}</div>
-                </div>
+                </Link>
               ))
             ) : (
-              <div className="no-news">沒有找到新聞</div>
+              <div className="no-news">{t("news.noNews")}</div>
             )}
           </div>
 
@@ -103,18 +135,18 @@ const NewsPage = () => {
               disabled={currentPage === 1}
               className="btn--news-page btn--extrem"
             >
-              第一頁
+              {t("news.firstPage")}
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
               className="btn--news-page"
             >
-              上一頁
+              {t("news.prevPage")}
             </button>
 
             <div className="page-select">
-              <span className="page-select__text">第</span>
+              <span className="page-select__text">{t("news.the")}</span>
               <select
                 value={currentPage > totalPages ? 1 : currentPage} // 確保 currentPage 不超過 totalPages
                 onChange={(e) => setCurrentPage(Number(e.target.value))}
@@ -126,7 +158,10 @@ const NewsPage = () => {
                   </option>
                 ))}
               </select>
-              <span className="page-select__text">頁 / 共 {totalPages} 頁</span>
+              <span className="page-select__text">
+                {t("news.page")} / {t("news.total")} {totalPages}{" "}
+                {t("news.page")}
+              </span>
             </div>
 
             <button
@@ -136,14 +171,14 @@ const NewsPage = () => {
               disabled={currentPage === totalPages}
               className="btn--news-page"
             >
-              下一頁
+              {t("news.nextPage")}
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
               className="btn--news-page btn--extrem"
             >
-              最後一頁
+              {t("news.lastPage")}
             </button>
           </div>
         </>

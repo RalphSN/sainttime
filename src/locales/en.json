@@ -20,7 +20,7 @@
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us",
-    "faq":"FAQ"
+    "faq": "FAQ"
   },
   "home": {
     "popularGames": "Popular Free Games",
@@ -493,5 +493,19 @@
     "A11": "Once you have successfully topped up your points, you can check your balance in 'Member Center' -> 'Point Inquiry.' You can use these points to purchase in-game items. 1 point = 1 CNY.",
     "Q12": "How do I unban my account?",
     "A12": "If your account is banned and you cannot log in, go to 'Contact Us,' copy the customer support email, and send an email with your account details for assistance."
+  },
+  "news": {
+    "title": "Latest News",
+    "error": "Error",
+    "tryAgain": "Retry",
+    "loading": "Loading...",
+    "noNews": "No news found",
+    "firstPage": "First Page",
+    "prevPage": "Previous Page",
+    "nextPage": "Next Page",
+    "lastPage": "Last Page",
+    "the": "The",
+    "page": "Page",
+    "total": "Total of"
   }
 }
