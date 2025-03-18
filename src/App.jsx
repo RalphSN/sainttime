@@ -15,6 +15,7 @@ import Terms from "./pages/Terms/Terms";
 import Business from "./pages/Business/Business";
 import Faq from "./pages/Faq/Faq";
 import NewsPage from "./pages/NewsPage/NewsPage";
+import NewsDetail from "./pages/NewsDetail/NewsDetail";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="business" element={<Business />} />
           <Route path="FAQ" element={<Faq />} />
-          <Route path="announce" element={<NewsPage />} />
+          <Route path="news" element={<NewsPage />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

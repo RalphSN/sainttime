@@ -506,6 +506,7 @@
     "lastPage": "最後一頁",
     "the": "第",
     "page": "頁",
-    "total": "共"
+    "total": "共",
+    "backToList": "返回列表"
   }
 }
