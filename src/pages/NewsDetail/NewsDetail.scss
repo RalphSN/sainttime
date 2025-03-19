@@ -17,7 +17,7 @@
     justify-content: space-between;
     font-size: 1rem;
     color: v.$white;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
 
   .news-thumbnail {
@@ -29,9 +29,14 @@
     overflow-x: auto;
     position: relative;
 
+    // background-color: v.$white;
+    // padding: 6px;
+    // border-radius: 10px;
+
     .image-slider {
       display: flex;
       gap: 5px;
+      margin-bottom: 1rem;
       overflow-x: auto;
       white-space: nowrap;
       scroll-behavior: smooth;
@@ -39,7 +44,7 @@
       user-select: none;
       -webkit-overflow-scrolling: touch;
       width: 100%;
-      scroll-snap-type: x mandatory; 
+      scroll-snap-type: x mandatory;
 
       /* 隱藏滾動條但保留功能 */
       &::-webkit-scrollbar {
@@ -52,19 +57,54 @@
         cursor: grabbing;
       }
 
+      &.single-image {
+        justify-content: center;
+        overflow-x: hidden;
+
+        .news-thumbnail__img {
+          max-width: 100%;
+        }
+      }
+
+      &.double-image {
+        justify-content: center;
+        overflow-x: hidden;
+
+        .news-thumbnail__img {
+          max-width: 48%;
+        }
+      }
+
+      &.multi-image {
+        justify-content: flex-start;
+        overflow-x: auto;
+
+        .news-thumbnail__img {
+          max-width: 45%;
+        }
+
+        .slider-btn {
+          display: block;
+        }
+      }
+
       .slider-btn {
         position: absolute;
         top: 50%;
-        background: rgba(0, 0, 0, 0.5);
+        transform: translateY(-50%);
         color: v.$white;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        z-index: 10;
+        border: 2px solid v.$white;
 
-        &:hover {
-          background: rgba(0, 0, 0, 0.7);
-        }
+        cursor: pointer;
+        padding: 5px 10px;
+        z-index: 10;
+        border-radius: 50%;
+        transition: 0.35s;
+
+        // &:hover {
+        //   background-color: v.$white;
+        //   color: v.$black;
+        // }
       }
       .slider-btn--left {
         left: 10px;
@@ -77,7 +117,6 @@
         max-width: 45%;
         height: auto;
         object-fit: cover;
-        border-radius: 10px;
         flex-shrink: 0;
         scroll-snap-align: start; /* 確保圖片對齊 */
         /* 不要使用 pointer-events: none */
@@ -117,9 +156,15 @@
 
     .news-thumbnail {
       .image-slider {
+        &::-webkit-scrollbar {
+          display: block;
+        }
         .news-thumbnail__img {
           max-width: 60%;
         }
+      }
+      .slider-btn {
+        display: none;
       }
     }
   }

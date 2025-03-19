@@ -16,6 +16,7 @@ import Business from "./pages/Business/Business";
 import Faq from "./pages/Faq/Faq";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="FAQ" element={<Faq />} />
           <Route path="news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/loading" element={<Loading />} />
         </Route>
       </Routes>
     </BrowserRouter>
