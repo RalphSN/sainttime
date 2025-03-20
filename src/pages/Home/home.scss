@@ -5,16 +5,18 @@
   @include m.page-basic;
 
   .home__carousel {
-    @include m.sensational-mask;
+    @include m.home-carousel-setting;
     position: relative;
     width: 100%;
     padding: 0 2rem;
 
-    img {
+    .home__carousel-image {
       width: 100%;
       height: auto;
+      max-height: 500px;
       object-fit: cover;
     }
+
   }
 
   .home__content {
@@ -75,6 +77,8 @@
 
     .home__side {
       flex: 1;
+      max-width: 30%;
+      // max-height: 350px;
 
       .home__side-reserve {
         &-title {
@@ -100,7 +104,7 @@
       }
 
       .home__side-ad {
-        @include m.sensational-mask;
+        @include m.home-carousel-setting;
         display: flex;
         width: 100%;
         position: relative;
@@ -153,7 +157,8 @@
 
       .home__side {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        max-width: 100%;
 
         .home__side-reserve {
           flex: 1;

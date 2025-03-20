@@ -1,4 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Home.scss";
 import cardData from "../../components/PopularCard/CardPopularData";
 import reserveCardData from "../../components/ReserveCard/CardReserveCard";
@@ -8,14 +13,38 @@ import ReserveCard from "../../components/ReserveCard/ReserveCard";
 const Home = () => {
   const { t } = useTranslation();
 
+  const baseUrl =
+    "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/";
+  const coverUrls = Array.from(
+    { length: 5 },
+    (_, index) => `${baseUrl}cover0${index + 1}.png`
+  );
+  const adUrls = Array.from(
+    { length: 4 },
+    (_, index) => `${baseUrl}ad0${index + 1}.png`
+  );
+
   return (
     <main>
       <div className="home">
         <div className="home__carousel">
-          <img
-            src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/sainttime-banner.gif"
-            alt=""
-          />
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            loop
+          >
+            {coverUrls.map((url, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={`${url}`}
+                  alt={`slide-${index}`}
+                  className="home__carousel-image"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <div className="home__content">
           <div className="home__popular">
@@ -53,12 +82,20 @@ const Home = () => {
               </div>
             </div>
             <div className="home__side-ad">
-              <a href="#" className="home__side-ad-link">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/image-ad.gif"
-                  alt=""
-                />
-              </a>
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop
+              >
+                {adUrls.map((url, index) => (
+                  <SwiperSlide key={index}>
+                    <a href="#" className="home__side-ad-link">
+                      <img src={url} alt={`ad-${index}`} />
+                    </a>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

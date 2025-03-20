@@ -206,3 +206,31 @@ $transition-duration: 0.3s;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin home-carousel-setting {
+  /* 左右箭頭大小與顏色 */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  /* 修改分頁點的顏色、大小 */
+  .swiper-pagination-bullet {
+    background: v.$white;
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+
+  /* 目前選中的分頁點 */
+  .swiper-pagination-bullet-active {
+    background: v.$aid;
+    opacity: 1;
+  }
+
+  /* 分頁點方形 */
+  .swiper-pagination-bullet {
+    border-radius: 4px;
+  }
+}

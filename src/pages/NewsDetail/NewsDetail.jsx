@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../../components/Loading/Loading";
 import "./NewsDetail.scss";
 
 const NewsDetail = () => {
@@ -157,7 +158,7 @@ const NewsDetail = () => {
 
   // ===== ImageSlider END =====
 
-  if (loading) return <div className="loading">{t("news.loading")}</div>;
+  if (loading) return <Loading justifyContent="center"/>;
   if (error)
     return (
       <div className="error">

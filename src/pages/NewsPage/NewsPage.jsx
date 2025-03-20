@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../../components/Loading/Loading";
 import "./NewsPage.scss";
 
 const NewsPage = () => {
@@ -68,6 +69,8 @@ const NewsPage = () => {
     }
   }, [totalPages]);
 
+  if (loading) return <Loading justifyContent="center" />;
+
   return (
     <div className="news">
 
@@ -93,8 +96,6 @@ const NewsPage = () => {
           </p>
           <button onClick={fetchNews}>{t("news.tryAgain")}</button>
         </div>
-      ) : loading ? (
-        <div className="loading">{t("news.loading")}</div>
       ) : (
         <>
           <div className="news-list">
