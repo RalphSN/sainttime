@@ -1,0 +1,37 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.gift-page {
+  @include m.page-basic;
+  color: v.$white;
+
+  .gift__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .gift-item {
+    @include m.flex-center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid v.$white;
+    border-radius: 15px;
+    margin: 1rem auto;
+
+    .gift-item__content {
+        @include m.flex-center;
+        .gift-item__avatar {
+            width: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+      
+            .avatar {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+            }
+          }
+    }
+  }
+}

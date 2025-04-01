@@ -17,6 +17,7 @@ import Faq from "./pages/Faq/Faq";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import Loading from "./components/Loading/Loading";
+import GiftPackPage from "./pages/GiftPackPage/GiftPackPage"
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/loading" element={<Loading />} />
+          <Route path="/gift" element={<GiftPackPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

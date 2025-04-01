@@ -2,7 +2,8 @@
 @use "sass:color";
 
 @mixin page-basic {
-  background-color: v.$secondary;
+  // background-color: v.$secondary;
+  background-color: v.$black;
   padding: 1rem 2rem;
   min-height: calc(100vh - 21rem);
   width: 100%;

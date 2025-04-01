@@ -6,7 +6,8 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  background-color: v.$secondary;
+  // background-color: v.$secondary;
+  background-color: v.$background-color;
   font-size: 1rem;
   font-weight: bold;
   color: v.$white;

@@ -1,4 +1,5 @@
 {
+  
   "uploads": [
     {
       "id": "1aa6",
@@ -102,6 +103,40 @@
       "title": "新年快樂！",
       "date": "2025-01-01",
       "content": "值此新年來臨之際，公司全體員工祝願所有客戶和合作夥伴新年快樂，萬事如意！2025年，我們將繼續為您提供卓越的服務和創新的解決方案。"
+    }
+  ],
+  "giftPacks": [
+    {
+      "id": "g1",
+      "title": "海賊：大惡海時代【新手禮包1】",
+      "content": "鑽石*500 貝裡*100000 高級招喚券*10",
+      "startDate": "2025-03-27",
+      "endDate": "2026-03-27",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift01.png"
+    },
+    {
+      "id": "g2",
+      "title": "海賊：大惡海時代【新手禮包2】",
+      "content": "鑽石*888 貝裡*88888 5星海軍五星碎片*50",
+      "startDate": "2025-03-27",
+      "endDate": "2026-03-27",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift02.png"
+    },
+    {
+      "id": "g3",
+      "title": "火影：滅忍考試【新手禮包】",
+      "content": "銀幣*100萬 金幣*200 高級招募券*10 進階丹*500",
+      "startDate": "2025-03-10",
+      "endDate": "2026-03-10",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift03.png"
+    }
+  ],
+  "claims": [
+    {
+      "id": 1,
+      "userId": "a557",
+      "giftPackId": "g1",
+      "claimedAt": "2025-03-28T01:00:00Z"
     }
   ]
 }

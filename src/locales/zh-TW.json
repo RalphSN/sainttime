@@ -508,5 +508,8 @@
     "page": "頁",
     "total": "共",
     "backToList": "返回列表"
+  },
+  "gift": {
+    "title" : "遊戲禮包"
   }
 }
