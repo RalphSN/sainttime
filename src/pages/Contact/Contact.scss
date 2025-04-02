@@ -67,3 +67,14 @@
     background-color: #0056b3;
   }
 }
+
+@media (max-width: 430px) {
+  .contact {
+    .contact__label, .contact__email {
+      font-size: .8rem;
+    }
+    .copy-button {
+      font-size: .8rem;
+    }
+  }
+}

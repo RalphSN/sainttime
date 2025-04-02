@@ -37,6 +37,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     try {
       const response = await axios.get(
         `http://localhost:5000/users?username=${formData.username}&password=${formData.password}`
@@ -45,6 +46,7 @@ const Login = () => {
       if (response.data.length > 0) {
         const user = response.data[0]; // 取得用戶資料
         login(user); // 立即更新 AuthContext 裡的 `user`
+        localStorage.setItem("userId", user.id); // 把 userId 存進 localStorage
         setMessage("✅ 登入成功！");
         setTimeout(() => navigate("/"), 500); // 立即跳轉回首頁
       } else {

@@ -8,7 +8,6 @@
     @include m.home-carousel-setting;
     position: relative;
     width: 100%;
-    padding: 0 2rem;
 
     .home__carousel-image {
       width: 100%;
@@ -21,7 +20,7 @@
 
   .home__content {
     display: flex;
-    padding: 2rem 5rem;
+    padding: 2rem 0;
     color: v.$white;
     font-size: 1.2rem;
 
@@ -124,31 +123,12 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .home {
-    padding: 0 10%;
-    .home__carousel {
-      padding: 0;
-    }
-    .home__content {
-      padding: 2rem 0;
-    }
-  }
-}
 
-@media (max-width: 1024px) {
-  .home {
-    .home__content {
-      padding: 2rem;
-    }
-  }
-}
 
 @media (max-width: 991px) {
   .home {
     .home__content {
       flex-direction: column;
-      padding: 2rem;
 
       .home__popular {
         margin-right: 0;
@@ -178,11 +158,7 @@
 
 @media (max-width: 767px) {
   .home {
-    .home__carousel {
-      padding: 0;
-    }
     .home__content {
-      padding: 2rem;
       .home__side {
         flex-direction: column;
       }

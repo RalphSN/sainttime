@@ -46,11 +46,11 @@ const HotFreeGames = () => {
 
   return (
     <section className="hot-games">
-      <h2 className="hot-games__title">{t("hot.title")}</h2>
+      <h1 className="hot-games__title">{t("hot.title")}</h1>
 
       {/* 裝置類型篩選 */}
       <div className="hot-games__filter">
-        <h3 className="hot-games__filter-title">{t("hot.filter-platform")}</h3>
+        <h2 className="hot-games__filter-title">{t("hot.filter-platform")}</h2>
         <div className="hot-games__filter-options">
           {allPlatforms.map((platform) => (
             <button
@@ -68,7 +68,7 @@ const HotFreeGames = () => {
 
       {/* 遊戲類型篩選 */}
       <div className="hot-games__filter">
-        <h3 className="hot-games__filter-title">{t("hot.filter-genre")}</h3>
+        <h2 className="hot-games__filter-title">{t("hot.filter-genre")}</h2>
         <div className="hot-games__filter-options">
           {allTags.map((tag) => (
             <button

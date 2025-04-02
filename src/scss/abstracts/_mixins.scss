@@ -2,16 +2,21 @@
 @use "sass:color";
 
 @mixin page-basic {
-  // background-color: v.$secondary;
   background-color: v.$black;
-  padding: 1rem 2rem;
+  padding: 1rem 10%;
+  padding-bottom: 4rem;
   min-height: calc(100vh - 21rem);
   width: 100%;
-  @media (min-width: 1440px) {
-    padding: 1% 10%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 1440px) {
+    padding: 1rem 2rem;
+    padding-bottom: 4rem;
   }
   @media (max-width: 767px) {
     padding: 1rem;
+    padding-bottom: 4rem;
   }
 }
 

@@ -1,6 +1,10 @@
 @use "./abstracts/variables" as v;
 @use "./abstracts/mixins" as m;
 
+main,body {
+  background-color: v.$background-color;
+}
+
 // =====breadcrun=====
 
 .breadcrumb {
@@ -56,7 +60,7 @@
   flex-direction: column;
   border-radius: 15px;
   overflow: hidden;
-  margin-top: 2rem;
+  margin: 2rem auto;
 
   .faq-item {
     background-color: v.$greyLight-2;

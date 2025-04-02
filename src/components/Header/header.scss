@@ -6,9 +6,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1400px;
   height: 6rem;
-  padding: 1rem 2rem;
-  // background-color: v.$dark-background;
+  margin: 0 auto;
+  padding: 0 10%;
   background-color: v.$black;
   color: v.$white;
   position: relative;
@@ -182,6 +183,12 @@
   }
 }
 
+@media(max-width: 1440px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+}
+
 // 小螢幕時隱藏 navbar-auth
 @media (max-width: 768px) {
   .navbar {
@@ -270,11 +277,5 @@
         cursor: pointer;
       }
     }
-  }
-}
-
-@media (min-width: 1440px) {
-  .navbar {
-    padding: 0 10%;
   }
 }

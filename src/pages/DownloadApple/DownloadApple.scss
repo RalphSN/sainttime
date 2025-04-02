@@ -5,8 +5,6 @@
   @include m.page-basic;
 
   .ios-download__page {
-    width: 100%;
-    min-height: calc(100vh - 6rem);
     color: v.$white;
     padding: 2rem 0;
 

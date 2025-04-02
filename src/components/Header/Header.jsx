@@ -134,6 +134,7 @@ const Header = () => {
                 className="btn btn--logout"
                 onClick={() => {
                   logout();
+                  localStorage.removeItem("userId");
                   closeMenuOnNavigate();
                 }}
               >

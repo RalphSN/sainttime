@@ -54,7 +54,7 @@ const GiftPackPage = () => {
 
       {/* =====Breadcrumbs=====END */}
 
-      <h1 className="gift__title">遊戲禮包</h1>
+      <h1 className="gift__title">{t("gift.title")}</h1>
       {giftPacks.map((pack) => {
         const expired = new Date() > new Date(pack.endDate);
         const claimed = claimedPacks.includes(pack.id);
@@ -65,20 +65,23 @@ const GiftPackPage = () => {
               <figure className="gift-item__avatar">
                 <img src={pack.image} alt="icon" className="avatar" />
               </figure>
-              <div className="info">
+              <div className="gift-item__info">
                 <h2>{pack.title}</h2>
                 <p>{pack.content}</p>
                 <p>
-                  有效期：{pack.startDate} ~ {pack.endDate}
+                  有效期限：{pack.startDate} ~ {pack.endDate}
                 </p>
               </div>
             </div>
-            <button
-              disabled={expired || claimed}
-              onClick={() => handleClaim(pack.id)}
-            >
-              {expired ? "已過期" : claimed ? "已領取" : "領取"}
-            </button>
+            <div className="btn-box">
+              <button
+                disabled={expired || claimed}
+                onClick={() => handleClaim(pack.id)}
+                className="btn--withdraw"
+              >
+                {expired ? "已過期" : claimed ? "已領取" : "領取"}
+              </button>
+            </div>
           </div>
         );
       })}
