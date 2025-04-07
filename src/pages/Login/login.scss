@@ -3,9 +3,8 @@
 
 .login {
   align-items: flex-start;
-  padding-top: 5rem;
   @include m.page-basic;
-  @include m.flex-center;
+  @include m.flex-center($padding: 5rem 2rem);
 
   .login-box,
   .register-box {
@@ -26,21 +25,19 @@
   }
 
   .login-box {
-    justify-content: flex-start;
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
-    @include m.flex-center;
+    @include m.flex-center($justify: flex-start);
     .login-btn {
       @include m.small-btn;
     }
   }
   .register-box {
-    justify-content: flex-start;
     flex-direction: column;
     flex: 1;
     max-width: 28rem;
-    @include m.flex-center;
+    @include m.flex-center($justify: flex-start);
   }
 
   .login__title-sec {
@@ -86,7 +83,6 @@
     background-color: v.$btn-l;
     color: v.$white;
     margin: 1rem 0;
-    position: relative;
     @include m.interactive-btn;
   }
 
@@ -119,14 +115,13 @@
 
   .tips {
     flex-direction: column;
-    align-items: flex-start;
     align-self: flex-start;
     width: 100%;
 
     font-size: 0.8rem;
     margin-top: 1rem;
     border-top: 1px solid v.$white;
-    @include m.flex-center;
+    @include m.flex-center($align: flex-start);
 
     .tips__title {
       font-size: 1.2rem;

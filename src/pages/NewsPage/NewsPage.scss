@@ -28,12 +28,11 @@
   }
 
   .news-item {
-    justify-content: space-between;
     color: v.$white;
     padding: 0.5rem 1rem;
     border-bottom: 1px solid v.$white;
     transition: 0.35s;
-    @include m.flex-center;
+    @include m.flex-center($justify: space-between);
 
     &:hover {
       background-color: v.$greyLight-1;
@@ -83,10 +82,10 @@
   }
 
   .pagination {
-    @include m.flex-center;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 2rem;
+    @include m.flex-center;
 
     .btn--news-page {
       color: v.$white;

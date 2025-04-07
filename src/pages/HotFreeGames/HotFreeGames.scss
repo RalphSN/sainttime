@@ -14,11 +14,10 @@
   .hot-games__filter {
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-start;
     color: v.$white;
     gap: 1rem;
     margin-bottom: 1rem;
-    @include m.flex-center;
+    @include m.flex-center($align: flex-start);
 
     .hot-games__filter-options {
       display: flex;

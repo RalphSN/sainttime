@@ -15,17 +15,15 @@
     }
 
     .game__info {
-      justify-content: space-between;
       width: 100%;
       height: 12rem;
       margin-top: 2rem;
-      @include m.flex-center;
+      @include m.flex-center($justify: space-between);
 
       .game__info-content {
-        justify-content: flex-start;
         height: 100%;
         width: 100%;
-        @include m.flex-center;
+        @include m.flex-center($justify: flex-start);
 
         .game-avatar {
           object-fit: cover;
@@ -37,13 +35,11 @@
 
         .info-text__container {
           flex-direction: column;
-          align-items: flex-start;
-          justify-content: space-between;
           width: 100%;
           height: 100%;
           letter-spacing: 0.1rem;
           gap: 0.1rem;
-          @include m.flex-center;
+          @include m.flex-center($align: flex-start, $justify: space-between);
 
           .info-text {
             max-width: 50rem;
@@ -102,7 +98,7 @@
       .download-btn {
         padding: 0.7rem 1rem;
         font-weight: bold;
-        @include m.btn-basic;
+        @include m.btn-basic($padding: 0.7rem 1rem);
 
         &.ios {
           background-color: v.$greyLight-1;

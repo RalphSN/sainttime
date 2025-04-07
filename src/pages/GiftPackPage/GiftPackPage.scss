@@ -12,16 +12,15 @@
   }
 
   .gift-item {
-    justify-content: space-between;
-    align-items: stretch;
     padding: 1rem;
     border: 1px solid v.$white;
     border-radius: 15px;
     margin: 1rem auto;
-    @include m.flex-center;
+    @include m.flex-center($align: stretch, $justify: space-between);
 
     .gift-item__content {
       @include m.flex-center;
+
       .gift-item__avatar {
         width: 100px;
         border-radius: 50%;
@@ -35,19 +34,16 @@
         }
       }
       .gift-item__info {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: start;
         height: 100%;
-
         letter-spacing: 0.5px;
+        @include m.flex-center($align: start, $justify: space-between);
       }
     }
 
     .btn-box {
       display: flex;
-      
+
       .btn--withdraw {
         background-color: v.$thirdary;
         align-self: center;

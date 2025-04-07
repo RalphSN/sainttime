@@ -1,10 +1,10 @@
 @use "variables" as v;
 @use "sass:color";
 
-@mixin page-basic {
+@mixin page-basic($padding: 1rem 10%, $padding-bottom: 4rem) {
   background-color: v.$black;
-  padding: 1rem 10%;
-  padding-bottom: 4rem;
+  padding: $padding;
+  padding-bottom: $padding-bottom;
   min-height: calc(100vh - 21rem);
   width: 100%;
   max-width: 1400px;
@@ -33,20 +33,20 @@
   cursor: pointer;
 }
 
-@mixin btn-basic {
+@mixin btn-basic($white-space: nowrap, $padding: 0.5rem 1rem) {
   font-size: 1rem;
   display: inline-block;
-  padding: 0.5rem 0.8rem;
-  white-space: nowrap;
+  padding: $padding;
+  white-space: $white-space;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
 }
 
-@mixin flex-center {
+@mixin flex-center($align: center, $justify: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin flex-column {

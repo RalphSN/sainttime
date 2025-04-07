@@ -2,10 +2,9 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .register {
-  align-items: flex-start;
   padding-top: 5rem;
   @include m.page-basic;
-  @include m.flex-center;
+  @include m.flex-center($align: flex-start);
 
   .register-case,
   .login-case {
@@ -25,22 +24,20 @@
     }
   }
   .register-case {
-    justify-content: flex-start;
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
-    @include m.flex-center;
+    @include m.flex-center($justify: flex-start);
 
     .btn--register {
       @include m.small-btn;
     }
   }
   .login-case {
-    justify-content: flex-start;
     flex-direction: column;
     flex: 1;
     max-width: 28rem;
-    @include m.flex-center;
+    @include m.flex-center($justify: flex-start);
   }
 
   .register__subtitle {

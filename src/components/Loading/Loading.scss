@@ -3,8 +3,7 @@
 
 .loader-container {
   flex-direction: column;
-  justify-content: flex-start;
-  @include m.flex-center;
+  @include m.flex-center($justify: flex-start);
   @include m.page-basic;
 }
 

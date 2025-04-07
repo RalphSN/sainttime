@@ -13,21 +13,19 @@
   }
 
   .news-meta {
-    justify-content: space-between;
     font-size: 1rem;
     color: v.$white;
     margin-bottom: 1rem;
-    @include m.flex-center;
+    @include m.flex-center($justify: space-between);
   }
 
   .news-thumbnail {
-    justify-content: flex-start;
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
     overflow-x: auto;
     position: relative;
-    @include m.flex-center;
+    @include m.flex-center($justify: flex-start);
 
     .image-slider {
       display: flex;
