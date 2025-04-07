@@ -2,8 +2,8 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .faq {
-  @include m.page-basic;
   color: v.$white;
+  @include m.page-basic;
 
   .faq__title {
     text-align: center;

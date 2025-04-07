@@ -33,9 +33,9 @@
     border-top: 1px solid v.$white;
 
     .card-hot__title {
-      @include m.nowrap;
       font-size: 1.2rem;
       margin-right: 0.5rem;
+      @include m.nowrap;
     }
 
     .card-hot__tags {

@@ -2,10 +2,10 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .loader-container {
-  @include m.flex-center;
-  @include m.page-basic;
   flex-direction: column;
   justify-content: flex-start;
+  @include m.flex-center;
+  @include m.page-basic;
 }
 
 .loader {

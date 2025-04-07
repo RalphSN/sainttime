@@ -2,8 +2,8 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .news {
-  @include m.page-basic;
   color: v.$white;
+  @include m.page-basic;
 
   .news__title {
     text-align: center;
@@ -28,12 +28,12 @@
   }
 
   .news-item {
-    @include m.flex-center;
     justify-content: space-between;
     color: v.$white;
     padding: 0.5rem 1rem;
     border-bottom: 1px solid v.$white;
     transition: 0.35s;
+    @include m.flex-center;
 
     &:hover {
       background-color: v.$greyLight-1;
@@ -71,8 +71,6 @@
         font-size: 1.2rem;
         font-weight: 500;
         margin-left: 2rem;
-
-  
 
         display: inline-block; /* 讓 ellipsis 生效 */
         flex-shrink: 1; /* 允許縮小 */
@@ -170,28 +168,28 @@
       width: 100%;
       padding-top: 1rem;
 
-        .news-info {
-          width: 100%;
+      .news-info {
+        width: 100%;
 
-          .news-category {
-            display: none;
-          }
-
-          .news-item__title {
-            margin-left: 1rem;
-          }
+        .news-category {
+          display: none;
         }
 
-        .news-date {
-          display: none;
+        .news-item__title {
+          margin-left: 1rem;
         }
       }
 
-      .pagination {
-        gap: 0.2rem;
-        .btn--extrem {
-          display: none;
-        }
+      .news-date {
+        display: none;
+      }
+    }
+
+    .pagination {
+      gap: 0.2rem;
+      .btn--extrem {
+        display: none;
       }
     }
   }
+}

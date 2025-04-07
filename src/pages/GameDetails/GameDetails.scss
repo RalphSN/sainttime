@@ -15,19 +15,17 @@
     }
 
     .game__info {
-      @include m.flex-center;
       justify-content: space-between;
       width: 100%;
       height: 12rem;
       margin-top: 2rem;
-      
+      @include m.flex-center;
 
       .game__info-content {
-        @include m.flex-center;
         justify-content: flex-start;
         height: 100%;
         width: 100%;
-        
+        @include m.flex-center;
 
         .game-avatar {
           object-fit: cover;
@@ -38,7 +36,6 @@
         }
 
         .info-text__container {
-          @include m.flex-center;
           flex-direction: column;
           align-items: flex-start;
           justify-content: space-between;
@@ -46,7 +43,7 @@
           height: 100%;
           letter-spacing: 0.1rem;
           gap: 0.1rem;
-          
+          @include m.flex-center;
 
           .info-text {
             max-width: 50rem;
@@ -64,14 +61,13 @@
           margin-top: 0.2rem;
           flex-wrap: wrap;
           width: 100%;
-          
 
           .tag {
-            @include m.flex-center;
             text-align: center;
             padding: 0.4rem 0.8rem;
             border-radius: 10px;
             white-space: nowrap;
+            @include m.flex-center;
 
             &.tag-genre {
               background-color: v.$thirdary;
@@ -104,16 +100,15 @@
       box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 3px;
 
       .download-btn {
-        @include m.btn-basic;
         padding: 0.7rem 1rem;
         font-weight: bold;
-      
+        @include m.btn-basic;
 
         &.ios {
           background-color: v.$greyLight-1;
           color: v.$dark;
           box-shadow: v.$shadow;
-          transition: .35s;
+          transition: 0.35s;
           border: 2px solid transparent;
 
           &:active {
@@ -129,7 +124,7 @@
           background-color: v.$success;
           color: v.$white;
           box-shadow: v.$shadow-green;
-          border: 2px solid transparent; 
+          border: 2px solid transparent;
 
           &:active {
             box-shadow: v.$inner-shadow-green;
@@ -268,7 +263,7 @@
             .tags {
               transform-origin: left center;
               align-self: flex-start;
-                           font-size: .8rem;
+              font-size: 0.8rem;
             }
           }
         }

@@ -4,7 +4,6 @@
 .card-popular {
   display: flex;
   flex-direction: column;
-  // width: 18rem;
 
   height: auto;
   border-radius: 10px;
@@ -25,16 +24,15 @@
     justify-content: space-between;
 
     .card-popular__title {
-      @include m.nowrap;
       font-size: 1.2rem;
       margin-right: 0.5rem;
+      @include m.nowrap;
     }
 
     .btn--play {
       padding: 0.6rem 1rem;
       font-weight: 700;
       background-color: v.$btn-p;
-      //   border: 1px solid v.$white;
       border-radius: 10px;
       font-size: 0.8rem;
       letter-spacing: 0.1rem;

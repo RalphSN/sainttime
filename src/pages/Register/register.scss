@@ -2,12 +2,12 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .register {
-  @include m.page-basic;
-  @include m.flex-center;
   align-items: flex-start;
   padding-top: 5rem;
+  @include m.page-basic;
+  @include m.flex-center;
 
-  .register-case, 
+  .register-case,
   .login-case {
     background-color: v.$background-color;
     border: 1px solid v.$white;
@@ -19,27 +19,28 @@
 
     .register__title,
     .login__title {
-        display: flex;
-        margin-bottom: 1.2rem;
-        align-self: flex-start;
-      }
+      display: flex;
+      margin-bottom: 1.2rem;
+      align-self: flex-start;
+    }
   }
   .register-case {
-    @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
+    @include m.flex-center;
+
     .btn--register {
       @include m.small-btn;
     }
   }
   .login-case {
-    @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
     flex: 1;
     max-width: 28rem;
+    @include m.flex-center;
   }
 
   .register__subtitle {
@@ -47,9 +48,9 @@
   }
 
   .input-wrapper {
-    @include m.flex-center;
     flex-direction: column;
     width: 100%;
+    @include m.flex-center;
 
     .input-register {
       width: 100%;
@@ -60,7 +61,7 @@
       border-radius: 10px;
       background-color: v.$white;
       color: v.$black;
-      transition: .1s;
+      transition: 0.1s;
 
       &:focus {
         outline: v.$primary 5px solid;
@@ -69,24 +70,24 @@
   }
 
   .btn--register {
-    @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
     margin: 1rem 0;
     position: relative;
+    @include m.interactive-btn;
   }
 
   .btn--login {
-    @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
+    @include m.interactive-btn;
   }
 
   .btn-r {
     display: block;
     width: 100%;
-    padding: .6rem;
-    margin: .6rem 0;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -103,6 +104,7 @@
       color: v.$gray;
       text-decoration: underline;
       transition: 0.35s;
+      
       &:hover {
         color: v.$primary;
       }
@@ -110,21 +112,21 @@
   }
 }
 
-@media (max-width:768px) {
-    .register {
-      flex-direction: column;
-      padding: 2rem;
-      .register-case {
-        width: 100%;
-        flex: none;
-        max-width: 100%;
-        margin: 2rem 0;
-      }
-      .login-case {
-        width: 100%;
-        flex: none;
-        max-width: 100%;
-        margin: 2rem 0;
-      }
+@media (max-width: 768px) {
+  .register {
+    flex-direction: column;
+    padding: 2rem;
+    .register-case {
+      width: 100%;
+      flex: none;
+      max-width: 100%;
+      margin: 2rem 0;
+    }
+    .login-case {
+      width: 100%;
+      flex: none;
+      max-width: 100%;
+      margin: 2rem 0;
     }
   }
+}

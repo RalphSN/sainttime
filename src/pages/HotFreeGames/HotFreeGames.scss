@@ -12,13 +12,13 @@
   }
 
   .hot-games__filter {
-    @include m.flex-center;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     color: v.$white;
     gap: 1rem;
     margin-bottom: 1rem;
+    @include m.flex-center;
 
     .hot-games__filter-options {
       display: flex;
@@ -57,7 +57,6 @@
     padding-bottom: 5rem;
   }
 
-
   @keyframes plus {
     0% {
       transform: scale(1);
@@ -73,14 +72,6 @@
     padding: 0 10%;
   }
 }
-
-// @media (min-width: 769px) {
-//     .hot-games {
-//       .hot-games__grid {
-//         grid-template-columns: repeat(auto-fit, minmax(20rem, 28rem));
-//       }
-//     }
-// }
 
 @media (max-width: 1024px) {
   .hot-games {

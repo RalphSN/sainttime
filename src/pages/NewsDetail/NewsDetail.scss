@@ -2,9 +2,9 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .news-detail {
-  @include m.page-basic;
   display: flex;
   flex-direction: column;
+  @include m.page-basic;
 
   .news-detail__title {
     font-size: 2rem;
@@ -13,21 +13,21 @@
   }
 
   .news-meta {
-    @include m.flex-center;
     justify-content: space-between;
     font-size: 1rem;
     color: v.$white;
     margin-bottom: 1rem;
+    @include m.flex-center;
   }
 
   .news-thumbnail {
-    @include m.flex-center;
     justify-content: flex-start;
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
     overflow-x: auto;
     position: relative;
+    @include m.flex-center;
 
     .image-slider {
       display: flex;
@@ -96,15 +96,12 @@
         z-index: 10;
         border-radius: 50%;
         transition: 0.35s;
-
-        // &:hover {
-        //   background-color: v.$white;
-        //   color: v.$black;
-        // }
       }
+
       .slider-btn--left {
         left: 10px;
       }
+
       .slider-btn--right {
         right: 10px;
       }
@@ -134,13 +131,13 @@
   }
 
   .btn--back {
-    @include m.btn-basic;
-    @include m.interactive-btn;
     margin: 2rem auto;
     background-color: v.$thirdary;
     color: v.$white;
     text-decoration: none;
     border-radius: 5px;
+    @include m.btn-basic;
+    @include m.interactive-btn;
   }
 }
 

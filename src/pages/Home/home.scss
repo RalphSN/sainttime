@@ -5,9 +5,9 @@
   @include m.page-basic;
 
   .home__carousel {
-    @include m.home-carousel-setting;
     position: relative;
     width: 100%;
+    @include m.home-carousel-setting;
 
     .home__carousel-image {
       width: 100%;
@@ -15,7 +15,6 @@
       max-height: 500px;
       object-fit: cover;
     }
-
   }
 
   .home__content {
@@ -32,13 +31,14 @@
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
+
         &::before {
           content: "";
           display: inline-block;
-          width: 0.4rem; 
-          height: 1.5em; 
-          background-color: v.$thirdary; 
-          margin-right: 20px; 
+          width: 0.4rem;
+          height: 1.5em;
+          background-color: v.$thirdary;
+          margin-right: 20px;
         }
       }
 
@@ -55,16 +55,16 @@
     }
 
     .more-btn-box {
-      @include m.flex-center;
       width: 100%;
       margin-top: 2rem;
+      @include m.flex-center;
 
       .btn-more {
         font-size: 1rem;
         padding: 0.5rem 1rem;
         border: 1px solid v.$white;
         border-radius: 10px;
-        transition: .35s;
+        transition: 0.35s;
         cursor: pointer;
 
         &:hover {
@@ -77,7 +77,6 @@
     .home__side {
       flex: 1;
       max-width: 30%;
-      // max-height: 350px;
 
       .home__side-reserve {
         &-title {
@@ -87,10 +86,10 @@
           &::before {
             content: "";
             display: inline-block;
-            width: 0.4rem; 
-            height: 1.5em; 
-            background-color: v.$thirdary; 
-            margin-right: 20px; 
+            width: 0.4rem;
+            height: 1.5em;
+            background-color: v.$thirdary;
+            margin-right: 20px;
           }
         }
 
@@ -103,15 +102,15 @@
       }
 
       .home__side-ad {
-        @include m.home-carousel-setting;
         display: flex;
         width: 100%;
         position: relative;
         margin-top: 2rem;
-
+        @include m.home-carousel-setting;
 
         .home__side-ad-link {
           width: 100%;
+
           img {
             width: 100%;
             height: auto;
@@ -122,8 +121,6 @@
     }
   }
 }
-
-
 
 @media (max-width: 991px) {
   .home {
@@ -165,4 +162,3 @@
     }
   }
 }
-

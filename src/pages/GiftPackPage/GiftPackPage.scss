@@ -2,8 +2,8 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .gift-page {
-  @include m.page-basic;
   color: v.$white;
+  @include m.page-basic;
 
   .gift__title {
     text-align: center;
@@ -12,13 +12,13 @@
   }
 
   .gift-item {
-    @include m.flex-center;
     justify-content: space-between;
     align-items: stretch;
     padding: 1rem;
     border: 1px solid v.$white;
     border-radius: 15px;
     margin: 1rem auto;
+    @include m.flex-center;
 
     .gift-item__content {
       @include m.flex-center;
@@ -41,19 +41,19 @@
         align-items: start;
         height: 100%;
 
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
       }
     }
 
     .btn-box {
       display: flex;
-      // flex-direction: column;
+      
       .btn--withdraw {
-        @include m.btn-basic;
-        @include m.interactive-btn;
         background-color: v.$thirdary;
         align-self: center;
         cursor: pointer;
+        @include m.btn-basic;
+        @include m.interactive-btn;
       }
     }
   }

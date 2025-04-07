@@ -1,5 +1,5 @@
-@use '../../scss/abstracts/variables' as v;
-@use '../../scss/abstracts/mixins' as m;
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
 
 .navbar {
   display: flex;
@@ -76,19 +76,19 @@
     }
 
     .btn {
-      @include m.small-btn;
       white-space: nowrap;
-      
+      @include m.small-btn;
+
       &.btn--login,
       &.btn--logout {
         background-color: transparent;
         color: v.$white;
         border: 1px solid v.$white;
-        transition: .35s;
+        transition: 0.35s;
         &:hover {
           color: v.$secondary;
           background-color: v.$white;
-          transition: .35s;
+          transition: 0.35s;
           animation: pulse-log 1s;
           box-shadow: 0 0 0 1em transparent;
 
@@ -103,7 +103,7 @@
       &.btn--register {
         background-color: v.$primary;
         color: v.$white;
-        transition: .35s;
+        transition: 0.35s;
 
         &:hover {
           animation: pulse-rig 1s;
@@ -117,7 +117,7 @@
         }
       }
     }
-    
+
     .user-greeting {
       white-space: nowrap;
     }
@@ -160,10 +160,10 @@
 
         li {
           padding: 0.5rem 1rem;
-          
+
           &:hover {
             background-color: v.$light;
-            transition: .35s;
+            transition: 0.35s;
           }
 
           a {
@@ -171,7 +171,6 @@
             color: v.$black;
             display: block;
             white-space: nowrap;
-
           }
         }
       }
@@ -183,7 +182,7 @@
   }
 }
 
-@media(max-width: 1440px) {
+@media (max-width: 1440px) {
   .navbar {
     padding: 1rem 2rem;
   }
@@ -205,7 +204,7 @@
     .navbar-auth {
       display: none;
     }
-  
+
     .hamburger-menu {
       display: flex;
       flex-direction: column;
@@ -213,7 +212,7 @@
       cursor: pointer;
       background: none;
       border: none;
-  
+
       .bar {
         width: 25px;
         height: 3px;
@@ -221,7 +220,7 @@
         transition: 0.3s;
       }
     }
-  
+
     // 背景遮罩
     .menu-overlay {
       position: fixed;
@@ -234,15 +233,13 @@
       opacity: 0;
       transition: 0.35s ease-in-out;
       visibility: hidden;
-    
-    
+
       &.open {
         opacity: 1;
         visibility: visible;
       }
     }
-    
-  
+
     // 右側滑出選單
     .navbar-auth__slide {
       position: fixed;
@@ -262,11 +259,11 @@
       .navbar-auth__slide-box {
         flex-direction: column;
       }
-  
+
       &.open {
         right: 0;
       }
-  
+
       .close-menu {
         display: flex;
         align-self: flex-end;

@@ -2,10 +2,10 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .login {
-  @include m.page-basic;
-  @include m.flex-center;
   align-items: flex-start;
   padding-top: 5rem;
+  @include m.page-basic;
+  @include m.flex-center;
 
   .login-box,
   .register-box {
@@ -26,21 +26,21 @@
   }
 
   .login-box {
-    @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
     flex: 2;
     max-width: 38rem;
+    @include m.flex-center;
     .login-btn {
       @include m.small-btn;
     }
   }
   .register-box {
-    @include m.flex-center;
     justify-content: flex-start;
     flex-direction: column;
     flex: 1;
     max-width: 28rem;
+    @include m.flex-center;
   }
 
   .login__title-sec {
@@ -48,9 +48,9 @@
   }
 
   .input-wrapper {
-    @include m.flex-center;
     flex-direction: column;
     width: 100%;
+    @include m.flex-center;
 
     .login-input {
       width: 100%;
@@ -61,7 +61,7 @@
       border-radius: 10px;
       background-color: v.$white;
       color: v.$black;
-      transition: .1s;
+      transition: 0.1s;
 
       &:focus {
         outline: v.$primary 5px solid;
@@ -72,8 +72,8 @@
   .btn-l {
     display: block;
     width: 100%;
-    padding: .6rem;
-    margin: .6rem 0;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -83,23 +83,23 @@
   }
 
   .login-btn {
-    @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
     margin: 1rem 0;
     position: relative;
+    @include m.interactive-btn;
   }
 
   .btn--register {
-    @include m.interactive-btn;
     background-color: v.$btn-l;
     color: v.$white;
+    @include m.interactive-btn;
   }
 
   .btn--forgot {
-    @include m.interactive-btn;
     background-color: v.$white;
     color: v.$black;
+    @include m.interactive-btn;
   }
 
   .privacy-policy {
@@ -110,6 +110,7 @@
       color: v.$gray;
       text-decoration: underline;
       transition: 0.35s;
+
       &:hover {
         color: v.$primary;
       }
@@ -117,7 +118,6 @@
   }
 
   .tips {
-    @include m.flex-center;
     flex-direction: column;
     align-items: flex-start;
     align-self: flex-start;
@@ -126,6 +126,7 @@
     font-size: 0.8rem;
     margin-top: 1rem;
     border-top: 1px solid v.$white;
+    @include m.flex-center;
 
     .tips__title {
       font-size: 1.2rem;
@@ -146,8 +147,7 @@
   }
 }
 
-
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .login {
     flex-direction: column;
     padding: 2rem;

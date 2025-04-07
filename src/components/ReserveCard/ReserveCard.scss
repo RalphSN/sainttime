@@ -26,15 +26,13 @@
     justify-content: center;
 
     .card-reserve__title {
-      @include m.nowrap;
-
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 1rem;
+      @include m.nowrap;
     }
 
     .btn--reserve {
-      @include m.small-btn;
       font-size: 0.8rem;
       font-weight: 600;
       color: v.$thirdary;
@@ -43,7 +41,8 @@
       align-self: start;
       background-color: v.$white;
       color: v.$secondary;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
+      @include m.small-btn;
 
       &:hover {
         color: v.$secondary;

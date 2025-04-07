@@ -2,8 +2,8 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .business {
-  @include m.page-basic;
   color: v.$white;
+  @include m.page-basic;
 
   .business__title {
     text-align: center;
@@ -20,18 +20,18 @@
   }
 
   .business__content {
-    @include m.flex-center;
     width: fit-content;
     gap: 15px;
     background: rgba(255, 255, 255, 0.1);
     margin: 0 auto;
-    
+
     padding: 15px 25px;
     border-radius: 10px;
+    @include m.flex-center;
 
     .business__info {
-      @include m.flex-center;
       gap: 10px;
+      @include m.flex-center;
     }
   }
 
@@ -51,7 +51,6 @@
   }
 
   .copy-button {
-    @include m.flex-center;
     background-color: #007bff;
     color: v.$white;
     white-space: nowrap;
@@ -62,6 +61,7 @@
     cursor: pointer;
     gap: 5px;
     transition: 0.35s;
+    @include m.flex-center;
   }
 
   .copy-button:hover {
@@ -71,11 +71,12 @@
 
 @media (max-width: 430px) {
   .business {
-    .business__label, .business__email {
-      font-size: .8rem;
+    .business__label,
+    .business__email {
+      font-size: 0.8rem;
     }
     .copy-button {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 }

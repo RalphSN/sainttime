@@ -81,7 +81,7 @@ const GiftPackPage = () => {
               >
                 {expired ? "已過期" : claimed ? "已領取" : "領取"}
               </button>
-            </div>
+            </div> 
           </div>
         );
       })}
