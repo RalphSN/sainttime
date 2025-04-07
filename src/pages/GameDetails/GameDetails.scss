@@ -121,6 +121,7 @@
           color: v.$white;
           box-shadow: v.$shadow-green;
           border: 2px solid transparent;
+          transition: 0.35s;
 
           &:active {
             box-shadow: v.$inner-shadow-green;

@@ -510,6 +510,9 @@
     "backToList": "返回列表"
   },
   "gift": {
-    "title" : "遊戲禮包"
+    "title" : "遊戲禮包",
+    "receive": "領取",
+    "received": "已領取",
+    "expired": "已過期"
   }
 }

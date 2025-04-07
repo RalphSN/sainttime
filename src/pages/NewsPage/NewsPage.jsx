@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import Loading from "../../components/Loading/Loading";
+
 import "./NewsPage.scss";
 
 const NewsPage = () => {
@@ -73,7 +74,6 @@ const NewsPage = () => {
 
   return (
     <div className="news">
-
       {/* =====Breadcrumbs=====START */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
@@ -85,7 +85,6 @@ const NewsPage = () => {
       </nav>
 
       {/* =====Breadcrumbs=====END */}
-
 
       <h1 className="news__title">{t("news.title")}</h1>
 
@@ -170,7 +169,7 @@ const NewsPage = () => {
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
-              className="btn--news-page"
+              className="btn--page"
             >
               {t("news.nextPage")}
             </button>

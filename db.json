@@ -135,25 +135,64 @@
       "id": "1",
       "userId": "a557",
       "giftPackId": "g1",
-      "claimedAt": "2025-03-28T01:00:00Z"
+      "claimedAt": "2025-03-28T01:00:00Z",
+      "cardCode": "VIP666"
     },
     {
       "id": "a4fe",
       "userId": "7e0f",
       "giftPackId": "g1",
-      "claimedAt": "2025-04-02T09:59:45.906Z"
+      "claimedAt": "2025-04-02T09:59:45.906Z",
+      "cardCode": "VIP888"
     },
     {
       "id": "172d",
       "userId": "7e0f",
       "giftPackId": "g2",
-      "claimedAt": "2025-04-02T09:59:48.186Z"
+      "claimedAt": "2025-04-02T09:59:48.186Z",
+      "cardCode": "GOLD123"
     },
     {
-      "id": "8b4b",
+      "id": "4183",
       "userId": "7e0f",
       "giftPackId": "g3",
-      "claimedAt": "2025-04-02T09:59:49.010Z"
+      "claimedAt": "2025-04-07T10:00:42.213Z",
+      "cardCode": "VIP575"
+    },
+    {
+      "id": "4464",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-07T10:04:40.101Z",
+      "cardCode": "VIP596"
+    },
+    {
+      "id": "f16c",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-07T10:04:42.869Z",
+      "cardCode": "VIP685"
+    },
+    {
+      "id": "3d93",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-07T10:04:44.406Z",
+      "cardCode": "VIP552"
+    },
+    {
+      "id": "66a5",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-07T10:04:47.509Z",
+      "cardCode": "VIP931"
+    },
+    {
+      "id": "1de0",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-07T10:04:49.661Z",
+      "cardCode": "VIP824"
     }
   ]
 }

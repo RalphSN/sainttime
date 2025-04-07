@@ -126,3 +126,54 @@ main,body {
     }
   }
 }
+
+// =====分頁區塊=====
+
+.pagination {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  @include m.flex-center;
+
+  .btn--page {
+    color: v.$white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      color: v.$primary;
+    }
+
+    &:disabled {
+      color: v.$white;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-select {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+
+    .page-select__text {
+      margin: 0 0.5rem;
+      color: v.$greyLight-2;
+    }
+
+    .page-select__select {
+      padding: 0.2rem 0.35rem;
+      border: 1px solid v.$white;
+      border-radius: 5px;
+      background-color: v.$white;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

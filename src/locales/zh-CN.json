@@ -508,6 +508,11 @@
     "page": "页",
     "total": "共",
     "backToList": "返回列表"
-}
-
+  },
+  "gift": {
+    "title": "游戏礼包",
+    "receive": "领取",
+    "received": "已领取",
+    "expired": "已过期"
+  }
 }

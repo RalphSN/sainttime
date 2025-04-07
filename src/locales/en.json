@@ -508,5 +508,11 @@
     "page": "Page",
     "total": "Total of",
     "backToList": "Back to List"
+  },
+  "gift": {
+    "title": "Game Gift Pack",
+    "receive": "Claim",
+    "received": "Claimed",
+    "expired": "Expired"
   }
 }
