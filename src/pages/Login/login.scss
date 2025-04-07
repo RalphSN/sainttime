@@ -2,9 +2,11 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .login {
-  align-items: flex-start;
-  @include m.page-basic;
-  @include m.flex-center($padding: 5rem 2rem);
+  @include m.flex-center($align: flex-start);
+
+  & {
+    @include m.page-basic($padding: 5rem 2rem);
+  }
 
   .login-box,
   .register-box {

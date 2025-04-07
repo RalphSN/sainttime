@@ -2,9 +2,11 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .register {
-  padding-top: 5rem;
-  @include m.page-basic;
   @include m.flex-center($align: flex-start);
+
+  & {
+    @include m.page-basic($padding: 5rem 2rem);
+  }
 
   .register-case,
   .login-case {
@@ -101,7 +103,7 @@
       color: v.$gray;
       text-decoration: underline;
       transition: 0.35s;
-      
+
       &:hover {
         color: v.$primary;
       }
