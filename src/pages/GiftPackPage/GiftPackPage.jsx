@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { AnimatePresence } from "framer-motion";
 import Loading from "../../components/Loading/Loading";
 import GiftSuccessModal from "../../components/GiftSuccessModal/GiftSuccessModal";
 import "./GiftPackPage.scss";
@@ -115,9 +116,9 @@ const GiftPackPage = () => {
                       <img src={pack.image} alt="icon" className="avatar" />
                     </figure>
                     <div className="gift-item__info">
-                      <h2>{pack.title}</h2>
-                      <p>{pack.content}</p>
-                      <p>
+                      <h2 className="gift-item__info-title">{pack.title}</h2>
+                      <p className="gift-item__info-text">{pack.content}</p>
+                      <p className="gift-item__info-text">
                         有效期限：{pack.startDate} ~ {pack.endDate}
                       </p>
                     </div>
@@ -141,20 +142,20 @@ const GiftPackPage = () => {
             <button
               onClick={() => setCurrentPage(1)}
               disabled={currentPage === 1}
-              className="btn--news-page btn--extrem"
+              className="btn--page btn--extrem"
             >
-              {t("news.firstPage")}
+              {t("pagination.firstPage")}
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
               className="btn--page"
             >
-              {t("news.prevPage")}
+              {t("pagination.prevPage")}
             </button>
 
             <div className="page-select">
-              <span className="page-select__text">{t("news.the")}</span>
+              <span className="page-select__text">{t("pagination.the")}</span>
               <select
                 value={currentPage}
                 onChange={(e) => setCurrentPage(Number(e.target.value))}
@@ -167,8 +168,8 @@ const GiftPackPage = () => {
                 ))}
               </select>
               <span className="page-select__text">
-                {t("news.page")} / {t("news.total")} {totalPages}{" "}
-                {t("news.page")}
+                {t("pagination.page")} / {t("pagination.total")} {totalPages}{" "}
+                {t("pagination.page")}
               </span>
             </div>
 
@@ -177,28 +178,30 @@ const GiftPackPage = () => {
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
-              className="btn--news-page"
+              className="btn--page"
             >
-              {t("news.nextPage")}
+              {t("pagination.nextPage")}
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
-              className="btn--news-page btn--extrem"
+              className="btn--page btn--extrem"
             >
-              {t("news.lastPage")}
+              {t("pagination.lastPage")}
             </button>
           </div>
         </>
       )}
 
       {/* 成功領取彈窗 */}
-      {showSuccessModal && (
-        <GiftSuccessModal
-          code={claimedCode}
-          onClose={() => setShowSuccessModal(false)}
-        />
-      )}
+      <AnimatePresence>
+        {showSuccessModal && (
+          <GiftSuccessModal
+            code={claimedCode}
+            onClose={() => setShowSuccessModal(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

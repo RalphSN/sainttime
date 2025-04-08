@@ -72,6 +72,7 @@ const Header = () => {
   const navLinks = [
     { key: "navbar.home", to: "/" },
     { key: "navbar.popularGames", to: "/games" },
+    { key: "navbar.gift", to: "/gift" },
     { key: "navbar.member", to: "/member" },
   ];
 

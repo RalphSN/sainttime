@@ -54,3 +54,44 @@
     }
   }
 }
+
+@media (max-width: 430px) {
+  .gift-page {
+    .gift-item {
+      flex-direction: column;
+
+      .gift-item__content {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+
+        .gift-item__avatar {
+          width: 100%;
+          border-radius: 15px;
+          margin: 0;
+          max-height: 250px;
+          margin-bottom: 0.5rem;
+        }
+
+        .gift-item__info {
+          .gift-item__info-title {
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+          }
+          .gift-item__info-text {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .btn-box {
+        width: 100%;
+
+        .btn--withdraw {
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

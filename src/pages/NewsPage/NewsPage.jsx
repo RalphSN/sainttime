@@ -128,25 +128,25 @@ const NewsPage = () => {
             )}
           </div>
 
-          {/* 分頁 UI */}
+          {/* 分頁區塊 */}
           <div className="pagination">
             <button
               onClick={() => setCurrentPage(1)}
               disabled={currentPage === 1}
-              className="btn--news-page btn--extrem"
+              className="btn--page btn--extrem"
             >
-              {t("news.firstPage")}
+              {t("pagination.firstPage")}
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="btn--news-page"
+              className="btn--page"
             >
-              {t("news.prevPage")}
+              {t("pagination.prevPage")}
             </button>
 
             <div className="page-select">
-              <span className="page-select__text">{t("news.the")}</span>
+              <span className="page-select__text">{t("pagination.the")}</span>
               <select
                 value={currentPage > totalPages ? 1 : currentPage} // 確保 currentPage 不超過 totalPages
                 onChange={(e) => setCurrentPage(Number(e.target.value))}
@@ -159,8 +159,8 @@ const NewsPage = () => {
                 ))}
               </select>
               <span className="page-select__text">
-                {t("news.page")} / {t("news.total")} {totalPages}{" "}
-                {t("news.page")}
+                {t("pagination.page")} / {t("pagination.total")} {totalPages}{" "}
+                {t("pagination.page")}
               </span>
             </div>
 
@@ -171,14 +171,14 @@ const NewsPage = () => {
               disabled={currentPage === totalPages}
               className="btn--page"
             >
-              {t("news.nextPage")}
+              {t("pagination.nextPage")}
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
-              className="btn--news-page btn--extrem"
+              className="btn--page btn--extrem"
             >
-              {t("news.lastPage")}
+              {t("pagination.lastPage")}
             </button>
           </div>
         </>

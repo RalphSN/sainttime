@@ -148,7 +148,7 @@ main,body {
     }
 
     &:disabled {
-      color: v.$white;
+      color: v.$gray;
       cursor: not-allowed;
     }
   }
@@ -176,4 +176,19 @@ main,body {
       }
     }
   }
+}
+
+
+@media (max-width: 430px) {
+  .pagination {
+
+    .page-select {
+      margin: 0;
+    }
+
+    .btn--extrem {
+      display: none;
+    }
+  }
+
 }

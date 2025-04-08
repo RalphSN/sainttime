@@ -7,7 +7,8 @@
     "language": "Language",
     "member": "Member Area",
     "hello": "Hi",
-    "logout": "logout"
+    "logout": "logout",
+    "gift": "Game Gift"
   },
   "languages": {
     "en": "English",
@@ -500,19 +501,28 @@
     "tryAgain": "Retry",
     "loading": "Loading...",
     "noNews": "No news found",
+    "backToList": "Back to List"
+  },
+  "pagination": {
     "firstPage": "First Page",
     "prevPage": "Previous Page",
     "nextPage": "Next Page",
     "lastPage": "Last Page",
     "the": "The",
     "page": "Page",
-    "total": "Total of",
-    "backToList": "Back to List"
+    "total": "Total of"
   },
   "gift": {
     "title": "Game Gift Pack",
     "receive": "Claim",
     "received": "Claimed",
     "expired": "Expired"
+  },
+  "modal": {
+    "title": "Claim Successful",
+    "content": "Congratulations! You've successfully claimed it. Please click to copy!",
+    "code": "Card Number",
+    "copy": "Copy",
+    "confirm": "Confirm"
   }
 }

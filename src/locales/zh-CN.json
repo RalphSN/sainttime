@@ -7,7 +7,8 @@
     "language": "语言",
     "member": "会员专区",
     "hello": "您好",
-    "logout": "登出"
+    "logout": "登出",
+    "gift": "游戏礼包"
   },
   "languages": {
     "en": "English",
@@ -500,19 +501,28 @@
     "tryAgain": "重试",
     "loading": "加载中...",
     "noNews": "没有找到新闻",
+    "backToList": "返回列表"
+  },
+  "pagination": {
     "firstPage": "第一页",
     "prevPage": "上一页",
     "nextPage": "下一页",
     "lastPage": "最后一页",
     "the": "第",
     "page": "页",
-    "total": "共",
-    "backToList": "返回列表"
+    "total": "共"
   },
   "gift": {
     "title": "游戏礼包",
     "receive": "领取",
     "received": "已领取",
     "expired": "已过期"
+  },
+  "modal": {
+    "title": "领取成功",
+    "content": "恭喜您领取成功！请点击复制！",
+    "code": "卡号",
+    "copy": "复制",
+    "confirm": "确定"
   }
 }
