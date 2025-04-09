@@ -18,6 +18,7 @@ import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import Loading from "./components/Loading/Loading";
 import GiftPackPage from "./pages/GiftPackPage/GiftPackPage"
+import Member from "./pages/Member/Member";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/gift" element={<GiftPackPage />} />
+          <Route path="/member" element={<Member />} />
         </Route>
       </Routes>
     </BrowserRouter>

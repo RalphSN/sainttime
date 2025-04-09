@@ -529,6 +529,90 @@
       "giftPackId": "g1",
       "claimedAt": "2025-04-08T09:04:31.262Z",
       "cardCode": "VIP635"
+    },
+    {
+      "id": "5279",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T01:11:25.983Z",
+      "cardCode": "VIP511"
+    },
+    {
+      "id": "5d34",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-09T01:11:28.247Z",
+      "cardCode": "VIP207"
+    },
+    {
+      "id": "fcc0",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-09T01:16:38.894Z",
+      "cardCode": "VIP970"
+    },
+    {
+      "id": "8c84",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T01:16:43.518Z",
+      "cardCode": "VIP206"
+    },
+    {
+      "id": "02fd",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-09T01:18:18.197Z",
+      "cardCode": "VIP157"
+    },
+    {
+      "id": "e018",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T01:18:19.870Z",
+      "cardCode": "VIP207"
+    },
+    {
+      "id": "07b8",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-09T02:10:03.192Z",
+      "cardCode": "VIP620"
+    },
+    {
+      "id": "28e6",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T02:10:18.232Z",
+      "cardCode": "VIP299"
+    },
+    {
+      "id": "ff25",
+      "userId": "7e0f",
+      "giftPackId": "g3",
+      "claimedAt": "2025-04-09T02:10:20.152Z",
+      "cardCode": "VIP712"
+    },
+    {
+      "id": "c219",
+      "userId": "7e0f",
+      "giftPackId": "g3",
+      "claimedAt": "2025-04-09T02:10:21.543Z",
+      "cardCode": "VIP445"
+    },
+    {
+      "id": "4a85",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T02:10:23.904Z",
+      "cardCode": "VIP178"
+    },
+    {
+      "id": "4421",
+      "userId": "7e0f",
+      "giftPackId": "g2",
+      "claimedAt": "2025-04-09T02:10:32.688Z",
+      "cardCode": "VIP707"
     }
   ]
 }

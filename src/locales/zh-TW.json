@@ -524,5 +524,9 @@
     "code": "卡號",
     "copy": "複製",
     "confirm": "確定"
+  },
+  "member": {
+    "title": "會員專區",
+    "count": "點數查詢"
   }
 }

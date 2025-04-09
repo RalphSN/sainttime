@@ -16,11 +16,11 @@
   display: inline-block;
   vertical-align: top;
   transform: scale(1.5);
-}
 
-svg path,
-svg rect {
-  fill: v.$white;
+  svg path,
+  svg rect {
+    fill: v.$white;
+  }
 }
 
 .text {
@@ -67,7 +67,6 @@ svg rect {
   animation-delay: 0.9s;
 }
 
-
 @keyframes bounce {
   0%,
   20%,
@@ -83,4 +82,3 @@ svg rect {
     transform: translateY(-5px);
   }
 }
-

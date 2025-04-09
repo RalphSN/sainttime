@@ -17,9 +17,9 @@ const Header = () => {
     "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/logo_sainttime.png";
 
   // 如果username是email格式，則只取@之前的內容
-  const dispalyName = user?.username.includes("@")
+  const displayName = user?.username.includes("@")
     ? user.username.split("@")[0]
-    : user?.username;
+    : user?.username || "";
 
   // 切換語言
   const changeLanguage = (lng) => {
@@ -129,7 +129,7 @@ const Header = () => {
           {user ? (
             <>
               <span className="user-greeting">
-                {dispalyName}，{t("navbar.hello")}!
+                {displayName}，{t("navbar.hello")}!
               </span>
               <button
                 className="btn btn--logout"
@@ -137,6 +137,7 @@ const Header = () => {
                   logout();
                   localStorage.removeItem("userId");
                   closeMenuOnNavigate();
+                  window.location.href = "/";
                 }}
               >
                 {t("navbar.logout")}
