@@ -524,5 +524,24 @@
     "code": "卡号",
     "copy": "复制",
     "confirm": "确定"
+  },
+  "member": {
+    "title": "会员专区",
+    "count": "点数查询",
+    "remainingPoints": "剩余点数",
+    "orderNumber": "订单号",
+    "success": "已支付",
+    "processing": "处理中",
+    "failed": "未完成",
+    "rechargeAmount": "充值金额",
+    "points": "点",
+    "menu": {
+      "recharge": "充值",
+      "checkPoints": "点数查询",
+      "customerService": "联系客服",
+      "myCertificates": "我的凭证",
+      "changePassword": "修改密码",
+      "myBookings": "我的预约"
+    }
   }
 }

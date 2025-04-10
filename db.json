@@ -17,17 +17,98 @@
     {
       "id": "9ede",
       "username": "ralph341629@gmail.com",
-      "password": "test123"
+      "password": "test123",
+      "nickname": "ralph3416",
+      "points": 3200,
+      "avatar": "default1"
     },
     {
       "id": "a557",
       "username": "ralph.sn.2025@gmail.com",
-      "password": "test123"
+      "password": "test123",
+      "nickname": "ralphsn2025",
+      "points": 5000,
+      "avatar": "default2"
     },
     {
       "id": "7e0f",
       "username": "meme",
-      "password": "test123"
+      "password": "test123",
+      "nickname": "meme",
+      "points": 800,
+      "avatar": "default3"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "userId": "9ede",
+      "time": "2025-01-12 10:00:00",
+      "paymentMethod": "信用卡",
+      "orderId": "Order202501121000009ede1",
+      "points": 1000,
+      "amount": 10,
+      "status": "success"
+    },
+    {
+      "id": 2,
+      "userId": "9ede",
+      "time": "2025-02-15 15:23:45",
+      "paymentMethod": "LINE Pay",
+      "orderId": "Order202502151523459ede2",
+      "points": 2200,
+      "amount": 22,
+      "status": "success"
+    },
+    {
+      "id": 3,
+      "userId": "a557",
+      "time": "2025-02-10 11:12:14",
+      "paymentMethod": "微信-C01",
+      "orderId": "SaintTime20250210111213721872qg9",
+      "points": 1000,
+      "amount": 10,
+      "status": "processing"
+    },
+    {
+      "id": 4,
+      "userId": "a557",
+      "time": "2025-02-10 11:12:04",
+      "paymentMethod": "支付寶-M01",
+      "orderId": "SaintTime20250210111203876782zh9",
+      "points": 5000,
+      "amount": 50,
+      "status": "success"
+    },
+    {
+      "id": 5,
+      "userId": "7e0f",
+      "time": "2025-03-05 09:30:00",
+      "paymentMethod": "街口支付",
+      "orderId": "Order202503050930007e0f1",
+      "points": 1200,
+      "amount": 12,
+      "status": "failed"
+    },
+    {
+      "id": 6,
+      "userId": "7e0f",
+      "time": "2025-03-06 14:18:00",
+      "paymentMethod": "支付寶-M01",
+      "orderId": "Order202503061418007e0f2",
+      "points": 800,
+      "amount": 8,
+      "status": "success"
+    },
+    {
+      "id": 7,
+      "userId": "7e0f",
+      "time": "2025-03-07 17:45:30",
+      "paymentMethod": "LINE Pay",
+      "orderId": "Order202503071745307e0f3",
+      "points": 1000,
+      "amount": 10,
+      "status": "processing"
     }
   ],
   "news": [

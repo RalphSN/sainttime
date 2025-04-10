@@ -513,7 +513,7 @@
     "total": "共"
   },
   "gift": {
-    "title" : "遊戲禮包",
+    "title": "遊戲禮包",
     "receive": "領取",
     "received": "已領取",
     "expired": "已過期"
@@ -527,6 +527,21 @@
   },
   "member": {
     "title": "會員專區",
-    "count": "點數查詢"
+    "count": "點數查詢",
+    "remainingPoints": "剩餘點數",
+    "orderNumber": "訂單號",
+    "success": "已支付",
+    "processing": "處理中",
+    "failed": "未完成",
+    "rechargeAmount": "儲值金額",
+    "points": "點",
+    "menu": {
+      "recharge": "儲值點數",
+      "checkPoints": "點數查詢",
+      "customerService": "聯繫客服",
+      "myCertificates": "我的憑證",
+      "changePassword": "修改密碼",
+      "myBookings": "我的預約"
+    }
   }
 }

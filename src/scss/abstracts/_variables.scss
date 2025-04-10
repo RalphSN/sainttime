@@ -10,7 +10,7 @@ $aid: #ff5733;
 $white: #fff;
 $black: #000;
 
-$success: #28a745;
+$success: #22a455;
 $danger: #dc3545;
 $warning: #ffc107;
 $info: #17a2b8;
@@ -37,7 +37,7 @@ $shadow-color-black: rgba(0, 0, 0, 0.2);
 $shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
 $inner-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
   inset -0.2rem -0.2rem 0.5rem #ffffff;
-  
+
 $shadow-green: inset 0.2rem 0.2rem 1rem color.adjust(#28a745, $lightness: 20%),
   inset -0.2rem -0.2rem 1rem color.adjust(#28a745, $lightness: -20%), $shadow;
 $inner-shadow-green: inset 0.2rem 0.2rem 0.5rem

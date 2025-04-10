@@ -524,5 +524,24 @@
     "code": "Card Number",
     "copy": "Copy",
     "confirm": "Confirm"
+  },
+  "member": {
+    "title": "Member Center",
+    "count": "Points Inquiry",
+    "remainingPoints": "Remaining Points",
+    "orderNumber": "Order Number",
+    "success": "Paid",
+    "processing": "Processing",
+    "failed": "Failed",
+    "rechargeAmount": "Top-up",
+    "points": "Points",
+    "menu": {
+      "recharge": "Top Up",
+      "checkPoints": "Check Points",
+      "customerService": "Contact Support",
+      "myCertificates": "My Certificates",
+      "changePassword": "Change Password",
+      "myBookings": "My Bookings"
+    }
   }
 }
