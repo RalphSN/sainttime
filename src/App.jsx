@@ -17,8 +17,10 @@ import Faq from "./pages/Faq/Faq";
 import NewsPage from "./pages/NewsPage/NewsPage";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import Loading from "./components/Loading/Loading";
-import GiftPackPage from "./pages/GiftPackPage/GiftPackPage"
-import Member from "./pages/Member/Member";
+import GiftPackPage from "./pages/GiftPackPage/GiftPackPage";
+import MemberLayout from "./components/MemberLayout/MemberLayout";
+import Points from "./pages/Points/Points";
+import Recharge from "./pages/Recharge/Recharge";
 
 function App() {
   return (
@@ -41,7 +43,12 @@ function App() {
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/gift" element={<GiftPackPage />} />
-          <Route path="/member" element={<Member />} />
+
+          <Route path="member" element={<MemberLayout />}>
+            <Route index element={<Points />} />
+            <Route path="points" element={<Points />} />
+            <Route path="recharge" element={<Recharge />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -695,5 +695,56 @@
       "claimedAt": "2025-04-09T02:10:32.688Z",
       "cardCode": "VIP707"
     }
+  ],
+  "paymentMethods": [
+    {
+      "currency": "CNY",
+      "id": "C01",
+      "name": "支付寶",
+      "label": "推薦",
+      "icon": "alipay"
+    },
+    { "currency": "CNY", "id": "P01", "name": "支付寶", "icon": "alipay" },
+    { "currency": "CNY", "id": "M01", "name": "支付寶", "icon": "alipay" },
+    { "currency": "CNY", "id": "WX01", "name": "微信", "icon": "wechat" },
+    {
+      "currency": "TWD",
+      "id": "P02_CreditCard",
+      "name": "信用卡",
+      "label": "推薦",
+      "icon": "creditcard"
+    },
+    {
+      "currency": "TWD",
+      "id": "P02_GooglePay",
+      "name": "GooglePay",
+      "icon": "googlepay"
+    },
+    {
+      "currency": "TWD",
+      "id": "P02_ApplePay",
+      "name": "ApplePay",
+      "icon": "applepay"
+    },
+    { "currency": "TWD", "id": "P02_ATM", "name": "ATM", "icon": "atm" }
+  ],
+  "paymentAmounts": [
+    {
+      "currency": "CNY",
+      "methodId": "C01",
+      "amounts": [10, 30, 50, 100, 150, 300, 500, 1000, 2000, 3000]
+    },
+    { "currency": "CNY", "methodId": "P01", "amounts": [10, 50, 100, 300] },
+    { "currency": "CNY", "methodId": "M01", "amounts": [30, 100, 500] },
+    { "currency": "CNY", "methodId": "WX01", "amounts": [50, 100, 200] },
+
+    {
+      "currency": "TWD",
+      "methodId": "P02_CreditCard",
+      "amounts": [300, 500, 1000]
+    },
+    { "currency": "TWD", "methodId": "P02_GooglePay", "amounts": [150, 500] },
+    { "currency": "TWD", "methodId": "P02_ApplePay", "amounts": [300, 600] },
+    { "currency": "TWD", "methodId": "P02_ATM", "amounts": [1000, 2000, 3000] }
   ]
 }
