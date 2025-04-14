@@ -1,6 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAlipay,
+  faWeixin,
+  faApplePay,
+  faGooglePay,
+} from "@fortawesome/free-brands-svg-icons";
+import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
+import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import RechargeConfirmationModal from "../../components/RechargeConfirmationModal/RechargeConfirmationModal";
 import RechargeSuccessModal from "../../components/RechargeSuccessModal/RechargeSuccessModal";
@@ -43,6 +52,15 @@ const Recharge = () => {
     }
   }, [selectedMethod, currency]);
 
+  const iconMap = {
+    alipay: faAlipay,
+    wechat: faWeixin,
+    applepay: faApplePay,
+    googlepay: faGooglePay,
+    creditcard: faCreditCard,
+    atm: faBuildingColumns,
+  };
+
   const getPointValue = (amount) => {
     return amount * 100; // 假設 1 元可兌換 100 點
   };
@@ -52,19 +70,23 @@ const Recharge = () => {
       <main className="recharge-content">
         <section className="recharge-check">
           <h2 className="recharge__title">{t("member.menu.recharge")}</h2>
-          <p>
+          <p className="recharge__hint">
             儲值遇到問題？請前往《<a>聯繫客服</a>》由專人為您服務
           </p>
           <div className="payment-methods">
             <div className="currency-tabs">
               <button
-                className={currency === "CNY" ? "active" : ""}
+                className={
+                  currency === "CNY" ? "btn--currency active" : "btn--currency"
+                }
                 onClick={() => setCurrency("CNY")}
               >
                 CNY
               </button>
               <button
-                className={currency === "TWD" ? "active" : ""}
+                className={
+                  currency === "TWD" ? "btn--currency active" : "btn--currency"
+                }
                 onClick={() => setCurrency("TWD")}
               >
                 TWD
@@ -76,11 +98,17 @@ const Recharge = () => {
                 <li
                   key={index}
                   onClick={() => setSelectedMethod(method.id)}
-                  className={selectedMethod === method.id ? "active" : ""}
+                  className={
+                    selectedMethod === method.id
+                      ? "method-item active"
+                      : "method-item"
+                  }
                 >
-                  <span>{method.icon}</span>
+                  <span className="method-icon">
+                    <FontAwesomeIcon icon={iconMap[method.icon]} className="method-icon"/>
+                  </span>
                   {method.name}-{method.id}
-                  {method.label && <span>＜{method.label}＞</span>}
+                  {method.label && <span className="recommended">＜{method.label}＞</span>}
                 </li>
               ))}
             </ul>
@@ -96,7 +124,7 @@ const Recharge = () => {
                   {amounts.map((amt, i) => (
                     <button
                       key={i}
-                      className={selectedAmount === amt ? "selected" : ""}
+                      className={selectedAmount === amt ? "btn--amount selected" : "btn--amount"}
                       onClick={() => setSelectedAmount(amt)}
                     >
                       {amt}

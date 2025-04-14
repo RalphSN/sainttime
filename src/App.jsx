@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // import Navbar from './components/Header/Header';
 // import Footer from './components/Footer/Footer';
 import Layout from "./components/Layout";
@@ -45,7 +45,7 @@ function App() {
           <Route path="/gift" element={<GiftPackPage />} />
 
           <Route path="member" element={<MemberLayout />}>
-            <Route index element={<Points />} />
+            <Route index element={<Navigate to="points" replace />} />
             <Route path="points" element={<Points />} />
             <Route path="recharge" element={<Recharge />} />
           </Route>

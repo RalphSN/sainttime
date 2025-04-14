@@ -700,33 +700,33 @@
     {
       "currency": "CNY",
       "id": "C01",
-      "name": "支付寶",
+      "name": "支付宝",
       "label": "推薦",
       "icon": "alipay"
     },
-    { "currency": "CNY", "id": "P01", "name": "支付寶", "icon": "alipay" },
-    { "currency": "CNY", "id": "M01", "name": "支付寶", "icon": "alipay" },
+    { "currency": "CNY", "id": "P01", "name": "支付宝", "icon": "alipay" },
+    { "currency": "CNY", "id": "M01", "name": "支付宝", "icon": "alipay" },
     { "currency": "CNY", "id": "WX01", "name": "微信", "icon": "wechat" },
     {
       "currency": "TWD",
-      "id": "P02_CreditCard",
+      "id": "P02",
       "name": "信用卡",
       "label": "推薦",
       "icon": "creditcard"
     },
     {
       "currency": "TWD",
-      "id": "P02_GooglePay",
+      "id": "P03",
       "name": "GooglePay",
       "icon": "googlepay"
     },
     {
       "currency": "TWD",
-      "id": "P02_ApplePay",
+      "id": "P04",
       "name": "ApplePay",
       "icon": "applepay"
     },
-    { "currency": "TWD", "id": "P02_ATM", "name": "ATM", "icon": "atm" }
+    { "currency": "TWD", "id": "P05", "name": "ATM", "icon": "atm" }
   ],
   "paymentAmounts": [
     {
@@ -740,11 +740,11 @@
 
     {
       "currency": "TWD",
-      "methodId": "P02_CreditCard",
+      "methodId": "P02",
       "amounts": [300, 500, 1000]
     },
-    { "currency": "TWD", "methodId": "P02_GooglePay", "amounts": [150, 500] },
-    { "currency": "TWD", "methodId": "P02_ApplePay", "amounts": [300, 600] },
-    { "currency": "TWD", "methodId": "P02_ATM", "amounts": [1000, 2000, 3000] }
+    { "currency": "TWD", "methodId": "P03", "amounts": [150, 500] },
+    { "currency": "TWD", "methodId": "P04", "amounts": [300, 600] },
+    { "currency": "TWD", "methodId": "P05", "amounts": [1000, 2000, 3000] }
   ]
 }
