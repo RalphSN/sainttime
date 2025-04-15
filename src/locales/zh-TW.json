@@ -543,5 +543,29 @@
       "changePassword": "修改密碼",
       "myBookings": "我的預約"
     }
+  },
+  "rechargeModal": {
+    "title": "充值訂單確認",
+    "type": "付款類型",
+    "amount": "儲值金額",
+    "points": "到帳點數",
+    "thinking": "再想想",
+    "send": "送出資料",
+    "alreadyConfirmed": "已送出確認",
+    "hint1": "若無出現支付畫面",
+    "hint2": "請注意視窗是否被瀏覽器阻擋",
+    "confirm": "確認"
+  },
+  "recharge": {
+    "hint1": "儲值遇到問題？請前往",
+    "contact": "聯繫客服",
+    "hint2": "由專人為您服務",
+    "amount": {
+      "title": "請選擇儲值金額",
+      "hint": "支付寶用戶若於點選確定後，未跳出二維碼，請嘗試開啟VPN後再次進行充值！",
+      "pay": "支付",
+      "availablePoints": "可兌換點數",
+      "confirm": "確認"
+    }
   }
 }

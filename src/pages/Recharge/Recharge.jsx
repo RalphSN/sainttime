@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAlipay,
@@ -8,11 +9,11 @@ import {
   faApplePay,
   faGooglePay,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
-import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
+import { faCreditCard as faCreditCardTThin } from "@fortawesome/free-regular-svg-icons";
+import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import RechargeConfirmationModal from "../../components/RechargeConfirmationModal/RechargeConfirmationModal";
-import RechargeSuccessModal from "../../components/RechargeSuccessModal/RechargeSuccessModal";
+import RechargeConfirmationModal from "../../components/RechargeModal/RechargeConfirmationModal";
+import RechargeSuccessModal from "../../components/RechargeModal/RechargeSuccessModal";
 import "./Recharge.scss";
 
 const Recharge = () => {
@@ -57,8 +58,8 @@ const Recharge = () => {
     wechat: faWeixin,
     applepay: faApplePay,
     googlepay: faGooglePay,
-    creditcard: faCreditCard,
-    atm: faBuildingColumns,
+    creditcard: faCreditCardTThin,
+    atm: faSackDollar,
   };
 
   const getPointValue = (amount) => {
@@ -71,7 +72,8 @@ const Recharge = () => {
         <section className="recharge-check">
           <h2 className="recharge__title">{t("member.menu.recharge")}</h2>
           <p className="recharge__hint">
-            儲值遇到問題？請前往《<a>聯繫客服</a>》由專人為您服務
+            {t("recharge.hint1")}《<a>{t("recharge.contact")}</a>》
+            {t("recharge.hint2")}
           </p>
           <div className="payment-methods">
             <div className="currency-tabs">
@@ -105,26 +107,32 @@ const Recharge = () => {
                   }
                 >
                   <span className="method-icon">
-                    <FontAwesomeIcon icon={iconMap[method.icon]} className="method-icon"/>
+                    <FontAwesomeIcon
+                      icon={iconMap[method.icon]}
+                      className="method-icon"
+                    />
                   </span>
                   {method.name}-{method.id}
-                  {method.label && <span className="recommended">＜{method.label}＞</span>}
+                  {method.label && (
+                    <span className="recommended">＜{method.label}＞</span>
+                  )}
                 </li>
               ))}
             </ul>
 
             {selectedMethod && (
               <div className="amount-options">
-                <p className="amount-title">請選擇充值金額</p>
-                <p className="amount-hint">
-                  ※
-                  支付寶用戶若於點選確定後，未跳出二維碼，請嘗試開啟VPN後再次進行充值！
-                </p>
+                <p className="amount-title">{t("recharge.amount.title")}</p>
+                <p className="amount-hint">※{t("recharge.amount.hint")}</p>
                 <div className="amount-buttons">
                   {amounts.map((amt, i) => (
                     <button
                       key={i}
-                      className={selectedAmount === amt ? "btn--amount selected" : "btn--amount"}
+                      className={
+                        selectedAmount === amt
+                          ? "btn--amount selected"
+                          : "btn--amount"
+                      }
                       onClick={() => setSelectedAmount(amt)}
                     >
                       {amt}
@@ -134,7 +142,8 @@ const Recharge = () => {
 
                 {selectedAmount && (
                   <p className="point-info">
-                    支付 {selectedAmount.toFixed(2)} 可兌換點數{" "}
+                    {t("recharge.amount.pay")} {selectedAmount.toFixed(2)}{" "}
+                    {t("recharge.amount.availablePoints")}{" "}
                     {getPointValue(selectedAmount)}
                   </p>
                 )}
@@ -147,69 +156,71 @@ const Recharge = () => {
                     }
                   }}
                 >
-                  確定
+                  {t("recharge.amount.confirm")}
                 </button>
               </div>
             )}
           </div>
         </section>
       </main>
+      <AnimatePresence>
+        {showConfirmModal && (
+          <RechargeConfirmationModal
+            methodLabel={
+              methods.find((m) => m.id === selectedMethod)?.name +
+              "-" +
+              selectedMethod +
+              (methods.find((m) => m.id === selectedMethod)?.label
+                ? " ＜" +
+                  methods.find((m) => m.id === selectedMethod)?.label +
+                  "＞"
+                : "")
+            }
+            amount={selectedAmount}
+            point={getPointValue(selectedAmount)}
+            onCancel={() => setShowConfirmModal(false)}
+            onConfirm={() => {
+              const method = methods.find((m) => m.id === selectedMethod);
+              const point = getPointValue(selectedAmount);
+              const time = new Date().toISOString();
+              const orderId = `Order${time.replace(
+                /[-:.TZ]/g,
+                ""
+              )}${user.id.slice(0, 4)}`;
 
-      {showConfirmModal && (
-        <RechargeConfirmationModal
-          methodLabel={
-            methods.find((m) => m.id === selectedMethod)?.name +
-            "-" +
-            selectedMethod +
-            (methods.find((m) => m.id === selectedMethod)?.label
-              ? " ＜" +
-                methods.find((m) => m.id === selectedMethod)?.label +
-                "＞"
-              : "")
-          }
-          amount={selectedAmount}
-          point={getPointValue(selectedAmount)}
-          onCancel={() => setShowConfirmModal(false)}
-          onConfirm={() => {
-            const method = methods.find((m) => m.id === selectedMethod);
-            const point = getPointValue(selectedAmount);
-            const time = new Date().toISOString();
-            const orderId = `Order${time.replace(
-              /[-:.TZ]/g,
-              ""
-            )}${user.id.slice(0, 4)}`;
-
-            axios
-              .post("http://localhost:5000/transactions", {
-                userId: user.id,
-                time,
-                paymentMethod: `${method.name}-${method.id}`,
-                orderId,
-                points: point,
-                amount: selectedAmount,
-                status: "processing",
-              })
-              .then(() => {
-                setShowConfirmModal(false);
-                setShowSuccessModal(true);
-              })
-              .catch((err) => {
-                console.error("❌ 儲值失敗：", err);
-                setShowConfirmModal(false);
-                alert("儲值失敗，請稍後再試。");
-              });
-          }}
-        />
-      )}
-
-      {showSuccessModal && (
-        <RechargeSuccessModal
-          onClose={() => {
-            setShowSuccessModal(false);
-            // TODO: 可加上跳轉
-          }}
-        />
-      )}
+              axios
+                .post("http://localhost:5000/transactions", {
+                  userId: user.id,
+                  time,
+                  paymentMethod: `${method.name}-${method.id}`,
+                  orderId,
+                  points: point,
+                  amount: selectedAmount,
+                  status: "processing",
+                })
+                .then(() => {
+                  setShowConfirmModal(false);
+                  setShowSuccessModal(true);
+                })
+                .catch((err) => {
+                  console.error("❌ 儲值失敗：", err);
+                  setShowConfirmModal(false);
+                  alert("儲值失敗，請稍後再試。");
+                });
+            }}
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showSuccessModal && (
+          <RechargeSuccessModal
+            onClose={() => {
+              setShowSuccessModal(false);
+              // TODO: 可加上跳轉
+            }}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };

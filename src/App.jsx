@@ -21,6 +21,7 @@ import GiftPackPage from "./pages/GiftPackPage/GiftPackPage";
 import MemberLayout from "./components/MemberLayout/MemberLayout";
 import Points from "./pages/Points/Points";
 import Recharge from "./pages/Recharge/Recharge";
+import ComplaintForm from "./pages/ComplaintForm/ComplaintForm";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route index element={<Navigate to="points" replace />} />
             <Route path="points" element={<Points />} />
             <Route path="recharge" element={<Recharge />} />
+            <Route path="service" element={<ComplaintForm />} />
           </Route>
         </Route>
       </Routes>

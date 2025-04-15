@@ -543,5 +543,29 @@
       "changePassword": "Change Password",
       "myBookings": "My Bookings"
     }
+  },
+  "rechargeModal": {
+    "title": "Top-up Order Confirmation",
+    "type": "Payment Method",
+    "amount": "Top-up Amount",
+    "points": "Received Points",
+    "thinking": "Think Again",
+    "send": "Submit",
+    "alreadyConfirmed": "Confirmation Submitted",
+    "hint1": "If the payment screen doesn't appear",
+    "hint2": "Please check if the browser blocked the popup window",
+    "confirm": "Confirm"
+  },
+  "recharge": {
+    "hint1": "Having trouble with top-up? Please go to",
+    "contact": "Customer Support",
+    "hint2": "Our representative will assist you",
+    "amount": {
+      "title": "Please select a top-up amount",
+      "hint": "If you're using Alipay and the QR code doesn't appear after clicking Confirm, try enabling VPN and try again!",
+      "pay": "Pay",
+      "availablePoints": "Redeemable Points",
+      "confirm": "Confirm"
+    }
   }
 }

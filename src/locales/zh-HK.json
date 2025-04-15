@@ -536,12 +536,36 @@
     "rechargeAmount": "充值金额",
     "points": "点",
     "menu": {
-      "recharge": "充值",
+      "recharge": "充值点数",
       "checkPoints": "点数查询",
       "customerService": "联系客服",
       "myCertificates": "我的凭证",
       "changePassword": "修改密码",
       "myBookings": "我的预约"
+    }
+  },
+  "rechargeModal": {
+    "title": "充值订单确认",
+    "type": "付款类型",
+    "amount": "充值金额",
+    "points": "到账点数",
+    "thinking": "再想想",
+    "send": "提交资料",
+    "alreadyConfirmed": "已提交确认",
+    "hint1": "若未弹出支付画面",
+    "hint2": "请检查浏览器是否拦截了窗口",
+    "confirm": "确认"
+  },
+  "recharge": {
+    "hint1": "充值遇到问题？请前往",
+    "contact": "联系客服",
+    "hint2": "将有专人为您服务",
+    "amount": {
+      "title": "请选择充值金额",
+      "hint": "若您是支付宝用户，点击确定后未跳出二维码，请尝试开启 VPN 后再次充值！",
+      "pay": "支付",
+      "availablePoints": "可兑换点数",
+      "confirm": "确认"
     }
   }
 }

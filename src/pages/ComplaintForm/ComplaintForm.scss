@@ -1,0 +1,30 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+
+.member-container {
+  .complaint-form {
+    flex: 4;
+    border: 1px solid v.$white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+
+    .complaint-form__title {
+      color: v.$thirdary;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .complaint-form__subtitle {
+      color: v.$white;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    .btn--edit {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+}
