@@ -567,5 +567,14 @@
       "availablePoints": "可兌換點數",
       "confirm": "確認"
     }
+  },
+  "complaint": {
+    "processed": "已處理",
+    "processing": "處理中",
+    "pending": "待處理",
+    "recharge": "儲值問題",
+    "game": "遊戲問題",
+    "function": "功能問題",
+    "other": "其他問題"
   }
 }

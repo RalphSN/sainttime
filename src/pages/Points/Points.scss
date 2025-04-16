@@ -61,11 +61,8 @@
           }
 
           .status {
-            padding: 2px 4px;
-            font-size: 12px;
-            border-radius: 5px;
             margin-left: 0.5rem;
-            white-space: nowrap;
+            @include m.tag-status;
 
             &.success {
               background-color: v.$success;

@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import axios from "axios";
-import "./Points.scss"; 
+import "./Points.scss";
 
 const Points = () => {
   const { t } = useTranslation();
-  const [user] = useOutletContext(); 
+  const [user] = useOutletContext();
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
