@@ -149,6 +149,23 @@
             height: 100%;
             object-fit: cover;
             cursor: pointer;
+            transition: 0.35s;
+
+            &:hover {
+              filter: brightness(80%);
+            }
+          }
+
+          .drag-handle {
+            position: absolute;
+            bottom: -3px;
+            right: -3px;
+
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: grab;
+            user-select: none;
+            transform: rotate(135deg) scaleX(5);
           }
 
           .btn--remove {
@@ -159,10 +176,20 @@
             right: 0;
             cursor: pointer;
             border: none;
-            color: v.$white;
+            color: v.$greyLight-2;
             background-color: v.$danger;
+            transition: 0.15s;
+            visibility: hidden;
 
             @include m.flex-center;
+
+            &:hover {
+              color: v.$white;
+            }
+          }
+
+          &:hover .btn--remove {
+            visibility: visible;
           }
         }
       }
@@ -173,13 +200,57 @@
         border: 1.5px dashed v.$white;
         font-size: 1.5rem;
         cursor: pointer;
+        position: relative;
         transition: 0.35s;
         @include m.flex-center;
 
-        &:hover {
+        &:hover,
+        &.drag-hover {
           background: rgba(255, 255, 255, 0.2);
         }
       }
+    }
+
+    .btn--submit {
+      margin-top: 2rem;
+      background-color: v.$thirdary;
+      width: 100%;
+
+      @include m.btn-basic;
+      @include m.interactive-btn;
+    }
+  }
+}
+
+.lightbox--contact {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+
+  @include m.flex-center;
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-container {
+    .complaint-form {
+      flex: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .complaint-form__new {
+      flex: 0;
+      margin: 0;
+      width: 100%;
     }
   }
 }

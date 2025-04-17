@@ -575,6 +575,13 @@
     "recharge": "儲值問題",
     "game": "遊戲問題",
     "function": "功能問題",
-    "other": "其他問題"
+    "other": "其他問題",
+    "title": "聯繫客服",
+    "subtitle1": "問題反饋",
+    "subtitle2": "問題類型",
+    "defaultSelector": "請選擇問題類型",
+    "subtitle3": "您的問題",
+    "upload": "上傳憑證（最多5張圖片）",
+    "submit": "提交"
   }
 }

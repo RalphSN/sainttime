@@ -18,6 +18,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { AnimatePresence, motion } from "framer-motion";
 import axios from "axios";
 import "./ComplaintForm.scss";
 
@@ -40,12 +41,13 @@ function SortableImage({ id, url, onRemove, onClick }) {
       style={style}
       {...attributes}
     >
-      <img
-        src={url}
-        alt="preview"
-        onClick={() => onClick(url)}
-        {...listeners}
-      />
+      <img src={url} alt="preview" onClick={() => onClick(url)} />
+
+      {/* 拖曳手把，只限制這個小區域可以拖曳 */}
+      <div className="drag-handle" {...listeners}>
+        ☰
+      </div>
+
       <button
         type="button"
         onClick={(e) => {
@@ -67,6 +69,7 @@ const ComplaintForm = () => {
   const [lightbox, setLightbox] = useState(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [feedbacks, setFeedbacks] = useState([]);
+  const [isDragging, setIsDragging] = useState(false);
   const { t } = useTranslation();
 
   const sensors = useSensors(useSensor(PointerSensor));
@@ -90,25 +93,47 @@ const ComplaintForm = () => {
     const newImages = files
       .slice(0, MAX_FILES - images.length)
       .map((file, index) => ({
-        id: `${Date.now()}-${index}`,
+        id: `${file.name}-${Date.now()}`,
         file,
         url: URL.createObjectURL(file),
       }));
     setImages((prev) => [...prev, ...newImages]);
+    fileInputRef.current.value = null;
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
+
+    const items = Array.from(e.dataTransfer.items);
+
+    // 避免從頁面內部 <img> 拖進來：不是來自檔案系統的不處理
+    const isRealFile = items.some((item) => {
+      const entry = item.webkitGetAsEntry?.();
+      return entry && entry.isFile;
+    });
+
+    if (!isRealFile) return;
+
     const files = Array.from(e.dataTransfer.files).filter((file) =>
       file.type.startsWith("image/")
     );
+
+    const existingFileKeys = new Set(
+      images.map((img) => img.file?.name + "-" + img.file?.size)
+    );
+
     const newImages = files
+      .filter((file) => {
+        const key = file.name + "-" + file.size;
+        return !existingFileKeys.has(key);
+      })
       .slice(0, MAX_FILES - images.length)
       .map((file, index) => ({
-        id: `${Date.now()}-${index}`,
+        id: `${file.name}-${Date.now()}`,
         file,
         url: URL.createObjectURL(file),
       }));
+
     setImages((prev) => [...prev, ...newImages]);
   };
 
@@ -133,11 +158,20 @@ const ComplaintForm = () => {
       content,
       images: images.map((img) => img.url),
       timestamp: new Date().toISOString(),
-      status: "未處理",
+      status: "pending",
     };
     await axios.post(`${API_URL}/feedbacks`, data);
     alert("提交成功！");
+
+    // 清空表單內容
+    setType("");
+    setContent("");
+    setImages([]);
+
+    // 關閉表單
     setIsFormOpen(false);
+
+    //重新抓feedbacks
     const res = await axios.get(`${API_URL}/feedbacks?userId=${userId}`);
     setFeedbacks(res.data);
   };
@@ -188,19 +222,19 @@ const ComplaintForm = () => {
           onChange={(e) => setType(e.target.value)}
           required
         >
-          <option className="qusetion-default" value="">
+          <option className="question-default" value="">
             請選擇問題類型
           </option>
-          <option className="question-type" value={t("complaint.recharge")}>
+          <option className="question-type" value="recharge">
             {t("complaint.recharge")}
           </option>
-          <option className="question-type" value={t("complaint.function")}>
+          <option className="question-type" value="function">
             {t("complaint.function")}
           </option>
-          <option className="question-type" value={t("complaint.game")}>
+          <option className="question-type" value="game">
             {t("complaint.game")}
           </option>
-          <option className="question-type" value={t("complaint.other")}>
+          <option className="question-type" value="other">
             {t("complaint.other")}
           </option>
         </select>
@@ -256,10 +290,18 @@ const ComplaintForm = () => {
               {/* 上傳按鈕，最多 5 張 */}
               {images.length < MAX_FILES && (
                 <div
-                  className="upload-area"
+                  className={`upload-area ${isDragging ? "drag-hover" : ""}`}
                   onClick={() => fileInputRef.current.click()}
-                  onDragOver={(e) => e.preventDefault()}
-                  onDrop={handleDrop}
+                  onDragOver={(e) => {
+                    e.preventDefault(); // 總是先擋預設行為
+                    if (!e.dataTransfer.types.includes("Files")) return;
+                  }}
+                  onDragEnter={() => setIsDragging(true)}
+                  onDragLeave={() => setIsDragging(false)}
+                  onDrop={(e) => {
+                    handleDrop(e);
+                    setIsDragging(false);
+                  }}
                 >
                   +
                 </div>
@@ -269,39 +311,35 @@ const ComplaintForm = () => {
         </DndContext>
       </div>
 
-      <button type="submit" style={{ marginTop: "1rem" }}>
+      <button type="submit" className="btn--submit">
         提交
       </button>
 
-      {lightbox &&
-        createPortal(
-          <div
-            onClick={() => setLightbox(null)}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              background: "rgba(0, 0, 0, 0.8)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 9999,
-            }}
-          >
-            <img
-              src={lightbox}
-              alt="lightbox"
-              style={{
-                maxHeight: "90%",
-                maxWidth: "90%",
-                objectFit: "contain",
-              }}
-            />
-          </div>,
-          document.body
-        )}
+      {createPortal(
+        <AnimatePresence>
+          {lightbox && (
+            <motion.div
+              className="lightbox--contact"
+              onClick={() => setLightbox(null)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.img
+                key={lightbox}
+                src={lightbox}
+                alt="lightbox"
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </form>
   );
 };
