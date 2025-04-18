@@ -18,7 +18,7 @@ import LoadingSmall from "../../Loading/LoadingSmall";
 import "./ChatBox.scss";
 import "../../../scss/common.scss";
 
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 const MAX_FILES = 5;
 
 const ChatBox = ({ feedback, onBack }) => {

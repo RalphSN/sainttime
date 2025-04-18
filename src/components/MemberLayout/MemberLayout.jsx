@@ -6,7 +6,9 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
 import Loading from "../Loading/Loading";
-import "./MemberLayout.scss"; 
+import "./MemberLayout.scss";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const MemberLayout = () => {
   const [user, setUser] = useState(null);
@@ -15,14 +17,13 @@ const MemberLayout = () => {
 
   useEffect(() => {
     if (!userId) return;
-    axios.get(`http://localhost:5000/users/${userId}`).then((res) => {
+    axios.get(`${API_URL}/users/${userId}`).then((res) => {
       setUser(res.data);
     });
   }, [userId]);
 
   if (!user) return <Loading />;
 
-  // 根據網址顯示不同的副標題（右上方頁籤標題）
   const subTitleMap = {
     "/member/recharge": t("member.menu.recharge"),
     "/member/points": t("member.menu.checkPoints"),
@@ -57,7 +58,6 @@ const MemberLayout = () => {
 
       <div className="member-box">
         <Sidebar user={user} />
-        {/* 子頁的內容，仍然保持原本 points-content 架構 */}
         <Outlet context={[user]} />
       </div>
     </div>

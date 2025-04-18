@@ -4,6 +4,8 @@ import { useOutletContext } from "react-router-dom";
 import axios from "axios";
 import "./Points.scss";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Points = () => {
   const { t } = useTranslation();
   const [user] = useOutletContext();
@@ -11,9 +13,12 @@ const Points = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/transactions?userId=${user.id}`)
+      .get(`${API_URL}/transactions?userId=${user.id}`)
       .then((res) => {
         setTransactions(res.data);
+      })
+      .catch((err) => {
+        console.error("載入交易紀錄失敗：", err);
       });
   }, [user.id]);
 

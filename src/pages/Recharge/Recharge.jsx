@@ -16,6 +16,9 @@ import RechargeConfirmationModal from "../../components/RechargeModal/RechargeCo
 import RechargeSuccessModal from "../../components/RechargeModal/RechargeSuccessModal";
 import "./Recharge.scss";
 
+// 讀取環境變數
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Recharge = () => {
   const { t } = useTranslation();
   const [user] = useOutletContext();
@@ -32,7 +35,7 @@ const Recharge = () => {
     setSelectedMethod(null);
     setSelectedAmount(null);
     axios
-      .get(`http://localhost:5000/paymentMethods?currency=${currency}`)
+      .get(`${API_URL}/paymentMethods?currency=${currency}`)
       .then((res) => {
         setMethods(res.data);
       });
@@ -42,9 +45,7 @@ const Recharge = () => {
     setSelectedAmount(null);
     if (selectedMethod) {
       axios
-        .get(
-          `http://localhost:5000/paymentAmounts?currency=${currency}&methodId=${selectedMethod}`
-        )
+        .get(`${API_URL}/paymentAmounts?currency=${currency}&methodId=${selectedMethod}`)
         .then((res) => {
           if (res.data.length > 0) {
             setAmounts(res.data[0].amounts);
@@ -62,9 +63,7 @@ const Recharge = () => {
     atm: faSackDollar,
   };
 
-  const getPointValue = (amount) => {
-    return amount * 100; // 假設 1 元可兌換 100 點
-  };
+  const getPointValue = (amount) => amount * 100;
 
   return (
     <>
@@ -77,22 +76,17 @@ const Recharge = () => {
           </p>
           <div className="payment-methods">
             <div className="currency-tabs">
-              <button
-                className={
-                  currency === "CNY" ? "btn--currency active" : "btn--currency"
-                }
-                onClick={() => setCurrency("CNY")}
-              >
-                CNY
-              </button>
-              <button
-                className={
-                  currency === "TWD" ? "btn--currency active" : "btn--currency"
-                }
-                onClick={() => setCurrency("TWD")}
-              >
-                TWD
-              </button>
+              {["CNY", "TWD"].map((cur) => (
+                <button
+                  key={cur}
+                  className={
+                    currency === cur ? "btn--currency active" : "btn--currency"
+                  }
+                  onClick={() => setCurrency(cur)}
+                >
+                  {cur}
+                </button>
+              ))}
             </div>
 
             <ul className="method-list">
@@ -107,10 +101,7 @@ const Recharge = () => {
                   }
                 >
                   <span className="method-icon">
-                    <FontAwesomeIcon
-                      icon={iconMap[method.icon]}
-                      className="method-icon"
-                    />
+                    <FontAwesomeIcon icon={iconMap[method.icon]} className="method-icon" />
                   </span>
                   {method.name}-{method.id}
                   {method.label && (
@@ -163,6 +154,7 @@ const Recharge = () => {
           </div>
         </section>
       </main>
+
       <AnimatePresence>
         {showConfirmModal && (
           <RechargeConfirmationModal
@@ -189,7 +181,7 @@ const Recharge = () => {
               )}${user.id.slice(0, 4)}`;
 
               axios
-                .post("http://localhost:5000/transactions", {
+                .post(`${API_URL}/transactions`, {
                   userId: user.id,
                   time,
                   paymentMethod: `${method.name}-${method.id}`,
@@ -211,6 +203,7 @@ const Recharge = () => {
           />
         )}
       </AnimatePresence>
+
       <AnimatePresence>
         {showSuccessModal && (
           <RechargeSuccessModal
@@ -226,3 +219,4 @@ const Recharge = () => {
 };
 
 export default Recharge;
+

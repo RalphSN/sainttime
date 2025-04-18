@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { AuthContext } from "../../context/AuthContext"; 
+import { AuthContext } from "../../context/AuthContext";
 import "./Login.scss";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const InputField = ({ label, type, placeholder, id, value, onChange }) => (
   <div className="input-wrapper">
@@ -26,7 +28,7 @@ const InputField = ({ label, type, placeholder, id, value, onChange }) => (
 const Login = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { login } = useContext(AuthContext); // 直接使用 AuthContext 的 login() 方法
+  const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [message, setMessage] = useState("");
 
@@ -37,18 +39,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     try {
       const response = await axios.get(
-        `http://localhost:5000/users?username=${formData.username}&password=${formData.password}`
+        `${API_URL}/users?username=${formData.username}&password=${formData.password}`
       );
 
       if (response.data.length > 0) {
-        const user = response.data[0]; // 取得用戶資料
-        login(user); // 立即更新 AuthContext 裡的 `user`
-        localStorage.setItem("userId", user.id); // 把 userId 存進 localStorage
+        const user = response.data[0];
+        login(user);
+        localStorage.setItem("userId", user.id);
         setMessage("✅ 登入成功！");
-        setTimeout(() => navigate("/"), 500); // 立即跳轉回首頁
+        setTimeout(() => navigate("/"), 500);
       } else {
         setMessage("❌ 帳號或密碼錯誤");
       }

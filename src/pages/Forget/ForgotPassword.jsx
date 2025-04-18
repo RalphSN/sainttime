@@ -7,6 +7,9 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "./ForgotPassword.scss";
 
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ForgotPassword = () => {
   const { register, handleSubmit } = useForm();
   const { t } = useTranslation();
@@ -30,7 +33,7 @@ const ForgotPassword = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/uploads")
+      .get(`${API_URL}/uploads`)
       .then((response) => setUploads(response.data))
       .catch((error) => console.error(t("forgotPassword.fetchError"), error));
   }, [t]);
@@ -43,7 +46,7 @@ const ForgotPassword = () => {
 
     try {
       const uploadPromises = files.map((file) =>
-        axios.post("http://localhost:5000/uploads", {
+        axios.post(`${API_URL}/uploads`, {
           email: data.email,
           fileName: file.name,
           timestamp: new Date().toISOString(),

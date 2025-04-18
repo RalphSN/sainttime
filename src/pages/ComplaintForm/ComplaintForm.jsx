@@ -25,7 +25,7 @@ import axios from "axios";
 import "./ComplaintForm.scss";
 
 const MAX_FILES = 5;
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function SortableImage({ id, url, onRemove, onClick }) {
   const { attributes, listeners, setNodeRef, transform, transition } =

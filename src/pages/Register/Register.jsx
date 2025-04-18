@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import "./Register.scss";
+
+// 讀取環境變數
+const API_URL = import.meta.env.VITE_API_URL;
 
 const InputField = ({ label, type, placeholder, id, value, onChange }) => (
   <div className="input-wrapper">
@@ -41,7 +44,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/users", {
+      await axios.post(`${API_URL}/users`, {
         username: formData.username,
         password: formData.password
       });
