@@ -432,11 +432,42 @@
       "type": "recharge",
       "content": "錢已扣款但沒到點數",
       "images": [
-        "/uploads/test1.png",
-        "/uploads/test2.png"
+        "blob:http://localhost:5173/05b26aa2-6f42-4b73-b2bd-863200cf0cc0",
+        "blob:http://localhost:5173/babbc00a-e015-4d25-bc49-712b962a7cc6",
+        "blob:http://localhost:5173/fafd7723-618a-4edf-9fda-99774ef18ad9",
+        "blob:http://localhost:5173/5a02fd84-1e8c-4e82-80a0-9a336fa4cc63",
+        "blob:http://localhost:5173/99f972da-4871-49f5-995b-d5197aef222e"
       ],
       "timestamp": "2025-04-15T09:30:00Z",
-      "status": "processed"
+      "status": "processed",
+      "messages": [
+        {
+          "role": "user",
+          "text": "錢已扣款但沒到點數",
+          "timestamp": "2025-04-15T09:30:00Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-15T09:30:00Z"
+        },
+        {
+          "role": "user",
+          "text": "123",
+          "image": null,
+          "timestamp": "2025-04-18T07:09:43.670Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/05b26aa2-6f42-4b73-b2bd-863200cf0cc0",
+            "blob:http://localhost:5173/fafd7723-618a-4edf-9fda-99774ef18ad9",
+            "blob:http://localhost:5173/babbc00a-e015-4d25-bc49-712b962a7cc6"
+          ],
+          "timestamp": "2025-04-18T10:19:40.773Z"
+        }
+      ]
     },
     {
       "id": "f002",
@@ -444,19 +475,104 @@
       "type": "function",
       "content": "點擊確認後沒有反應",
       "images": [
-        "/uploads/error1.png"
+        "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+        "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+        "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf"
       ],
       "timestamp": "2025-04-16T08:45:00Z",
-      "status": "processing"
+      "status": "processing",
+      "messages": [
+        {
+          "role": "user",
+          "text": "點擊確認後沒有反應",
+          "timestamp": "2025-04-16T08:45:00Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-16T08:45:00Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/d8be9de6-9c55-41f9-8044-ab588c776659",
+            "blob:http://localhost:5173/67203140-2c71-4fe4-b023-babc26d51946"
+          ],
+          "timestamp": "2025-04-18T08:07:38.717Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6bd21b62-3297-40a9-8e21-1b964764889b",
+            "blob:http://localhost:5173/63f0e7fb-0e35-4d4e-b65f-469c9e026fcb"
+          ],
+          "timestamp": "2025-04-18T08:15:37.437Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6bd21b62-3297-40a9-8e21-1b964764889b",
+            "blob:http://localhost:5173/c09c2d65-4a6c-4efb-a162-71cfd7401e92",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/2b26fc8e-27ed-4139-8260-ce4caec29bbf",
+            "blob:http://localhost:5173/76298781-5f41-437e-ad8b-564f292503f0"
+          ],
+          "timestamp": "2025-04-18T08:21:03.381Z"
+        }
+      ]
     },
     {
       "id": "f003",
       "userId": "7e0f",
       "type": "other",
       "content": "建議增加夜間模式",
-      "images": [],
+      "images": [
+        "blob:http://localhost:5173/6eb228fe-42ba-46c2-8828-41b512c38147",
+        "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
+      ],
       "timestamp": "2025-04-16T09:00:00Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "建議增加夜間模式",
+          "timestamp": "2025-04-16T09:00:00Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-16T09:00:00Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/ca5df872-8630-4a02-87cc-e26f60179961",
+            "blob:http://localhost:5173/c482adc8-d42f-4036-b787-05786836f02c"
+          ],
+          "timestamp": "2025-04-18T08:11:31.141Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6eb228fe-42ba-46c2-8828-41b512c38147"
+          ],
+          "timestamp": "2025-04-18T09:05:31.227Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6eb228fe-42ba-46c2-8828-41b512c38147",
+            "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
+          ],
+          "timestamp": "2025-04-18T10:24:49.556Z"
+        }
+      ]
     },
     {
       "id": "f95a",
@@ -471,7 +587,19 @@
         "blob:http://localhost:5173/a65a7d1b-0923-49f5-9573-1396b86368c2"
       ],
       "timestamp": "2025-04-17T02:24:16.467Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "test",
+          "timestamp": "2025-04-17T02:24:16.467Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-17T02:24:16.467Z"
+        }
+      ]
     },
     {
       "id": "6f7b",
@@ -483,7 +611,19 @@
         "blob:http://localhost:5173/cda12379-d45f-4f9d-9bf9-fdbdfa1e3c5a"
       ],
       "timestamp": "2025-04-17T02:34:57.106Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "窩喔喔你是我的花朵",
+          "timestamp": "2025-04-17T02:34:57.106Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-17T02:34:57.106Z"
+        }
+      ]
     },
     {
       "id": "fb7f",
@@ -498,7 +638,19 @@
         "blob:http://localhost:5173/73c3803c-5d60-42e0-aecd-84d2e1362e25"
       ],
       "timestamp": "2025-04-17T05:48:19.533Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "Erya coivië\"",
+          "timestamp": "2025-04-17T05:48:19.533Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-17T05:48:19.533Z"
+        }
+      ]
     },
     {
       "id": "307c",
@@ -513,7 +665,19 @@
         "blob:http://localhost:5173/3fb5b2dc-6f28-4300-bd2c-1ff40f79d47e"
       ],
       "timestamp": "2025-04-17T06:20:07.101Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "測試手機版本",
+          "timestamp": "2025-04-17T06:20:07.101Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-17T06:20:07.101Z"
+        }
+      ]
     },
     {
       "id": "f335",
@@ -521,14 +685,64 @@
       "type": "function",
       "content": "手機板測試",
       "images": [
-        "blob:http://localhost:5173/0fc56ac2-e020-4e39-acae-1c5b5427b4ec",
-        "blob:http://localhost:5173/051c5c88-1ff5-450e-aeb5-66adac7c48f8",
-        "blob:http://localhost:5173/9e8f30a8-30f0-4c12-bffc-68cd1c3affbe",
-        "blob:http://localhost:5173/92ad4934-8f24-4602-b0d6-211caaec7ee0",
-        "blob:http://localhost:5173/2d97662a-699a-4c32-9660-b0c704d89ba5"
+        "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+        "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+        "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
       ],
       "timestamp": "2025-04-17T06:40:09.816Z",
-      "status": "pending"
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "手機板測試",
+          "timestamp": "2025-04-17T06:40:09.816Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-17T06:40:09.816Z"
+        },
+        {
+          "role": "user",
+          "text": "你好",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
+          ],
+          "timestamp": "2025-04-18T09:28:18.987Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
+          ],
+          "timestamp": "2025-04-18T09:56:55.234Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
+          ],
+          "timestamp": "2025-04-18T09:56:57.290Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
+          ],
+          "timestamp": "2025-04-18T09:56:58.939Z"
+        }
+      ]
     }
   ]
 }

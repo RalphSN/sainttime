@@ -19,6 +19,8 @@ import { CSS } from "@dnd-kit/utilities";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
+import ChatBox from "../../components/Feedbacks/ChatBox/ChatBox";
+import LoadingSmall from "../../components/Loading/LoadingSmall";
 import axios from "axios";
 import "./ComplaintForm.scss";
 
@@ -70,6 +72,8 @@ const ComplaintForm = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [feedbacks, setFeedbacks] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [activeFeedback, setActiveFeedback] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const { t } = useTranslation();
 
   const sensors = useSensors(useSensor(PointerSensor));
@@ -152,29 +156,50 @@ const ComplaintForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const timestamp = new Date().toISOString(); // 先定義 timestamp
+
     const data = {
       userId,
       type,
       content,
       images: images.map((img) => img.url),
-      timestamp: new Date().toISOString(),
+      timestamp, // 使用同一個時間
       status: "pending",
+      messages: [
+        {
+          role: "user",
+          text: content,
+          timestamp,
+        },
+        {
+          role: "bot",
+          text: "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          timestamp,
+        },
+      ],
     };
+
     await axios.post(`${API_URL}/feedbacks`, data);
     alert("提交成功！");
 
-    // 清空表單內容
     setType("");
     setContent("");
     setImages([]);
-
-    // 關閉表單
     setIsFormOpen(false);
 
-    //重新抓feedbacks
     const res = await axios.get(`${API_URL}/feedbacks?userId=${userId}`);
     setFeedbacks(res.data);
   };
+
+  if (activeFeedback) {
+    return (
+      <ChatBox
+        feedback={activeFeedback}
+        onBack={() => setActiveFeedback(null)}
+      />
+    );
+  }
 
   if (!isFormOpen) {
     return (
@@ -187,7 +212,11 @@ const ComplaintForm = () => {
           </button>
         </div>
         {feedbacks.map((fb) => (
-          <div key={fb.id} className="feedback-item">
+          <div
+            key={fb.id}
+            className="feedback-item"
+            onClick={() => setActiveFeedback(fb)}
+          >
             <div className="feedback-item__date">
               {new Date(fb.timestamp).toLocaleString()}
             </div>
@@ -303,7 +332,7 @@ const ComplaintForm = () => {
                     setIsDragging(false);
                   }}
                 >
-                  +
+                  {isUploading ? <LoadingSmall /> : "+"}
                 </div>
               )}
             </div>

@@ -20,6 +20,26 @@
   }
 }
 
+@mixin service-area {
+  flex: 4;
+  border: 1px solid v.$white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-left: 2rem;
+
+  &__title {
+    color: v.$thirdary;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 767px) {
+    flex: 0;
+    margin: 0;
+    width: 100%;
+  }
+}
+
 @mixin text-basic {
   font-size: 1rem;
   letter-spacing: 0.1rem;

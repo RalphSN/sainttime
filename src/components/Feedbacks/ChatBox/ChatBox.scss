@@ -1,0 +1,71 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+  .chat-box {
+    @include m.service-area;
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+
+      .chat-message {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        position: relative;
+        word-break: break-word;
+        position: relative;
+
+        .chat-message__time {
+          position: absolute;
+          color: v.$white;
+          font-size: 0.75rem;
+          width: 100px;
+        }
+
+        &.user {
+          align-self: flex-end;
+          background-color: #d0f0fd;
+          color: #000;
+          border-top-right-radius: 0;
+
+          .chat-message__time {
+            right: 5px;
+            bottom: -20px;
+            text-align: right;
+          }
+
+          .chat-message__text {
+            text-align: right;
+          }
+        }
+
+        &.bot {
+          align-self: flex-start;
+          background-color: #f3f3f3;
+          color: #333;
+          border-top-left-radius: 0;
+
+          .chat-message__time {
+            left: 5px;
+            bottom: -20px;
+            text-align: left;
+          }
+
+          .chat-message__text {
+            text-align: left;
+          }
+        }
+
+        .chat-message__image {
+          width: 100px;
+          margin-top: 1rem;
+          display: none;
+        }
+      }
+    }
+  }
+}

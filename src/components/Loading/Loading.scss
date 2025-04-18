@@ -82,3 +82,31 @@
     transform: translateY(-5px);
   }
 }
+
+
+.loader-container--small {
+  position: absolute;
+  top: -2px;
+  right: 15px;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  @include m.flex-center;
+
+  .loader {
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+
+    display: inline-block;
+    vertical-align: top;
+    transform: scale(1.5);
+
+  
+    svg path,
+    svg rect {
+      fill: v.$white;
+    }
+  }
+}
