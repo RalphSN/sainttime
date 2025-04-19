@@ -516,7 +516,9 @@
     "title": "遊戲禮包",
     "receive": "領取",
     "received": "已領取",
-    "expired": "已過期"
+    "expired": "已過期",
+    "error": "錯誤",
+    "tryAgain": "請再試一次"
   },
   "modal": {
     "title": "領取成功",

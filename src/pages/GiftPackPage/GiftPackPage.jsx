@@ -1,69 +1,69 @@
-import { useEffect, useState, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { AnimatePresence } from "framer-motion";
-import Loading from "../../components/Loading/Loading";
-import GiftSuccessModal from "../../components/GiftSuccessModal/GiftSuccessModal";
-import "./GiftPackPage.scss";
-import "../../scss/common.scss";
+import { useEffect, useState, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { AnimatePresence } from 'framer-motion'
+import Loading from '../../components/Loading/Loading'
+import GiftSuccessModal from '../../components/GiftSuccessModal/GiftSuccessModal'
+import './GiftPackPage.scss'
+import '../../scss/common.scss'
 
-const API_URL = import.meta.env.VITE_API_URL;
-const itemsPerPage = 6;
+const API_URL = import.meta.env.VITE_API_URL
+const itemsPerPage = 6
 
 const GiftPackPage = () => {
-  const [giftPacks, setGiftPacks] = useState([]);
-  const [claimedPacks, setClaimedPacks] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [claimedCode, setClaimedCode] = useState("");
+  const [giftPacks, setGiftPacks] = useState([])
+  const [claimedPacks, setClaimedPacks] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [claimedCode, setClaimedCode] = useState('')
 
-  const userId = localStorage.getItem("userId");
-  const { t } = useTranslation();
+  const userId = localStorage.getItem('userId')
+  const { t } = useTranslation()
 
   const fetchGiftPacks = useCallback(async () => {
-    setLoading(true);
-    setError(null);
+    setLoading(true)
+    setError(null)
     try {
-      const res = await fetch(`${API_URL}/giftPacks`);
-      const all = await res.json();
+      const res = await fetch(`${API_URL}/giftPacks`)
+      const all = await res.json()
 
-      setTotalPages(Math.ceil(all.length / itemsPerPage));
-      const start = (currentPage - 1) * itemsPerPage;
-      const currentItems = all.slice(start, start + itemsPerPage);
-      setGiftPacks(currentItems);
+      setTotalPages(Math.ceil(all.length / itemsPerPage))
+      const start = (currentPage - 1) * itemsPerPage
+      const currentItems = all.slice(start, start + itemsPerPage)
+      setGiftPacks(currentItems)
     } catch (err) {
-      setError(err.message || "Error loading gift packs");
+      setError(err.message || 'Error loading gift packs')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [currentPage]);
+  }, [currentPage])
 
   useEffect(() => {
-    fetchGiftPacks();
+    fetchGiftPacks()
     if (userId) {
       fetch(`${API_URL}/claims?userId=${userId}`)
         .then((res) => res.json())
-        .then((data) => setClaimedPacks(data.map((d) => d.giftPackId)));
+        .then((data) => setClaimedPacks(data.map((d) => d.giftPackId)))
     }
-  }, [fetchGiftPacks, userId]);
+  }, [fetchGiftPacks, userId])
 
   const handleClaim = async (giftPackId) => {
     if (!userId) {
-      alert("請先登入！");
-      window.location.href = "/login";
-      return;
+      alert('請先登入！')
+      window.location.href = '/login'
+      return
     }
 
-    const cardCode = `VIP${Math.floor(100 + Math.random() * 900)}`; // 每次都生成新卡號
+    const cardCode = `VIP${Math.floor(100 + Math.random() * 900)}` // 每次都生成新卡號
 
     await fetch(`${API_URL}/claims`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         userId,
@@ -71,14 +71,14 @@ const GiftPackPage = () => {
         claimedAt: new Date(),
         cardCode,
       }),
-    });
+    })
 
     // 不用判斷是否已領取，直接彈窗
-    setClaimedCode(cardCode);
-    setShowSuccessModal(true);
-  };
+    setClaimedCode(cardCode)
+    setShowSuccessModal(true)
+  }
 
-  if (loading) return <Loading justifyContent="center" />;
+  if (loading) return <Loading justifyContent="center" />
 
   return (
     <div className="gift-page">
@@ -86,28 +86,30 @@ const GiftPackPage = () => {
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item">
           <FontAwesomeIcon icon={faHouse} className="icon" />
-          {t("breadcrumb.home")}
+          {t('breadcrumb.home')}
         </a>
         <span className="breadcrumb-separator"> &gt; </span>
-        <span className="breadcrumb-current">{t("gift.title")}</span>
+        <span className="breadcrumb-current">{t('gift.title')}</span>
       </nav>
       {/* =====Breadcrumbs=====END */}
 
-      <h1 className="gift__title">{t("gift.title")}</h1>
+      <h1 className="gift__title">{t('gift.title')}</h1>
 
       {error ? (
         <div className="error-message">
           <p>
-            {t("gift.error")}: {error}
+            {t('gift.error')}: {error}
           </p>
-          <button onClick={fetchGiftPacks}>{t("gift.tryAgain")}</button>
+          <button className="btn--retry" onClick={fetchGiftPacks}>
+            {t('gift.tryAgain')}
+          </button>
         </div>
       ) : (
         <>
           <div className="gift-list">
             {giftPacks.map((pack) => {
-              const expired = new Date() > new Date(pack.endDate);
-              const claimed = claimedPacks.includes(pack.id);
+              const expired = new Date() > new Date(pack.endDate)
+              const claimed = claimedPacks.includes(pack.id)
 
               return (
                 <div className="gift-item" key={pack.id}>
@@ -129,11 +131,11 @@ const GiftPackPage = () => {
                       onClick={() => handleClaim(pack.id)}
                       className="btn--withdraw"
                     >
-                      {expired ? t("gift.expired") : t("gift.receive")}
+                      {expired ? t('gift.expired') : t('gift.receive')}
                     </button>
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
 
@@ -144,18 +146,18 @@ const GiftPackPage = () => {
               disabled={currentPage === 1}
               className="btn--page btn--extrem"
             >
-              {t("pagination.firstPage")}
+              {t('pagination.firstPage')}
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
               className="btn--page"
             >
-              {t("pagination.prevPage")}
+              {t('pagination.prevPage')}
             </button>
 
             <div className="page-select">
-              <span className="page-select__text">{t("pagination.the")}</span>
+              <span className="page-select__text">{t('pagination.the')}</span>
               <select
                 value={currentPage}
                 onChange={(e) => setCurrentPage(Number(e.target.value))}
@@ -168,8 +170,8 @@ const GiftPackPage = () => {
                 ))}
               </select>
               <span className="page-select__text">
-                {t("pagination.page")} / {t("pagination.total")} {totalPages}{" "}
-                {t("pagination.page")}
+                {t('pagination.page')} / {t('pagination.total')} {totalPages}{' '}
+                {t('pagination.page')}
               </span>
             </div>
 
@@ -180,14 +182,14 @@ const GiftPackPage = () => {
               disabled={currentPage === totalPages}
               className="btn--page"
             >
-              {t("pagination.nextPage")}
+              {t('pagination.nextPage')}
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
               className="btn--page btn--extrem"
             >
-              {t("pagination.lastPage")}
+              {t('pagination.lastPage')}
             </button>
           </div>
         </>
@@ -203,7 +205,7 @@ const GiftPackPage = () => {
         )}
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
-export default GiftPackPage;
+export default GiftPackPage

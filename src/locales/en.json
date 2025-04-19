@@ -516,7 +516,9 @@
     "title": "Game Gift Pack",
     "receive": "Claim",
     "received": "Claimed",
-    "expired": "Expired"
+    "expired": "Expired",
+    "error": "Error",
+    "tryAgain": "Please try again"
   },
   "modal": {
     "title": "Claim Successful",

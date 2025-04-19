@@ -516,7 +516,9 @@
     "title": "游戏礼包",
     "receive": "领取",
     "received": "已领取",
-    "expired": "已过期"
+    "expired": "已过期",
+    "error": "错误",
+    "tryAgain": "请再试一次"
   },
   "modal": {
     "title": "领取成功",
