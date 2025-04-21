@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import {
   DndContext,
@@ -13,6 +14,8 @@ import {
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { AnimatePresence, motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import SortableImage from "../../Shared/SortableImage/SortableImage";
 import LoadingSmall from "../../Loading/LoadingSmall";
 import "./ChatBox.scss";
@@ -30,6 +33,7 @@ const ChatBox = ({ feedback, onBack }) => {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef(null);
   const chatEndRef = useRef(null);
+  const { t } = useTranslation();
 
   const sensors = useSensors(useSensor(PointerSensor));
 
@@ -39,7 +43,7 @@ const ChatBox = ({ feedback, onBack }) => {
         id: `existing-${index}-${Date.now()}`,
         file: null,
         url,
-        uploaded: true,
+        uploaded: true, // 後端已存在的，不再發送
       }));
       setImages(initialImages);
     }
@@ -109,61 +113,108 @@ const ChatBox = ({ feedback, onBack }) => {
   };
 
   const handleSend = async () => {
-    if (!inputText.trim() && images.length === 0) return;
+    const trimmedText = inputText.trim();
+    const hasText = trimmedText.length > 0;
+    const newImages = images.filter((img) => !img.uploaded);
+    const hasNewImages = newImages.length > 0;
 
-    const newMessage = {
-      role: "user",
-      text: inputText.trim(),
-      images: images.map((img) => img.url),
-      timestamp: new Date().toISOString(),
-    };
+    // 如果是純圖片，直接標記為已上傳，不送出訊息
+    if (!hasText && hasNewImages) {
+      try {
+        await axios.patch(`${API_URL}/feedbacks/${feedback.id}`, {
+          messages,
+          images: [...feedback.images, ...newImages.map((img) => img.url)],
+        });
 
-    const updatedMessages = [...messages, newMessage];
-    setMessages(updatedMessages);
-    setInputText("");
+        // 只更新圖片狀態，不新增訊息
+        setImages((prev) =>
+          prev.map((img) =>
+            newImages.some((n) => n.id === img.id)
+              ? { ...img, uploaded: true }
+              : img
+          )
+        );
+      } catch (err) {
+        alert("圖片上傳失敗！");
+      }
+      return;
+    }
 
-    try {
-      await axios.patch(`${API_URL}/feedbacks/${feedback.id}`, {
-        messages: updatedMessages,
-        images: images.map((img) => img.url),
-      });
+    // 有文字或文字＋圖片，才發送訊息
+    if (hasText || hasNewImages) {
+      const newMessage = {
+        role: "user",
+        ...(hasText && { text: trimmedText }),
+        ...(hasNewImages && { images: newImages.map((img) => img.url) }),
+        timestamp: new Date().toISOString(),
+      };
 
-      setImages((prev) => prev.map((img) => ({ ...img, uploaded: true })));
-    } catch (err) {
-      alert("訊息儲存失敗！");
+      const updatedMessages = [...messages, newMessage];
+      setMessages(updatedMessages);
+      setInputText("");
+
+      try {
+        await axios.patch(`${API_URL}/feedbacks/${feedback.id}`, {
+          messages: updatedMessages,
+          images: [...feedback.images, ...newImages.map((img) => img.url)],
+        });
+
+        setImages((prev) =>
+          prev.map((img) =>
+            newImages.some((n) => n.id === img.id)
+              ? { ...img, uploaded: true }
+              : img
+          )
+        );
+      } catch (err) {
+        alert("訊息儲存失敗！");
+      }
     }
   };
 
   return (
     <div className="chat-box">
-      <button onClick={onBack} className="btn--back">
-        ← 返回
-      </button>
+      <div className="chat-box__header">
+        <button onClick={onBack} className="btn--back">
+          ← 返回
+        </button>
+        <span className={`feedback-item__status ${feedback.status}`}>
+          {feedback.status === "processed"
+            ? t("complaint.processed")
+            : feedback.status === "processing"
+            ? t("complaint.processing")
+            : t("complaint.pending")}
+        </span>
+      </div>
 
       <div className="chat-messages">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={`chat-message ${msg.role}`}>
-            <div className="chat-message__text">{msg.text}</div>
-            {msg.images?.map((url, i) => (
-              <img
-                key={i}
-                src={url}
-                alt="chat-img"
-                className="chat-message__image"
-              />
-            ))}
-            <div className="chat-message__time">
-              {new Date(msg.timestamp).toLocaleString("zh-TW", {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              })}
+        {messages
+          .filter(
+            (msg) => msg.text?.trim() || (msg.images && msg.images.length > 0)
+          ) // 過濾空訊息
+          .map((msg, idx) => (
+            <div key={idx} className={`chat-message ${msg.role}`}>
+              {msg.text && <div className="chat-message__text">{msg.text}</div>}
+              {msg.images?.map((url, i) => (
+                <img
+                  key={i}
+                  src={url}
+                  alt="chat-img"
+                  className="chat-message__image"
+                />
+              ))}
+              <div className="chat-message__time">
+                {new Date(msg.timestamp).toLocaleString("zh-TW", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         <div ref={chatEndRef}></div>
       </div>
 
@@ -247,19 +298,21 @@ const ChatBox = ({ feedback, onBack }) => {
         </AnimatePresence>
       )}
 
-      <div className="chat-input-area">
-        <input
-          type="text"
-          className="chat-input"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="輸入訊息..."
-          onKeyDown={(e) => e.key === "Enter" && handleSend()}
-        />
-        <button className="btn--send" onClick={handleSend}>
-          ➤
-        </button>
-      </div>
+      {feedback.status !== "processed" && (
+        <div className="chat-input-area">
+          <input
+            type="text"
+            className="chat-input"
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            placeholder="輸入訊息..."
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+          />
+          <button className="btn--send" onClick={handleSend}>
+            <FontAwesomeIcon icon={faTelegram} size="2x" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

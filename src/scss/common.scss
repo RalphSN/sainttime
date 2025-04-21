@@ -248,6 +248,7 @@ main,body {
       background-color: v.$danger;
       transition: 0.15s;
       visibility: hidden;
+      z-index: 100;
 
       @include m.flex-center;
 
@@ -278,4 +279,25 @@ main,body {
   }
 }
 
+// Feedback Status 
 
+.feedback-item__status {
+  margin-left: 0.5rem;
+  font-weight: 300;
+  @include m.tag-status;
+
+  &.processed {
+    color: v.$white;
+    background-color: v.$success;
+  }
+
+  &.processing {
+    color: v.$black;
+    background-color: v.$warning;
+  }
+
+  &.pending {
+    color: v.$white;
+    background-color: v.$danger;
+  }
+}

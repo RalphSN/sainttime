@@ -485,9 +485,11 @@
       "type": "function",
       "content": "點擊確認後沒有反應",
       "images": [
+        "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
         "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
         "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
-        "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf"
+        "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+        "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
       ],
       "timestamp": "2025-04-16T08:45:00Z",
       "status": "processing",
@@ -531,6 +533,74 @@
             "blob:http://localhost:5173/76298781-5f41-437e-ad8b-564f292503f0"
           ],
           "timestamp": "2025-04-18T08:21:03.381Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T03:40:47.620Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T03:43:41.524Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T06:36:36.992Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T06:36:38.392Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T06:36:41.800Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6080b509-3bb0-44d3-a987-b44f4eb8bdcf",
+            "blob:http://localhost:5173/2cda74d3-da82-433e-b107-fc968c49e4c9",
+            "blob:http://localhost:5173/2c1fbce9-9436-437d-97a7-4b14e7af69ed",
+            "blob:http://localhost:5173/7036e4f1-2b52-47a3-8ac1-1036036dfbea",
+            "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
+          ],
+          "timestamp": "2025-04-21T06:36:42.768Z"
         }
       ]
     },
@@ -581,6 +651,22 @@
             "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
           ],
           "timestamp": "2025-04-18T10:24:49.556Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6eb228fe-42ba-46c2-8828-41b512c38147",
+            "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
+          ],
+          "timestamp": "2025-04-21T06:23:12.944Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/6eb228fe-42ba-46c2-8828-41b512c38147",
+            "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
+          ],
+          "timestamp": "2025-04-21T06:23:13.744Z"
         }
       ]
     },
@@ -632,6 +718,24 @@
           "role": "bot",
           "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
           "timestamp": "2025-04-17T02:34:57.106Z"
+        },
+        {
+          "role": "user",
+          "text": "",
+          "images": [
+            "blob:http://localhost:5173/9d158738-6e52-4801-ad21-feca8cefb746",
+            "blob:http://localhost:5173/cda12379-d45f-4f9d-9bf9-fdbdfa1e3c5a"
+          ],
+          "timestamp": "2025-04-21T02:59:08.045Z"
+        },
+        {
+          "role": "user",
+          "text": "也許可能可以",
+          "images": [
+            "blob:http://localhost:5173/9d158738-6e52-4801-ad21-feca8cefb746",
+            "blob:http://localhost:5173/cda12379-d45f-4f9d-9bf9-fdbdfa1e3c5a"
+          ],
+          "timestamp": "2025-04-21T03:17:50.198Z"
         }
       ]
     },
@@ -697,7 +801,9 @@
       "images": [
         "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
         "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
-        "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
+        "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb",
+        "blob:http://localhost:5173/a2653cc0-ad2d-4713-ab9e-58b418a5ae5a",
+        "blob:http://localhost:5173/5c4d0866-ceb4-45df-a698-bd3e3f89aab7"
       ],
       "timestamp": "2025-04-17T06:40:09.816Z",
       "status": "pending",
@@ -751,6 +857,153 @@
             "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb"
           ],
           "timestamp": "2025-04-18T09:56:58.939Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb",
+            "blob:http://localhost:5173/a2653cc0-ad2d-4713-ab9e-58b418a5ae5a"
+          ],
+          "timestamp": "2025-04-21T06:40:12.984Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb",
+            "blob:http://localhost:5173/a2653cc0-ad2d-4713-ab9e-58b418a5ae5a"
+          ],
+          "timestamp": "2025-04-21T06:48:59.247Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb",
+            "blob:http://localhost:5173/a2653cc0-ad2d-4713-ab9e-58b418a5ae5a"
+          ],
+          "timestamp": "2025-04-21T06:49:00.672Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/9162ae0d-4f9f-4081-afe2-dd37567a6aab",
+            "blob:http://localhost:5173/10126076-8dc0-4699-931b-db6454313c2d",
+            "blob:http://localhost:5173/075b521c-4b80-45d7-9879-89e4206bc2eb",
+            "blob:http://localhost:5173/a2653cc0-ad2d-4713-ab9e-58b418a5ae5a"
+          ],
+          "timestamp": "2025-04-21T06:49:01.848Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/298f344c-09a4-4bdd-acad-7c596de9ad99"
+          ],
+          "timestamp": "2025-04-21T07:08:58.031Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/ee9cd821-494f-451a-8f36-6c21394ae8d3",
+            "blob:http://localhost:5173/da30f612-422d-47e3-9661-aeeaa3b246c3"
+          ],
+          "timestamp": "2025-04-21T07:19:35.655Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/8429b9f1-5f3f-435d-a2f7-3c9a2190bd70"
+          ],
+          "timestamp": "2025-04-21T07:19:43.255Z"
+        },
+        {
+          "role": "user",
+          "text": "58",
+          "images": [
+            "blob:http://localhost:5173/13f977c1-f97d-4f57-adb6-38da717c1767"
+          ],
+          "timestamp": "2025-04-21T07:19:57.567Z"
+        },
+        {
+          "role": "user",
+          "text": "ㄍ",
+          "timestamp": "2025-04-21T07:25:43.856Z"
+        },
+        {
+          "role": "user",
+          "images": [
+            "blob:http://localhost:5173/5c4d0866-ceb4-45df-a698-bd3e3f89aab7"
+          ],
+          "timestamp": "2025-04-21T07:26:04.087Z"
+        }
+      ]
+    },
+    {
+      "id": "db27",
+      "userId": "7e0f",
+      "type": "recharge",
+      "content": "test",
+      "images": [
+        "blob:http://localhost:5173/02635b6b-3a73-4d76-aff0-5590d9646e97",
+        "blob:http://localhost:5173/b59b3962-2583-4224-aec8-ac301c178c79"
+      ],
+      "timestamp": "2025-04-21T07:49:14.823Z",
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "test",
+          "timestamp": "2025-04-21T07:49:14.823Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-21T07:49:14.823Z"
+        },
+        {
+          "role": "user",
+          "text": "5858",
+          "timestamp": "2025-04-21T07:49:46.998Z"
+        },
+        {
+          "role": "user",
+          "text": "582885",
+          "images": [
+            "blob:http://localhost:5173/f4118d9c-2982-44d4-a34f-af1b71192dd1"
+          ],
+          "timestamp": "2025-04-21T07:50:24.903Z"
+        }
+      ]
+    },
+    {
+      "id": "0a52",
+      "userId": "7e0f",
+      "type": "recharge",
+      "content": "eqweq",
+      "images": [
+        "blob:http://localhost:5173/1b18742e-d04b-4c81-aba4-d408a14ff109"
+      ],
+      "timestamp": "2025-04-21T08:07:34.687Z",
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "eqweq",
+          "timestamp": "2025-04-21T08:07:34.687Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-21T08:07:34.687Z"
+        },
+        {
+          "role": "user",
+          "text": "789",
+          "timestamp": "2025-04-21T08:29:47.965Z"
         }
       ]
     }

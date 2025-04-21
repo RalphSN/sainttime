@@ -30,6 +30,16 @@
       .btn--edit {
         font-size: 2rem;
         cursor: pointer;
+        transition: 0.35s;
+        position: relative;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+
+        &:active {
+          transform: scale(1.2);
+        }
       }
     }
 
@@ -40,9 +50,28 @@
       padding: 1rem;
       border-radius: 10px;
       margin-bottom: 1rem;
+      cursor: pointer;
+      transition: 0.35s ease-in-out;
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &:hover {
+        background-color: v.$white;
+        color: v.$black;
+        // opacity: 0.9;
+
+        &::after {
+          content: "›";
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+          opacity: 0.7;
+          color: v.$black;
+        }
       }
 
       .feedback-item__date {
@@ -57,31 +86,14 @@
       }
 
       .feedback-item__type {
-        color: v.$black;
+        color: v.$white;
         background-color: v.$thirdary;
+        font-weight: 300;
 
         @include m.tag-status;
       }
 
-      .feedback-item__status {
-        margin-left: 0.5rem;
-        @include m.tag-status;
-
-        &.processed {
-          color: v.$white;
-          background-color: v.$success;
-        }
-
-        &.processing {
-          color: v.$black;
-          background-color: v.$warning;
-        }
-
-        &.pending {
-          color: v.$white;
-          background-color: v.$danger;
-        }
-      }
+      
     }
   }
 

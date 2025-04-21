@@ -5,6 +5,25 @@
   .chat-box {
     @include m.service-area;
 
+    .chat-box__header {
+      border-bottom: 1px solid v.$white; 
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      @include m.flex-center($justify: space-between);  
+
+      .btn--back {
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.35s;
+        position: relative;
+
+  
+        &:hover {
+          color: v.$primary;
+        }
+      }
+    }
+
     .chat-messages {
       display: flex;
       flex-direction: column;
@@ -64,6 +83,29 @@
           width: 100px;
           margin-top: 1rem;
           display: none;
+        }
+      }
+    }
+
+    .chat-input-area {
+      margin-top: 1rem;
+      @include m.flex-center($justify: flex-start);
+
+      .chat-input {
+        resize: none;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 0.5rem;
+        width: calc(100% - 2rem);
+      }
+      .btn--send {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.35s;
+
+        &:hover {
+          color: v.$greyLight-3;
         }
       }
     }
