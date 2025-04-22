@@ -1,0 +1,278 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Dela+Gothic+One&family=Noto+Sans+TC:wght@100..900&family=ZCOOL+QingKe+HuangYou&family=Zen+Antique+Soft&family=Zen+Old+Mincho&display=swap");
+
+.error-container {
+  height: calc(100vh - 21rem);
+  margin: 0px;
+  background: v.$secondary;
+
+  .wrap {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .error-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: 150px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: v.$btn-p;
+    text-shadow: 0px 0px 6px v.$btn-p;
+    animation: fadeInText 3s ease-in 0.5s forwards,
+      flicker4 5s linear 3.5s infinite, hueRotate 6s ease-in-out 3s infinite;
+
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+  }
+}
+
+#svgWrap_1,
+#svgWrap_2 {
+  position: absolute;
+  height: auto;
+  width: 500px;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: hueRotate 6s ease-in-out 3s infinite;
+  opacity: 0.95;
+}
+
+#id1_1,
+#id2_1,
+#id3_1 {
+  stroke: v.$btn-p;
+  stroke-width: 5px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+#id1_2,
+#id2_2,
+#id3_2 {
+  stroke: transparent;
+  stroke-width: 5px;
+  fill: transparent;
+  filter: url(#glow);
+}
+
+#id3_1 {
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation: drawLine3 2s ease-in-out 0s forwards,
+    flicker3 4s linear 2s infinite;
+}
+
+#id2_1 {
+  stroke-dasharray: 735px;
+  stroke-dashoffset: -735px;
+  animation: drawLine2 2s ease-in-out 0.5s forwards,
+    flicker2 4s linear 2.5s infinite;
+}
+
+#id1_1 {
+  stroke-dasharray: 940px;
+  stroke-dashoffset: -940px;
+  animation: drawLine1 2s ease-in-out 1s forwards,
+    flicker1 4s linear 3s infinite;
+}
+
+@keyframes drawLine1 {
+  0% {
+    stroke-dashoffset: -940px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes drawLine2 {
+  0% {
+    stroke-dashoffset: -735px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes drawLine3 {
+  0% {
+    stroke-dashoffset: -940px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes flicker1 {
+  0% {
+    stroke: #ff3a7a;
+  }
+  1% {
+    stroke: transparent;
+  }
+  3% {
+    stroke: transparent;
+  }
+  4% {
+    stroke: #ff3a7a;
+  }
+  6% {
+    stroke: #ff3a7a;
+  }
+  7% {
+    stroke: transparent;
+  }
+  13% {
+    stroke: transparent;
+  }
+  14% {
+    stroke: #ff3a7a;
+  }
+  100% {
+    stroke: #ff3a7a;
+  }
+}
+
+@keyframes flicker2 {
+  0% {
+    stroke: #ff3a7a;
+  }
+  50% {
+    stroke: #ff3a7a;
+  }
+  51% {
+    stroke: transparent;
+  }
+  61% {
+    stroke: transparent;
+  }
+  62% {
+    stroke: #ff3a7a;
+  }
+  100% {
+    stroke: #ff3a7a;
+  }
+}
+
+@keyframes flicker3 {
+  0% {
+    stroke: #ff3a7a;
+  }
+  1% {
+    stroke: transparent;
+  }
+  10% {
+    stroke: transparent;
+  }
+  11% {
+    stroke: #ff3a7a;
+  }
+  40% {
+    stroke: #ff3a7a;
+  }
+  41% {
+    stroke: transparent;
+  }
+  45% {
+    stroke: transparent;
+  }
+  46% {
+    stroke: #ff3a7a;
+  }
+  100% {
+    stroke: #ff3a7a;
+  }
+}
+
+@keyframes flicker4 {
+  0% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  30% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  31% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  32% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  36% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  37% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  41% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  42% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  85% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  86% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  95% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  96% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  100% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+}
+
+@keyframes fadeInText {
+  1% {
+    color: #ff3a7a;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+  70% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 16px #ff2957;
+  }
+  100% {
+    color: #ff6b8b;
+    text-shadow: 0px 0px 6px #ff2957;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .error-container {
+    .wrap {
+      max-width: 90%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+  color: v.$white;
+  @include m.page-basic;
+
+  .member__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .member-box {
+    width: 100%;
+    @include m.flex-center($justify: flex-start, $align: flex-start);
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .member-container {
+    .member-box {
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+}

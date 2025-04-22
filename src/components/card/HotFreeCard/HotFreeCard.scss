@@ -1,0 +1,58 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+.card-hot {
+  display: flex;
+  flex-direction: column;
+  color: v.$white;
+  height: auto;
+ 
+
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid v.$white;
+  
+
+  .card-hot__image-container {
+    width: 100%;
+    overflow: hidden;
+    .card-hot__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s;
+    }
+  }
+
+  .card-hot__content {
+    padding: 1.2rem .8rem 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid v.$white;
+
+    .card-hot__title {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      @include m.nowrap;
+    }
+
+    .card-hot__tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+
+      .card-hot__tag {
+        background: v.$thirdary;
+        padding: 0.4rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &:hover .card-hot__image {
+    transform: scale(1.2);
+  }
+}

@@ -1,0 +1,178 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+  .complaint-form {
+    flex: 4;
+    border: 1px solid v.$white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+
+    .complaint-form__title {
+      color: v.$thirdary;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .complaint-form__header {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid v.$white;
+      @include m.flex-center($justify: space-between);
+
+      .complaint-form__subtitle {
+        color: v.$white;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      .btn--edit {
+        font-size: 2rem;
+        cursor: pointer;
+        transition: 0.35s;
+        position: relative;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+
+        &:active {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .feedback-item {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid v.$white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: 0.35s ease-in-out;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        background-color: v.$white;
+        color: v.$black;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      .feedback-item__date {
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .feedback-item__content {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05rem;
+      }
+
+      .feedback-item__type {
+        color: v.$white;
+        background-color: v.$thirdary;
+        font-weight: 300;
+
+        @include m.tag-status;
+      }
+
+      
+    }
+  }
+
+  .complaint-form__new {
+    flex: 4;
+    border: 1px solid v.$white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+
+    .complaint-form__title {
+      color: v.$thirdary;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .complaint-form__form {
+      &.content {
+        margin-top: 1rem;
+      }
+
+      .question-title {
+        font-size: 1.2rem;
+      }
+
+      .question-types {
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        width: 100%;
+        font-size: 1.1rem;
+      }
+
+      .question-content {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        resize: none;
+
+        &::placeholder {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .btn--submit {
+      margin-top: 2rem;
+      background-color: v.$thirdary;
+      width: 100%;
+
+      @include m.btn-basic;
+      @include m.interactive-btn;
+    }
+  }
+}
+
+.lightbox--contact {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+
+  @include m.flex-center;
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-container {
+    .complaint-form {
+      flex: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .complaint-form__new {
+      flex: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+  .chat-box {
+    @include m.service-area;
+
+    .chat-box__header {
+      border-bottom: 1px solid v.$white;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      @include m.flex-center($justify: space-between);
+
+      .btn--back {
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.35s;
+        position: relative;
+
+        &:hover {
+          color: v.$primary;
+        }
+      }
+    }
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+
+      .chat-message {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        position: relative;
+        word-break: break-word;
+        position: relative;
+
+        .chat-message__time {
+          position: absolute;
+          color: v.$white;
+          font-size: 0.75rem;
+          width: 100px;
+        }
+
+        .user-triangle, .bot-triangle {
+          display: none;
+        }
+
+        &.user {
+          align-self: flex-end;
+          background-color: #d0f0fd;
+          color: #000;
+          border-bottom-right-radius: 0;
+          position: relative;
+
+          .user-triangle {
+            display: block;
+            font-size: 10px;
+            position: absolute;
+            right: 0;
+            bottom: -8px;
+            color: #d0f0fd;
+          }
+
+          .chat-message__time {
+            right: 0;
+            bottom: -25px;
+            text-align: right;
+          }
+
+          .chat-message__text {
+            text-align: right;
+          }
+        }
+
+        &.bot {
+          align-self: flex-start;
+          background-color: #f3f3f3;
+          color: #333;
+          border-bottom-left-radius: 0;
+
+          .bot-triangle {
+            display: block;
+            font-size: 10px;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            color: #f3f3f3;
+          }
+
+          .chat-message__time {
+            left: 0px;
+            bottom: -25px;
+            text-align: left;
+          }
+
+          .chat-message__text {
+            text-align: left;
+          }
+        }
+
+        .chat-message__image {
+          width: 100px;
+          margin-top: 1rem;
+          display: none;
+        }
+      }
+    }
+
+    .chat-input-area {
+      margin-top: 1rem;
+      @include m.flex-center($justify: flex-start);
+
+      .chat-input {
+        resize: none;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 0.5rem;
+        width: calc(100% - 2rem);
+      }
+      .btn--send {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.35s;
+
+        &:hover {
+          color: v.$greyLight-3;
+        }
+
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

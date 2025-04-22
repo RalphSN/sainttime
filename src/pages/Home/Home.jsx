@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Home.scss";
-import cardData from "../../components/PopularCard/CardPopularData";
-import reserveCardData from "../../components/ReserveCard/CardReserveCard";
-import PopularCard from "../../components/PopularCard/PopularCard";
-import ReserveCard from "../../components/ReserveCard/ReserveCard";
+import cardData from "../../components/card/PopularCard/CardPopularData";
+import reserveCardData from "../../components/card/ReserveCard/CardReserveCard";
+import PopularCard from "../../components/card/PopularCard/PopularCard";
+import ReserveCard from "../../components/card/ReserveCard/ReserveCard";
 
 const Home = () => {
   const { t } = useTranslation();

@@ -569,5 +569,28 @@
       "availablePoints": "可兑换点数",
       "confirm": "确认"
     }
+  },
+  "complaint": {
+    "processed": "已处理",
+    "processing": "处理中",
+    "pending": "待处理",
+    "recharge": "充值问题",
+    "game": "游戏问题",
+    "function": "功能问题",
+    "other": "其他问题",
+    "title": "联系客服",
+    "subtitle1": "问题反馈",
+    "subtitle2": "问题类型",
+    "defaultSelector": "请选择问题类型",
+    "subtitle3": "您的问题",
+    "upload": "上传图片（最多5张）",
+    "submit": "提交",
+    "submitSuccess": "提交成功！",
+    "back": "返回",
+    "placeholderQues": "请说明您的问题",
+    "placeholder": "输入消息",
+    "imgFailed": "图片上传失败，请稍后再试",
+    "msgFailed": "消息发送失败，请稍后再试",
+    "defaultBotMsg": "亲爱的玩家您好：正在为您连接客服，请耐心等待。"
   }
 }

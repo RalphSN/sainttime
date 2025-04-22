@@ -1,0 +1,131 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.register {
+  @include m.flex-center($align: flex-start);
+
+  & {
+    @include m.page-basic($padding: 5rem 2rem);
+  }
+
+  .register-case,
+  .login-case {
+    background-color: v.$background-color;
+    border: 1px solid v.$white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: v.$white;
+    margin: 1rem;
+
+    .register__title,
+    .login__title {
+      display: flex;
+      margin-bottom: 1.2rem;
+      align-self: flex-start;
+    }
+  }
+  .register-case {
+    flex-direction: column;
+    flex: 2;
+    max-width: 38rem;
+    @include m.flex-center($justify: flex-start);
+
+    .btn--register {
+      @include m.small-btn;
+    }
+  }
+  .login-case {
+    flex-direction: column;
+    flex: 1;
+    max-width: 28rem;
+    @include m.flex-center($justify: flex-start);
+  }
+
+  .register__subtitle {
+    align-self: flex-start;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    width: 100%;
+    @include m.flex-center;
+
+    .input-register {
+      width: 100%;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 3px solid v.$white;
+      border-radius: 10px;
+      background-color: v.$white;
+      color: v.$black;
+      transition: 0.1s;
+
+      &:focus {
+        outline: v.$primary 5px solid;
+      }
+    }
+  }
+
+  .btn--register {
+    background-color: v.$btn-l;
+    color: v.$white;
+    margin: 1rem 0;
+    position: relative;
+    @include m.interactive-btn;
+  }
+
+  .btn--login {
+    background-color: v.$btn-l;
+    color: v.$white;
+    @include m.interactive-btn;
+  }
+
+  .btn-r {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .privacy-policy {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+
+    .privacy-policy__entry {
+      color: v.$gray;
+      text-decoration: underline;
+      transition: 0.35s;
+
+      &:hover {
+        color: v.$primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .register {
+    flex-direction: column;
+    padding: 2rem;
+    .register-case {
+      width: 100%;
+      flex: none;
+      max-width: 100%;
+      margin: 2rem 0;
+    }
+    .login-case {
+      width: 100%;
+      flex: none;
+      max-width: 100%;
+      margin: 2rem 0;
+    }
+  }
+}

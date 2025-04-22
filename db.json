@@ -149,6 +149,16 @@
       "points": 5000,
       "amount": 50,
       "status": "processing"
+    },
+    {
+      "id": "890e",
+      "userId": "7e0f",
+      "time": "2025-04-22T08:27:04.950Z",
+      "paymentMethod": "支付宝-P01",
+      "orderId": "Order202504220827049507e0f",
+      "points": 10000,
+      "amount": 100,
+      "status": "processing"
     }
   ],
   "news": [
@@ -601,6 +611,11 @@
             "blob:http://localhost:5173/6251b8e7-f4c5-4264-8d83-61838c1a7f74"
           ],
           "timestamp": "2025-04-21T06:36:42.768Z"
+        },
+        {
+          "role": "user",
+          "text": "1212",
+          "timestamp": "2025-04-22T01:02:24.000Z"
         }
       ]
     },
@@ -667,6 +682,11 @@
             "blob:http://localhost:5173/f760ba53-3c8e-40e0-bb64-ee2a400b25f3"
           ],
           "timestamp": "2025-04-21T06:23:13.744Z"
+        },
+        {
+          "role": "user",
+          "text": "77885",
+          "timestamp": "2025-04-22T01:02:33.289Z"
         }
       ]
     },
@@ -790,6 +810,11 @@
           "role": "bot",
           "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
           "timestamp": "2025-04-17T06:20:07.101Z"
+        },
+        {
+          "role": "user",
+          "text": "如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢如果超級超級長的話呢",
+          "timestamp": "2025-04-22T05:34:28.027Z"
         }
       ]
     },
@@ -976,6 +1001,16 @@
             "blob:http://localhost:5173/f4118d9c-2982-44d4-a34f-af1b71192dd1"
           ],
           "timestamp": "2025-04-21T07:50:24.903Z"
+        },
+        {
+          "role": "user",
+          "text": "可也",
+          "timestamp": "2025-04-22T06:02:48.675Z"
+        },
+        {
+          "role": "user",
+          "text": "測測試是",
+          "timestamp": "2025-04-22T06:03:56.970Z"
         }
       ]
     },
@@ -1004,6 +1039,54 @@
           "role": "user",
           "text": "789",
           "timestamp": "2025-04-21T08:29:47.965Z"
+        }
+      ]
+    },
+    {
+      "id": "1fbd",
+      "userId": "7e0f",
+      "type": "other",
+      "content": "tesssst",
+      "images": [
+        "blob:http://localhost:5173/0195838e-4ad0-4f50-b4ba-4d50f9b10814",
+        "blob:http://localhost:5173/11062209-28a7-4799-8bd8-8b5a53585617"
+      ],
+      "timestamp": "2025-04-22T05:28:59.963Z",
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "tesssst",
+          "timestamp": "2025-04-22T05:28:59.963Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-22T05:28:59.963Z"
+        }
+      ]
+    },
+    {
+      "id": "c6e0",
+      "userId": "7e0f",
+      "type": "function",
+      "content": "123",
+      "images": [
+        "blob:http://localhost:5173/01b79985-a14d-4074-841f-a5369d6ad7c5",
+        "blob:http://localhost:5173/ecd3a6b7-c160-487a-a73b-f99f7e4bdde1"
+      ],
+      "timestamp": "2025-04-22T08:51:42.311Z",
+      "status": "pending",
+      "messages": [
+        {
+          "role": "user",
+          "text": "123",
+          "timestamp": "2025-04-22T08:51:42.311Z"
+        },
+        {
+          "role": "bot",
+          "text": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。",
+          "timestamp": "2025-04-22T08:51:42.311Z"
         }
       ]
     }

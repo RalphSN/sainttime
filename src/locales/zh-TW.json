@@ -583,7 +583,14 @@
     "subtitle2": "問題類型",
     "defaultSelector": "請選擇問題類型",
     "subtitle3": "您的問題",
-    "upload": "上傳憑證（最多5張圖片）",
-    "submit": "提交"
+    "upload": "上傳圖片（最多5張圖片）",
+    "submit": "提交",
+    "submitSuccess": "提交成功!",
+    "back": "返回",
+    "placeholderQues": "請說明您的問題",
+    "placeholder": "輸入訊息",
+    "imgFailed": "圖片上傳失敗，請稍後再試",
+    "msgFailed": "訊息發送失敗，請稍後再試",
+    "defaultBotMsg": "尊敬的玩家您好：馬上為您連接客服，您稍微耐心等待。"
   }
 }

@@ -1,27 +1,25 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-// import Navbar from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout/Layout";
 import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
-import Forgot from "./pages/Forget/ForgotPassword";
+import Login from "./pages/auth/Login/Login";
+import Register from "./pages/auth/Register/Register";
+import Forgot from "./pages/auth/Forget/ForgotPassword";
 import HotFreeGames from "./pages/HotFreeGames/HotFreeGames";
 import GameDetails from "./pages/GameDetails/GameDetails";
 import DownloadApple from "./pages/DownloadApple/DownloadApple";
-import Privacy from "./pages/Privacy/Privacy";
-import Contact from "./pages/Contact/Contact";
-import Terms from "./pages/Terms/Terms";
-import Business from "./pages/Business/Business";
-import Faq from "./pages/Faq/Faq";
-import NewsPage from "./pages/NewsPage/NewsPage";
-import NewsDetail from "./pages/NewsDetail/NewsDetail";
-import Loading from "./components/Loading/Loading";
+import Privacy from "./pages/legal/Privacy/Privacy";
+import Contact from "./pages/legal/Contact/Contact";
+import Terms from "./pages/legal/Terms/Terms";
+import Business from "./pages/legal/Business/Business";
+import Faq from "./pages/legal/Faq/Faq";
+import NewsPage from "./pages/news/NewsPage/NewsPage";
+import NewsDetail from "./pages/news/NewsDetail/NewsDetail";
+import Loading from "./components/common/Loading/Loading";
 import GiftPackPage from "./pages/GiftPackPage/GiftPackPage";
-import MemberLayout from "./components/MemberLayout/MemberLayout";
-import Points from "./pages/Points/Points";
-import Recharge from "./pages/Recharge/Recharge";
-import ComplaintForm from "./pages/ComplaintForm/ComplaintForm";
+import MemberLayout from "./components/layout/MemberLayout/MemberLayout";
+import Points from "./pages/user/Points/Points";
+import Recharge from "./pages/user/Recharge/Recharge";
+import ComplaintForm from "./pages/user/ComplaintForm/ComplaintForm";
 
 function App() {
   return (

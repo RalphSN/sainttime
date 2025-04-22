@@ -569,5 +569,28 @@
       "availablePoints": "Redeemable Points",
       "confirm": "Confirm"
     }
+  },
+  "complaint": {
+    "processed": "Resolved",
+    "processing": "Ongoing",
+    "pending": "Pending",
+    "recharge": "Recharge Issue",
+    "game": "Game Issue",
+    "function": "Function Issue",
+    "other": "Other Issue",
+    "title": "Contact Support",
+    "subtitle1": "Report a Problem",
+    "subtitle2": "Issue Category",
+    "defaultSelector": "Please select an issue category",
+    "subtitle3": "Describe the Issue",
+    "upload": "Upload Images (up to 5)",
+    "submit": "Submit",
+    "submitSuccess": "Submitted Successfully!",
+    "back": "Back",
+    "placeholderQues": "Please describe your issue",
+    "placeholder": "Type a message",
+    "imgFailed": "Image upload failed. Please try again later.",
+    "msgFailed": "Message failed to send. Please try again later.",
+    "defaultBotMsg": "Hello dear player, we're connecting you to a support agent. Please wait a moment."
   }
 }
