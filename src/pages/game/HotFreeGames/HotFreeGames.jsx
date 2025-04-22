@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next"; 
-import cardHotData from "../../components/card/HotFreeCard/HotFreeCardData";
-import HotFreeCard from "../../components/card/HotFreeCard/HotFreeCard";
-import NotFound from "../../components/common/NotFound/NotFound";
+import cardHotData from "../../../components/card/HotFreeCard/HotFreeCardData";
+import HotFreeCard from "../../../components/card/HotFreeCard/HotFreeCard";
+import NotFound from "../../../components/common/NotFound/NotFound";
 import "./HotFreeGames.scss";
 
 const HotFreeGames = () => {

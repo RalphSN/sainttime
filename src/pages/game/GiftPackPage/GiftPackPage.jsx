@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { AnimatePresence } from 'framer-motion'
-import Loading from '../../components/common/Loading/Loading'
-import GiftSuccessModal from '../../components/modal/GiftSuccessModal/GiftSuccessModal'
+import Loading from '../../../components/common/Loading/Loading'
+import GiftSuccessModal from '../../../components/modal/GiftSuccessModal/GiftSuccessModal'
 import './GiftPackPage.scss'
-import '../../scss/common.scss'
+import '../../../scss/common.scss'
 
 const API_URL = import.meta.env.VITE_API_URL
 const itemsPerPage = 6

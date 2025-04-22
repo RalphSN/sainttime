@@ -7,12 +7,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import NotFound from "../../components/common/NotFound/NotFound";
-import cardData from "../../data/cardData";
+import NotFound from "../../../components/common/NotFound/NotFound";
+import cardData from "../../../data/cardData";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "../../scss/common.scss";
+import "../../../scss/common.scss";
 import "./GameDetails.scss";
 
 const GameDetails = () => {

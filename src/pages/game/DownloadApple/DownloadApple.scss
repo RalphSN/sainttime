@@ -1,5 +1,5 @@
-@use "../../scss/abstracts/variables" as v;
-@use "../../scss/abstracts/mixins" as m;
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
 
 .ios-download__container {
   @include m.page-basic;

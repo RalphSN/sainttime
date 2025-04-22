@@ -5,13 +5,13 @@ import { useEffect, useState, useRef } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import VideoPlayer from "../../components/video/VideoPlayer/VideoPlayer";
-import cardData from "../../data/cardData";
+import VideoPlayer from "../../../components/video/VideoPlayer/VideoPlayer";
+import cardData from "../../../data/cardData";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./DownloadApple.scss";
-import "../../scss/common.scss";
+import "../../../scss/common.scss";
 
 const DownloadApple = () => {
   const [searchParams] = useSearchParams();
