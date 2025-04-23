@@ -20,6 +20,7 @@ import MemberLayout from "./components/layout/MemberLayout/MemberLayout";
 import Points from "./pages/user/Points/Points";
 import Recharge from "./pages/user/Recharge/Recharge";
 import ComplaintForm from "./pages/user/ComplaintForm/ComplaintForm";
+import MyVerification from "./pages/user/MyVerification/MyVerification";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path="points" element={<Points />} />
             <Route path="recharge" element={<Recharge />} />
             <Route path="service" element={<ComplaintForm />} />
+            <Route path="certificate" element={<MyVerification />} />
           </Route>
         </Route>
       </Routes>

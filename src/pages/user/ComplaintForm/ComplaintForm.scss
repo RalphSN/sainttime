@@ -3,11 +3,7 @@
 
 .member-container {
   .complaint-form {
-    flex: 4;
-    border: 1px solid v.$white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-left: 2rem;
+    @include m.user-area;
 
     .complaint-form__title {
       color: v.$thirdary;
@@ -84,17 +80,11 @@
 
         @include m.tag-status;
       }
-
-      
     }
   }
 
   .complaint-form__new {
-    flex: 4;
-    border: 1px solid v.$white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-left: 2rem;
+    @include m.user-area;
 
     .complaint-form__title {
       color: v.$thirdary;
@@ -163,12 +153,6 @@
 
 @media (max-width: 768px) {
   .member-container {
-    .complaint-form {
-      flex: 0;
-      margin: 0;
-      width: 100%;
-    }
-
     .complaint-form__new {
       flex: 0;
       margin: 0;

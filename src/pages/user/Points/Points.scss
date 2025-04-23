@@ -3,11 +3,7 @@
 
 .member-container {
   .points-content {
-    flex: 4;
-    border: 1px solid v.$white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-left: 2rem;
+    @include m.user-area;
 
     .points-check {
       .points__title {
@@ -109,10 +105,6 @@
 @media (max-width: 768px) {
   .member-container {
     .points-content {
-      flex: 0;
-      margin: 0;
-      width: 100%;
-
       .transaction-list {
         width: 100%;
 

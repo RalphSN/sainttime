@@ -592,5 +592,11 @@
     "imgFailed": "Image upload failed. Please try again later.",
     "msgFailed": "Message failed to send. Please try again later.",
     "defaultBotMsg": "Hello dear player, we're connecting you to a support agent. Please wait a moment."
+  },
+  "verification": {
+    "title": "My Credentials",
+    "subtitle": "Please take a screenshot and keep your account credentials safe",
+    "note": "Why should I save my account credentials?",
+    "tip": "If you lose your account, you can recover it by uploading or scanning your credentials under Forgot Password ⭢ Credential Recovery"
   }
 }

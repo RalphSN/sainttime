@@ -3,7 +3,7 @@
 
 .member-container {
   .chat-box {
-    @include m.service-area;
+    @include m.user-area;
 
     .chat-box__header {
       border-bottom: 1px solid v.$white;

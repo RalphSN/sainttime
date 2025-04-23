@@ -3,11 +3,7 @@
 
 .member-container {
   .recharge-content {
-    flex: 4;
-    border: 1px solid v.$white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-left: 2rem;
+    @include m.user-area;
   }
 
   .recharge-check {
@@ -164,15 +160,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .member-container {
-    .recharge-content {
-      flex: 0;
-      margin-left: 0;
-      width: 100%;
-    }
-  }
-}
 
 @media (max-width: 430px) {
   .member-container {

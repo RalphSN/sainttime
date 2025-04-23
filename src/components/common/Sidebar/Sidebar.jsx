@@ -40,7 +40,7 @@ const Sidebar = ({ user }) => {
             </NavLink>
           </li>
           <li className="menu-item">
-            <NavLink to="/member/certificates" className={getLinkClass}>
+            <NavLink to="/member/certificate" className={getLinkClass}>
               {t("member.menu.myCertificates")}
             </NavLink>
           </li>
