@@ -11,7 +11,8 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", "Noto Sans SC", "Microsoft YaHei", "PingFang SC",
+    "PingFang TC", sans-serif;
 }
 
 img {
@@ -61,4 +62,3 @@ input {
   background-image: none !important;
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
 } */
-

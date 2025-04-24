@@ -33,7 +33,7 @@
     {
       "id": "7e0f",
       "username": "meme",
-      "password": "test123",
+      "password": "test123123",
       "nickname": "meme",
       "points": 800,
       "avatar": "default3"
@@ -259,6 +259,70 @@
       "startDate": "2025-03-10",
       "endDate": "2026-03-10",
       "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift03.png"
+    },
+    {
+      "id": "g4",
+      "title": "火影：滅忍考試【進階禮包】",
+      "content": "銀幣*150萬 高級招募券*20 忍者碎片*80",
+      "startDate": "2025-04-01",
+      "endDate": "2026-04-01",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift01.png"
+    },
+    {
+      "id": "g5",
+      "title": "海賊：大惡海時代【VIP禮包】",
+      "content": "鑽石*2000 貝裡*200000 海賊覺醒丹*30",
+      "startDate": "2025-04-02",
+      "endDate": "2026-04-02",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift02.png"
+    },
+    {
+      "id": "g6",
+      "title": "火影：滅忍考試【影級禮包】",
+      "content": "金幣*500 高級招募券*30 S級忍者碎片*100",
+      "startDate": "2025-04-03",
+      "endDate": "2026-04-03",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift03.png"
+    },
+    {
+      "id": "g7",
+      "title": "海賊：大惡海時代【進階新手包】",
+      "content": "鑽石*700 貝裡*120000 航海經驗書*15",
+      "startDate": "2025-04-04",
+      "endDate": "2026-04-04",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift01.png"
+    },
+    {
+      "id": "g8",
+      "title": "火影：滅忍考試【月卡禮包】",
+      "content": "金幣*300 高級招募券*5 查克拉水晶*200",
+      "startDate": "2025-04-05",
+      "endDate": "2026-04-05",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift03.png"
+    },
+    {
+      "id": "g9",
+      "title": "海賊：大惡海時代【週年禮包】",
+      "content": "鑽石*1000 貝裡*150000 限定裝備碎片*10",
+      "startDate": "2025-04-06",
+      "endDate": "2026-04-06",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift02.png"
+    },
+    {
+      "id": "g10",
+      "title": "火影：滅忍考試【精英禮包】",
+      "content": "銀幣*80萬 高級招募券*15 忍者裝備包*3",
+      "startDate": "2025-04-07",
+      "endDate": "2026-04-07",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift03.png"
+    },
+    {
+      "id": "g11",
+      "title": "海賊：大惡海時代【傳奇禮包】",
+      "content": "鑽石*3000 貝裡*300000 傳說海賊碎片*100",
+      "startDate": "2025-04-08",
+      "endDate": "2026-04-08",
+      "image": "https://cdn.jsdelivr.net/gh/RalphSN/images@main/sainttime-images/gift01.png"
     }
   ],
   "claims": [
@@ -303,6 +367,27 @@
       "giftPackId": "g1",
       "claimedAt": "2025-04-17T07:17:14.627Z",
       "cardCode": "VIP506"
+    },
+    {
+      "id": "6598",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-24T08:01:27.348Z",
+      "cardCode": "VIP704"
+    },
+    {
+      "id": "8732",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-24T08:01:30.060Z",
+      "cardCode": "VIP933"
+    },
+    {
+      "id": "b311",
+      "userId": "7e0f",
+      "giftPackId": "g1",
+      "claimedAt": "2025-04-24T08:01:32.092Z",
+      "cardCode": "VIP707"
     }
   ],
   "paymentMethods": [
@@ -361,87 +446,49 @@
     {
       "currency": "CNY",
       "methodId": "C01",
-      "amounts": [
-        10,
-        30,
-        50,
-        100,
-        150,
-        300,
-        500,
-        1000,
-        2000,
-        3000
-      ],
+      "amounts": [10, 30, 50, 100, 150, 300, 500, 1000, 2000, 3000],
       "id": "13b6"
     },
     {
       "currency": "CNY",
       "methodId": "P01",
-      "amounts": [
-        10,
-        50,
-        100,
-        300
-      ],
+      "amounts": [10, 50, 100, 300],
       "id": "f577"
     },
     {
       "currency": "CNY",
       "methodId": "M01",
-      "amounts": [
-        30,
-        100,
-        500
-      ],
+      "amounts": [30, 100, 500],
       "id": "ba59"
     },
     {
       "currency": "CNY",
       "methodId": "WX01",
-      "amounts": [
-        50,
-        100,
-        200
-      ],
+      "amounts": [50, 100, 200],
       "id": "7aa3"
     },
     {
       "currency": "TWD",
       "methodId": "P02",
-      "amounts": [
-        300,
-        500,
-        1000
-      ],
+      "amounts": [300, 500, 1000],
       "id": "c8e0"
     },
     {
       "currency": "TWD",
       "methodId": "P03",
-      "amounts": [
-        150,
-        500
-      ],
+      "amounts": [150, 500],
       "id": "7a1d"
     },
     {
       "currency": "TWD",
       "methodId": "P04",
-      "amounts": [
-        300,
-        600
-      ],
+      "amounts": [300, 600],
       "id": "5eab"
     },
     {
       "currency": "TWD",
       "methodId": "P05",
-      "amounts": [
-        1000,
-        2000,
-        3000
-      ],
+      "amounts": [1000, 2000, 3000],
       "id": "26f0"
     }
   ],

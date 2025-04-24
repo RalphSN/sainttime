@@ -1,0 +1,16 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+    .reserve {
+        @include m.user-area;
+        
+        .reserve__title {
+            color: v.$thirdary;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+
+}

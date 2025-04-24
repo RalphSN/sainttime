@@ -518,7 +518,8 @@
     "received": "Claimed",
     "expired": "Expired",
     "error": "Error",
-    "tryAgain": "Please try again"
+    "tryAgain": "Please try again",
+    "validityPeriod": "Validity Period"
   },
   "modal": {
     "title": "Claim Successful",
@@ -598,5 +599,30 @@
     "subtitle": "Please take a screenshot and keep your account credentials safe",
     "note": "Why should I save my account credentials?",
     "tip": "If you lose your account, you can recover it by uploading or scanning your credentials under Forgot Password ⭢ Credential Recovery"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "username": "Username",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "enterCurrentPassword": "Please enter your current password",
+    "enterNewPassword": "Please enter a new password",
+    "confirmPassword": "Re-enter New Password",
+    "confirmNewPassword": "Please confirm your new password",
+    "saving": "Saving...",
+    "confirmBtn": "Confirm",
+    "noId": "❌ Unable to retrieve user information, please log in again.",
+    "noUserId": "❌ Unable to identify user, please log in again.",
+    "noSamePwd": "❌ New password and confirmation do not match.",
+    "fillAll": "❌ Please fill in all required fields.",
+    "needLength": "❌ New password must be at least 6 characters long.",
+    "currentError": "❌ Current password is incorrect. Please try again.",
+    "changeSuccess": "✅ Password changed successfully!",
+    "changeFailed": "❌ Failed to change password:",
+    "noAccount": "❌ Account does not exist. Please try again.",
+    "changeFailed2": "❌ Password change failed. Please try again later."
+  },
+  "reserve": {
+    "title": "My Reservations"
   }
 }

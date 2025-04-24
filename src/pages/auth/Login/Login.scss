@@ -17,8 +17,8 @@
     text-align: center;
     color: v.$white;
     margin: 1rem;
-
     min-height: 30rem;
+
     .login__title {
       display: flex;
       margin-bottom: 1.2rem;
@@ -98,6 +98,10 @@
     background-color: v.$white;
     color: v.$black;
     @include m.interactive-btn;
+
+    &:hover {
+      background-color: v.$greyLight-3;
+    }
   }
 
   .privacy-policy {

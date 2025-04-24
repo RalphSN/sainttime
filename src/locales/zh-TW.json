@@ -518,7 +518,8 @@
     "received": "已領取",
     "expired": "已過期",
     "error": "錯誤",
-    "tryAgain": "請再試一次"
+    "tryAgain": "請再試一次",
+    "validityPeriod": "有效期限"
   },
   "modal": {
     "title": "領取成功",
@@ -598,5 +599,30 @@
     "subtitle": "請截圖並保管好您的帳號憑證",
     "note": "為甚麼要保存帳號憑證？",
     "tip": "如果您的帳號遺失，可在忘記密碼⭢帳號憑證找回上傳憑證、或掃描憑證找回"
+  },
+  "changePassword": {
+    "title": "修改密碼",
+    "username": "帳號",
+    "currentPassword": "密碼",
+    "newPassword": "新密碼",
+    "enterCurrentPassword": "請輸入當前密碼",
+    "enterNewPassword": "請輸入新密碼",
+    "confirmPassword": "再次輸入新密碼",
+    "confirmNewPassword": "請再次輸入新密碼",
+    "saving": "儲存中...",
+    "confirmBtn": "確認",
+    "noId": "❌ 無法獲取使用者資訊，請重新登入。",
+    "noUserId": "❌ 無法識別使用者身份，請重新登入。",
+    "noSamePwd": "❌ 新密碼與確認密碼不符。",
+    "fillAll": "❌ 請填寫所有必填欄位。",
+    "needLength": "❌ 新密碼長度至少需要 6 個字元。",
+    "currentError": "❌ 當前密碼錯誤，請重新輸入。",
+    "changeSuccess": "✅ 密碼修改成功！",
+    "changeFailed": "❌ 密碼修改失敗:",
+    "noAccount": "❌ 帳號不存在，請重新輸入。",
+    "changeFailed2": "❌ 密碼修改失敗，請稍後再試。"
+  },
+  "reserve": {
+    "title": "我的預約"
   }
 }

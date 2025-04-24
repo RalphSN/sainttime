@@ -518,7 +518,8 @@
     "received": "已领取",
     "expired": "已过期",
     "error": "错误",
-    "tryAgain": "请再试一次"
+    "tryAgain": "请再试一次",
+    "validityPeriod": "有效期"
   },
   "modal": {
     "title": "领取成功",
@@ -538,7 +539,7 @@
     "rechargeAmount": "充值金额",
     "points": "点",
     "menu": {
-      "recharge": "充值",
+      "recharge": "充值点数",
       "checkPoints": "点数查询",
       "customerService": "联系客服",
       "myCertificates": "我的凭证",
@@ -598,5 +599,30 @@
     "subtitle": "请截图并妥善保管您的账号凭证",
     "note": "为什么要保存账号凭证？",
     "tip": "如果您的账号丢失，可在忘记密码⭢账号凭证找回中上传凭证，或扫描凭证找回"
+  },
+  "changePassword": {
+    "title": "修改密码",
+    "username": "账号",
+    "currentPassword": "密码",
+    "newPassword": "新密码",
+    "enterCurrentPassword": "请输入当前密码",
+    "enterNewPassword": "请输入新密码",
+    "confirmPassword": "再次输入新密码",
+    "confirmNewPassword": "请再次输入新密码",
+    "saving": "保存中...",
+    "confirmBtn": "确认",
+    "noId": "❌ 无法获取用户信息，请重新登录。",
+    "noUserId": "❌ 无法识别用户身份，请重新登录。",
+    "noSamePwd": "❌ 新密码与确认密码不一致。",
+    "fillAll": "❌ 请填写所有必填字段。",
+    "needLength": "❌ 新密码长度至少需要 6 个字符。",
+    "currentError": "❌ 当前密码错误，请重新输入。",
+    "changeSuccess": "✅ 密码修改成功！",
+    "changeFailed": "❌ 密码修改失败：",
+    "noAccount": "❌ 账号不存在，请重新输入。",
+    "changeFailed2": "❌ 密码修改失败，请稍后再试。"
+  },
+  "reserve": {
+    "title": "我的预约"
   }
 }

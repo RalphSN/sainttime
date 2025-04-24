@@ -21,6 +21,8 @@ import Points from "./pages/user/Points/Points";
 import Recharge from "./pages/user/Recharge/Recharge";
 import ComplaintForm from "./pages/user/ComplaintForm/ComplaintForm";
 import MyVerification from "./pages/user/MyVerification/MyVerification";
+import ChangePassword from "./pages/user/ChangePassword/ChangePassword";
+import Reserve from "./pages/user/Reserve/Reserve";
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
             <Route path="recharge" element={<Recharge />} />
             <Route path="service" element={<ComplaintForm />} />
             <Route path="certificate" element={<MyVerification />} />
+            <Route path="password" element={<ChangePassword />} />
+            <Route path="reserve" element={<Reserve />} />
           </Route>
         </Route>
       </Routes>

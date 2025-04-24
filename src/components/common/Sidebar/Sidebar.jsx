@@ -2,13 +2,12 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import "./Sidebar.scss"; 
+import "./Sidebar.scss";
 const Sidebar = ({ user }) => {
   const { t } = useTranslation();
-  
+
   const getLinkClass = ({ isActive }) =>
     isActive ? "menu-item__link active" : "menu-item__link";
-
 
   return (
     <aside className="sidebar">
@@ -50,7 +49,7 @@ const Sidebar = ({ user }) => {
             </NavLink>
           </li>
           <li className="menu-item">
-            <NavLink to="/member/bookings" className={getLinkClass}>
+            <NavLink to="/member/reserve" className={getLinkClass}>
               {t("member.menu.myBookings")}
             </NavLink>
           </li>
