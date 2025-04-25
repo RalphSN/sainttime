@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +23,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 const Recharge = () => {
   const { t } = useTranslation();
   const [user] = useOutletContext();
-
+  const navigate = useNavigate();
   const [methods, setMethods] = useState([]);
   const [currency, setCurrency] = useState("CNY");
   const [selectedMethod, setSelectedMethod] = useState(null);
@@ -69,6 +70,9 @@ const Recharge = () => {
     <>
       <main className="recharge-content">
         <section className="recharge-check">
+          <button onClick={() => navigate(-1)} className="btn--back">
+            ← {t("complaint.back")}
+          </button>
           <h2 className="recharge__title">{t("member.menu.recharge")}</h2>
           <p className="recharge__hint">
             {t("recharge.hint1")}《<a>{t("recharge.contact")}</a>》

@@ -16,14 +16,19 @@
   }
 }
 
-
-
 @media (max-width: 768px) {
   .member-container {
     .member-box {
       flex-direction: column;
       align-items: center;
+    }
 
+    .member__title {
+      display: none;
+    }
+
+    .breadcrumb {
+      display: none;
     }
   }
 }

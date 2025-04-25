@@ -154,6 +154,9 @@ const ChangePassword = () => {
     <div className="change-password-container">
       {" "}
       <form className="change-password-box" onSubmit={handleSubmit}>
+        <button onClick={() => navigate(-1)} className="btn--back">
+          ← {t("complaint.back")}
+        </button>
         <h2 className="cp__title">{t("changePassword.title")}</h2>{" "}
         {/* Display Username (Read-only) */}
         <InputField

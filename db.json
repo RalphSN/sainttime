@@ -402,6 +402,13 @@
       "giftPackId": "g1",
       "claimedAt": "2025-04-24T09:11:43.218Z",
       "cardCode": "VIP113"
+    },
+    {
+      "id": "c46b",
+      "userId": "7e0f",
+      "giftPackId": "g4",
+      "claimedAt": "2025-04-25T05:27:58.462Z",
+      "cardCode": "VIP140"
     }
   ],
   "paymentMethods": [

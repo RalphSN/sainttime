@@ -23,6 +23,8 @@ import ComplaintForm from "./pages/user/ComplaintForm/ComplaintForm";
 import MyVerification from "./pages/user/MyVerification/MyVerification";
 import ChangePassword from "./pages/user/ChangePassword/ChangePassword";
 import Reserve from "./pages/user/Reserve/Reserve";
+import MemberMobile from "./pages/user/MobileMember/MobileMember";
+import MemberRedirect from "./pages/user/MemberRedirect";
 
 function App() {
   return (
@@ -47,7 +49,8 @@ function App() {
           <Route path="/gift" element={<GiftPackPage />} />
 
           <Route path="member" element={<MemberLayout />}>
-            <Route index element={<Navigate to="points" replace />} />
+            <Route index element={<MemberRedirect />} />
+            <Route path="mobile" element={<MemberMobile />} />
             <Route path="points" element={<Points />} />
             <Route path="recharge" element={<Recharge />} />
             <Route path="service" element={<ComplaintForm />} />

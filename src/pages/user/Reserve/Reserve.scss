@@ -2,15 +2,32 @@
 @use "../../../scss/abstracts/mixins" as m;
 
 .member-container {
-    .reserve {
-        @include m.user-area;
-        
-        .reserve__title {
-            color: v.$thirdary;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+  .reserve {
+    @include m.user-area;
+
+    .btn--back {
+      cursor: pointer;
+      transition: 0.35s;
+      display: none;
     }
 
+    .reserve__title {
+      color: v.$thirdary;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
 
+@media (max-width: 768px) {
+  .member-container {
+    .reserve {
+      .btn--back {
+        display: block;
+      }
+      .reserve__title {
+        text-align: center;
+      }
+    }
+  }
 }

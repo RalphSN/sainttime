@@ -6,6 +6,12 @@
     @include m.user-area;
 
     .points-check {
+      .btn--back {
+        cursor: pointer;
+        transition: 0.35s;
+        display: none;
+      }
+
       .points__title {
         color: v.$thirdary;
       }
@@ -105,6 +111,15 @@
 @media (max-width: 768px) {
   .member-container {
     .points-content {
+      .points-check {
+        .btn--back {
+          display: block;
+        }
+        .points__title {
+          text-align: center;
+        }
+      }
+
       .transaction-list {
         width: 100%;
 

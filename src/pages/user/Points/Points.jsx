@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Points.scss";
 
@@ -10,6 +11,7 @@ const Points = () => {
   const { t } = useTranslation();
   const [user] = useOutletContext();
   const [transactions, setTransactions] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -26,6 +28,9 @@ const Points = () => {
     <>
       <main className="points-content">
         <section className="points-check">
+          <button onClick={() => navigate(-1)} className="btn--back">
+            ← {t("complaint.back")}
+          </button>
           <h2 className="points__title">{t("member.menu.checkPoints")}</h2>
           <p className="remaining-points">
             {t("member.remainingPoints")}{" "}

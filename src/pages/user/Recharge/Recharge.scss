@@ -7,6 +7,12 @@
   }
 
   .recharge-check {
+
+    .btn--back {
+      cursor: pointer;
+      transition: 0.35s;
+    }
+
     .recharge__title {
       color: v.$thirdary;
       font-size: 1.5rem;
@@ -155,6 +161,23 @@
 
         @include m.btn-basic;
         @include m.interactive-btn;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .member-container {
+    .recharge-content {
+      .recharge-check {
+
+        .btn--back {
+          display: block;
+        }
+        
+        .recharge__title {
+          text-align: center;
+        }
       }
     }
   }

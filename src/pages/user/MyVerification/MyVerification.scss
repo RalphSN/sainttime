@@ -8,6 +8,16 @@
     .qrcode-box {
       text-align: center;
       margin: 1rem auto;
+      position: relative;
+
+      .btn--back {
+        position: absolute;
+        top: -16px;
+        left: 0;
+        cursor: pointer;
+        transition: 0.35s;
+        display: none;
+      }
 
       .qrcode__title {
         color: v.$thirdary;
@@ -34,6 +44,18 @@
 
         .qrcode__tip {
           color: #dcdcdc;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .member-container {
+    .qrcode-wrapper {
+      .qrcode-box {
+        .btn--back {
+          display: block;
         }
       }
     }

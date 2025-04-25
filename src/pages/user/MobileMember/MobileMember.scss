@@ -1,0 +1,110 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.member-container {
+  .mobile-member {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .user-info {
+      flex-direction: column;
+      margin-bottom: 1rem;
+      width: 100%;
+      @include m.flex-center;
+
+      .user-avatar {
+        background-color: v.$greyLight-1;
+        padding: 10px;
+        margin-bottom: 1rem;
+        aspect-ratio: 1/1;
+        width: 100px;
+        border-radius: 50%;
+
+        @include m.flex-center;
+        .fa-user {
+          font-size: 48px;
+          color: v.$dark;
+        }
+      }
+
+      .username {
+        font-size: 1.2rem;
+      }
+
+      .user-property {
+        width: 100%;
+        background-color: v.$thirdary;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        @include m.flex-center($justify: space-between);
+
+        .user-property__content {
+          flex-direction: column;
+          @include m.flex-center($align: flex-start);
+
+          .user-property__title {
+            font-size: 1rem;
+          }
+        }
+
+        .btn--recharge {
+          background-color: v.$thirdary-light;
+          color: v.$black;
+          transition: 0.35s;
+          @include m.btn-basic;
+          @include m.interactive-btn;
+
+          &:hover {
+            background-color: v.$greyLight-1;
+          }
+        }
+      }
+
+      .points {
+        font-size: 3rem;
+
+        .points__text {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .menu {
+      .menu-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+
+        .menu-item {
+          height: 150px;
+          background-color: v.$greyLight-1;
+          color: v.$dark;
+          border-radius: 10px;
+          margin: 4px;
+          transition: 0.35s;
+          flex-direction: column;
+          @include m.flex-center;
+
+          .menu-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: v.$dark;
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+
+          .menu-item__link {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            @include m.flex-center;
+          }
+        }
+      }
+    }
+  }
+}

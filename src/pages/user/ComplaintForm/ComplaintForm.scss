@@ -5,6 +5,12 @@
   .complaint-form {
     @include m.user-area;
 
+    .btn--back {
+      cursor: pointer;
+      transition: 0.35s;
+      display: none;
+    }
+
     .complaint-form__title {
       color: v.$thirdary;
       font-size: 1.5rem;
@@ -86,6 +92,12 @@
   .complaint-form__new {
     @include m.user-area;
 
+    .btn--back {
+      cursor: pointer;
+      transition: 0.35s;
+      display: none;
+    }
+
     .complaint-form__title {
       color: v.$thirdary;
       font-size: 1.5rem;
@@ -153,10 +165,27 @@
 
 @media (max-width: 768px) {
   .member-container {
+    .complaint-form {
+      .btn--back {
+        display: block;
+      }
+
+      .complaint-form__title {
+        text-align: center;
+      }
+    }
     .complaint-form__new {
       flex: 0;
       margin: 0;
       width: 100%;
+
+      .btn--back {
+        display: block;
+      }
+
+      .complaint-form__title {
+        text-align: center;
+      }
     }
   }
 }

@@ -204,6 +204,9 @@ const ComplaintForm = () => {
   if (!isFormOpen) {
     return (
       <div className="complaint-form">
+        <button onClick={() => navigate(-1)} className="btn--back">
+          ← {t("complaint.back")}
+        </button>
         <h3 className="complaint-form__title">{t("complaint.title")}</h3>
         <div className="complaint-form__header">
           <h4 className="complaint-form__subtitle">
@@ -244,6 +247,9 @@ const ComplaintForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="complaint-form__new">
+      <button onClick={() => navigate(-1)} className="btn--back">
+        ← {t("complaint.back")}
+      </button>
       <h3 className="complaint-form__title">{t("complaint.title")}</h3>
       <div className="complaint-form__form">
         <label className="question-title">{t("complaint.subtitle2")}</label>
