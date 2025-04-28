@@ -1,0 +1,28 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.age-gate__container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  @include m.flex-center;
+
+  .age-gate {
+    background-color: v.$white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+  }
+
+  .btn--age {
+    margin-top: 1rem;
+    background-color: pink;
+    width: 90%;
+
+    @include m.btn-basic;
+    @include m.interactive-btn;
+  }
+}

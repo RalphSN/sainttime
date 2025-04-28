@@ -25,10 +25,14 @@ import ChangePassword from "./pages/user/ChangePassword/ChangePassword";
 import Reserve from "./pages/user/Reserve/Reserve";
 import MemberMobile from "./pages/user/MobileMember/MobileMember";
 import MemberRedirect from "./pages/user/MemberRedirect";
+import GoTopButton from "./components/common/GoTopButton/GoTopButton";
+import AgeGateModal from "./components/common/AgeGateModal/AgeGateModal";
 
 function App() {
   return (
     <BrowserRouter>
+      <AgeGateModal />
+      <GoTopButton />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -47,6 +51,7 @@ function App() {
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/gift" element={<GiftPackPage />} />
+          <Route path="/age" element={<AgeGateModal />} />
 
           <Route path="member" element={<MemberLayout />}>
             <Route index element={<MemberRedirect />} />
