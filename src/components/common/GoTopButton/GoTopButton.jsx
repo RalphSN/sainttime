@@ -38,10 +38,10 @@ const GoTopButton = () => {
         <motion.button
           onClick={scrollToTop}
           className="go-top-button"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.8, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.35 }}
+          initial={{ opacity: 0, scale: 0, right: "-10px" }}
+          animate={{ opacity: 0.8, scale: 1, right: "40px" }}
+          exit={{ opacity: 0, scale: 0, right: "-10px" }}
+          transition={{ duration: 0.35  }}
         >
           ↑
         </motion.button>

@@ -1,17 +1,16 @@
 @use "../../../scss/abstracts/variables" as v;
 @use "../../../scss/abstracts/mixins" as m;
+
 .card-hot {
   display: flex;
   flex-direction: column;
   color: v.$white;
   height: auto;
- 
 
   height: auto;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid v.$white;
-  
 
   .card-hot__image-container {
     width: 100%;
@@ -25,7 +24,7 @@
   }
 
   .card-hot__content {
-    padding: 1.2rem .8rem 1.2rem 2rem;
+    padding: 1.2rem 0.8rem 1.2rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
