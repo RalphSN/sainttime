@@ -545,7 +545,10 @@
       "myCertificates": "我的憑證",
       "changePassword": "修改密碼",
       "myBookings": "我的預約"
-    }
+    },
+    "recharge": "儲值點數",
+    "dividend": "免費紅利",
+    "maturityDividend": "30天內到期紅利"
   },
   "rechargeModal": {
     "title": "充值訂單確認",
@@ -624,5 +627,13 @@
   },
   "reserve": {
     "title": "我的預約"
+  },
+  "ageGate": {
+    "title": "你滿18歲了嗎？",
+    "content1": "本網站可能涉及成人內容",
+    "content2": "未滿18歲請勿進入！！！",
+    "noRemind": "不再提醒",
+    "18aged": "是，我已經年滿18歲並同意",
+    "under18aged": "不，我還未滿18歲"
   }
 }

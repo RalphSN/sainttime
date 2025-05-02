@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./AgeGateModal.scss";
 
 const AgeGateModal = () => {
   const [showModal, setShowModal] = useState(false);
   const [noRemind, setNoRemind] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const ageVerified = localStorage.getItem("ageVerified");
@@ -28,9 +30,9 @@ const AgeGateModal = () => {
   return (
     <div className="age-gate__container">
       <div className="age-gate">
-        <h2 className="age-gate__title">你滿18歲了嗎？</h2>
+        <h2 className="age-gate__title">{t("ageGate.title")}</h2>
         <p className="age-gate__content">
-          本網站可能涉及成人內容，未滿18歲請勿進入
+          {t("ageGate.content1")}<br/>{t("ageGate.content2")}
         </p>
         <div className="no-remind">
           <input
@@ -39,13 +41,13 @@ const AgeGateModal = () => {
             checked={noRemind}
             onChange={(e) => setNoRemind(e.target.checked)}
           />
-          <label htmlFor="noRemind">不再提醒</label>
+          <label htmlFor="noRemind">{t("ageGate.noReMind")}</label>
         </div>
         <button className="btn--age btn--18aged" onClick={handleConfirm}>
-          是，我已年滿18歲並同意
+          {t("ageGate.18aged")}
         </button>
         <button className="btn--age btn--under18aged" onClick={handleDeny}>
-          不，我還未滿18歲
+          {t("ageGate.under18aged")}
         </button>
       </div>
     </div>

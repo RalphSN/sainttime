@@ -17,6 +17,38 @@
     width: 90%;
   }
 
+  .age-gate__title {
+    margin-bottom: 1rem;
+  }
+
+  .age-gate__content {
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .no-remind {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    @include m.flex-center;
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      appearance: auto;
+      border: 1px solid #999;
+      border-radius: 2px;
+      cursor: pointer;
+
+      @include m.flex-center;
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
   .btn--age {
     margin-top: 1rem;
     background-color: pink;

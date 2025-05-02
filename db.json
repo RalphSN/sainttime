@@ -20,6 +20,8 @@
       "password": "test123",
       "nickname": "ralph3416",
       "points": 3200,
+      "dividend": 0,
+      "maturityDividend": 0,
       "avatar": "default1"
     },
     {
@@ -28,6 +30,8 @@
       "password": "test123",
       "nickname": "ralphsn2025",
       "points": 5000,
+      "dividend": 0,
+      "maturityDividend": 0,
       "avatar": "default2"
     },
     {
@@ -36,6 +40,8 @@
       "password": "test123123",
       "nickname": "meme",
       "points": 800,
+      "dividend": 0,
+      "maturityDividend": 0,
       "avatar": "default3"
     }
   ],
@@ -467,87 +473,49 @@
     {
       "currency": "CNY",
       "methodId": "C01",
-      "amounts": [
-        10,
-        30,
-        50,
-        100,
-        150,
-        300,
-        500,
-        1000,
-        2000,
-        3000
-      ],
+      "amounts": [10, 30, 50, 100, 150, 300, 500, 1000, 2000, 3000],
       "id": "13b6"
     },
     {
       "currency": "CNY",
       "methodId": "P01",
-      "amounts": [
-        10,
-        50,
-        100,
-        300
-      ],
+      "amounts": [10, 50, 100, 300],
       "id": "f577"
     },
     {
       "currency": "CNY",
       "methodId": "M01",
-      "amounts": [
-        30,
-        100,
-        500
-      ],
+      "amounts": [30, 100, 500],
       "id": "ba59"
     },
     {
       "currency": "CNY",
       "methodId": "WX01",
-      "amounts": [
-        50,
-        100,
-        200
-      ],
+      "amounts": [50, 100, 200],
       "id": "7aa3"
     },
     {
       "currency": "TWD",
       "methodId": "P02",
-      "amounts": [
-        300,
-        500,
-        1000
-      ],
+      "amounts": [300, 500, 1000],
       "id": "c8e0"
     },
     {
       "currency": "TWD",
       "methodId": "P03",
-      "amounts": [
-        150,
-        500
-      ],
+      "amounts": [150, 500],
       "id": "7a1d"
     },
     {
       "currency": "TWD",
       "methodId": "P04",
-      "amounts": [
-        300,
-        600
-      ],
+      "amounts": [300, 600],
       "id": "5eab"
     },
     {
       "currency": "TWD",
       "methodId": "P05",
-      "amounts": [
-        1000,
-        2000,
-        3000
-      ],
+      "amounts": [1000, 2000, 3000],
       "id": "26f0"
     }
   ],

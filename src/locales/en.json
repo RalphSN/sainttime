@@ -624,5 +624,13 @@
   },
   "reserve": {
     "title": "My Reservations"
+  },
+  "ageGate": {
+    "title": "Are you over 18?",
+    "content1": "This website may contain adult content.",
+    "content2": "Do not enter if you are under 18!",
+    "noRemind": "Don't remind me again",
+    "18aged": "Yes, I am over 18 and agree",
+    "under18aged": "No, I am under 18"
   }
 }
