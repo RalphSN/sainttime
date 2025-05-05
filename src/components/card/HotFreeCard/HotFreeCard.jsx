@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./HotFreeCard.scss";
+import "../../../scss/common.scss";
 
 const HotFreeCard = ({
-  id, // 對應id屬性
+  id,
   title,
   image,
   className = "",
@@ -21,12 +22,14 @@ const HotFreeCard = ({
       data-platforms={platforms.join(",")}
     >
       <figure className="card-hot__image-container">
-        {image && (
-          <img src={image} alt={t(title)} className="card-hot__image" />
+        {image ? (
+          <img src={image} alt={t(title)} className="card-hot__image" loading="lazy"/>
+        ) : (
+          <div className="card-hot__image skeleton" />
         )}
       </figure>
       <div className="card-hot__content">
-        <h2 className="card-hot__title">{t(title)}</h2>
+        <p className="card-hot__title">{t(title)}</p>
         {children}
         <div className="card-hot__tags">
           {tagKeys.map((key, index) => (

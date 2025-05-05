@@ -1,7 +1,8 @@
 @use "./abstracts/variables" as v;
 @use "./abstracts/mixins" as m;
 
-main,body {
+main,
+body {
   background-color: v.$background-color;
 }
 
@@ -80,7 +81,7 @@ main,body {
       cursor: pointer;
       transition: 0.35s ease;
       padding: 1rem 2rem;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
 
       &:hover {
         background: v.$white;
@@ -102,7 +103,7 @@ main,body {
       padding: 1rem;
       background-color: v.$white;
       border-top: 1px solid v.$white;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       line-height: 1.5rem;
 
       transition: 0.35s;
@@ -178,10 +179,8 @@ main,body {
   }
 }
 
-
 @media (max-width: 430px) {
   .pagination {
-
     .page-select {
       margin: 0;
     }
@@ -190,11 +189,9 @@ main,body {
       display: none;
     }
   }
-
 }
 
 // =======上傳圖片區塊=======
-
 
 .sortable-images {
   display: flex;
@@ -279,7 +276,7 @@ main,body {
   }
 }
 
-// Feedback Status 
+// Feedback Status
 
 .feedback-item__status {
   margin-left: 0.5rem;
@@ -299,5 +296,21 @@ main,body {
   &.pending {
     color: v.$white;
     background-color: v.$danger;
+  }
+}
+
+//=====Skeleton=====
+
+.skeleton {
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
