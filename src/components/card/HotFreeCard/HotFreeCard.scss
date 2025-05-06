@@ -16,19 +16,15 @@
     overflow: hidden;
 
     .card-hot__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       transition: 0.35s;
+      @include m.img-cover;
     }
   }
 
   .card-hot__content {
     padding: 1.2rem 0.8rem 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-top: 1px solid v.$white;
+    @include m.flex-center($justify: space-between);
 
     .card-hot__title {
       font-size: 1.2rem;
@@ -43,10 +39,7 @@
 
       .card-hot__tag {
         background: v.$thirdary;
-        padding: 0.4rem 0.8rem;
-        border-radius: 15px;
-        font-size: 0.9rem;
-        white-space: nowrap;
+        @include m.tag-genre;
       }
     }
   }

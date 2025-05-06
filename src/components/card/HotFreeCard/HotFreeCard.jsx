@@ -23,7 +23,12 @@ const HotFreeCard = ({
     >
       <figure className="card-hot__image-container">
         {image ? (
-          <img src={image} alt={t(title)} className="card-hot__image" loading="lazy"/>
+          <img
+            src={image}
+            alt={t(title)}
+            className="card-hot__image"
+            loading="lazy"
+          />
         ) : (
           <div className="card-hot__image skeleton" />
         )}
@@ -43,7 +48,7 @@ const HotFreeCard = ({
   );
 };
 
-//  加入 PropTypes 驗證
+// PropTypes 驗證
 HotFreeCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

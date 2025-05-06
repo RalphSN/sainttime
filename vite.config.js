@@ -1,7 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import dotenv from "dotenv";
 
-// https://vite.dev/config/
+dotenv.config(); // 手動載入 .env 檔案
+
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    port: parseInt(process.env.VITE_PORT) || 5173,
+  },
+});

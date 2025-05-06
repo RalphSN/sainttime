@@ -41,7 +41,7 @@ const AgeGateModal = () => {
             checked={noRemind}
             onChange={(e) => setNoRemind(e.target.checked)}
           />
-          <label htmlFor="noRemind">{t("ageGate.noReMind")}</label>
+          <label htmlFor="noRemind">{t("ageGate.noRemind")}</label>
         </div>
         <button className="btn--age btn--18aged" onClick={handleConfirm}>
           {t("ageGate.18aged")}
