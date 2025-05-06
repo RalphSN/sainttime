@@ -30,28 +30,27 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-
     @include m.flex-center;
 
-    input[type="checkbox"] {
+    .no-remind__checkbox {
       width: 16px;
       height: 16px;
       appearance: auto;
       border: 1px solid #999;
       border-radius: 2px;
       cursor: pointer;
-
       @include m.flex-center;
     }
 
-    label {
+    .no-remind__label {
       cursor: pointer;
     }
   }
 
   .btn--age {
     margin-top: 1rem;
-    background-color: pink;
+    background-color: v.$btn-p;
+    color: v.$white;
     width: 90%;
 
     @include m.btn-basic;

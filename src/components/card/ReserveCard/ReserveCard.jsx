@@ -1,6 +1,7 @@
-import PropTypes from "prop-types"; // 加入 PropTypes 驗證
+import PropTypes from "prop-types"; 
 import { useTranslation } from "react-i18next";
 import "./ReserveCard.scss";
+import "../../../scss/common.scss";
 
 const ReserveCard = ({
   title,
@@ -13,18 +14,21 @@ const ReserveCard = ({
 }) => {
   const { t } = useTranslation();
 
-
   return (
     <div className={`card-reserve ${className}`}>
-      <div className="card-reserve__image-container">
-        {image && (
+      <figure className="card-reserve__image-container">
+        {image ? (
           <img
             src={image}
             alt={title && t(title)}
             className="card-reserve__image"
+            loading="lazy"
           />
+        ) : (
+          <div className="card-reserve__image skeleton" />
         )}
-      </div>
+      </figure>
+
       <div className="card-reserve__content">
         <h2 className="card-reserve__title">{title && t(title)}</h2>
         {description && (
@@ -46,13 +50,12 @@ const ReserveCard = ({
   );
 };
 
-// 加入 PropTypes 驗證
 ReserveCard.propTypes = {
-  title: PropTypes.string.isRequired, // 必須是 string，且必填
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
   image: PropTypes.string,
   buttonText: PropTypes.string,
-  url: PropTypes.string, // 替換 onReserve 為 url
+  url: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
 };

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./PopularCard.scss";
+import "../../../scss/common.scss"
 
 const PopularCard = ({
   id,
@@ -15,11 +16,20 @@ const PopularCard = ({
 
   return (
     <div className={`card-popular ${className}`}>
-      {image && (
-        <img src={image} alt={t(title)} className="card-popular__image" />
-      )}
+      <figure className="card-popular__image-container">
+        {image ? (
+          <img
+            src={image}
+            alt={t(title)}
+            className="card-popular__image"
+            loading="lazy"
+          />
+        ) : (
+          <div className="card-popular__image skeleton" />
+        )}
+      </figure>
       <div className="card-popular__content">
-        <h2 className="card-popular__title">{t(title)}</h2>
+        <p className="card-popular__title">{t(title)}</p>
         {children}
         {buttonText && id && (
           <Link to={`/game?id=${id}`} className="btn--play">
@@ -31,13 +41,11 @@ const PopularCard = ({
   );
 };
 
-
 PopularCard.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   image: PropTypes.string,
   buttonText: PropTypes.string,
-  url: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
 };

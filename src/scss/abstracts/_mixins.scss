@@ -53,12 +53,17 @@
   cursor: pointer;
 }
 
-@mixin btn-basic($white-space: nowrap, $padding: 0.5rem 1rem) {
-  font-size: 1rem;
+@mixin btn-basic(
+  $white-space: nowrap,
+  $padding: 0.5rem 1rem,
+  $radius: 10px,
+  $font: 1rem
+) {
+  font-size: $font;
   display: inline-block;
   padding: $padding;
   white-space: $white-space;
-  border-radius: 10px;
+  border-radius: $radius;
   text-align: center;
   cursor: pointer;
 }
@@ -119,8 +124,8 @@
   transition: 0.35s;
 
   &:hover {
-    background-color: v.$primary;
-    color: v.$white;
+    background-color: v.$thirdary-light;
+    color: v.$black;
   }
 }
 

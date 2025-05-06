@@ -8,15 +8,13 @@
 
   .card-reserve__image-container {
     position: relative;
-    width: 5rem;
+    width: 80px;
     margin-right: 1rem;
     border-radius: 15px;
     overflow: hidden;
 
     .card-reserve__image {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+      @include m.img-cover;
     }
   }
 
@@ -33,16 +31,14 @@
     }
 
     .btn--reserve {
-      font-size: 0.8rem;
       font-weight: 600;
       color: v.$thirdary;
-      display: flex;
-      justify-content: center;
       align-self: start;
       background-color: v.$white;
       color: v.$secondary;
       letter-spacing: 0.1rem;
-      @include m.small-btn;
+      @include m.btn-basic($radius: 5px, $font: 0.8rem);
+      @include m.flex-center;
 
       &:hover {
         color: v.$secondary;
