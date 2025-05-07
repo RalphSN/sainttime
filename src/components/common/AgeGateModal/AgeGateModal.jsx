@@ -4,15 +4,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./AgeGateModal.scss";
 
 const AgeGateModal = () => {
-  const [showModal, setShowModal] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [noRemind, setNoRemind] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
-    const ageVerified = localStorage.getItem("ageVerified");
-    if (ageVerified !== "true") {
-      setShowModal(true);
+    try {
+      const ageVerified = localStorage.getItem("ageVerified");
+      if (ageVerified !== "true") {
+        setIsVisible(true);
+      }
+    } catch (err) {
+      console.warn("LocalStorage access failed:", err);
       setIsVisible(true);
     }
   }, []);
@@ -21,7 +24,6 @@ const AgeGateModal = () => {
     if (noRemind) {
       localStorage.setItem("ageVerified", "true");
     }
-    setShowModal(false);
     setTimeout(() => setIsVisible(false), 200);
   };
 
@@ -34,6 +36,9 @@ const AgeGateModal = () => {
       {isVisible && (
         <motion.div
           className="age-gate__container"
+          role="dialog"
+          aria-labelledby="ageGateTitle"
+          aria-describedby="ageGateContent"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -45,8 +50,10 @@ const AgeGateModal = () => {
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="age-gate__title">{t("ageGate.title")}</h2>
-            <p className="age-gate__content">
+            <h2 className="age-gate__title" id="ageGateTitle">
+              {t("ageGate.title")}
+            </h2>
+            <p className="age-gate__content" id="ageGateContent">
               {t("ageGate.content1")}
               <br />
               {t("ageGate.content2")}
@@ -59,7 +66,9 @@ const AgeGateModal = () => {
                 className="no-remind__checkbox"
                 onChange={(e) => setNoRemind(e.target.checked)}
               />
-              <label htmlFor="noRemind" className="no-remind__label">{t("ageGate.noRemind")}</label>
+              <label htmlFor="noRemind" className="no-remind__label">
+                {t("ageGate.noRemind")}
+              </label>
             </div>
             <button className="btn--age btn--18aged" onClick={handleConfirm}>
               {t("ageGate.18aged")}
