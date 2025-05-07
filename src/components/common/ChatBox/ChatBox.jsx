@@ -54,9 +54,10 @@ const ChatBox = ({ feedback, onBack }) => {
   }, [messages]);
 
   const handleImageChange = (e) => {
+    const now = Date.now();
     const files = Array.from(e.target.files);
     const newImages = files.slice(0, MAX_FILES - images.length).map((file) => ({
-      id: `${file.name}-${Date.now()}`,
+      id: `${file.name}-${now}`,
       file,
       url: URL.createObjectURL(file),
       uploaded: false,
@@ -66,11 +67,28 @@ const ChatBox = ({ feedback, onBack }) => {
   };
 
   const handleRemove = (id) => {
-    setImages((prev) => prev.filter((img) => img.id !== id));
+    setImages((prev) => {
+      const toRemove = prev.find((img) => img.id === id);
+      if (toRemove && !toRemove.uploaded) {
+        URL.revokeObjectURL(toRemove.url); // 釋放記憶體
+      }
+      return prev.filter((img) => img.id !== id);
+    });
   };
+
+  useEffect(() => {
+    return () => {
+      images.forEach((img) => {
+        if (!img.uploaded) {
+          URL.revokeObjectURL(img.url);
+        }
+      });
+    };
+  }, []);
 
   const handleDrop = (e) => {
     e.preventDefault();
+    const now = Date.now();
     const items = Array.from(e.dataTransfer.items);
     const isRealFile = items.some((item) => {
       const entry = item.webkitGetAsEntry?.();
@@ -93,7 +111,7 @@ const ChatBox = ({ feedback, onBack }) => {
       })
       .slice(0, MAX_FILES - images.length)
       .map((file) => ({
-        id: `${file.name}-${Date.now()}`,
+        id: `${file.name}-${now}`,
         file,
         url: URL.createObjectURL(file),
         uploaded: false,
@@ -308,7 +326,12 @@ const ChatBox = ({ feedback, onBack }) => {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder={t("complaint.placeholder")}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleSend();
+              }
+            }}
           />
           <button className="btn--send" onClick={handleSend}>
             <FontAwesomeIcon icon={faTelegram} size="2x" />

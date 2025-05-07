@@ -1,7 +1,7 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons"; 
 import { motion } from "framer-motion";
 
 const SortableImage = ({ id, url, uploaded, onRemove, onClick }) => {
@@ -32,21 +32,29 @@ const SortableImage = ({ id, url, uploaded, onRemove, onClick }) => {
         }}
         transition={{ duration: 0.3 }}
       />
+
       <div className="drag-handle" {...listeners}>
         ☰
       </div>
-      {!uploaded && (
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            onRemove(id);
-          }}
-          className="btn--remove"
-        >
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
-      )}
+
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove(id);
+        }}
+        className="btn--remove"
+      >
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
+
+      {/* 上傳狀態提示圖示 */}
+      <div className="upload-status">
+        <FontAwesomeIcon
+          icon={uploaded ? faCheck : faSpinner}
+          spin={!uploaded}
+        />
+      </div>
     </div>
   );
 };
