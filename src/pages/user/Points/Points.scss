@@ -15,14 +15,29 @@
       .points__title {
         color: v.$thirdary;
       }
-      .remaining-points {
+
+      .current-points {
+        display: flex;
         border-bottom: 1px solid v.$white;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
 
-        .points-value {
-          font-size: 3rem;
-          color: v.$danger;
+        .remaining-points {
+          .points-value {
+            font-size: 3rem;
+            color: v.$danger;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .remaining-dividend {
+          margin-left: 1rem;
+
+          .dividend-value {
+            font-size: 3rem;
+            color: v.$danger;
+            margin-left: 0.5rem;
+          }
         }
       }
 
@@ -117,6 +132,13 @@
         }
         .points__title {
           text-align: center;
+        }
+        .current-points {
+          flex-direction: column;
+
+          .remaining-dividend {
+            margin: 0;
+          }
         }
       }
 

@@ -11,6 +11,7 @@
     .btn--back {
       cursor: pointer;
       transition: 0.35s;
+      display: none;
     }
 
     .recharge__title {
@@ -188,6 +189,10 @@
   .member-container {
     .recharge-content {
       .recharge-check {
+        .btn--back {
+          display: block;
+        }
+
         .currency-tabs {
           .btn--currency {
             width: 50%;

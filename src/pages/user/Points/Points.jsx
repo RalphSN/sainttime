@@ -32,10 +32,16 @@ const Points = () => {
             ← {t("complaint.back")}
           </button>
           <h2 className="points__title">{t("member.menu.checkPoints")}</h2>
-          <p className="remaining-points">
-            {t("member.remainingPoints")}{" "}
-            <span className="points-value">{user.points}</span>
-          </p>
+          <div className="current-points">
+            <p className="remaining-points">
+              {t("member.remainingPoints")}{" "}
+              <span className="points-value">{user.points}</span>
+            </p>
+            <p className="remaining-dividend">
+              剩餘紅利
+              <span className="dividend-value">{user.dividend}</span>
+            </p>
+          </div>
 
           <div className="transaction-list">
             {transactions.map((tx) => (
