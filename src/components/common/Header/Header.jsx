@@ -95,7 +95,7 @@ const Header = () => {
     { key: "navbar.home", to: "/" },
     { key: "navbar.popularGames", to: "/games" },
     { key: "navbar.gift", to: "/gift" },
-    { key: "navbar.member", to: "/member" },
+    ...(user ? [{ key: "navbar.member", to: "/member" }] : []),
   ];
 
   // 語言選單
