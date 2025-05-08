@@ -42,7 +42,7 @@ const RechargeConfirmationModal = ({
         <h3 className="modal-title">{t("rechargeModal.title")}</h3>
         <div className="modal-content">
           <p>{t("rechargeModal.type")}：{methodLabel}</p>
-          <p>{t("rechargeModal.amount")}：{amount.toFixed(2)}</p>
+          <p>{t("rechargeModal.amount")}：{amount.amount.toFixed(2)}</p>
           <p>{t("rechargeModal.points")}：{point}</p>
         </div>
         <div className="modal-buttons">

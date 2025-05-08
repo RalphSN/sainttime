@@ -7,7 +7,6 @@
   }
 
   .recharge-check {
-
     .btn--back {
       cursor: pointer;
       transition: 0.35s;
@@ -121,7 +120,8 @@
         margin-top: 1rem;
 
         .btn--amount {
-          width: 85px; //千位數撐起來的寬度
+          display: flex;
+          flex-direction: column;
           padding: 0.5rem 1rem;
           border-radius: 10px;
           border: 1.5px solid v.$white;
@@ -133,6 +133,12 @@
           white-space: nowrap;
           transition: 0.35s ease;
 
+          .bonus {
+            font-size: 0.8rem;
+            color: v.$notice;
+            transition: 0.35s;
+          }
+
           &:hover {
             background-color: #ffffff30;
           }
@@ -140,16 +146,25 @@
           &.selected {
             background-color: v.$thirdary;
             border-color: v.$thirdary;
+
+            .bonus {
+              color: v.$thirdary-light;
+            }
           }
         }
       }
 
       .point-info {
         margin-top: 1rem;
-        font-size: 1.5rem;
-        font-weight: bold;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
         color: v.$success;
         text-align: center;
+        letter-spacing: 0.01rem;
+
+        border: 2px solid v.$success;
+        border-radius: 5px;
       }
 
       .confirm-btn {
@@ -171,11 +186,10 @@
   .member-container {
     .recharge-content {
       .recharge-check {
-
         .btn--back {
           display: block;
         }
-        
+
         .recharge__title {
           text-align: center;
         }
@@ -183,7 +197,6 @@
     }
   }
 }
-
 
 @media (max-width: 430px) {
   .member-container {

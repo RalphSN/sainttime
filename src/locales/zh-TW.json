@@ -566,6 +566,9 @@
     "hint1": "儲值遇到問題？請前往",
     "contact": "聯繫客服",
     "hint2": "由專人為您服務",
+    "dividend": "紅利",
+    "rechargeFailed1":"❌ 儲值失敗：",
+    "rechargeFailed2":"儲值失敗，請稍後再試。",
     "amount": {
       "title": "請選擇儲值金額",
       "hint": "支付寶用戶若於點選確定後，未跳出二維碼，請嘗試開啟VPN後再次進行充值！",

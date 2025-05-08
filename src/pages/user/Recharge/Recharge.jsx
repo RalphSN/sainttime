@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAlipay,
@@ -127,24 +127,38 @@ const Recharge = () => {
                     <button
                       key={i}
                       className={
-                        selectedAmount === amt
+                        selectedAmount?.amount === amt.amount
                           ? "btn--amount selected"
                           : "btn--amount"
                       }
                       onClick={() => setSelectedAmount(amt)}
                     >
-                      {amt}
+                      {amt.amount}
+                      <span className="bonus">
+                        {amt.dividend}
+                        {t("recharge.dividend")}
+                      </span>
                     </button>
                   ))}
                 </div>
 
-                {selectedAmount && (
-                  <p className="point-info">
-                    {t("recharge.amount.pay")} {selectedAmount.toFixed(2)}{" "}
-                    {t("recharge.amount.availablePoints")}{" "}
-                    {getPointValue(selectedAmount)}
-                  </p>
-                )}
+                <AnimatePresence mode="wait">
+                  {selectedAmount && (
+                    <motion.p
+                      className="point-info"
+                      key={selectedAmount.amount} // 讓每個金額切換有 transition
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.35 }}
+                    >
+                      {t("recharge.amount.pay")}{" "}
+                      {selectedAmount.amount.toFixed(2)}{" "}
+                      {t("recharge.amount.availablePoints")}{" "}
+                      {getPointValue(selectedAmount.amount)}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
 
                 <button
                   className="confirm-btn"
@@ -176,7 +190,7 @@ const Recharge = () => {
                 : "")
             }
             amount={selectedAmount}
-            point={getPointValue(selectedAmount)}
+            point={getPointValue(selectedAmount.amount)}
             onCancel={() => setShowConfirmModal(false)}
             onConfirm={() => {
               const method = methods.find((m) => m.id === selectedMethod);
@@ -202,9 +216,9 @@ const Recharge = () => {
                   setShowSuccessModal(true);
                 })
                 .catch((err) => {
-                  console.error("❌ 儲值失敗：", err);
+                  console.error(t("recharge.rechargeFailed1"), err);
                   setShowConfirmModal(false);
-                  alert("儲值失敗，請稍後再試。");
+                  alert(t("recharge.rechargeFailed2"));
                 });
             }}
           />
