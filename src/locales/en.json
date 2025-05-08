@@ -545,7 +545,10 @@
       "myCertificates": "My Certificates",
       "changePassword": "Change Password",
       "myBookings": "My Bookings"
-    }
+    },
+    "recharge": "Recharge Points",
+    "dividend": "Remaining Bonus",
+    "maturityDividend": "Bonus expiring within 30 days"
   },
   "rechargeModal": {
     "title": "Top-up Order Confirmation",
@@ -563,6 +566,10 @@
     "hint1": "Having trouble with top-up? Please go to",
     "contact": "Customer Support",
     "hint2": "Our representative will assist you",
+    "dividend": "Bonus",
+    "rechargeFailed1": "❌ Recharge failed:",
+    "rechargeFailed2": "Recharge failed, please try again later.",
+
     "amount": {
       "title": "Please select a top-up amount",
       "hint": "If you're using Alipay and the QR code doesn't appear after clicking Confirm, try enabling VPN and try again!",

@@ -33,6 +33,10 @@ const MobileMember = () => {
 
   if (!user) return <Loading />;
 
+  // 防止 points 為物件
+  const pointDisplay =
+    typeof user.points === "number" ? user.points : user.points?.amount ?? 0;
+
   return (
     <div className="mobile-member">
       <div className="user-info">
@@ -44,13 +48,13 @@ const MobileMember = () => {
           <div className="user-property__content">
             <h2 className="user-property__title">總資產</h2>
             <p className="points">
-              {user.points}{" "}
+              {pointDisplay}{" "}
               <span className="points__text">{t("member.points")}</span>
             </p>
           </div>
           <NavLink
             to="/member/recharge"
-            className={`btn--recharge ${getLinkClass}`}
+            className={(props) => `btn--recharge ${getLinkClass(props)}`}
           >
             儲值
           </NavLink>
@@ -70,7 +74,6 @@ const MobileMember = () => {
           <li className="menu-item">
             <NavLink to="/member/service" className={getLinkClass}>
               <FontAwesomeIcon icon={faCommentDots} className="menu-icon" />
-
               {t("member.menu.customerService")}
             </NavLink>
           </li>

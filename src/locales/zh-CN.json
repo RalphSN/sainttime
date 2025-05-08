@@ -545,7 +545,10 @@
       "myCertificates": "我的凭证",
       "changePassword": "修改密码",
       "myBookings": "我的预约"
-    }
+    },
+    "recharge": "充值点数",
+    "dividend": "剩余红利",
+    "maturityDividend": "30天内到期红利"
   },
   "rechargeModal": {
     "title": "充值订单确认",
@@ -563,6 +566,10 @@
     "hint1": "充值遇到问题？请前往",
     "contact": "联系客服",
     "hint2": "将有专人为您服务",
+    "dividend": "红利",
+    "rechargeFailed1": "❌ 充值失败：",
+    "rechargeFailed2": "充值失败，请稍后再试。",
+
     "amount": {
       "title": "请选择充值金额",
       "hint": "若您是支付宝用户，点击确定后未跳出二维码，请尝试开启 VPN 后再次充值！",

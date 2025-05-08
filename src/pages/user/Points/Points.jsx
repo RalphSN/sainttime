@@ -38,7 +38,7 @@ const Points = () => {
               <span className="points-value">{user.points}</span>
             </p>
             <p className="remaining-dividend">
-              剩餘紅利
+              {t("member.dividend")}
               <span className="dividend-value">{user.dividend}</span>
             </p>
           </div>
@@ -53,11 +53,18 @@ const Points = () => {
                     {t("member.orderNumber")}：<strong>{tx.orderId}</strong>
                   </p>
                 </div>
+
                 <p className="points-detail">
                   <span className="points-amount">
-                    {tx.points} {t("member.points")}
+                    {typeof tx.points === "number"
+                      ? tx.points
+                      : tx.points?.amount ?? 0}{" "}
+                    {t("member.points")}
                   </span>
-                  {t("member.rechargeAmount")}：{tx.amount}
+                  {t("member.rechargeAmount")}：
+                  {typeof tx.amount === "number"
+                    ? tx.amount
+                    : tx.amount?.amount ?? 0}
                   <span className={`status ${tx.status}`}>
                     {tx.status === "success"
                       ? t("member.success")

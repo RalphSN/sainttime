@@ -72,15 +72,8 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .hot-games {
-    padding: 2rem;
-  }
-}
-
 @media (max-width: 991px) {
   .hot-games {
-    padding: 2rem;
 
     .hot-games__grid {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

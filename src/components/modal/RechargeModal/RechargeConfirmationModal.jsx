@@ -42,8 +42,9 @@ const RechargeConfirmationModal = ({
         <h3 className="modal-title">{t("rechargeModal.title")}</h3>
         <div className="modal-content">
           <p>{t("rechargeModal.type")}：{methodLabel}</p>
-          <p>{t("rechargeModal.amount")}：{amount.amount.toFixed(2)}</p>
+          <p>{t("rechargeModal.amount")}：{amount?.amount?.toFixed(2) ?? "0.00"}</p>
           <p>{t("rechargeModal.points")}：{point}</p>
+          <p>{t("recharge.dividend")}：{amount?.dividend ?? 0}</p>
         </div>
         <div className="modal-buttons">
           <button onClick={onCancel} className="btn--modal cancel">

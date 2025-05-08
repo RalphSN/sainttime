@@ -547,7 +547,7 @@
       "myBookings": "我的預約"
     },
     "recharge": "儲值點數",
-    "dividend": "免費紅利",
+    "dividend": "剩餘紅利",
     "maturityDividend": "30天內到期紅利"
   },
   "rechargeModal": {
@@ -567,8 +567,8 @@
     "contact": "聯繫客服",
     "hint2": "由專人為您服務",
     "dividend": "紅利",
-    "rechargeFailed1":"❌ 儲值失敗：",
-    "rechargeFailed2":"儲值失敗，請稍後再試。",
+    "rechargeFailed1": "❌ 儲值失敗：",
+    "rechargeFailed2": "儲值失敗，請稍後再試。",
     "amount": {
       "title": "請選擇儲值金額",
       "hint": "支付寶用戶若於點選確定後，未跳出二維碼，請嘗試開啟VPN後再次進行充值！",

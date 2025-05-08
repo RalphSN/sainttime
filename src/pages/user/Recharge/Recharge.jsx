@@ -194,7 +194,7 @@ const Recharge = () => {
             onCancel={() => setShowConfirmModal(false)}
             onConfirm={() => {
               const method = methods.find((m) => m.id === selectedMethod);
-              const point = getPointValue(selectedAmount);
+              const point = getPointValue(selectedAmount.amount);
               const time = new Date().toISOString();
               const orderId = `Order${time.replace(
                 /[-:.TZ]/g,
@@ -208,7 +208,8 @@ const Recharge = () => {
                   paymentMethod: `${method.name}-${method.id}`,
                   orderId,
                   points: point,
-                  amount: selectedAmount,
+                  amount: selectedAmount.amount,
+                  dividend: selectedAmount.dividend,
                   status: "processing",
                 })
                 .then(() => {

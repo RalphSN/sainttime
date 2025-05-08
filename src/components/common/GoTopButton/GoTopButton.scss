@@ -19,3 +19,9 @@
 
   @include m.flex-center;
 }
+
+@media (max-width: 430px) {
+  .go-top-button {
+    bottom: 120px;
+  }
+}
