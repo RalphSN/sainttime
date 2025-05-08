@@ -1,0 +1,25 @@
+@use "../../../scss/abstracts/variables" as v;
+@use "../../../scss/abstracts/mixins" as m;
+
+.app-store {
+  color: v.$white;
+  @include m.page-basic;
+
+  .app-store__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .app-store__img-container {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    @include m.flex-center;
+
+    .app-store__img {
+      @include m.img-cover;
+    }
+  }
+}

@@ -27,6 +27,7 @@ import MemberMobile from "./pages/user/MobileMember/MobileMember";
 import MemberRedirect from "./pages/user/MemberRedirect";
 import GoTopButton from "./components/common/GoTopButton/GoTopButton";
 import AgeGateModal from "./components/common/AgeGateModal/AgeGateModal";
+import AppStore from "./pages/legal/AppStore/AppStore";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/loading" element={<Loading />} />
           <Route path="/gift" element={<GiftPackPage />} />
           <Route path="/age" element={<AgeGateModal />} />
+          <Route path="/appstore" element={<AppStore />} />
 
           <Route path="member" element={<MemberLayout />}>
             <Route index element={<MemberRedirect />} />
